@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class DieScript : MonoBehaviour
 {
-    [SerializeField]
     private bool isGrounded = false;
 
-    [SerializeField]
     private bool hasBeenRolled = false;
 
     [SerializeField]
@@ -46,7 +44,13 @@ public class DieScript : MonoBehaviour
         if (isGrounded && hasBeenRolled)
         {
             getResult();
-            hasBeenRolled = false; 
+            hasBeenRolled = false;
+            if (rolledNumber == 0)
+            {
+                FindObjectOfType<dieRoller>().RollDie();
+                Destroy(this);
+            }
+            Debug.Log(rolledNumber + " has been rolled!");
         }
     }
 
@@ -61,6 +65,5 @@ public class DieScript : MonoBehaviour
                 break;
             }
         }
-        Debug.Log(rolledNumber + " has been rolled!");
     }
 }

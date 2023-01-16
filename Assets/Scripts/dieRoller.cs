@@ -16,7 +16,12 @@ public class dieRoller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject rolledDie = Instantiate(d6);
+            RollDie();
         }
+    }
+
+    public void RollDie()
+    {
+        GameObject rolledDie = Instantiate(d6);
     }
 }
