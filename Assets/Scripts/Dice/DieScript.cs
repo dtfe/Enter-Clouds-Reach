@@ -47,10 +47,11 @@ public class DieScript : MonoBehaviour
             hasBeenRolled = false;
             if (rolledNumber == 0)
             {
-                FindObjectOfType<dieRoller>().RollDie();
+                FindObjectOfType<dieRoller>().rerollDie();
                 Destroy(this);
             }
             Debug.Log(rolledNumber + " has been rolled!");
+            FindObjectOfType<RollManager>().giveResult(rolledNumber);
         }
     }
 
