@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dieRoller : MonoBehaviour
 {
-    public GameObject d4, d6, d8, d10, d12, d20;
+    public GameObject d4, d6, d8, d10, d20;
     // Start is called before the first frame update
     void Start()
     {
