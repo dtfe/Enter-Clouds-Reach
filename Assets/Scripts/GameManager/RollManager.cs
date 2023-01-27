@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RollManager : MonoBehaviour
 {
-    private GameObject requestingEvent;
+    private EventScript requestingEvent;
     private int rolledNumber;
+    private string rollType;
 
     // Start is called before the first frame update
     void Start()
@@ -19,20 +20,35 @@ public class RollManager : MonoBehaviour
         
     }
 
-    public void rollAbilityCheck(GameObject rqEvent)
+    public void rollAbilityCheck(EventScript rqEvent)
     {
         requestingEvent = rqEvent;
+        rollType = "ability";
         FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d20);
     }
 
-    public void rollDamage(GameObject rqEvent)
+    public void rollDamage()
     {
-        requestingEvent = rqEvent;
+        rollType = "damage";
         FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d6);
     }
 
     public void giveResult(int resultNumber)
     {
         rolledNumber = resultNumber;
+        switch (rollType)
+        {
+            case "ability":
+                if (rolledNumber >= requestingEvent.DifficultyCheck)
+                {
+                    requestingEvent.SucceededRoll();
+                }
+                else
+                {
+                    requestingEvent.FailedRoll();
+                }
+                break;
+
+        }
     }
 }

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0) && !targetPos)
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
                 GameObject targetGO = Instantiate(navmeshPoint, hit.point, Quaternion.identity);
                 targetPos = targetGO;
             }
-        }
+        }*/
 
         if (targetPos == null)
         {
