@@ -5,38 +5,49 @@ using TMPro;
 
 public class EventScript : MonoBehaviour
 {
-    public string[] eventText;
-
-    public List<Vector3> navMeshPoint;
+    public GameObject uiEvent;
     private RollManager RM;
+    private uiAnimator uiA;
 
-    public Transform[] pointsToMove;
+    public int DifficultyCheck;
 
     // Start is called before the first frame update
     void Start()
     {
         RM = FindObjectOfType<RollManager>();
+        uiA = uiEvent.GetComponent<uiAnimator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ActivateEvent()
     {
 
     }
 
-    public void MoveToLocation(Vector3 point)
+    public void MoveToLocation(GameObject navPoint)
     {
-        FindObjectOfType<PlayerController>().agent.SetDestination(point);
-    }
-
-    public void InitiateFight()
-    {
-
+        navPoint.GetComponent<NavigationPointScript>().MovePlayerHere();
+        ClearEvent();
     }
 
     public void rollAbilityCheck(string ability)
     {
-        Debug.Log("Rolling a " + ability + " check!");
-        RM.rollAbilityCheck(gameObject);
+        Debug.Log("Rolling a " + ability.ToLower() + " check!");
+        RM.rollAbilityCheck(this);
+        ClearEvent();
+    }
+
+    public void SucceededRoll()
+    {
+
+    }
+
+    public void FailedRoll()
+    {
+
+    }
+
+    public void ClearEvent()
+    {
+        uiA.clearSections();
     }
 }
