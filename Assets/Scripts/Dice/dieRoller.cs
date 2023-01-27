@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,11 +28,16 @@ public class dieRoller : MonoBehaviour
         d10 = 10,
 
         /// <summary>
+        /// Rolls a D12
+        /// </summary>
+        d12 = 12,
+
+        /// <summary>
         /// Rolls a d20
         /// </summary>
         d20 = 20,
     }
-    public GameObject d4, d6, d8, d10, d20;
+    public GameObject d4, d6, d8, d10, d12, d20;
 
     public GameObject rolledDie;
 
@@ -46,9 +52,12 @@ public class dieRoller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RollDie(dFaces.d6);
-            RollDie(dFaces.d20);
             RollDie(dFaces.d4);
+            RollDie(dFaces.d6);
+            RollDie(dFaces.d8);
+            RollDie(dFaces.d10);
+            RollDie(dFaces.d12);
+            RollDie(dFaces.d20);
         }
     }
 
@@ -75,6 +84,10 @@ public class dieRoller : MonoBehaviour
 
             case dFaces.d10:
                 rolledDie = Instantiate(d10);
+                break;
+
+            case dFaces.d12:
+                rolledDie = Instantiate(d12);
                 break;
 
             case dFaces.d20:

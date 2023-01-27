@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -196,11 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316c1192573fbbe45a85ee6fafa265bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  d4: {fileID: 0}
-  d6: {fileID: 5230880833110894895, guid: 4ae75d4d06753254b92bc649b0ab4df7, type: 3}
-  d8: {fileID: 0}
-  d10: {fileID: 0}
-  d20: {fileID: 0}
+  d4: {fileID: 177724972755522070, guid: 2571cf23f23125a4c9b9acfe3b0a9906, type: 3}
+  d6: {fileID: 4717380920837157062, guid: 4ae75d4d06753254b92bc649b0ab4df7, type: 3}
+  d8: {fileID: 3992472459780028335, guid: 63b9d78028468234998155f86902680f, type: 3}
+  d10: {fileID: 907486411417271883, guid: 620e29c12bfee0c4390a2a799f5fea5e, type: 3}
+  d12: {fileID: 6814313671094440451, guid: 68100a21fa3e3db4595b8ab5a800d24c, type: 3}
+  d20: {fileID: 8090063765926577025, guid: 68dc15bac9ca40149a908b3e8ab400d3, type: 3}
   rolledDie: {fileID: 0}
 --- !u!4 &593319480
 Transform:
@@ -309,7 +310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -393,7 +394,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467262599
 GameObject:
@@ -491,7 +492,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5230880832441056570
 PrefabInstance:
