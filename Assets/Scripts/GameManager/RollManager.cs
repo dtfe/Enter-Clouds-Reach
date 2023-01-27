@@ -19,13 +19,15 @@ public class RollManager : MonoBehaviour
         
     }
 
-    public void rollAbilityCheck()
+    public void rollAbilityCheck(GameObject rqEvent)
     {
+        requestingEvent = rqEvent;
         FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d20);
     }
 
-    public void rollDamage()
+    public void rollDamage(GameObject rqEvent)
     {
+        requestingEvent = rqEvent;
         FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d6);
     }
 
