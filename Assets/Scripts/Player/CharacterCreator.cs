@@ -1,15 +1,14 @@
-
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class CharacterCreator : MonoBehaviour
 {
     public PlayerStats playerStats;
-    [SerializeField]private GameObject checkmark;
     [SerializeField] private TMP_Text[] statText;
     [SerializeField] private TMP_Text[] traitText;
     [SerializeField] int baseStat = 5;
@@ -51,28 +50,42 @@ public class CharacterCreator : MonoBehaviour
             Debug.Log(playerStats.Stats.Values.Sum());
         }
     }
+    
     public void Trait(TMP_Text traitText)
     {
-       if (playerStats.Traits.ContainsKey(traitText.name))
-       {
+        
+        if (playerStats.Traits.ContainsKey(traitText.name))
+        {
         bool traitTF = playerStats.Traits[traitText.name];
             if (!traitTF)
             { 
                 playerStats.Traits[traitText.name] = true;
-                checkmark.SetActive(true);
             }
             else if(traitTF)
             {
-                checkmark.SetActive(false);
                 playerStats.Traits[traitText.name] = false;
             }
             
        }
-        
     }
+    public Sprite traitChecked;
+    public Sprite traitUnChecked;
+    public void buttonImage(GameObject button)
+    {
+        if(button.GetComponent<Image>().sprite == traitChecked)
+            {button.GetComponent<Image>().sprite = traitUnChecked;}
+        else {button.GetComponent<Image>().sprite = traitChecked;}
         
+    }  
     public void nextScene()
     {
+        for(int i = 0; i < playerStats.Traits.Count; i++)
+        {
+            if(!playerStats.Traits[traitText[i].name])
+            {
+                playerStats.Traits.Remove(traitText[i].name);
+            }
+        }
         SceneManager.LoadScene(1);
     }
     //AAAAAAAAAAAAAAH 

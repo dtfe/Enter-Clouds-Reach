@@ -18,5 +18,7 @@ public class CharacterSheet : MonoBehaviour
             else Debug.Log(playerStats.Stats.Keys.ToString());
             Debug.Log(statText[i]);
         }
+        Debug.Log(playerStats.Traits.Count);
+        
     }
 }
