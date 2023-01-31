@@ -23,7 +23,7 @@ public class DieScript : MonoBehaviour
         dieFaces = GetComponentsInChildren<DieFaceScript>();
         Debug.Log("Rolling a " + dieFaces.Length + "-sided die!");
 
-        rb.AddForce(new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f)) * 500, ForceMode.Force);
+        rb.AddForce(new Vector3(Random.Range(0, 2f), 0, Random.Range(0, 2f)) * 500, ForceMode.Force);
         rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 100);
     }
 
