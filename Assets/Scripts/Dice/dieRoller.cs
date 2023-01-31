@@ -53,11 +53,11 @@ public class dieRoller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RollDie(dFaces.d4);
-            RollDie(dFaces.d6);
-            RollDie(dFaces.d8);
-            RollDie(dFaces.d10);
-            RollDie(dFaces.d12);
-            RollDie(dFaces.d20);
+            //RollDie(dFaces.d6);
+            //RollDie(dFaces.d8);
+            //RollDie(dFaces.d10);
+            //RollDie(dFaces.d12);
+            //RollDie(dFaces.d20);
         }
     }
 
@@ -71,33 +71,33 @@ public class dieRoller : MonoBehaviour
         switch (die)
         {
             case dFaces.d4:
-                rolledDie = Instantiate(d4);
+                rolledDie = Instantiate(d4, transform);
                 break;
 
             case dFaces.d6:
-                rolledDie = Instantiate(d6);
+                rolledDie = Instantiate(d6, transform);
                 break;
 
             case dFaces.d8:
-                rolledDie = Instantiate(d8);
+                rolledDie = Instantiate(d8, transform);
                 break;
 
             case dFaces.d10:
-                rolledDie = Instantiate(d10);
+                rolledDie = Instantiate(d10, transform);
                 break;
 
             case dFaces.d12:
-                rolledDie = Instantiate(d12);
+                rolledDie = Instantiate(d12, transform);
                 break;
 
             case dFaces.d20:
-                rolledDie = Instantiate(d20);
+                rolledDie = Instantiate(d20, transform);
                 break;
         }
     }
 
     public void rerollDie()
     {
-        Instantiate(rolledDie);
+        Instantiate(rolledDie, transform);
     }
 }

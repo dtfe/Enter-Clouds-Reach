@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3947317240582997798}
   - component: {fileID: 2713703159703923891}
   - component: {fileID: 7365190204957689719}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 3222125796690930880}
   - component: {fileID: 7717930851474287672}
   - component: {fileID: 6060927823025273042}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5894049787570172502}
   - component: {fileID: 513641709869285139}
   - component: {fileID: 6923325383162904415}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 911389621065686822}
   - component: {fileID: 8994468774835664934}
   - component: {fileID: 4425081057677504125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cc6bb6ea32558d429092cb719d289a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cc6bb6ea32558d429092cb719d289a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -326,6 +326,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1cc6bb6ea32558d429092cb719d289a3, type: 3}
       propertyPath: m_Name
       value: D4 Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cc6bb6ea32558d429092cb719d289a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cc6bb6ea32558d429092cb719d289a3, type: 3}

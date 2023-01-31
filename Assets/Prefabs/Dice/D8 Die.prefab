@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6510851337437855041}
   - component: {fileID: 3521756579313412041}
   - component: {fileID: 2630197296120648037}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 864217139655537868}
   - component: {fileID: 369548682816749525}
   - component: {fileID: 6269296543341855557}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3928608157290745217}
   - component: {fileID: 2403568562239839269}
   - component: {fileID: 1227182706142529894}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 6410694556933571106}
   - component: {fileID: 3918298279963324154}
   - component: {fileID: 8055929706992937451}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4757513136473827946}
   - component: {fileID: 54066900074676708}
   - component: {fileID: 6295355272516775295}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 4565678048004160468}
   - component: {fileID: 4879557880837480539}
   - component: {fileID: 9196029755026411754}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 7534872879790813348}
   - component: {fileID: 7482912259698230499}
   - component: {fileID: 3836352253536731871}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 4306939670630664593}
   - component: {fileID: 5188848119429430835}
   - component: {fileID: 4044172684668234265}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62caaf2133fb48448bde6e7607150dc6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62caaf2133fb48448bde6e7607150dc6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -598,6 +598,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 62caaf2133fb48448bde6e7607150dc6, type: 3}
       propertyPath: m_Name
       value: D8 Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 62caaf2133fb48448bde6e7607150dc6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62caaf2133fb48448bde6e7607150dc6, type: 3}
