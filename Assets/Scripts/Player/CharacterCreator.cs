@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-public class CharacterCreator : MonoBehaviour
+public class CharacterCreator : TraitsC
 {
     public PlayerStats playerStats;
     [SerializeField] private TMP_Text[] statText;
@@ -14,7 +14,7 @@ public class CharacterCreator : MonoBehaviour
     [SerializeField] int baseStat = 5;
     [SerializeField] int maxStat = 10;
     [SerializeField] int minStat = 1;
-    [SerializeField] int maxTotal = 40; 
+    [SerializeField] int maxTotal = 40;   
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +27,8 @@ public class CharacterCreator : MonoBehaviour
             Debug.Log(statText[i]);
             Debug.Log(playerStats.Stats.Values.Sum());
         }
-        for(int j = 0; j < traitLength; j++)
-        {
-            playerStats.Traits.Add(traitText[j].name, false);
-        }
+        
+       
     }
     public void posIncrement(TMP_Text posText)
     {
@@ -51,19 +49,19 @@ public class CharacterCreator : MonoBehaviour
         }
     }
     
-    public void Trait(TMP_Text traitText)
+    public void Trait()
     {
         
-        if (playerStats.Traits.ContainsKey(traitText.name))
+        if (playerStats.Traits.ContainsKey(testTrait))
         {
-        bool traitTF = playerStats.Traits[traitText.name];
+            bool traitTF = playerStats.Traits[testTrait];
             if (!traitTF)
             { 
-                playerStats.Traits[traitText.name] = true;
+                playerStats.Traits[testTrait] = true;
             }
             else if(traitTF)
             {
-                playerStats.Traits[traitText.name] = false;
+                playerStats.Traits[testTrait] = false;
             }
             
        }
@@ -81,9 +79,9 @@ public class CharacterCreator : MonoBehaviour
     {
         for(int i = 0; i < playerStats.Traits.Count; i++)
         {
-            if(!playerStats.Traits[traitText[i].name])
+            if(!playerStats.Traits[testTrait])
             {
-                playerStats.Traits.Remove(traitText[i].name);
+                playerStats.Traits.Remove(testTrait);
             }
         }
         SceneManager.LoadScene(1);
