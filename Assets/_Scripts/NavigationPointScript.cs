@@ -20,6 +20,7 @@ public class NavigationPointScript : MonoBehaviour, IReceiveResult
     public void MovePlayerHere()
     {
         FindObjectOfType<PlayerController>().agent.SetDestination(transform.position);
+        FindObjectOfType<PlayerController>().SetTargetPos(gameObject);
     }
 
     public void TriggerEvent()

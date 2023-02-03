@@ -45,6 +45,12 @@ public class PlayerController : MonoBehaviour
             targetPos.GetComponent<NavigationPointScript>().TriggerEvent();
             targetPos = null;
             isMoving = false;
+            Debug.Log(2);
         }
+    }
+
+    public void SetTargetPos(GameObject pos)
+    {
+        targetPos = pos;
     }
 }
