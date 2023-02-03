@@ -6,26 +6,26 @@ public class uiAnimator : MonoBehaviour
 {
     float t = 0;
     private bool isMoving = false;
+    private bool clearing = false;
+    public GameObject startingBox;
 
     private RectTransform m_RectTransform;
-    private Vector2 previousPos;
-    private Vector2 startingPos;
-    private Vector2 targetPos;
+    public Vector2 previousPos;
+    public Vector2 startingPos;
+    public Vector2 targetPos;
     // Start is called before the first frame update
     void Start()
     {
         m_RectTransform = GetComponent<RectTransform>();
-        startingPos = m_RectTransform.anchoredPosition;
+        m_RectTransform.SetLocalPositionAndRotation(new Vector3(0, transform.position.y), Quaternion.identity);
+        startSection();
+        nextSection();
+        startingPos = m_RectTransform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            nextSection();
-        }
-
         if (!isMoving)
         {
             previousPos = m_RectTransform.anchoredPosition;
@@ -38,14 +38,23 @@ public class uiAnimator : MonoBehaviour
             if (m_RectTransform.anchoredPosition == targetPos)
             {
                 isMoving = false;
+                if (clearing)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
 
-    private void nextSection()
+    public void startSection()
+    {
+        startingBox.GetComponent<TextEvent>().activateNext();
+    }
+
+    public void nextSection()
     {
         t = 0;
-        targetPos = new Vector2(previousPos.x, previousPos.y + 240);
+        targetPos = new Vector2(previousPos.x, previousPos.y + 250);
         isMoving = true;
     }
 
@@ -54,5 +63,6 @@ public class uiAnimator : MonoBehaviour
         t = 0;
         targetPos = startingPos;
         isMoving = true;
+        clearing = true;
     }
 }
