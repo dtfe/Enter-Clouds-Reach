@@ -99,5 +99,6 @@ public class dieRoller : MonoBehaviour
     public void rerollDie()
     {
         Instantiate(rolledDie, transform);
+        Destroy(rolledDie);
     }
 }
