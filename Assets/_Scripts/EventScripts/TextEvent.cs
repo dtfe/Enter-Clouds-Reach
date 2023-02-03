@@ -1,27 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class TextEvent : MonoBehaviour
 {
     public int numbOfActivations;
-
+    public PlayerInput playerInput;
+    private InputAction clickAction;
     public bool clearEvents;
-
     public GameObject nextEvent;
     private uiAnimator uiAnim;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         uiAnim = GetComponentInParent<uiAnimator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void ClickInput(InputAction.CallbackContext inn)
     {
-
-        if (Input.GetMouseButtonDown(0))
-        {
             switch (numbOfActivations)
             {
                 case 1:
@@ -32,9 +31,7 @@ public class TextEvent : MonoBehaviour
                     NextAction();
                     break;
             }
-        }
     }
-
     public void activateNext()
     {
         numbOfActivations++;
@@ -52,5 +49,17 @@ public class TextEvent : MonoBehaviour
             nextEvent.GetComponent<TextEvent>().activateNext();
             Destroy(this);
         }
+    }
+    void OnEnable()
+    {
+        clickAction = playerInput.actions.FindAction("Click");
+        clickAction.performed += ClickInput;
+        clickAction.canceled += ClickInput;
+    }
+    void OnDisable()
+    {
+        clickAction = playerInput.actions.FindAction("Click");
+        clickAction.performed -= ClickInput;
+        clickAction.canceled -= ClickInput;
     }
 }

@@ -6,5 +6,5 @@ using UnityEngine;
 public class PlayerStats : ScriptableObject
 {
     public IDictionary<string,int> Stats = new Dictionary<string, int>();
-    public IDictionary<string,bool> Traits = new Dictionary<string,bool>();
+    public IDictionary<PlayerTraits,bool> Traits = new Dictionary<PlayerTraits,bool>();
 }
