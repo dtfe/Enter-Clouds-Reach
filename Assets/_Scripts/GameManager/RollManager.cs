@@ -6,7 +6,6 @@ public class RollManager : MonoBehaviour
 {
     private GameObject requestingEvent;
     private int rolledNumber;
-    private int DC;
     private string rollType;
 
     // Start is called before the first frame update
@@ -21,10 +20,9 @@ public class RollManager : MonoBehaviour
         
     }
 
-    public void rollAbilityCheck(GameObject rqEvent, int difficultyCheck, string ability)
+    public void rollAbilityCheck(GameObject rqEvent, string ability)
     {
         requestingEvent = rqEvent;
-        DC = difficultyCheck;
         rollType = "ability";
         FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d20);
     }
@@ -37,10 +35,11 @@ public class RollManager : MonoBehaviour
 
     public void giveResult(int resultNumber)
     {
-        rolledNumber = resultNumber;
-        if (rolledNumber >= DC)
+        switch (rollType)
         {
-            
+            case "ability":
+                requestingEvent.GetComponent<AbilityCheckScript>().ReceiveResult(resultNumber);
+                break;
         }
     }
 }
