@@ -17,6 +17,11 @@ public class AbilityCheckScript : MonoBehaviour
 
     public void ReceiveResult(int rolledNumber)
     {
+        Debug.Log("Rolled a " + rolledNumber + ". Has to beat " + difficulty);
+        if (!failedEvent || !successEvent)
+        {
+            return;
+        }
         GameObject eventToSpawn = failedEvent;
         if(rolledNumber >= difficulty)
         {

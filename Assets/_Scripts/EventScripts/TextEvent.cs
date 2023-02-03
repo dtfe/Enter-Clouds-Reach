@@ -38,6 +38,10 @@ public class TextEvent : MonoBehaviour
 
     private void NextAction()
     {
+        if (GetComponent<AbilityCheckScript>())
+        {
+            GetComponent<AbilityCheckScript>().StartCheck();
+        }
         if (clearEvents)
         {
             uiAnim.clearSections();
