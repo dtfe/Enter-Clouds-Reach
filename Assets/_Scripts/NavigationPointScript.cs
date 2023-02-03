@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NavigationPointScript : MonoBehaviour
 {
+    public string navPointId;
+
     public GameObject Event;
 
     // Leave these alone if there is no roll connected to this navpoint
