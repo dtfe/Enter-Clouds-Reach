@@ -32,7 +32,7 @@ public class EventScript : MonoBehaviour
     public void rollAbilityCheck(string ability)
     {
         Debug.Log("Rolling a " + ability.ToLower() + " check!");
-        RM.rollAbilityCheck(gameObject, DifficultyCheck, ability);
+        RM.rollAbilityCheck(gameObject, ability);
         ClearEvent();
     }
 

@@ -52,6 +52,7 @@ public class DieScript : MonoBehaviour
             }
             Debug.Log(rolledNumber + " has been rolled!");
             FindObjectOfType<RollManager>().giveResult(rolledNumber);
+            Destroy(gameObject);
         }
     }
 

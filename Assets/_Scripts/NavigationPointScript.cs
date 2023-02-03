@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavigationPointScript : MonoBehaviour, IReceiveResult
+public class NavigationPointScript : MonoBehaviour
 {
     public GameObject Event;
 
@@ -28,21 +28,5 @@ public class NavigationPointScript : MonoBehaviour, IReceiveResult
         GameObject spawnedGO = Instantiate(Event, canvas.transform);
         spawnedGO.transform.position = spawnedGO.GetComponent<uiAnimator>().startingPos;
         spawnedGO.GetComponent<uiAnimator>().startSection();
-    }
-
-    public void AbilityCheckBeforeMove(int difficultyCheck, string ability)
-    {
-        FindObjectOfType<RollManager>().rollAbilityCheck(gameObject, difficultyCheck, ability);
-
-    }
-
-    public void Success()
-    {
-        MovePlayerHere();
-    }
-
-    public void Failure()
-    {
-
     }
 }
