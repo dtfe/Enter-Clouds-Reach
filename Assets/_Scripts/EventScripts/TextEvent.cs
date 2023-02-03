@@ -33,7 +33,7 @@ public class TextEvent : MonoBehaviour
     }
     public void activateNext()
     {
-        numbOfActivations++;
+        numbOfActivations++; 
     }
 
     private void NextAction()
