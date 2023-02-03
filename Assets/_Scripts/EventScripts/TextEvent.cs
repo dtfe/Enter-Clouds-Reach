@@ -6,16 +6,17 @@ using UnityEngine.InputSystem;
 public class TextEvent : MonoBehaviour
 {
     public int numbOfActivations;
-    public PlayerInput playerInput;
+    private PlayerInput playerInput;
+    private GameObject player;
     private InputAction clickAction;
     public bool clearEvents;
     public GameObject nextEvent;
     private uiAnimator uiAnim;
     // Start is called before the first frame update
-    void Start()
-    {   
+    void Awake()
+    {   player = GameObject.Find("---Camera---/Player");
         uiAnim = GetComponentInParent<uiAnimator>();
-        playerInput = FindObjectOfType<PlayerInput>();
+        playerInput = player.GetComponent<PlayerInput>();
     }
 
     // Update is called once per frame
