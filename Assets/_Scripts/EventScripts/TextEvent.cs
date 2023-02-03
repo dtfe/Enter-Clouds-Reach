@@ -15,6 +15,7 @@ public class TextEvent : MonoBehaviour
     void Start()
     {   
         uiAnim = GetComponentInParent<uiAnimator>();
+        playerInput = FindObjectOfType<PlayerInput>();
     }
 
     // Update is called once per frame
