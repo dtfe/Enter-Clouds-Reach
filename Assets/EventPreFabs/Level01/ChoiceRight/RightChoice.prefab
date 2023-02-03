@@ -260,13 +260,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EventScript, Assembly-CSharp
-        m_MethodName: MoveToLocation
-        m_Mode: 2
+      - m_Target: {fileID: 8332651733137827876, guid: b5dd633b45496c941847e7f2823c4f59, type: 3}
+        m_TargetAssemblyTypeName: NavigationPointScript, Assembly-CSharp
+        m_MethodName: MovePlayerHere
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: wisdom
@@ -449,13 +449,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EventScript, Assembly-CSharp
-        m_MethodName: MoveToLocation
-        m_Mode: 2
+      - m_Target: {fileID: 8332651733137827876, guid: b5dd633b45496c941847e7f2823c4f59, type: 3}
+        m_TargetAssemblyTypeName: NavigationPointScript, Assembly-CSharp
+        m_MethodName: MovePlayerHere
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: wisdom
@@ -496,8 +496,8 @@ RectTransform:
   m_Father: {fileID: 5959378230470514613}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -750}
   m_SizeDelta: {x: 1000, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
