@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameObject targetPos;
+    [SerializeField]private GameObject targetPos;
     private bool isMoving;
 
     public Camera cam;
@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.x > targetPos.transform.position.x - 0.2f && transform.position.x < targetPos.transform.position.x + 0.2f && transform.position.y - 1 > targetPos.transform.position.y - 0.2f && transform.position.y - 1 < targetPos.transform.position.y + 0.2f && transform.position.z > targetPos.transform.position.z - 0.2f && transform.position.z < targetPos.transform.position.z + 0.2f)
         {
-            Destroy(targetPos);
+            targetPos.GetComponent<NavigationPointScript>().TriggerEvent();
+            targetPos = null;
             isMoving = false;
         }
     }
