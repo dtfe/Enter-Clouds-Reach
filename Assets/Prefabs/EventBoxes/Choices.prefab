@@ -122,16 +122,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EventScript, Assembly-CSharp
-        m_MethodName: MoveToLocation
-        m_Mode: 2
+      - m_Target: {fileID: 2240466535011672712, guid: 6ad66bed01b794046aa6b22fdd249e97, type: 3}
+        m_TargetAssemblyTypeName: NavigationPointScript, Assembly-CSharp
+        m_MethodName: MovePlayerHere
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: wisdom
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: uiAnimator, Assembly-CSharp
+        m_MethodName: clearSections
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3261715059820196103
@@ -145,6 +157,8 @@ GameObject:
   - component: {fileID: 3261715059820196096}
   - component: {fileID: 3261715059820196098}
   - component: {fileID: 3261715059820196097}
+  - component: {fileID: 6818523530856117072}
+  - component: {fileID: 2042209060680508629}
   m_Layer: 5
   m_Name: Choices
   m_TagString: Untagged
@@ -212,6 +226,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6818523530856117072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261715059820196103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9c2927b00164f43bb6c48643775610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numbOfActivations: 0
+  clearEvents: 1
+  nextEvent: {fileID: 0}
+--- !u!114 &2042209060680508629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261715059820196103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9c2927b00164f43bb6c48643775610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numbOfActivations: 0
+  clearEvents: 1
+  nextEvent: {fileID: 0}
 --- !u!1 &3261715059938595064
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,16 +513,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EventScript, Assembly-CSharp
-        m_MethodName: MoveToLocation
-        m_Mode: 2
+      - m_Target: {fileID: 1116578054545474436, guid: 228e64754bf37084f8db74757dc603cb, type: 3}
+        m_TargetAssemblyTypeName: NavigationPointScript, Assembly-CSharp
+        m_MethodName: MovePlayerHere
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: wisdom
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: uiAnimator, Assembly-CSharp
+        m_MethodName: clearSections
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3261715060405331387

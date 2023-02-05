@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class uiAnimator : MonoBehaviour
 {
     float t = 0;
-    private bool isMoving = false;
+    [HideInInspector]public bool isMoving = false;
     private bool clearing = false;
+    bool abilityCheck = false;
     public GameObject startingBox;
 
     private RectTransform m_RectTransform;
@@ -14,7 +16,7 @@ public class uiAnimator : MonoBehaviour
     public Vector2 startingPos;
     public Vector2 targetPos;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_RectTransform = GetComponent<RectTransform>();
         m_RectTransform.SetLocalPositionAndRotation(new Vector3(0, transform.position.y), Quaternion.identity);
@@ -42,6 +44,10 @@ public class uiAnimator : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
+                if(abilityCheck)
+                {
+                    m_RectTransform.anchoredPosition = new Vector2(0,-138);
+                }
             }
         }
     }
@@ -58,11 +64,23 @@ public class uiAnimator : MonoBehaviour
         isMoving = true;
     }
 
+    public void AbilityCheck()
+    {
+        t = 0;
+        targetPos = startingPos;
+        isMoving = true;
+        clearing = false;
+        abilityCheck = true;
+    }
     public void clearSections()
     {
         t = 0;
         targetPos = startingPos;
         isMoving = true;
         clearing = true;
+    }
+    public void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
