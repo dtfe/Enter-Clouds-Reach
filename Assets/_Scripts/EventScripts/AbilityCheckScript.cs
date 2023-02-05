@@ -18,10 +18,10 @@ public class AbilityCheckScript : MonoBehaviour
     public void ReceiveResult(int rolledNumber)
     {
         Debug.Log("Rolled a " + rolledNumber + ". Has to beat " + difficulty);
-        if (!failedEvent || !successEvent)
-        {
-            return;
-        }
+        //if (!failedEvent || !successEvent)
+        //{
+        //    return;
+        //}
         GameObject eventToSpawn = failedEvent;
         if(rolledNumber >= difficulty)
         {
@@ -29,6 +29,6 @@ public class AbilityCheckScript : MonoBehaviour
         }
         GameObject spawnedGO = Instantiate(eventToSpawn, FindObjectOfType<Canvas>().transform);
         spawnedGO.transform.position = spawnedGO.GetComponent<uiAnimator>().startingPos;
-        spawnedGO.GetComponent<uiAnimator>().startSection();
+        //spawnedGO.GetComponent<uiAnimator>().startSection();
     }
 }

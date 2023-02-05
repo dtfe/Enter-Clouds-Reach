@@ -26,9 +26,16 @@ public class NavigationPointScript : MonoBehaviour
     }
 
     public void TriggerEvent()
-    {
-        GameObject spawnedGO = Instantiate(Event, canvas.transform);
-        spawnedGO.transform.position = spawnedGO.GetComponent<uiAnimator>().startingPos;
-        spawnedGO.GetComponent<uiAnimator>().startSection();
+    {   
+        if(canvas != null)
+        {
+            GameObject spawnedGO = Instantiate(Event, canvas.transform);
+            spawnedGO.transform.position = spawnedGO.GetComponent<uiAnimator>().startingPos;
+            //spawnedGO.GetComponent<uiAnimator>().startSection();
+        }
+        else   
+        {
+            canvas = FindObjectOfType<Canvas>();
+        }
     }
 }
