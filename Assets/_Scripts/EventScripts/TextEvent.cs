@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,9 +20,11 @@ public class TextEvent : MonoBehaviour
         playerInput = player.GetComponent<PlayerInput>();
     }
 
-    // Update is called once per frame
+    
     void ClickInput(InputAction.CallbackContext inn)
-    {
+    { 
+        if(!uiAnim.isMoving)
+        {
             switch (numbOfActivations)
             {
                 case 1:
@@ -32,6 +35,7 @@ public class TextEvent : MonoBehaviour
                     NextAction();
                     break;
             }
+        }
     }
     public void activateNext()
     {
@@ -46,25 +50,31 @@ public class TextEvent : MonoBehaviour
         }
         if (clearEvents)
         {
-            uiAnim.clearSections();
+            //uiAnim.clearSections();
             Destroy(this);
         }
         else
         {
-            nextEvent.GetComponent<TextEvent>().activateNext();
+            //nextEvent.GetComponent<TextEvent>().activateNext();
             Destroy(this);
         }
     }
     void OnEnable()
     {
-        clickAction = playerInput.actions.FindAction("Click");
-        clickAction.performed += ClickInput;
-        clickAction.canceled += ClickInput;
+        if (playerInput != null)
+        {
+            clickAction = playerInput.actions.FindAction("Click");
+            clickAction.performed += ClickInput;
+            clickAction.canceled += ClickInput;
+        }
     }
     void OnDisable()
     {
-        clickAction = playerInput.actions.FindAction("Click");
-        clickAction.performed -= ClickInput;
-        clickAction.canceled -= ClickInput;
+        if (playerInput != null)
+        {
+            clickAction = playerInput.actions.FindAction("Click");
+            clickAction.performed -= ClickInput;
+            clickAction.canceled -= ClickInput;
+        }
     }
 }
