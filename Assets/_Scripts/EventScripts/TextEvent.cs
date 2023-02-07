@@ -8,16 +8,15 @@ public class TextEvent : MonoBehaviour
 {
     public int numbOfActivations;
     private PlayerInput playerInput;
-    private GameObject player;
     private InputAction clickAction;
     public bool clearEvents;
     public GameObject nextEvent;
     private uiAnimator uiAnim;
     // Start is called before the first frame update
     void Awake()
-    {   player = GameObject.Find("---Camera---/Player");
+    {
         uiAnim = GetComponentInParent<uiAnimator>();
-        playerInput = player.GetComponent<PlayerInput>();
+        playerInput = FindObjectOfType<PlayerController>().GetComponent<PlayerInput>();
     }
 
     

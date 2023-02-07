@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 5959378230151221115}
   - component: {fileID: 5959378230151221114}
   - component: {fileID: 5959378230151221113}
+  - component: {fileID: 2896144138101205153}
   m_Layer: 5
   m_Name: Choice2
   m_TagString: Untagged
@@ -293,6 +294,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2896144138101205153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959378230151221063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
 --- !u!1 &5959378230470514612
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58c1ae9e9823c842839887e81d3ac28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   startingBox: {fileID: 0}
   previousPos: {x: 0, y: 0}
   startingPos: {x: 0, y: 0}
@@ -360,6 +375,7 @@ GameObject:
   - component: {fileID: 5959378231144896662}
   - component: {fileID: 5959378231144896661}
   - component: {fileID: 5959378231144896660}
+  - component: {fileID: 5775886685342808464}
   m_Layer: 5
   m_Name: Choice1
   m_TagString: Untagged
@@ -482,6 +498,19 @@ MonoBehaviour:
           m_StringArgument: wisdom
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5775886685342808464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959378231144896658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
 --- !u!1 &5959378231157358214
 GameObject:
   m_ObjectHideFlags: 0

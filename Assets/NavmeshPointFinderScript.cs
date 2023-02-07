@@ -23,6 +23,17 @@ public class NavmeshPointFinderScript : MonoBehaviour
         }
     }
 
+    public void findPoint(string ID)
+    {
+        foreach(NavigationPointScript nav in NavigationPoints)
+        {
+            if (nav.navPointId == ID)
+            {
+                FindObjectOfType<PlayerController>().SetTargetPos(nav.gameObject);
+            }
+        }
+    }
+
     private void addPoint(NavigationPointScript navPoint)
     {
         NavigationPoints.Add(navPoint);

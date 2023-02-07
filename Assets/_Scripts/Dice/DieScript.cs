@@ -11,6 +11,8 @@ public class DieScript : MonoBehaviour
     [SerializeField]
     private int rolledNumber = 0;
 
+    private dieRoller.dFaces self;
+
     private Rigidbody rb;
 
     public DieFaceScript[] dieFaces;
@@ -47,8 +49,9 @@ public class DieScript : MonoBehaviour
             hasBeenRolled = false;
             if (rolledNumber == 0)
             {
-                FindObjectOfType<dieRoller>().rerollDie();
-                Destroy(this);
+                FindObjectOfType<dieRoller>().rerollDie(self);
+                Destroy(gameObject);
+                return;
             }
             Debug.Log(rolledNumber + " has been rolled!");
             FindObjectOfType<RollManager>().giveResult(rolledNumber);
@@ -67,5 +70,10 @@ public class DieScript : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void DFace(dieRoller.dFaces dface)
+    {
+        self = dface;
     }
 }

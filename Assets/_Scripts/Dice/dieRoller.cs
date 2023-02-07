@@ -94,11 +94,12 @@ public class dieRoller : MonoBehaviour
                 rolledDie = Instantiate(d20, transform);
                 break;
         }
+
+        rolledDie.GetComponent<DieScript>().DFace(die);
     }
 
-    public void rerollDie()
+    public void rerollDie(dFaces dieToReroll)
     {
-        Instantiate(rolledDie, transform);
-        Destroy(rolledDie);
+        RollDie(dieToReroll);
     }
 }
