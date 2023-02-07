@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CharacterSheet : TraitsC
+public class CharacterSheet : MonoBehaviour
 {
     public PlayerStats playerStats;
     [SerializeField]

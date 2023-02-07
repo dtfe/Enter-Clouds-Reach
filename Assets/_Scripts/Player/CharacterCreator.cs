@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-public class CharacterCreator : TraitsC
+public class CharacterCreator : MonoBehaviour
 {
+    private  Traits traits;
     public PlayerStats playerStats;
     [SerializeField] private TMP_Text[] statText;
     [SerializeField] private TMP_Text[] traitText;
@@ -17,7 +18,8 @@ public class CharacterCreator : TraitsC
     [SerializeField] int maxTotal = 40;   
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        traits = GetComponent<Traits>();
         int statLength = statText.Length;
         int traitLength = traitText.Length;
         for(int i = 0; i < statLength;i++)
@@ -49,22 +51,49 @@ public class CharacterCreator : TraitsC
         }
     }
     
-    public void Trait()
+    public void Trait(string traitName)
     {
-        
-        if (playerStats.Traits.ContainsKey(testTrait))
+        PlayerTraits[] traitAr = traits.traitArray;
+        int i = 0;
+        foreach(PlayerTraits playerTraits in traits.traitArray)
         {
-            bool traitTF = playerStats.Traits[testTrait];
-            if (!traitTF)
-            { 
-                playerStats.Traits[testTrait] = true;
-            }
-            else if(traitTF)
+            if (traitName != traitAr[i].traitName)
             {
-                playerStats.Traits[testTrait] = false;
+                i++;
+            }
+            else
+            {
+                if (playerStats.Traits.ContainsKey(traitAr[i]))
+                {
+                    bool traitTF = playerStats.Traits[traitAr[i]];
+                    if (traitTF)
+                    {
+                        playerStats.Traits[traitAr[i]] = false;
+                        playerStats.Stats["BrawnText"] -= traitAr[i].brawnModifier;
+                        playerStats.Stats["AgilityText"] -= traitAr[i].agilityModifier;
+                        playerStats.Stats["EnduranceText"] -= traitAr[i].enduranceModifier;
+                        playerStats.Stats["KnowledgeText"] -= traitAr[i].knowledgeModifier;
+                        playerStats.Stats["WisdomText"] -= traitAr[i].wisdomModifier;
+                        playerStats.Stats["CharmText"] -= traitAr[i].charmModifier;
+                        maxTotal -= traitAr[i].totalMod;
+                    }
+                    else
+                    {
+                        playerStats.Traits[traitAr[i]] = true;
+                        playerStats.Stats["BrawnText"] += traitAr[i].brawnModifier;
+                        playerStats.Stats["AgilityText"] += traitAr[i].agilityModifier;
+                        playerStats.Stats["EnduranceText"] += traitAr[i].enduranceModifier;
+                        playerStats.Stats["KnowledgeText"] += traitAr[i].knowledgeModifier;
+                        playerStats.Stats["WisdomText"] += traitAr[i].wisdomModifier;
+                        playerStats.Stats["CharmText"] += traitAr[i].charmModifier;
+                        maxTotal += traitAr[i].totalMod;
+                    }
+                }Debug.Log(playerStats.Stats.Values.Sum());
+                Debug.Log(maxTotal);
+                break;
             }
             
-       }
+        }
     }
     public Sprite traitChecked;
     public Sprite traitUnChecked;
@@ -77,14 +106,14 @@ public class CharacterCreator : TraitsC
     }  
     public void nextScene()
     {
-        for(int i = 0; i < playerStats.Traits.Count; i++)
+        for(int i = 0; i < traits.traitArray.Length; i++)
         {
-            if(!playerStats.Traits[testTrait])
+            if(!playerStats.Traits[traits.traitArray[i]])
             {
-                playerStats.Traits.Remove(testTrait);
+                playerStats.Traits.Remove(traits.traitArray[i]);
             }
         }
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     //AAAAAAAAAAAAAAH 
 }
