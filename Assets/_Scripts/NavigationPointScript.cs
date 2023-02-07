@@ -8,10 +8,6 @@ public class NavigationPointScript : MonoBehaviour
 
     public GameObject Event;
 
-    // Leave these alone if there is no roll connected to this navpoint
-    public GameObject successEvent;
-    public GameObject failureEvent;
-
     private Canvas canvas;
 
     private void Start()

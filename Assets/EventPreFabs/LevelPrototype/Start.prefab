@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58c1ae9e9823c842839887e81d3ac28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   startingBox: {fileID: 0}
   previousPos: {x: 0, y: 0}
   startingPos: {x: 0, y: 0}
@@ -438,6 +439,7 @@ GameObject:
   - component: {fileID: 8741758069263534194}
   - component: {fileID: 8741758069263534192}
   - component: {fileID: 8741758069263534195}
+  - component: {fileID: 3591964541482694666}
   m_Layer: 5
   m_Name: Choices
   m_TagString: Untagged
@@ -504,6 +506,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3591964541482694666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741758069263534197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
 --- !u!1 &8741758069415537034
 GameObject:
   m_ObjectHideFlags: 0

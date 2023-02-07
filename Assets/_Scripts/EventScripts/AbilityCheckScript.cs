@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityCheckScript : MonoBehaviour
@@ -18,12 +16,9 @@ public class AbilityCheckScript : MonoBehaviour
     public void ReceiveResult(int rolledNumber)
     {
         Debug.Log("Rolled a " + rolledNumber + ". Has to beat " + difficulty);
-        //if (!failedEvent || !successEvent)
-        //{
-        //    return;
-        //}
+        FindObjectOfType<uiAnimator>().clearSections();
         GameObject eventToSpawn = failedEvent;
-        if(rolledNumber >= difficulty)
+        if (rolledNumber >= difficulty)
         {
             eventToSpawn = successEvent;
         }
