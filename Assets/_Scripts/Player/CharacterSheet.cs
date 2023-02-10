@@ -1,9 +1,10 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CharacterSheet : TraitsC
+public class CharacterSheet : MonoBehaviour
 {
     public PlayerStats playerStats;
     [SerializeField]
@@ -18,7 +19,8 @@ public class CharacterSheet : TraitsC
             else Debug.Log(playerStats.Stats.Keys.ToString());
             Debug.Log(statText[i]);
         }
-        Debug.Log(playerStats.Traits.Count);
+        Debug.Log(playerStats.traitArray);
+        Debug.Log(playerStats.traitArray.Length);
         
     }
 }
