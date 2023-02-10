@@ -16,14 +16,14 @@ public class AbilityCheckScript : MonoBehaviour
     public void ReceiveResult(int rolledNumber)
     {
         Debug.Log("Rolled a " + rolledNumber + ". Has to beat " + difficulty);
-        FindObjectOfType<uiAnimator>().clearSections();
+        FindObjectOfType<UiAnimator>().clearSections();
         GameObject eventToSpawn = failedEvent;
         if (rolledNumber >= difficulty)
         {
             eventToSpawn = successEvent;
         }
         GameObject spawnedGO = Instantiate(eventToSpawn, FindObjectOfType<Canvas>().transform);
-        spawnedGO.transform.position = spawnedGO.GetComponent<uiAnimator>().startingPos;
+        spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
         //spawnedGO.GetComponent<uiAnimator>().startSection();
     }
 }

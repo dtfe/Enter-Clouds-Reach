@@ -7,7 +7,7 @@ public class EventScript : MonoBehaviour
 {
     public GameObject uiEvent;
     private RollManager RM;
-    private uiAnimator uiA;
+    private UiAnimator uiA;
 
     public int DifficultyCheck;
 
@@ -15,7 +15,7 @@ public class EventScript : MonoBehaviour
     void Start()
     {
         RM = FindObjectOfType<RollManager>();
-        uiA = uiEvent.GetComponent<uiAnimator>();
+        uiA = uiEvent.GetComponent<UiAnimator>();
     }
 
     public void ActivateEvent()
