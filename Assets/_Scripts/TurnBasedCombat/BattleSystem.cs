@@ -112,10 +112,12 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             // Win!
+            dialogue.text = playerUnit.unitName + " has defeated the enemy!";
             PlayerPrefs.SetString("BattleResult", "Won");
         } else if (state == BattleState.LOST)
         {
             // Lost!
+            dialogue.text = playerUnit.unitName + " has been defeated!";
             PlayerPrefs.SetString("BattleResult", "Lost");
         }
         yield return new WaitForSeconds(2f);
