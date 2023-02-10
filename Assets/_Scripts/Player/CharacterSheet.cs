@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,8 @@ public class CharacterSheet : MonoBehaviour
             else Debug.Log(playerStats.Stats.Keys.ToString());
             Debug.Log(statText[i]);
         }
-        Debug.Log(playerStats.Traits.Count);
+        Debug.Log(playerStats.traitArray);
+        Debug.Log(playerStats.traitArray.Length);
         
     }
 }

@@ -324,18 +324,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 230238232}
         m_TargetAssemblyTypeName: CharacterCreator, Assembly-CSharp
-        m_MethodName: buttonImage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 228061597}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 230238232}
-        m_TargetAssemblyTypeName: CharacterCreator, Assembly-CSharp
         m_MethodName: Trait
         m_Mode: 5
         m_Arguments:
@@ -389,7 +377,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1028015637412066389, guid: 894c8aa66fe9bc94e966f825d6e41d18, type: 3}
   m_PrefabInstance: {fileID: 1028015638480857781}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996885999}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cd72013ba6936449bbfef8c94b4ff07, type: 3}
@@ -571,8 +559,8 @@ Camera:
   m_GameObject: {fileID: 626231107}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.36133856, g: 0.3676121, b: 0.3773585, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -737,18 +725,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 230238232}
-        m_TargetAssemblyTypeName: CharacterCreator, Assembly-CSharp
-        m_MethodName: buttonImage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 967394359}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 230238232}
         m_TargetAssemblyTypeName: CharacterCreator, Assembly-CSharp
         m_MethodName: Trait
@@ -934,24 +910,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730536595}
   m_CullTransparentMesh: 1
---- !u!1 &1996885999 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1028015637412066410, guid: 894c8aa66fe9bc94e966f825d6e41d18, type: 3}
-  m_PrefabInstance: {fileID: 1028015638480857781}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1996886003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996885999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef9cdd8843548248b61c8b3f49d2d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: 1f2a3bbbb667d0547897fbf5e9851eb7, type: 2}
 --- !u!1001 &1028015638480857781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1084,9 +1042,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1028015637412066389, guid: 894c8aa66fe9bc94e966f825d6e41d18, type: 3}
+      propertyPath: minStat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028015637412066389, guid: 894c8aa66fe9bc94e966f825d6e41d18, type: 3}
       propertyPath: checkmark
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1028015637412066389, guid: 894c8aa66fe9bc94e966f825d6e41d18, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: a5cd63ed321d53d4380c37de3bd391f3, type: 2}
     - target: {fileID: 1028015637412066389, guid: 894c8aa66fe9bc94e966f825d6e41d18, type: 3}
       propertyPath: traitChecked
       value: 
