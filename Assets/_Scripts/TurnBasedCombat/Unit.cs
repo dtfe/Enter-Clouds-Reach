@@ -6,10 +6,17 @@ public class Unit : MonoBehaviour
 {
 
     public string unitName;
-    public int unitLevel;
 
+    public int defense;
+
+    public int attackBonus;
     public int damage;
 
     public int maxHP;
     public int curHP;
+
+    public void takeDamage(int damage)
+    {
+        curHP -= damage;
+    }
 }

@@ -11,7 +11,7 @@ public class DieScript : MonoBehaviour
     [SerializeField]
     private int rolledNumber = 0;
 
-    private dieRoller.dFaces self;
+    private DieRoller.dFaces self;
 
     private Rigidbody rb;
 
@@ -49,7 +49,7 @@ public class DieScript : MonoBehaviour
             hasBeenRolled = false;
             if (rolledNumber == 0)
             {
-                FindObjectOfType<dieRoller>().rerollDie(self);
+                FindObjectOfType<DieRoller>().rerollDie(self);
                 Destroy(gameObject);
                 return;
             }
@@ -72,7 +72,7 @@ public class DieScript : MonoBehaviour
         }
     }
 
-    public void DFace(dieRoller.dFaces dface)
+    public void DFace(DieRoller.dFaces dface)
     {
         self = dface;
     }

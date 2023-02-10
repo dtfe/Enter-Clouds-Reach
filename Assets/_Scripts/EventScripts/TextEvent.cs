@@ -11,11 +11,11 @@ public class TextEvent : MonoBehaviour
     private InputAction clickAction;
     public bool clearEvents;
     public GameObject nextEvent;
-    private uiAnimator uiAnim;
+    private UiAnimator uiAnim;
     // Start is called before the first frame update
     void Awake()
     {
-        uiAnim = GetComponentInParent<uiAnimator>();
+        uiAnim = GetComponentInParent<UiAnimator>();
         playerInput = FindObjectOfType<PlayerController>().GetComponent<PlayerInput>();
     }
 

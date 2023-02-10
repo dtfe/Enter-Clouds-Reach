@@ -26,7 +26,7 @@ public class NavigationPointScript : MonoBehaviour
         if(canvas != null)
         {
             GameObject spawnedGO = Instantiate(Event, canvas.transform);
-            spawnedGO.transform.position = spawnedGO.GetComponent<uiAnimator>().startingPos;
+            spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
             //spawnedGO.GetComponent<uiAnimator>().startSection();
         }
         else   
