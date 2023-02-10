@@ -13,15 +13,14 @@ public class CharacterCreator : MonoBehaviour
     [SerializeField] private TMP_Text[] statText;
     //[SerializeField] private TMP_Text[] traitText;
     [SerializeField] int baseStat = 5;
-    int[] maxStats;
-    int[] minStats;
-    bool traitCheck = false;
+    [SerializeField]int maxStat = 40;
+    [SerializeField]int minStat = 0;
+    // bool traitCheck = false;
     GameObject Button;
     [SerializeField] int maxTotal = 40;   
     // Start is called before the first frame update
     void Start()
-    {   minStats = new int[statText.Length];
-        maxStats = new int[statText.Length];
+    {
         if(playerStats.traitArray == null)
         {
             playerStats.traitArray = playerStats.GetVariablesOfType<PlayerTraits>();
@@ -30,8 +29,6 @@ public class CharacterCreator : MonoBehaviour
         //int traitLength = traitText.Length;
         for(int i = 0; i < statLength;i++)
         {   
-            maxStats[i] = 10;
-            minStats[i] = 0;
             statText[i].SetText(baseStat.ToString());
             playerStats.Stats.Add(statText[i].name,baseStat);
         }
@@ -39,7 +36,7 @@ public class CharacterCreator : MonoBehaviour
     }
     public void posIncrement(TMP_Text posText)
     {
-        if(playerStats.Stats.ContainsKey(posText.name) && playerStats.Stats.Values.Sum() < maxTotal && playerStats.Stats[posText.name] < maxStats[Array.IndexOf(statText,posText)])
+        if(playerStats.Stats.ContainsKey(posText.name) && playerStats.Stats.Values.Sum() < maxTotal && playerStats.Stats[posText.name] < maxStat)
         {
             playerStats.Stats[posText.name]++;
             posText.SetText(playerStats.Stats[posText.name].ToString());
@@ -47,7 +44,7 @@ public class CharacterCreator : MonoBehaviour
     }
     public void negIncrement(TMP_Text negText)
     {
-        if(playerStats.Stats.ContainsKey(negText.name) && playerStats.Stats[negText.name] > minStats[0])
+        if(playerStats.Stats.ContainsKey(negText.name) && playerStats.Stats[negText.name] > minStat)
         {
             playerStats.Stats[negText.name]--;
             negText.SetText(playerStats.Stats[negText.name].ToString());
@@ -64,18 +61,18 @@ public class CharacterCreator : MonoBehaviour
             bool traitTF = traitAr[i].traitBool;
             if (traitTF && traitAr[i].traitName == traitName)
             {   
-                negTrait(traitAr[i]);
+                //negTrait(traitAr[i]);
                 buttonImage(Button);
                 traitAr[i].traitBool = false;
-                addTraitStats();
+                //addTraitStats();
                 break;
             }
             else if(!traitTF && traitAr[i].traitName == traitName)
             {
-                posTrait(traitAr[i]);
+                //posTrait(traitAr[i]);
                 traitAr[i].traitBool = true;
                 buttonImage(Button);
-                addTraitStats();
+                //addTraitStats();
                 break;
             }
             else
@@ -103,88 +100,88 @@ public class CharacterCreator : MonoBehaviour
         SceneManager.LoadScene(2);
     }
     //AAAAAAAAAAAAAAH 
-    void negTrait(PlayerTraits traits)
-    {      
-        if(!traitCheck){
-            playerStats.Stats["BrawnText"] -= traits.bMod;
-            playerStats.Stats["AgilityText"] -= traits.aMod;
-            playerStats.Stats["EnduranceText"] -= traits.eMod;            
-            playerStats.Stats["KnowledgeText"] -= traits.kMod;
-            playerStats.Stats["WisdomText"] -= traits.wMod;
-            playerStats.Stats["CharmText"] -= traits.cMod;
-            maxStats[0] -= traits.bMod;
-            maxStats[1] -= traits.aMod;
-            maxStats[2] -= traits.eMod;            
-            maxStats[3] -= traits.kMod;
-            maxStats[4] -= traits.wMod;
-            maxStats[5] -= traits.cMod;
-            maxTotal -= traits.totalMod;
-            if(playerStats.Stats.Values.Min() < 0 )
-            {
-                playerStats.Stats["BrawnText"] += traits.bMod;
-                playerStats.Stats["AgilityText"] += traits.aMod;
-                playerStats.Stats["EnduranceText"] += traits.eMod;            
-                playerStats.Stats["KnowledgeText"] += traits.kMod;
-                playerStats.Stats["WisdomText"] += traits.wMod;
-                playerStats.Stats["CharmText"] += traits.cMod;
-                maxStats[0] += traits.bMod;
-                maxStats[1] += traits.aMod;
-                maxStats[2] += traits.eMod;            
-                maxStats[3] += traits.kMod;
-                maxStats[4] += traits.wMod;
-                maxStats[5] += traits.cMod;
-                maxTotal += traits.totalMod;
-                traitCheck = true;
-                return;
-            }
-            }
-            traitCheck = false;
+    // void negTrait(PlayerTraits traits)
+    // {      
+    //     if(!traitCheck){
+    //         playerStats.Stats["BrawnText"] -= traits.bMod;
+    //         playerStats.Stats["AgilityText"] -= traits.aMod;
+    //         playerStats.Stats["EnduranceText"] -= traits.eMod;            
+    //         playerStats.Stats["KnowledgeText"] -= traits.kMod;
+    //         playerStats.Stats["WisdomText"] -= traits.wMod;
+    //         playerStats.Stats["CharmText"] -= traits.cMod;
+    //         maxStats[0] -= traits.bMod;
+    //         maxStats[1] -= traits.aMod;
+    //         maxStats[2] -= traits.eMod;            
+    //         maxStats[3] -= traits.kMod;
+    //         maxStats[4] -= traits.wMod;
+    //         maxStats[5] -= traits.cMod;
+    //         maxTotal -= traits.totalMod;
+    //         if(playerStats.Stats.Values.Min() < 0 )
+    //         {
+    //             playerStats.Stats["BrawnText"] += traits.bMod;
+    //             playerStats.Stats["AgilityText"] += traits.aMod;
+    //             playerStats.Stats["EnduranceText"] += traits.eMod;            
+    //             playerStats.Stats["KnowledgeText"] += traits.kMod;
+    //             playerStats.Stats["WisdomText"] += traits.wMod;
+    //             playerStats.Stats["CharmText"] += traits.cMod;
+    //             maxStats[0] += traits.bMod;
+    //             maxStats[1] += traits.aMod;
+    //             maxStats[2] += traits.eMod;            
+    //             maxStats[3] += traits.kMod;
+    //             maxStats[4] += traits.wMod;
+    //             maxStats[5] += traits.cMod;
+    //             maxTotal += traits.totalMod;
+    //             traitCheck = true;
+    //             return;
+    //         }
+    //         }
+    //         traitCheck = false;
             
-    }
-    void posTrait(PlayerTraits traits)
-    {   
-        if(!traitCheck){
-        playerStats.Stats["BrawnText"] += traits.bMod;
-        playerStats.Stats["AgilityText"] += traits.aMod;
-        playerStats.Stats["EnduranceText"] += traits.eMod;            
-        playerStats.Stats["KnowledgeText"] += traits.kMod;
-        playerStats.Stats["WisdomText"] += traits.wMod;
-        playerStats.Stats["CharmText"] += traits.cMod;
-        maxStats[0] += traits.bMod;
-        maxStats[1] += traits.aMod;
-        maxStats[2] += traits.eMod;            
-        maxStats[3] += traits.kMod;
-        maxStats[4] += traits.wMod;
-        maxStats[5] += traits.cMod;
-        maxTotal += traits.totalMod;
-        if(playerStats.Stats.Values.Min() < 0 )
-        {
-            playerStats.Stats["BrawnText"] -= traits.bMod;
-            playerStats.Stats["AgilityText"] -= traits.aMod;
-            playerStats.Stats["EnduranceText"] -= traits.eMod;            
-            playerStats.Stats["KnowledgeText"] -= traits.kMod;
-            playerStats.Stats["WisdomText"] -= traits.wMod;
-            playerStats.Stats["CharmText"] -= traits.cMod;
-            maxStats[0] -= traits.bMod;
-            maxStats[1] -= traits.aMod;
-            maxStats[2] -= traits.eMod;            
-            maxStats[3] -= traits.kMod;
-            maxStats[4] -= traits.wMod;
-            maxStats[5] -= traits.cMod;
-            maxTotal -= traits.totalMod;
-            traitCheck = true;
-            return;
-        }
-        }traitCheck = false;
-    }
-    void addTraitStats()
-    {
-        int i = 0;
-        foreach(TMP_Text text in statText)
-        {
-            statText[i].SetText(playerStats.Stats[statText[i].name].ToString());
-            i++;
-        }
+    // }
+    // void posTrait(PlayerTraits traits)
+    // {   
+    //     if(!traitCheck){
+    //     playerStats.Stats["BrawnText"] += traits.bMod;
+    //     playerStats.Stats["AgilityText"] += traits.aMod;
+    //     playerStats.Stats["EnduranceText"] += traits.eMod;            
+    //     playerStats.Stats["KnowledgeText"] += traits.kMod;
+    //     playerStats.Stats["WisdomText"] += traits.wMod;
+    //     playerStats.Stats["CharmText"] += traits.cMod;
+    //     maxStats[0] += traits.bMod;
+    //     maxStats[1] += traits.aMod;
+    //     maxStats[2] += traits.eMod;            
+    //     maxStats[3] += traits.kMod;
+    //     maxStats[4] += traits.wMod;
+    //     maxStats[5] += traits.cMod;
+    //     maxTotal += traits.totalMod;
+    //     if(playerStats.Stats.Values.Min() < 0 )
+    //     {
+    //         playerStats.Stats["BrawnText"] -= traits.bMod;
+    //         playerStats.Stats["AgilityText"] -= traits.aMod;
+    //         playerStats.Stats["EnduranceText"] -= traits.eMod;            
+    //         playerStats.Stats["KnowledgeText"] -= traits.kMod;
+    //         playerStats.Stats["WisdomText"] -= traits.wMod;
+    //         playerStats.Stats["CharmText"] -= traits.cMod;
+    //         maxStats[0] -= traits.bMod;
+    //         maxStats[1] -= traits.aMod;
+    //         maxStats[2] -= traits.eMod;            
+    //         maxStats[3] -= traits.kMod;
+    //         maxStats[4] -= traits.wMod;
+    //         maxStats[5] -= traits.cMod;
+    //         maxTotal -= traits.totalMod;
+    //         traitCheck = true;
+    //         return;
+    //     }
+    //     }traitCheck = false;
+    // }
+    // void addTraitStats()
+    // {
+    //     int i = 0;
+    //     foreach(TMP_Text text in statText)
+    //     {
+    //         statText[i].SetText(playerStats.Stats[statText[i].name].ToString());
+    //         i++;
+    //     }
         
-    }
+    // }
 }
