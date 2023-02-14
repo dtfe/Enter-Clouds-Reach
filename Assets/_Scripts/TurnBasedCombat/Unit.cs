@@ -10,13 +10,24 @@ public class Unit : MonoBehaviour
     public int defense;
 
     public int attackBonus;
-    public int damage;
+
+    public DieRoller.dFaces damage;
+    public int damageBonus;
 
     public int maxHP;
     public int curHP;
 
-    public void takeDamage(int damage)
+    public int takeDamage(int damage, bool crit)
     {
-        curHP -= damage;
+        if (crit)
+        {
+            curHP -= damage * 2;
+            return damage * 2;
+        }
+        else
+        {
+            curHP -= damage;
+            return damage;
+        }
     }
 }

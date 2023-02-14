@@ -30,17 +30,21 @@ public class NavmeshPointFinderScript : MonoBehaviour
             if (nav.navPointId == ID)
             {
                 FindObjectOfType<PlayerController>().SetTargetPos(nav.gameObject);
+                return;
             }
+            Debug.LogError("Could not find navPoint with ID: " + ID);
         }
     }
 
     private void addPoint(NavigationPointScript navPoint)
     {
         NavigationPoints.Add(navPoint);
+        Debug.Log("Added point with ID: " + navPoint.navPointId);
     }
 
     private void removePoint(NavigationPointScript navPoint)
     {
         NavigationPoints.Remove(navPoint);
+        Debug.Log("Removed point with ID: " + navPoint.navPointId);
     }
 }

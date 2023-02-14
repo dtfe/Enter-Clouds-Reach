@@ -49,14 +49,22 @@ public class DieScript : MonoBehaviour
             hasBeenRolled = false;
             if (rolledNumber == 0)
             {
-                FindObjectOfType<DieRoller>().rerollDie(self);
-                Destroy(gameObject);
+                Debug.Log("Roll was scuffed");
+                rb.AddForce(new Vector3(Random.Range(0, 2f), 0, Random.Range(0, 2f)) * 100, ForceMode.Force);
+                rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 100);
+                isGrounded = false;
                 return;
             }
             Debug.Log(rolledNumber + " has been rolled!");
             FindObjectOfType<RollManager>().giveResult(rolledNumber);
-            Destroy(gameObject);
+            StartCoroutine(destroyDice());
         }
+    }
+
+    IEnumerator destroyDice()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
 

@@ -23,10 +23,11 @@ public class RollManager : MonoBehaviour
         FindObjectOfType<DieRoller>().RollDie(DieRoller.dFaces.d20);
     }
 
-    public void rollDamage()
+    public void rollDamage(GameObject requestingSystem, DieRoller.dFaces numbOfFaces)
     {
+        requestingEvent = requestingSystem;
         rollType = "damage";
-        FindObjectOfType<DieRoller>().RollDie(DieRoller.dFaces.d6);
+        FindObjectOfType<DieRoller>().RollDie(numbOfFaces);
     }
 
     public void giveResult(int resultNumber)
@@ -42,7 +43,7 @@ public class RollManager : MonoBehaviour
                 break;
 
             case "damage":
-
+                requestingEvent.GetComponent<BattleSystem>().ReceiveRoll(resultNumber);
                 break;
         }
     }
