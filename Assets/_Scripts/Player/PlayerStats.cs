@@ -9,8 +9,8 @@ public class PlayerStats : ScriptableObject
     public Dictionary<string,int> Stats = new Dictionary<string, int>();
    //public IDictionary<string,PlayerTraits> Traits = new Dictionary<string,PlayerTraits>();
     public PlayerTraits[] traitArray;
-    public PlayerTraits scared = new PlayerTraits("Scared",-1,0,0,-1,1,0,false);
-    public PlayerTraits brave = new PlayerTraits("Brave",1,0,0,0,-1,1,false);
+    public PlayerTraits scared = new PlayerTraits("Scared","test",false);
+    public PlayerTraits brave = new PlayerTraits("Brave","",false);
     
     public T[] GetVariablesOfType<T>()
     {

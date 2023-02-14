@@ -92,14 +92,14 @@ public class CharacterCreator : MonoBehaviour
         { button.GetComponent<Image>().sprite = traitUnChecked; }
 
     }  
-    public void nextScene()
+    public void nextScene(string scene)
     {
         for(int i = 0; i < playerStats.traitArray.Length; i++)
         {
         }
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(scene);
     }
-    //AAAAAAAAAAAAAAH 
+    // //AAAAAAAAAAAAAAH 
     // void negTrait(PlayerTraits traits)
     // {      
     //     if(!traitCheck){
