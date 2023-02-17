@@ -55,9 +55,9 @@ public class DieRoller : MonoBehaviour
             //RollDie(dFaces.d4);
             //RollDie(dFaces.d6);
             //RollDie(dFaces.d8);
-            //ollDie(dFaces.d10);
+            //RollDie(dFaces.d10);
             //RollDie(dFaces.d12);
-            RollDie(dFaces.d20);
+            //RollDie(dFaces.d20);
         }
     }
 

@@ -55,13 +55,13 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        GameObject playerGO = Instantiate(playerPrefab);
+        GameObject playerGO = Instantiate(playerPrefab, playerSpawn);
         playerUnit = playerGO.GetComponent<Unit>();
         playerHUD = playerGO.transform.Find("HUD").GetComponent<BattleHUD>();
 
         playerHUD.SetHUD(playerUnit);
 
-        GameObject enemyGO = Instantiate(enemyPrefab);
+        GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyUnit = enemyGO.GetComponent<Unit>();
         enemyHUD = enemyGO.transform.Find("HUD").GetComponent<BattleHUD>();
 
@@ -125,6 +125,7 @@ public class BattleSystem : MonoBehaviour
             PlayerPrefs.SetString("BattleResult", "Lost");
         }
         yield return new WaitForSeconds(2f);
+        FindObjectOfType<BattleLoader>().EndBattle();
     }
 
     IEnumerator EnemyTurn()
@@ -175,6 +176,7 @@ public class BattleSystem : MonoBehaviour
         if (playerUnit.curHP <= 0)
         {
             state = BattleState.LOST;
+            StartCoroutine(EndBattle());
         }
         else
         {

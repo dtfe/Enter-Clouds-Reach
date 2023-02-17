@@ -159,7 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
+  enemyPrefab: {fileID: 0}
+  winEvent: {fileID: 0}
 --- !u!1 &6391251223440754109
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,16 +877,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1116578054545474436, guid: 6eb4050802dd6be4dabd6211131ec626, type: 3}
-        m_TargetAssemblyTypeName: NavigationPointScript, Assembly-CSharp
-        m_MethodName: MovePlayerHere
-        m_Mode: 1
+      - m_Target: {fileID: 7149677239425363895}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: movePlayerToPoint
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: wisdom
+          m_StringArgument: endPoint1
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 6391251224600963948}
@@ -912,7 +913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
+  enemyPrefab: {fileID: 0}
+  winEvent: {fileID: 0}
 --- !u!1 &6391251224600963950
 GameObject:
   m_ObjectHideFlags: 0
