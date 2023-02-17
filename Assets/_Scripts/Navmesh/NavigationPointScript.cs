@@ -25,6 +25,7 @@ public class NavigationPointScript : MonoBehaviour
     {   
         if(canvas != null)
         {
+            Debug.Log("Navpoint: " + navPointId + " has triggered it's event");
             GameObject spawnedGO = Instantiate(Event, canvas.transform);
             spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
             //spawnedGO.GetComponent<uiAnimator>().startSection();

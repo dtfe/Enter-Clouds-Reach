@@ -32,8 +32,8 @@ public class NavmeshPointFinderScript : MonoBehaviour
                 FindObjectOfType<PlayerController>().SetTargetPos(nav.gameObject);
                 return;
             }
-            Debug.LogError("Could not find navPoint with ID: " + ID);
         }
+        Debug.LogError("Could not find navPoint with ID: " + ID);
     }
 
     private void addPoint(NavigationPointScript navPoint)

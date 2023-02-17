@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
-    public Button self;
-    public Button[] buttons;
+    [Header("Button Properties")]
+    private Button self;
+    private Button[] buttons;
+
+    [Header("Battle Properties")]
+    public GameObject enemyPrefab;
+    public GameObject winEvent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +29,11 @@ public class ButtonScript : MonoBehaviour
     {
         
         
+    }
+
+    public void EngageBattle()
+    {
+        FindObjectOfType<BattleLoader>().StartBattle(enemyPrefab, winEvent);
     }
 
     public void movePlayerToPoint(string ID)

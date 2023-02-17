@@ -76,4 +76,9 @@ public class TextEvent : MonoBehaviour
             clickAction.canceled -= ClickInput;
         }
     }
+
+    public void ClearEvent()
+    {
+        FindObjectOfType<UiAnimator>().clearSections();
+    }
 }

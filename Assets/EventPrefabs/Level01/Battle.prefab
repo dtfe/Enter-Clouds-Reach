@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6391251223389709388}
   - component: {fileID: 6391251223389709391}
   - component: {fileID: 6391251223389709390}
-  - component: {fileID: 3374162889206330046}
+  - component: {fileID: 6460080064260915400}
   m_Layer: 5
   m_Name: Choice1
   m_TagString: Untagged
@@ -123,33 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6391251224600963948, guid: 3d70ffef1463de44e9335acc0029439d, type: 3}
-        m_TargetAssemblyTypeName: uiAnimator, Assembly-CSharp
-        m_MethodName: clearSections
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3374162889206330046}
+      - m_Target: {fileID: 6460080064260915400}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: movePlayerToPoint
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: endPoint1
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6391251224600963948}
-        m_TargetAssemblyTypeName: uiAnimator, Assembly-CSharp
-        m_MethodName: clearSections
+        m_MethodName: EngageBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3374162889206330046
+--- !u!114 &6460080064260915400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  winEvent: {fileID: 0}
+  enemyPrefab: {fileID: 4386765821987018786, guid: 1e27eeebf29b80b4b98759957b548051, type: 3}
+  winEvent: {fileID: 6391251224600963950, guid: 84263356dd1459a479ccfa6af75efd47, type: 3}
 --- !u!1 &6391251223444357724
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +308,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go forwards
+  m_text: Start Combat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -412,7 +388,7 @@ GameObject:
   - component: {fileID: 6391251224026943750}
   - component: {fileID: 6391251224026943748}
   - component: {fileID: 6391251224026943751}
-  - component: {fileID: 7613013987709797587}
+  - component: {fileID: 3121551678485418838}
   m_Layer: 5
   m_Name: Choices
   m_TagString: Untagged
@@ -479,7 +455,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7613013987709797587
+--- !u!114 &3121551678485418838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -560,8 +536,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'With a loud "Clank!" the rusty padlock breaks, the pieces falling to the
-    floor as you hit it with the hilt of your sword. '
+  m_text: A goblin jumps out from around the corner, weapon in hand as you approach.
+    Prepare for Battle!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -588,7 +564,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.85
+  m_fontSize: 61.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -641,7 +617,7 @@ GameObject:
   - component: {fileID: 6391251224600963951}
   - component: {fileID: 6391251224600963948}
   m_Layer: 5
-  m_Name: SuccessLeft
+  m_Name: Battle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -750}
+  m_AnchoredPosition: {x: 0, y: -790}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6391251224600963948
