@@ -135,6 +135,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6391251224600963948}
+        m_TargetAssemblyTypeName: UiAnimator, Assembly-CSharp
+        m_MethodName: clearSections
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6460080064260915400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4386765821987018786, guid: 1e27eeebf29b80b4b98759957b548051, type: 3}
+  enemyPrefab: {fileID: 4386765821987018786, guid: a45de662ffa1bab40b8c7a686d91d2e0, type: 3}
   winEvent: {fileID: 6391251224600963950, guid: 84263356dd1459a479ccfa6af75efd47, type: 3}
 --- !u!1 &6391251223444357724
 GameObject:

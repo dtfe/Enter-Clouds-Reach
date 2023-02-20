@@ -47,14 +47,18 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         rm = FindObjectOfType<RollManager>();
-        state = BattleState.START;
+        //StartCoroutine(SetupBattle());
+    }
+
+    public void startSetup()
+    {
         StartCoroutine(SetupBattle());
     }
 
-    
-
     IEnumerator SetupBattle()
     {
+        state = BattleState.START;
+
         GameObject playerGO = Instantiate(playerPrefab, playerSpawn);
         playerUnit = playerGO.GetComponent<Unit>();
         playerHUD = playerGO.transform.Find("HUD").GetComponent<BattleHUD>();
