@@ -25,23 +25,18 @@ public class BattleLoader : MonoBehaviour
 
     public void StartBattle(GameObject enemyPrefab, GameObject WinEvent)
     {
-        if (SceneManager.sceneCount == 1)
-        {
-            SceneManager.LoadScene("PROTOTYPE_TURN_BASED_COMBAT", LoadSceneMode.Additive);
-        }
-        Debug.Log("Loading New Scene");
+        Debug.Log("Loading Combat");
         StartCoroutine(SwitchScenes(enemyPrefab, WinEvent));
     }
 
     IEnumerator SwitchScenes(GameObject enemyPrefab, GameObject WinEvent)
     {
-        yield return new WaitUntil(() => SceneManager.GetSceneByName("PROTOTYPE_TURN_BASED_COMBAT").isLoaded);
+        yield return new WaitForSeconds(2);
         Debug.Log("Scene Loaded");
         BS = FindObjectOfType<BattleSystem>();
         BS.enemyPrefab = enemyPrefab;
         winEvent = WinEvent;
         BS.startSetup();
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("PROTOTYPE_TURN_BASED_COMBAT"));
         GetComponent<ModeSwap>().ChangeToCombat();
     }
 
@@ -49,7 +44,7 @@ public class BattleLoader : MonoBehaviour
     {
         if (PlayerPrefs.GetString("BattleResult") == "Won")
         {
-            
+            GetComponent<ModeSwap>().ChangeToExploration();
         }
         else
         {
