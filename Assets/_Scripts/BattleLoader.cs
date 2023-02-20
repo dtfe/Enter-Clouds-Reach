@@ -9,15 +9,40 @@ public class BattleLoader : MonoBehaviour
 
     private GameObject winEvent;
 
+    private static BattleLoader battleLoaderInstance;
+
+    private void Awake()
+    {
+        if (battleLoaderInstance == null)
+        {
+            battleLoaderInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void StartBattle(GameObject enemyPrefab, GameObject WinEvent)
     {
         if (SceneManager.sceneCount == 1)
         {
             SceneManager.LoadScene("PROTOTYPE_TURN_BASED_COMBAT", LoadSceneMode.Additive);
         }
+        Debug.Log("Loading New Scene");
+        StartCoroutine(SwitchScenes(enemyPrefab, WinEvent));
+    }
+
+    IEnumerator SwitchScenes(GameObject enemyPrefab, GameObject WinEvent)
+    {
+        yield return new WaitUntil(() => SceneManager.GetSceneByName("PROTOTYPE_TURN_BASED_COMBAT").isLoaded);
+        Debug.Log("Scene Loaded");
         BS = FindObjectOfType<BattleSystem>();
         BS.enemyPrefab = enemyPrefab;
         winEvent = WinEvent;
+        BS.startSetup();
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("PROTOTYPE_TURN_BASED_COMBAT"));
+        GetComponent<ModeSwap>().ChangeToCombat();
     }
 
     public void EndBattle()
