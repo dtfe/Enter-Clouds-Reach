@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2900739887549494090}
   - component: {fileID: 2900739887549494089}
   m_Layer: 5
-  m_Name: Event_LR2
+  m_Name: Event_LR4(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,19 +65,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 72.2057
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 10.6357
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 463.8971
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -119.68216
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Room_L2(1)
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -223,9 +223,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Choices
       objectReference: {fileID: 0}
+    - target: {fileID: 3261715059938595065, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261715059938595065, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
     - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: "Leave room and keep going \n"
+      value: 'Keep going further into the room and enter the new path
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -273,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Tut_L3
+      value: Tut_S2
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -285,20 +295,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315087, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315087, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250.00005
+      value: 0.000030518
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060405332549, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'Search room '
+      value: '
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: difficulty
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 4386765821987018786, guid: ab3736e4792fdb244bc70089ff841a46, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
 --- !u!224 &2900739888398158115 stripped
@@ -457,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: 'This room dosent seem to have anything in your intrest. '
+      value: You searched the room and found a note (pop up note)
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
