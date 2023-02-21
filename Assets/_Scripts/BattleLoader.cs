@@ -9,6 +9,8 @@ public class BattleLoader : MonoBehaviour
 
     private GameObject winEvent;
 
+    public Canvas canvas;
+
     private static BattleLoader battleLoaderInstance;
 
     private void Awake()
@@ -45,6 +47,7 @@ public class BattleLoader : MonoBehaviour
         if (PlayerPrefs.GetString("BattleResult") == "Won")
         {
             GetComponent<ModeSwap>().ChangeToExploration();
+            Instantiate(winEvent, canvas.transform);
         }
         else
         {
