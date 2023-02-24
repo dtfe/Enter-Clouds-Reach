@@ -10,11 +10,9 @@ public enum BattleState
     ENEMYTURN,
     WON,
     LOST
-
-
 }
 
-public class BattleSystem : MonoBehaviour
+public class BattleSystem : MonoBehaviour, IReceiveResult
 {
     [Header("Properties")]
     public TMP_Text dialogue;
@@ -50,6 +48,7 @@ public class BattleSystem : MonoBehaviour
         //StartCoroutine(SetupBattle());
     }
 
+    #region battleSetup
     public void startSetup()
     {
         StartCoroutine(SetupBattle());
@@ -76,7 +75,78 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(0f);
 
         state = BattleState.PLAYERTURN;
-        PlayerTurn();
+        StartCoroutine(PlayerTurn());
+    }
+    #endregion battleSetup
+
+    #region playerMethods
+    IEnumerator PlayerTurn()
+    { 
+        if (!playerUnit.poisonImmune && playerUnit.poison > 1)
+        {
+            dialogue.text = "Player has taken " + playerUnit.takeDamage(playerUnit.poison, false) + " bleed damage!";
+            playerUnit.poison = playerUnit.poison / 2;
+            yield return new WaitForSeconds(1);
+        }
+        if (CheckStatuses(playerUnit, statusEffects.Stunned))
+        {
+            rm.rollAbilityCheck(gameObject, "endurance");
+            yield return new WaitUntil(() => rolledNumber != 0);
+            if (rolledNumber <= playerUnit.stunned)
+            {
+                dialogue.text = "Player was stunned!";
+                playerUnit.addStatus(statusEffects.Stunned, playerUnit.stunned);
+                yield return new WaitForSeconds(1);
+                StartCoroutine(EnemyTurn());
+                yield break;
+            }
+        }
+        dialogue.text = "It's your turn!";
+        actions.SetActive(true);
+    }
+
+    public void Attack(int attackNumber)
+    {
+        rolledNumber = 0;
+        dialogue.text = playerUnit.unitName + " is attacking " + enemyUnit.unitName + "!";
+        FindObjectOfType<RollManager>().rollAttack(gameObject);
+        actions.SetActive(false);
+        StartCoroutine(OnAttackSelection(attackNumber));
+
+    }
+
+    IEnumerator OnAttackSelection(int attackNumber)
+    {
+        Debug.Log("Waiting for Result");
+        yield return new WaitUntil(() => rolledNumber != 0);
+        criticalMiss = false;
+        criticalHit = false;
+        if (rolledNumber == 1)
+        {
+            criticalMiss = true;
+        }
+        else if (rolledNumber == 20)
+        {
+            criticalHit = true;
+        }
+        Debug.Log("Attacking!");
+        switch (attackNumber)
+        {
+            case 1:
+                StartCoroutine(PlayerAttack1());
+                break;
+
+            case 2:
+                StartCoroutine(PlayerAttack2());
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+        }
+
     }
 
     IEnumerator PlayerAttack1()
@@ -90,13 +160,13 @@ public class BattleSystem : MonoBehaviour
             rolledNumber = 0;
             rm.rollDamage(gameObject, playerUnit.damage);
             yield return new WaitUntil(() => rolledNumber != 0);
-            dialogue.text = playerUnit.unitName + " dealt " + enemyUnit.takeDamage(rolledNumber, criticalHit) + " damage!";
-            enemyHUD.SetHP(enemyUnit.curHP);
+            dialogue.text = playerUnit.unitName + " dealt " + enemyUnit.takeDamage(rolledNumber + playerUnit.damageBonus, criticalHit) + " damage!";
             criticalHit = false;
         }
 
         rolledNumber = 0;
         // Play Animation?
+        Debug.Log("Attack finished");
         yield return new WaitForSeconds(2f);
 
 
@@ -115,24 +185,81 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator EndBattle()
+    IEnumerator PlayerAttack2()
     {
-        if (state == BattleState.WON)
+        // attack stuff
+        dialogue.text = playerUnit.unitName + " has rolled " + rolledNumber + " + " + (playerUnit.attackBonus - 4) + " for a total of " + (rolledNumber + playerUnit.attackBonus - 4);
+        yield return new WaitForSeconds(1);
+        if (rolledNumber + playerUnit.attackBonus - 4 >= enemyUnit.defense)
         {
-            // Win!
-            dialogue.text = playerUnit.unitName + " has defeated the enemy!";
-            PlayerPrefs.SetString("BattleResult", "Won");
-        } else if (state == BattleState.LOST)
-        {
-            // Lost!
-            dialogue.text = playerUnit.unitName + " has been defeated!";
-            PlayerPrefs.SetString("BattleResult", "Lost");
+            dialogue.text = playerUnit.unitName + " beat the opponent's defense!";
+            rolledNumber = 0;
+            rm.rollDamage(gameObject, playerUnit.damage);
+            yield return new WaitUntil(() => rolledNumber != 0);
+            dialogue.text = playerUnit.unitName + " dealt " + enemyUnit.takeDamage(rolledNumber + playerUnit.damageBonus, criticalHit) + " damage!";
+            enemyHUD.SetHP(enemyUnit.curHP);
+            criticalHit = false;
+            yield return new WaitForSeconds(2);
+            dialogue.text = enemyUnit.name + " has been hit by a stunning strike!";
+            enemyUnit.addStatus(statusEffects.Stunned, 5);
         }
-        yield return new WaitForSeconds(2f);
-        FindObjectOfType<BattleLoader>().EndBattle();
+
+        rolledNumber = 0;
+        // Play Animation?
+        yield return new WaitForSeconds(1f);
+
+
+        // Check if Enemy is dead
+        if (enemyUnit.curHP <= 0)
+        {
+            //If true player wins and moves on
+            state = BattleState.WON;
+            StartCoroutine(EndBattle());
+        }
+        else
+        {
+            StartCoroutine(PlayerEndOfTurn());
+        }
     }
 
+    IEnumerator PlayerEndOfTurn()
+    {
+        if (!playerUnit.bleedImmune && playerUnit.bleed > 0)
+        {
+            dialogue.text = "Player has taken " + playerUnit.takeDamage(playerUnit.bleed, false) + " bleed damage";
+        }
+        yield return new WaitForSeconds(1);
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    }
+    #endregion playerMethods
+
+    #region enemyMethods
     IEnumerator EnemyTurn()
+    {
+        if (CheckStatuses(enemyUnit, statusEffects.Poison))
+        {
+            dialogue.text = "Enemy has taken " + playerUnit.takeDamage(enemyUnit.poison, false) + " poison damage!";
+            enemyUnit.poison = enemyUnit.poison / 2;
+        }
+        if (CheckStatuses(enemyUnit, statusEffects.Stunned))
+        {
+            rm.rollAbilityCheck(gameObject, "endurance");
+            yield return new WaitUntil(() => rolledNumber != 0);
+            if (rolledNumber <= playerUnit.stunned)
+            {
+                dialogue.text = "Enemy's was successfully stunned!";
+                enemyUnit.addStatus(statusEffects.Stunned, enemyUnit.stunned);
+                yield return new WaitForSeconds(1);
+                StartCoroutine(PlayerTurn());
+                yield break;
+            }
+        }
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(EnemyAttack());
+    }
+
+    IEnumerator EnemyAttack()
     {
         dialogue.text = enemyUnit.unitName + " is attacking " + playerUnit.unitName + "!";
         yield return new WaitForSeconds(2f);
@@ -171,7 +298,7 @@ public class BattleSystem : MonoBehaviour
             rolledNumber = 0;
             rm.rollDamage(gameObject, enemyUnit.damage);
             yield return new WaitUntil(() => rolledNumber != 0);
-            dialogue.text = playerUnit.unitName + " has taken " + playerUnit.takeDamage(rolledNumber, criticalHit) + " damage!";
+            dialogue.text = playerUnit.unitName + " has taken " + playerUnit.takeDamage(rolledNumber + enemyUnit.damageBonus, criticalHit) + " damage!";
             playerHUD.SetHP(playerUnit.curHP);
             yield return new WaitForSeconds(2);
         }
@@ -184,58 +311,70 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
+            StartCoroutine(EnemyEndOfTurn());
         }
     }
 
-
-
-    private void PlayerTurn()
+    IEnumerator EnemyEndOfTurn()
     {
-        dialogue.text = "It's your turn!";
-        actions.SetActive(true);
+        if (!enemyUnit.bleedImmune && enemyUnit.bleed > 0)
+        {
+            dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(enemyUnit.bleed, false) + " bleed damage!";
+        }
+        yield return new WaitForSeconds(1);
+        state = BattleState.PLAYERTURN;
+        StartCoroutine(PlayerTurn());
+    }
+    #endregion enemyMethods
+
+    IEnumerator EndBattle()
+    {
+        if (state == BattleState.WON)
+        {
+            // Win!
+            dialogue.text = playerUnit.unitName + " has defeated the enemy!";
+            PlayerPrefs.SetString("BattleResult", "Won");
+        }
+        else if (state == BattleState.LOST)
+        {
+            // Lost!
+            dialogue.text = playerUnit.unitName + " has been defeated!";
+            PlayerPrefs.SetString("BattleResult", "Lost");
+        }
+        yield return new WaitForSeconds(2f);
+        FindObjectOfType<BattleLoader>().EndBattle();
     }
 
-    public void Attack(int attackNumber)
+    private bool CheckStatuses(Unit unitToCheck, statusEffects status)
     {
-        dialogue.text = playerUnit.unitName + " is attacking " + enemyUnit.unitName + "!";
-        FindObjectOfType<RollManager>().rollAttack(gameObject);
-        StartCoroutine(OnAttackSelection(attackNumber));
-        actions.SetActive(false);
-
-    }
-
-    IEnumerator OnAttackSelection(int attackNumber)
-    {
-        Debug.Log("Waiting for Result");
-        yield return new WaitUntil(() => rolledNumber != 0);
-        criticalMiss = false;
-        criticalHit = false;
-        if (rolledNumber == 1)
+        switch (status)
         {
-            criticalMiss = true;
-        } else if (rolledNumber == 20)
-        {
-            criticalHit = true;
+            default:
+                Debug.Log("Status was not found, returning false");
+                return false;
+                
+
+            case statusEffects.Stunned:
+                if(unitToCheck.stunned > 1)
+                {
+                    return true;
+                }
+                return false;
+
+            case statusEffects.Bleed:
+                if(!unitToCheck.bleedImmune && unitToCheck.bleed > 1)
+                {
+                    return true;
+                }
+                return false;
+
+            case statusEffects.Poison:
+                if (!unitToCheck.poisonImmune && unitToCheck.poison > 1)
+                {
+                    return true;
+                }
+                return false;
         }
-        Debug.Log("Attacking!");
-        switch (attackNumber)
-        {
-            case 1:
-                StartCoroutine(PlayerAttack1());
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                break;
-        }
-        
     }
 
     public void ReceiveRoll(int roll)
