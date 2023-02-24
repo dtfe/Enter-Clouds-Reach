@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class AbilityCheckScript : MonoBehaviour
+public class AbilityCheckScript : MonoBehaviour, IReceiveResult
 {
     public int difficulty;
     public string ability;
+
+    private int rolledNumber;
 
     public GameObject successEvent;
     public GameObject failedEvent;
@@ -13,7 +15,7 @@ public class AbilityCheckScript : MonoBehaviour
         FindObjectOfType<RollManager>().rollAbilityCheck(gameObject, ability);
     }
 
-    public void ReceiveResult(int rolledNumber)
+    public void ReceiveResult()
     {
         Debug.Log("Rolled a " + rolledNumber + ". Has to beat " + difficulty);
         FindObjectOfType<UiAnimator>().clearSections();
@@ -26,4 +28,12 @@ public class AbilityCheckScript : MonoBehaviour
         spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
         //spawnedGO.GetComponent<uiAnimator>().startSection();
     }
+
+    public void ReceiveRoll(int roll)
+    {
+        rolledNumber = roll;
+        ReceiveResult();
+    }
+
+    
 }

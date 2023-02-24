@@ -13,25 +13,27 @@ public class RollManager : MonoBehaviour
     {
         requestingEvent = requestingSystem;
         rollType = "attack";
-        FindObjectOfType<DieRoller>().RollDie(DieRoller.dFaces.d20);
+        FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d20);
     }
 
     public void rollAbilityCheck(GameObject rqEvent, string ability)
     {
         requestingEvent = rqEvent;
         rollType = "ability";
-        FindObjectOfType<DieRoller>().RollDie(DieRoller.dFaces.d20);
+        FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d20);
     }
 
-    public void rollDamage(GameObject requestingSystem, DieRoller.dFaces numbOfFaces)
+    public void rollDamage(GameObject requestingSystem, dieRoller.dFaces numbOfFaces)
     {
         requestingEvent = requestingSystem;
         rollType = "damage";
-        FindObjectOfType<DieRoller>().RollDie(numbOfFaces);
+        FindObjectOfType<dieRoller>().RollDie(numbOfFaces);
     }
 
     public void giveResult(int resultNumber)
     {
+        requestingEvent.GetComponent<IReceiveResult>().ReceiveRoll(resultNumber);
+        /*
         switch (rollType)
         {
             case "ability":
@@ -46,5 +48,6 @@ public class RollManager : MonoBehaviour
                 requestingEvent.GetComponent<BattleSystem>().ReceiveRoll(resultNumber);
                 break;
         }
+        */
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DieRoller : MonoBehaviour
+public class dieRoller : MonoBehaviour
 {
     public enum dFaces
     {

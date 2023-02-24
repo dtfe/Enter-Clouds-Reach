@@ -4,6 +4,5 @@ using UnityEngine;
 
 public interface IReceiveResult
 {
-    void Success();
-    void Failure();
+    void ReceiveRoll(int roll);
 }
