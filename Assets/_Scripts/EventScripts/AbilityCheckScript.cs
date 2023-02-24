@@ -13,6 +13,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     public void StartCheck()
     {
         FindObjectOfType<RollManager>().rollAbilityCheck(gameObject, ability);
+        FindObjectOfType<UiAnimator>().clearingNow(false);
     }
 
     public void ReceiveResult()
@@ -26,7 +27,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
         }
         GameObject spawnedGO = Instantiate(eventToSpawn, FindObjectOfType<Canvas>().transform);
         spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
-        //spawnedGO.GetComponent<uiAnimator>().startSection();
+        Destroy(gameObject);
     }
 
     public void ReceiveRoll(int roll)
