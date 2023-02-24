@@ -94,8 +94,9 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             yield return new WaitUntil(() => rolledNumber != 0);
             if (rolledNumber <= playerUnit.stunned)
             {
+                rolledNumber = 0;
                 dialogue.text = "Player was stunned!";
-                playerUnit.addStatus(statusEffects.Stunned, playerUnit.stunned);
+                playerUnit.addStatus(statusEffects.Stunned, -playerUnit.stunned);
                 yield return new WaitForSeconds(1);
                 StartCoroutine(EnemyTurn());
                 yield break;
@@ -246,10 +247,10 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         {
             rm.rollAbilityCheck(gameObject, "endurance");
             yield return new WaitUntil(() => rolledNumber != 0);
-            if (rolledNumber <= playerUnit.stunned)
+            if (rolledNumber <= enemyUnit.stunned)
             {
                 dialogue.text = "Enemy's was successfully stunned!";
-                enemyUnit.addStatus(statusEffects.Stunned, enemyUnit.stunned);
+                enemyUnit.addStatus(statusEffects.Stunned, -enemyUnit.stunned);
                 yield return new WaitForSeconds(1);
                 StartCoroutine(PlayerTurn());
                 yield break;
@@ -261,6 +262,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     IEnumerator EnemyAttack()
     {
+        rolledNumber = 0;
         dialogue.text = enemyUnit.unitName + " is attacking " + playerUnit.unitName + "!";
         yield return new WaitForSeconds(2f);
 
