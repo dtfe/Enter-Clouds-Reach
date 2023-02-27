@@ -78,6 +78,12 @@ public class UiAnimator : MonoBehaviour
         targetPos = startingPos;
         isMoving = true;
         clearing = true;
+
+    }
+
+    public void clearingNow(bool clear)
+    {
+        clearing = clear;
     }
     public void restart()
     {

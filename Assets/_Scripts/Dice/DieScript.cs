@@ -11,7 +11,7 @@ public class DieScript : MonoBehaviour
     [SerializeField]
     private int rolledNumber = 0;
 
-    private DieRoller.dFaces self;
+    private dieRoller.dFaces self;
 
     private Rigidbody rb;
 
@@ -25,8 +25,8 @@ public class DieScript : MonoBehaviour
         dieFaces = GetComponentsInChildren<DieFaceScript>();
         Debug.Log("Rolling a " + dieFaces.Length + "-sided die!");
 
-        rb.AddForce(new Vector3(Random.Range(0, 2f), 0, Random.Range(0, 2f)) * 500, ForceMode.Force);
-        rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 100);
+        rb.AddForce(new Vector3(Random.Range(1, 4f), 0, Random.Range(1, 4f)) * 5000, ForceMode.Force);
+        rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 2000);
     }
 
     // Update is called once per frame
@@ -50,8 +50,8 @@ public class DieScript : MonoBehaviour
             if (rolledNumber == 0)
             {
                 Debug.Log("Roll was scuffed");
-                rb.AddForce(new Vector3(Random.Range(0, 2f), 0, Random.Range(0, 2f)) * 100, ForceMode.Force);
-                rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 100);
+                rb.AddForce(new Vector3(Random.Range(0, 2f), 0, Random.Range(0, 2f)) * 900, ForceMode.Force);
+                rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 500);
                 isGrounded = false;
                 return;
             }
@@ -80,7 +80,7 @@ public class DieScript : MonoBehaviour
         }
     }
 
-    public void DFace(DieRoller.dFaces dface)
+    public void DFace(dieRoller.dFaces dface)
     {
         self = dface;
     }
