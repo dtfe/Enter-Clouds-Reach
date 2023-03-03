@@ -19,8 +19,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     public GameObject actions;
 
     [Header("Attack Prefabs")]
-    public GameObject attack1;
-    public GameObject attack2;
+    public GameObject[] attack;
 
     [Header("Player Properties")]
     public GameObject playerPrefab;
@@ -88,22 +87,33 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     #region playerMethods
     IEnumerator PlayerTurn()
     { 
-        if (!playerUnit.poisonImmune && playerUnit.poison > 1)
+        if (CheckStatuses(playerUnit, statusEffects.Poison))
         {
             dialogue.text = "You've taken " + playerUnit.takeDamage(playerUnit.poison) + " poison damage!";
-            playerUnit.addStatus(statusEffects.Poison, -playerUnit.poison / 2);
+            if (playerUnit.poison == 1)
+            {
+                playerUnit.addStatus(statusEffects.Poison, -1);
+            }
+            else
+            {
+                playerUnit.addStatus(statusEffects.Poison, (int)Mathf.Floor(-playerUnit.poison / 2f));
+            }
             yield return new WaitForSeconds(1);
         }
         if (CheckStatuses(playerUnit, statusEffects.Stunned))
         {
-            if (playerUnit.stunned >= 10)
+            if (playerUnit.stunned >= 1)
             {
                 dialogue.text = "You've been stunned";
-                playerUnit.addStatus(statusEffects.Stunned, -10);
+                playerUnit.addStatus(statusEffects.Stunned, -1);
                 yield return new WaitForSeconds(1);
                 StartCoroutine(EnemyTurn());
                 yield break;
             }
+        }
+        if (CheckHealth())
+        {
+            yield break;
         }
         dialogue.text = "It's your turn!";
         actions.SetActive(true);
@@ -115,7 +125,8 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         dialogue.text = playerUnit.unitName + " is attacking " + enemyUnit.unitName + "!";
         //FindObjectOfType<RollManager>().rollAttack(gameObject);
         actions.SetActive(false);
-        StartCoroutine(OnAttackSelection(attackNumber));
+        StartCoroutine(PlayerAttack(attackNumber - 1));
+        //StartCoroutine(OnAttackSelection(attackNumber));
 
     }
 
@@ -156,28 +167,13 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     }
 
-    IEnumerator PlayerAttack1()
+    IEnumerator PlayerAttack(int attackIndex)
     {
-        
-        // attack stuff
-        #region old
-        /*
-        dialogue.text = playerUnit.unitName + " has rolled " + rolledNumber + " + " + playerUnit.attackBonus + " for a total of " + (rolledNumber + playerUnit.attackBonus);
-        yield return new WaitForSeconds(1);
-        if (rolledNumber + playerUnit.attackBonus >= enemyUnit.defense)
-        {
-            dialogue.text = playerUnit.unitName + " beat the opponent's defense!";
-            rolledNumber = 0;
-            rm.rollDamage(gameObject, playerUnit.damage);
-            yield return new WaitUntil(() => rolledNumber != 0);
-            dialogue.text = playerUnit.unitName + " dealt " + enemyUnit.takeDamage(rolledNumber + playerUnit.damageBonus, criticalHit) + " damage!";
-            criticalHit = false;
-        }*/
-        #endregion old
-        GameObject timingGO = Instantiate(attack1, actions.transform.parent);
+        GameObject timingGO = Instantiate(attack[attackIndex], actions.transform.parent);
         TimingController timingCon = timingGO.GetComponent<TimingController>();
         timingCon.startTiming(true);
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || !timingCon.isActivated);
+        playerUnit.animationStart("playerAttacking");
         HitTiming hitStatus = timingCon.Clicked();
         switch (hitStatus)
         {
@@ -187,7 +183,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 break;
 
             case (HitTiming.Hit):
-                dialogue.text = "You hit your attack!";
+                dialogue.text = "Hit!";
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
                 dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.damage) + " damage!";
@@ -197,7 +193,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 break;
 
             case (HitTiming.Critical):
-                dialogue.text = "You critically hit your attack!";
+                dialogue.text = "Critical Hit!";
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
                 dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.CritDamage) + " damage!";
@@ -224,7 +220,80 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         {
             //if false, turn order moves on to the enemy's turn
             state = BattleState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
+            StartCoroutine(PlayerEndOfTurn());
+        }
+    }
+
+    IEnumerator PlayerAttack1()
+    {
+
+        // attack stuff
+        #region old
+        /*
+        dialogue.text = playerUnit.unitName + " has rolled " + rolledNumber + " + " + playerUnit.attackBonus + " for a total of " + (rolledNumber + playerUnit.attackBonus);
+        yield return new WaitForSeconds(1);
+        if (rolledNumber + playerUnit.attackBonus >= enemyUnit.defense)
+        {
+            dialogue.text = playerUnit.unitName + " beat the opponent's defense!";
+            rolledNumber = 0;
+            rm.rollDamage(gameObject, playerUnit.damage);
+            yield return new WaitUntil(() => rolledNumber != 0);
+            dialogue.text = playerUnit.unitName + " dealt " + enemyUnit.takeDamage(rolledNumber + playerUnit.damageBonus, criticalHit) + " damage!";
+            criticalHit = false;
+        }*/
+        #endregion old
+        GameObject timingGO = Instantiate(attack[0], actions.transform.parent);
+        TimingController timingCon = timingGO.GetComponent<TimingController>();
+        timingCon.startTiming(true);
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || !timingCon.isActivated);
+        playerUnit.animationStart("attacking");
+        HitTiming hitStatus = timingCon.Clicked();
+        switch (hitStatus)
+        {
+            case (HitTiming.Miss):
+                dialogue.text = "You missed your attack!";
+                yield return new WaitForSeconds(1);
+                break;
+
+            case (HitTiming.Hit):
+                dialogue.text = "Hit!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.damage) + " damage!";
+                yield return new WaitForSeconds(1);
+                enemyUnit.addStatus(timingCon.regularHitStatus, timingCon.hitStatusStacks);
+                yield return new WaitForSeconds(1);
+                break;
+
+            case (HitTiming.Critical):
+                dialogue.text = "Critical Hit!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.CritDamage) + " damage!";
+                yield return new WaitForSeconds(1);
+                enemyUnit.addStatus(timingCon.criticalHitStatus, timingCon.criticalStatusStacks);
+                break;
+        }
+        Destroy(timingGO);
+
+        //rolledNumber = 0;
+        // Play Animation?
+        Debug.Log("Attack finished");
+        yield return new WaitForSeconds(1f);
+
+
+        // Check if Enemy is dead
+        if (enemyUnit.curHP <= 0)
+        {
+            //If true player wins and moves on
+            state = BattleState.WON;
+            StartCoroutine(EndBattle());
+        }
+        else
+        {
+            //if false, turn order moves on to the enemy's turn
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(PlayerEndOfTurn());
         }
     }
 
@@ -251,10 +320,11 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         rolledNumber = 0;
         */
         #endregion old
-        GameObject timingGO = Instantiate(attack2, actions.transform.parent);
+        GameObject timingGO = Instantiate(attack[1], actions.transform.parent);
         TimingController timingCon = timingGO.GetComponent<TimingController>();
         timingCon.startTiming(true);
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || !timingCon.isActivated);
+        playerUnit.animationStart("attacking");
         HitTiming hitStatus = timingCon.Clicked();
         switch (hitStatus)
         {
@@ -302,6 +372,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     IEnumerator PlayerEndOfTurn()
     {
+        Debug.Log("PlayerTurn ended");
         if (!playerUnit.bleedImmune && playerUnit.bleed > 0)
         {
             dialogue.text = "You've taken " + playerUnit.takeDamage(playerUnit.bleed) + " bleed damage";
@@ -319,20 +390,31 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         if (CheckStatuses(enemyUnit, statusEffects.Poison))
         {
             dialogue.text = "Enemy has taken " + playerUnit.takeDamage(enemyUnit.poison) + " poison damage!";
-            enemyUnit.addStatus(statusEffects.Poison, -enemyUnit.poison / 2);
+            if (enemyUnit.poison == 1)
+            {
+                enemyUnit.addStatus(statusEffects.Poison, -1);
+            }
+            else
+            {
+                enemyUnit.addStatus(statusEffects.Poison, (int)Mathf.Floor(-enemyUnit.poison / 2f));
+            }
         }
         if (CheckStatuses(enemyUnit, statusEffects.Stunned))
         {
-            if (enemyUnit.stunned >= 10)
+            if (enemyUnit.stunned >= 1)
             {
                 dialogue.text = "Enemy has been stunned";
-                enemyUnit.addStatus(statusEffects.Stunned, -10);
+                enemyUnit.addStatus(statusEffects.Stunned, -1);
                 yield return new WaitForSeconds(1);
                 StartCoroutine(PlayerTurn());
                 yield break;
             }
         }
         yield return new WaitForSeconds(1f);
+        if (CheckHealth())
+        {
+            yield break;
+        }
         StartCoroutine(EnemyAttack());
     }
 
@@ -389,6 +471,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         TimingController timingCon = timingGO.GetComponent<TimingController>();
         timingCon.startTiming(true);
         yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) || !timingCon.isActivated));
+        enemyUnit.animationStart("attacking");
         HitTiming hitStatus = timingCon.Clicked();
         switch (hitStatus)
         {
@@ -473,26 +556,43 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 
 
             case statusEffects.Stunned:
-                if(unitToCheck.stunned > 1)
+                if(unitToCheck.stunned >= 1)
                 {
                     return true;
                 }
                 return false;
 
             case statusEffects.Bleed:
-                if(!unitToCheck.bleedImmune && unitToCheck.bleed > 1)
+                if(!unitToCheck.bleedImmune && unitToCheck.bleed >= 1)
                 {
                     return true;
                 }
                 return false;
 
             case statusEffects.Poison:
-                if (!unitToCheck.poisonImmune && unitToCheck.poison > 1)
+                if (!unitToCheck.poisonImmune && unitToCheck.poison >= 1)
                 {
                     return true;
                 }
                 return false;
         }
+    }
+
+    public bool CheckHealth()
+    {
+        if (playerUnit.curHP <= 0)
+        {
+            state = BattleState.LOST;
+            StartCoroutine(EndBattle());
+            return true;
+        }
+        else if (enemyUnit.curHP <= 0)
+        {
+            state = BattleState.WON;
+            StartCoroutine(EndBattle());
+            return true;
+        }
+        return false;
     }
 
     public void ReceiveRoll(int roll)
