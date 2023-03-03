@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum statusEffects
 {
+    None,
     Stunned,
     Bleed,
     Poison,
@@ -22,14 +23,8 @@ public class Unit : MonoBehaviour
     public int intellect;
     public int charm;
 
-    [Header("Roll Parameters")]
-    public int defense;
-    public int attackBonus;
-
-    [Header("Damage Parameters")]
-    //public int numbOfDice;
-    public dieRoller.dFaces damage;
-    public int damageBonus;
+    [Header("Timing Parameters")]
+    public GameObject defendTiming;
 
     [Header("Health Parameters")]
     public int maxHP;
@@ -45,26 +40,20 @@ public class Unit : MonoBehaviour
     public bool poisonImmune;
     public int poison;
 
-    public int takeDamage(int damage, bool crit)
+    public int takeDamage(int damage)
     {
-        if (crit)
-        {
-            curHP -= damage * 2;
-            GetComponentInChildren<BattleHUD>().SetHP(curHP);
-            return damage * 2;
-        }
-        else
-        {
-            curHP -= damage;
-            GetComponentInChildren<BattleHUD>().SetHP(curHP);
-            return damage;
-        }
+        curHP -= damage;
+        GetComponentInChildren<BattleHUD>().SetHP(curHP);
+        return damage;
     }
 
     public void addStatus(statusEffects statusToAdd, int amount)
     {
         switch (statusToAdd)
         {
+            default:
+                break;
+
             case statusEffects.Stunned:
                 stunned += amount;
                 break;

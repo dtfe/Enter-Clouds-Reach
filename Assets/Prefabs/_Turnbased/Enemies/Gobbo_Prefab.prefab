@@ -418,7 +418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4386765821987018786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2833, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -511,14 +511,11 @@ MonoBehaviour:
   wisdom: 0
   intellect: 0
   charm: 0
-  defense: 10
-  attackBonus: 2
-  damage: 12
-  damageBonus: 4
+  defendTiming: {fileID: 6226760860064331139, guid: 5f629ccff78e0974db69e6f35a3c7cf0, type: 3}
   maxHP: 10
   curHP: 10
-  confusionImmune: 0
-  confusion: 0
+  stunnedImmune: 0
+  stunned: 0
   bleedImmune: 0
   bleed: 0
   poisonImmune: 0
