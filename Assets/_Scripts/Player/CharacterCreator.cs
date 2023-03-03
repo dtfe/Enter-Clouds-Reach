@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class CharacterCreator : MonoBehaviour
 {   
     public PlayerStats playerStats;
+    private TMP_Text healthText;
+    private TMP_Text ACText;
     [SerializeField] private TMP_Text[] statText;
     //[SerializeField] private TMP_Text[] traitText;
     [SerializeField] int baseStat = 5;
@@ -20,57 +22,85 @@ public class CharacterCreator : MonoBehaviour
     [SerializeField] int maxTotal = 40;   
     // Start is called before the first frame update
     void Start()
-    {
-        if(playerStats.traitArray == null)
-        {
-            playerStats.traitArray = playerStats.GetVariablesOfType<PlayerTraits>();
-        }
+    { 
+        Trait[] traits = playerStats.traits;
+        ACText = GameObject.Find("AC").GetComponent<TMP_Text>();
+        healthText = GameObject.Find("Health").GetComponent<TMP_Text>();
         int statLength = statText.Length;
-        //int traitLength = traitText.Length;
+        
         for(int i = 0; i < statLength;i++)
         {   
             statText[i].SetText(baseStat.ToString());
             playerStats.Stats.Add(statText[i].name,baseStat);
         }
+        int j = 0;
+        foreach(Trait t in traits)
+        {   
+            Debug.Log(traits[j].playerTraits.traitName);
+            j++;
+        }
        
     }
-    public void posIncrement(TMP_Text posText)
+    void Update()
     {
+        setHealth();
+        setAc();
+    }
+    public void posIncrement(TMP_Text posText)
+    {setHealth();
         if(playerStats.Stats.ContainsKey(posText.name) && playerStats.Stats.Values.Sum() < maxTotal && playerStats.Stats[posText.name] < maxStat)
         {
+            
             playerStats.Stats[posText.name]++;
             posText.SetText(playerStats.Stats[posText.name].ToString());
         }
     }
     public void negIncrement(TMP_Text negText)
-    {
+    {   setHealth();
         if(playerStats.Stats.ContainsKey(negText.name) && playerStats.Stats[negText.name] > minStat)
         {
+            
             playerStats.Stats[negText.name]--;
             negText.SetText(playerStats.Stats[negText.name].ToString());
         }
     }
     
+    void setHealth()
+    {
+        int health = playerStats.GetBonus("EnduranceText")*10;
+        if(health <= 0)
+        {
+            health = 10;
+        }
+        playerStats.health = health;
+        healthText.SetText(health.ToString());
+    }
+    void setAc()
+    {
+        int Ac = 10 + playerStats.GetBonus("AgilityText");
+        playerStats.AC = Ac;
+        ACText.SetText(Ac.ToString());
+    }
     public void Trait(string traitName)
     {   
         Button = GameObject.Find(traitName);
-        PlayerTraits[] traitAr = playerStats.traitArray;
+        Trait[] traits = playerStats.traits;
         int i = 0;
-        foreach(PlayerTraits playerTraits in traitAr)
+        foreach(Trait t in traits)
         {
-            bool traitTF = traitAr[i].traitBool;
-            if (traitTF && traitAr[i].traitName == traitName)
+            bool traitTF = traits[i].playerTraits.traitBool;
+            if (traitTF && traits[i].playerTraits.traitName == traitName)
             {   
                 //negTrait(traitAr[i]);
                 buttonImage(Button);
-                traitAr[i].traitBool = false;
+                traits[i].playerTraits.traitBool = false;
                 //addTraitStats();
                 break;
             }
-            else if(!traitTF && traitAr[i].traitName == traitName)
+            else if(!traitTF && traits[i].playerTraits.traitName == traitName)
             {
                 //posTrait(traitAr[i]);
-                traitAr[i].traitBool = true;
+                traits[i].playerTraits.traitBool = true;
                 buttonImage(Button);
                 //addTraitStats();
                 break;
@@ -94,9 +124,6 @@ public class CharacterCreator : MonoBehaviour
     }  
     public void nextScene(string scene)
     {
-        for(int i = 0; i < playerStats.traitArray.Length; i++)
-        {
-        }
         SceneManager.LoadScene(scene);
     }
     // //AAAAAAAAAAAAAAH 

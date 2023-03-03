@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,8 +40,23 @@ public class Unit : MonoBehaviour
 
     public bool poisonImmune;
     public int poison;
+    public PlayerStats ps;
 
-    public int takeDamage(int damage)
+    private void Start()
+    {
+        if(gameObject.tag == "Player" && ps != null && ps.Stats.Values.Count != 0)
+        {
+            brawn = ps.Stats["BrawnText"];
+            agility = ps.Stats["AgilityText"];
+            endurance = ps.Stats["EnduranceText"];
+            wisdom = ps.Stats["WisdomText"];
+            intellect = ps.Stats["KnowledgeText"];
+            charm = ps.Stats["CharmText"];
+            maxHP= ps.health;
+            curHP = maxHP;
+        }
+    }
+    public int takeDamage(int damage, bool crit)
     {
         curHP -= damage;
         GetComponentInChildren<BattleHUD>().SetHP(curHP);
