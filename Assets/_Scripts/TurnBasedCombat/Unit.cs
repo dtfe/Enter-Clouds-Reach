@@ -16,13 +16,7 @@ public enum statusEffects
 public class Unit : MonoBehaviour
 {
     public string unitName;
-    [Header("Stats")]
-    public int brawn;
-    public int agility;
-    public int endurance;
-    public int wisdom;
-    public int intellect;
-    public int charm;
+    private Animator anim;
 
     [Header("Timing Parameters")]
     public GameObject defendTiming;
@@ -44,19 +38,10 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
-        if(gameObject.tag == "Player" && ps != null && ps.Stats.Values.Count != 0)
-        {
-            brawn = ps.Stats["BrawnText"];
-            agility = ps.Stats["AgilityText"];
-            endurance = ps.Stats["EnduranceText"];
-            wisdom = ps.Stats["WisdomText"];
-            intellect = ps.Stats["KnowledgeText"];
-            charm = ps.Stats["CharmText"];
-            maxHP= ps.health;
-            curHP = maxHP;
-        }
+        anim = GetComponentInChildren<Animator>();
     }
-    public int takeDamage(int damage, bool crit)
+
+    public int takeDamage(int damage)
     {
         curHP -= damage;
         GetComponentInChildren<BattleHUD>().SetHP(curHP);
@@ -86,5 +71,10 @@ public class Unit : MonoBehaviour
         }
 
         GetComponentInChildren<BattleHUD>().refreshStatus(this);
+    }
+
+    public void animationStart(string animName)
+    {
+        anim.SetTrigger(animName);
     }
 }

@@ -59,22 +59,22 @@ public class BattleHUD : MonoBehaviour
         bleedText.text = unit.bleed.ToString();
         if (unit.stunned != 0)
         {
-            Debug.Log(name + " is stunned!");
             stunned.SetActive(true);
         }
         else
         {
-            Debug.Log(name + " is not stunned!");
             stunned.SetActive(false);
         }
 
         if (unit.bleed != 0)
         {
             bleed.SetActive(true);
+            transform.parent.Find("Body").Find("Blood").gameObject.SetActive(true);
         }
         else
         {
             bleed.SetActive(false);
+            transform.parent.Find("Body").Find("Blood").gameObject.SetActive(false);
         }
 
         if (unit.poison != 0)

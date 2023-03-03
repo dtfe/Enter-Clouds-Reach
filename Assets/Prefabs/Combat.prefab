@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 3901064496062742198}
   - component: {fileID: 3901064496062742199}
   - component: {fileID: 3901064496062742200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1091,6 +1091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 3901064496912679942}
   actions: {fileID: 3901064497773781921}
+  attack: []
   playerPrefab: {fileID: 2040174991180339344, guid: 015a1ed034ad3a34f96dc3e9b442d11e, type: 3}
   playerSpawn: {fileID: 3901064495944721696}
   enemyPrefab: {fileID: 4386765821987018786, guid: 1e27eeebf29b80b4b98759957b548051, type: 3}
