@@ -583,7 +583,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.385
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -838,10 +838,7 @@ MonoBehaviour:
   wisdom: 0
   intellect: 0
   charm: 0
-  defense: 12
-  attackBonus: 4
-  damage: 8
-  damageBonus: 0
+  defendTiming: {fileID: 0}
   maxHP: 50
   curHP: 50
   stunnedImmune: 0
@@ -941,7 +938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3183567936563536392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -982,7 +979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6120571537693378072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1059,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2648631262845934817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1406,7 +1403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &856098701723130232
 RectTransform:
   m_ObjectHideFlags: 0

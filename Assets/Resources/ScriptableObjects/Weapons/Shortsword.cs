@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "Resources/ScriptableObjects/Weapons")]
-public class WeaponData : ScriptableObject
+public class Shortsword : ScriptableObject
 {
-
-
     public void attack1()
     {
         string attackName = "Careful Slash";
@@ -23,7 +20,7 @@ public class WeaponData : ScriptableObject
     }
     public void attack3()
     {
-        string attackName = "Sloppy slice";
+        string attackName = "Precise Stab";
         int attackBonus = 0;
         DieRoller.dFaces damageDie = DieRoller.dFaces.d8;
         int damageBonus = 4;
