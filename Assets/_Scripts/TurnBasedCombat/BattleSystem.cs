@@ -18,6 +18,10 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     public TMP_Text dialogue;
     public GameObject actions;
 
+    [Header("Attack Prefabs")]
+    public GameObject attack1;
+    public GameObject attack2;
+
     [Header("Player Properties")]
     public GameObject playerPrefab;
     public Transform playerSpawn;
@@ -37,6 +41,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     Unit playerUnit;
     Unit enemyUnit;
 
+    private bool hasClicked;
     private int rolledNumber = 0;
     private bool criticalHit = false;
     private bool criticalMiss = false;
@@ -45,7 +50,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     void Start()
     {
         rm = FindObjectOfType<RollManager>();
-        //StartCoroutine(SetupBattle());
+        StartCoroutine(SetupBattle());
     }
 
     #region battleSetup
@@ -70,6 +75,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
         enemyHUD.SetHUD(enemyUnit);
 
+        hasClicked = false;
         rolledNumber = 0;
 
         yield return new WaitForSeconds(0f);
@@ -84,19 +90,16 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     { 
         if (!playerUnit.poisonImmune && playerUnit.poison > 1)
         {
-            dialogue.text = "Player has taken " + playerUnit.takeDamage(playerUnit.poison, false) + " bleed damage!";
-            playerUnit.poison = playerUnit.poison / 2;
+            dialogue.text = "You've taken " + playerUnit.takeDamage(playerUnit.poison) + " poison damage!";
+            playerUnit.addStatus(statusEffects.Poison, -playerUnit.poison / 2);
             yield return new WaitForSeconds(1);
         }
         if (CheckStatuses(playerUnit, statusEffects.Stunned))
         {
-            rm.rollAbilityCheck(gameObject, "endurance");
-            yield return new WaitUntil(() => rolledNumber != 0);
-            if (rolledNumber <= playerUnit.stunned)
+            if (playerUnit.stunned >= 10)
             {
-                rolledNumber = 0;
-                dialogue.text = "Player was stunned!";
-                playerUnit.addStatus(statusEffects.Stunned, -playerUnit.stunned);
+                dialogue.text = "You've been stunned";
+                playerUnit.addStatus(statusEffects.Stunned, -10);
                 yield return new WaitForSeconds(1);
                 StartCoroutine(EnemyTurn());
                 yield break;
@@ -110,7 +113,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     {
         rolledNumber = 0;
         dialogue.text = playerUnit.unitName + " is attacking " + enemyUnit.unitName + "!";
-        FindObjectOfType<RollManager>().rollAttack(gameObject);
+        //FindObjectOfType<RollManager>().rollAttack(gameObject);
         actions.SetActive(false);
         StartCoroutine(OnAttackSelection(attackNumber));
 
@@ -118,9 +121,10 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     IEnumerator OnAttackSelection(int attackNumber)
     {
-        Debug.Log("Waiting for Result");
-        yield return new WaitUntil(() => rolledNumber != 0);
-        criticalMiss = false;
+        #region old
+        //Debug.Log("Waiting for Result");
+        //yield return new WaitUntil(() => rolledNumber != 0);
+        /*criticalMiss = false;
         criticalHit = false;
         if (rolledNumber == 1)
         {
@@ -129,7 +133,9 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         else if (rolledNumber == 20)
         {
             criticalHit = true;
-        }
+        }*/
+        #endregion old 
+        yield return new WaitForSeconds(0);
         Debug.Log("Attacking!");
         switch (attackNumber)
         {
@@ -152,7 +158,10 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     IEnumerator PlayerAttack1()
     {
+        
         // attack stuff
+        #region old
+        /*
         dialogue.text = playerUnit.unitName + " has rolled " + rolledNumber + " + " + playerUnit.attackBonus + " for a total of " + (rolledNumber + playerUnit.attackBonus);
         yield return new WaitForSeconds(1);
         if (rolledNumber + playerUnit.attackBonus >= enemyUnit.defense)
@@ -163,12 +172,45 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             yield return new WaitUntil(() => rolledNumber != 0);
             dialogue.text = playerUnit.unitName + " dealt " + enemyUnit.takeDamage(rolledNumber + playerUnit.damageBonus, criticalHit) + " damage!";
             criticalHit = false;
-        }
+        }*/
+        #endregion old
+        GameObject timingGO = Instantiate(attack1, actions.transform.parent);
+        TimingController timingCon = timingGO.GetComponent<TimingController>();
+        timingCon.startTiming(true);
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || !timingCon.isActivated);
+        HitTiming hitStatus = timingCon.Clicked();
+        switch (hitStatus)
+        {
+            case (HitTiming.Miss):
+                dialogue.text = "You missed your attack!";
+                yield return new WaitForSeconds(1);
+                break;
 
-        rolledNumber = 0;
+            case (HitTiming.Hit):
+                dialogue.text = "You hit your attack!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.damage) + " damage!";
+                yield return new WaitForSeconds(1);
+                enemyUnit.addStatus(timingCon.regularHitStatus, timingCon.hitStatusStacks);
+                yield return new WaitForSeconds(1);
+                break;
+
+            case (HitTiming.Critical):
+                dialogue.text = "You critically hit your attack!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.CritDamage) + " damage!";
+                yield return new WaitForSeconds(1);
+                enemyUnit.addStatus(timingCon.criticalHitStatus, timingCon.criticalStatusStacks);
+                break;
+        }
+        Destroy(timingGO);
+
+        //rolledNumber = 0;
         // Play Animation?
         Debug.Log("Attack finished");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
 
         // Check if Enemy is dead
@@ -188,7 +230,9 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     IEnumerator PlayerAttack2()
     {
+        #region old
         // attack stuff
+        /*
         dialogue.text = playerUnit.unitName + " has rolled " + rolledNumber + " + " + (playerUnit.attackBonus - 4) + " for a total of " + (rolledNumber + playerUnit.attackBonus - 4);
         yield return new WaitForSeconds(1);
         if (rolledNumber + playerUnit.attackBonus - 4 >= enemyUnit.defense)
@@ -204,8 +248,41 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             dialogue.text = enemyUnit.name + " has been hit by a stunning strike!";
             enemyUnit.addStatus(statusEffects.Stunned, 5);
         }
-
         rolledNumber = 0;
+        */
+        #endregion old
+        GameObject timingGO = Instantiate(attack2, actions.transform.parent);
+        TimingController timingCon = timingGO.GetComponent<TimingController>();
+        timingCon.startTiming(true);
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || !timingCon.isActivated);
+        HitTiming hitStatus = timingCon.Clicked();
+        switch (hitStatus)
+        {
+            case (HitTiming.Miss):
+                dialogue.text = "You missed your attack!";
+                break;
+
+            case (HitTiming.Hit):
+                dialogue.text = "You hit your attack!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.damage) + " damage!";
+                yield return new WaitForSeconds(1);
+                enemyUnit.addStatus(timingCon.regularHitStatus, timingCon.hitStatusStacks);
+                yield return new WaitForSeconds(1);
+                break;
+
+            case (HitTiming.Critical):
+                dialogue.text = "You critically hit your attack!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.CritDamage) + " damage!";
+                yield return new WaitForSeconds(1);
+                enemyUnit.addStatus(timingCon.criticalHitStatus, timingCon.criticalStatusStacks);
+                break;
+        }
+        Destroy(timingGO);
+
         // Play Animation?
         yield return new WaitForSeconds(1f);
 
@@ -227,7 +304,8 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     {
         if (!playerUnit.bleedImmune && playerUnit.bleed > 0)
         {
-            dialogue.text = "Player has taken " + playerUnit.takeDamage(playerUnit.bleed, false) + " bleed damage";
+            dialogue.text = "You've taken " + playerUnit.takeDamage(playerUnit.bleed) + " bleed damage";
+            playerUnit.addStatus(statusEffects.Bleed, -1);
         }
         yield return new WaitForSeconds(1);
         state = BattleState.ENEMYTURN;
@@ -240,17 +318,15 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     {
         if (CheckStatuses(enemyUnit, statusEffects.Poison))
         {
-            dialogue.text = "Enemy has taken " + playerUnit.takeDamage(enemyUnit.poison, false) + " poison damage!";
-            enemyUnit.poison = enemyUnit.poison / 2;
+            dialogue.text = "Enemy has taken " + playerUnit.takeDamage(enemyUnit.poison) + " poison damage!";
+            enemyUnit.addStatus(statusEffects.Poison, -enemyUnit.poison / 2);
         }
         if (CheckStatuses(enemyUnit, statusEffects.Stunned))
         {
-            rm.rollAbilityCheck(gameObject, "endurance");
-            yield return new WaitUntil(() => rolledNumber != 0);
-            if (rolledNumber <= enemyUnit.stunned)
+            if (enemyUnit.stunned >= 10)
             {
-                dialogue.text = "Enemy's was successfully stunned!";
-                enemyUnit.addStatus(statusEffects.Stunned, -enemyUnit.stunned);
+                dialogue.text = "Enemy has been stunned";
+                enemyUnit.addStatus(statusEffects.Stunned, -10);
                 yield return new WaitForSeconds(1);
                 StartCoroutine(PlayerTurn());
                 yield break;
@@ -262,6 +338,8 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     IEnumerator EnemyAttack()
     {
+        #region old
+        /*
         rolledNumber = 0;
         dialogue.text = enemyUnit.unitName + " is attacking " + playerUnit.unitName + "!";
         yield return new WaitForSeconds(2f);
@@ -300,12 +378,49 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             rolledNumber = 0;
             rm.rollDamage(gameObject, enemyUnit.damage);
             yield return new WaitUntil(() => rolledNumber != 0);
-            dialogue.text = playerUnit.unitName + " has taken " + playerUnit.takeDamage(rolledNumber + enemyUnit.damageBonus, criticalHit) + " damage!";
+            dialogue.text = playerUnit.unitName + " has taken " + playerUnit.takeDamage(rolledNumber + enemyUnit.damageBonus) + " damage!";
             playerHUD.SetHP(playerUnit.curHP);
             yield return new WaitForSeconds(2);
         }
-
         rolledNumber = 0;
+        */
+        #endregion old
+        GameObject timingGO = Instantiate(enemyUnit.defendTiming, actions.transform.parent);
+        TimingController timingCon = timingGO.GetComponent<TimingController>();
+        timingCon.startTiming(true);
+        yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) || !timingCon.isActivated));
+        HitTiming hitStatus = timingCon.Clicked();
+        switch (hitStatus)
+        {
+            case (HitTiming.Miss):
+                dialogue.text = "The enemy critically hit!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.CritDamage) + " damage!";
+                yield return new WaitForSeconds(1);
+                playerUnit.addStatus(timingCon.criticalHitStatus, timingCon.criticalStatusStacks);
+                break;
+
+            case (HitTiming.Hit):
+                dialogue.text = "The attack scraped you!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.damage) + " damage!";
+                yield return new WaitForSeconds(1);
+                playerUnit.addStatus(timingCon.regularHitStatus, timingCon.hitStatusStacks);
+                break;
+
+            case (HitTiming.Critical):
+                dialogue.text = "You blocked most of the enemy's attack!";
+                yield return new WaitForSeconds(1);
+                timingGO.SetActive(false);
+                dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.damage / 2) + " damage!";
+                break;
+        }
+        Destroy(timingGO);
+
+        yield return new WaitForSeconds(1);
+
         if (playerUnit.curHP <= 0)
         {
             state = BattleState.LOST;
@@ -321,7 +436,8 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     {
         if (!enemyUnit.bleedImmune && enemyUnit.bleed > 0)
         {
-            dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(enemyUnit.bleed, false) + " bleed damage!";
+            dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(enemyUnit.bleed) + " bleed damage!";
+            enemyUnit.addStatus(statusEffects.Bleed, -1);
         }
         yield return new WaitForSeconds(1);
         state = BattleState.PLAYERTURN;
