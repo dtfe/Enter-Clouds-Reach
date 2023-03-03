@@ -5,8 +5,10 @@ using UnityEngine;
 public class RollManager : MonoBehaviour
 {
     private GameObject requestingEvent;
+    public PlayerStats ps;
     private int rolledNumber;
     private string rollType;
+    private int mod;
 
 
     public void rollAttack(GameObject requestingSystem)
