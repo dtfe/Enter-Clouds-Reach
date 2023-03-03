@@ -13,21 +13,21 @@ public class RollManager : MonoBehaviour
     {
         requestingEvent = requestingSystem;
         rollType = "attack";
-        FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d20);
+        FindObjectOfType<DieRoller>().RollDie(DieRoller.dFaces.d20);
     }
 
     public void rollAbilityCheck(GameObject rqEvent, string ability)
     {
         requestingEvent = rqEvent;
         rollType = "ability";
-        FindObjectOfType<dieRoller>().RollDie(dieRoller.dFaces.d20);
+        FindObjectOfType<DieRoller>().RollDie(DieRoller.dFaces.d20);
     }
 
-    public void rollDamage(GameObject requestingSystem, dieRoller.dFaces numbOfFaces)
+    public void rollDamage(GameObject requestingSystem, DieRoller.dFaces numbOfFaces)
     {
         requestingEvent = requestingSystem;
         rollType = "damage";
-        FindObjectOfType<dieRoller>().RollDie(numbOfFaces);
+        FindObjectOfType<DieRoller>().RollDie(numbOfFaces);
     }
 
     public void giveResult(int resultNumber)
