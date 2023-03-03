@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 8569975807355995839}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -847,6 +847,7 @@ MonoBehaviour:
   bleed: 0
   poisonImmune: 0
   poison: 0
+  ps: {fileID: 11400000, guid: a5cd63ed321d53d4380c37de3bd391f3, type: 2}
 --- !u!1 &2040174991726060820
 GameObject:
   m_ObjectHideFlags: 0
