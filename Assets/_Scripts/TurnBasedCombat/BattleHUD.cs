@@ -16,6 +16,7 @@ public class BattleHUD : MonoBehaviour
     private TMP_Text StunnedText;
         
     private GameObject bleed;
+    public GameObject bloodPS;
     private TMP_Text bleedText;
         
     private GameObject poison;
@@ -33,9 +34,13 @@ public class BattleHUD : MonoBehaviour
 
         bleed = statusEffects.transform.Find("Bleed").gameObject;
         bleedText = bleed.GetComponentInChildren<TMP_Text>();
+        bleed.GetComponent<Image>().sprite = Resources.Load<Sprite>("bloodIcon.png");
+        bloodPS = transform.parent.Find("Body").Find("Blood").gameObject;
+
 
         poison = statusEffects.transform.Find("Poison").gameObject;
         poisonText = poison.GetComponentInChildren<TMP_Text>();
+        bleed.GetComponent<Image>().sprite = Resources.Load<Sprite>("poisonIcon.png");
         #endregion status Effect Params
     }
 
@@ -69,12 +74,12 @@ public class BattleHUD : MonoBehaviour
         if (unit.bleed != 0)
         {
             bleed.SetActive(true);
-            transform.parent.Find("Body").Find("Blood").gameObject.SetActive(true);
+            bloodPS.SetActive(true);
         }
         else
         {
             bleed.SetActive(false);
-            transform.parent.Find("Body").Find("Blood").gameObject.SetActive(false);
+            bloodPS.SetActive(false);
         }
 
         if (unit.poison != 0)

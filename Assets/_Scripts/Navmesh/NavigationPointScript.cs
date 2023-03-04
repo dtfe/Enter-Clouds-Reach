@@ -8,11 +8,13 @@ public class NavigationPointScript : MonoBehaviour
 
     public GameObject Event;
 
-    private Canvas canvas;
+    [SerializeField]private Canvas canvas;
+
+    [SerializeField]private Animator anim;
 
     private void Start()
     {
-        canvas = FindObjectOfType<Canvas>();
+        
     }
 
     public void MovePlayerHere()
@@ -22,7 +24,8 @@ public class NavigationPointScript : MonoBehaviour
     }
 
     public void TriggerEvent()
-    {   
+    {
+        Debug.Log("Triggered Event: " + navPointId);
         if(canvas != null)
         {
             Debug.Log("Navpoint: " + navPointId + " has triggered it's event");
@@ -33,6 +36,10 @@ public class NavigationPointScript : MonoBehaviour
         else   
         {
             canvas = FindObjectOfType<Canvas>();
+            Debug.Log("Navpoint: " + navPointId + " has triggered it's event");
+            GameObject spawnedGO = Instantiate(Event, canvas.transform);
+            spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
+            //spawnedGO.GetComponent<uiAnimator>().startSection();
         }
     }
 }
