@@ -34,6 +34,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     [Header("Game Information")]
     public BattleState state;
+    public bool startBattleOnStart = false;
 
     private RollManager rm;
 
@@ -49,7 +50,11 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     void Start()
     {
         rm = FindObjectOfType<RollManager>();
-        StartCoroutine(SetupBattle());
+
+        if (startBattleOnStart)
+        {
+            StartCoroutine(SetupBattle());
+        }
     }
 
     #region battleSetup
@@ -61,10 +66,15 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     IEnumerator SetupBattle()
     {
         state = BattleState.START;
-
-        GameObject playerGO = Instantiate(playerPrefab, playerSpawn);
-        playerUnit = playerGO.GetComponent<Unit>();
-        playerHUD = playerGO.transform.Find("HUD").GetComponent<BattleHUD>();
+        if (playerUnit == null)
+        {
+            GameObject playerGO = Instantiate(playerPrefab, playerSpawn);
+            playerUnit = playerGO.GetComponent<Unit>();
+            playerHUD = playerGO.transform.Find("HUD").GetComponent<BattleHUD>();
+            //This wont work with saving
+            PlayerPrefs.SetInt("playerHealth", playerUnit.maxHP);
+        }
+        playerUnit.curHP = PlayerPrefs.GetInt("playerHealth");
 
         playerHUD.SetHUD(playerUnit);
 
@@ -107,7 +117,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 dialogue.text = "You've been stunned";
                 playerUnit.addStatus(statusEffects.Stunned, -1);
                 yield return new WaitForSeconds(1);
-                StartCoroutine(EnemyTurn());
+                StartCoroutine(PlayerEndOfTurn());
                 yield break;
             }
         }
@@ -406,7 +416,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 dialogue.text = "Enemy has been stunned";
                 enemyUnit.addStatus(statusEffects.Stunned, -1);
                 yield return new WaitForSeconds(1);
-                StartCoroutine(PlayerTurn());
+                StartCoroutine(EnemyEndOfTurn());
                 yield break;
             }
         }
@@ -542,6 +552,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             dialogue.text = playerUnit.unitName + " has been defeated!";
             PlayerPrefs.SetString("BattleResult", "Lost");
         }
+        PlayerPrefs.SetInt("playerHealth", playerUnit.curHP);
         yield return new WaitForSeconds(2f);
         FindObjectOfType<BattleLoader>().EndBattle();
     }

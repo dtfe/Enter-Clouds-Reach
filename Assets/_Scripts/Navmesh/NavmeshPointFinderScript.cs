@@ -29,7 +29,7 @@ public class NavmeshPointFinderScript : MonoBehaviour
         {
             if (nav.navPointId == ID)
             {
-                FindObjectOfType<PlayerController>().SetTargetPos(nav.gameObject);
+                nav.MovePlayerHere();
                 return;
             }
         }
