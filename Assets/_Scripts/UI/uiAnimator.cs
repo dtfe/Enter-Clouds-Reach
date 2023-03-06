@@ -59,8 +59,12 @@ public class UiAnimator : MonoBehaviour
 
     public void nextSection()
     {
+        if (t >= 1)
+        {
+            previousPos = targetPos;
+        }
         t = 0;
-        targetPos = new Vector2(previousPos.x, previousPos.y + 250);
+        targetPos = new Vector2(targetPos.x, targetPos.y + 250);
         isMoving = true;
     }
 
