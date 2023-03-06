@@ -1,5 +1,6 @@
 using System.IO.Pipes;
 using UnityEngine;
+using System.Linq;
 
 public class AbilityCheckScript : MonoBehaviour, IReceiveResult
 {
@@ -30,7 +31,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
         {
             eventToSpawn = successEvent;
         }
-        GameObject spawnedGO = Instantiate(eventToSpawn, FindObjectOfType<Canvas>().transform);
+        GameObject spawnedGO = Instantiate(eventToSpawn, FindObjectsOfType<Canvas>().Last().transform);
         spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
         Destroy(gameObject);
     }
