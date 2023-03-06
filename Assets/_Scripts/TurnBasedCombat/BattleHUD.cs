@@ -31,16 +31,17 @@ public class BattleHUD : MonoBehaviour
         #region status Effect Params
         stunned = statusEffects.transform.Find("Confusion").gameObject;
         StunnedText = stunned.GetComponentInChildren<TMP_Text>();
+        stunned.GetComponent<Image>().sprite = Resources.Load<Sprite>("stunnedIcon");
 
         bleed = statusEffects.transform.Find("Bleed").gameObject;
         bleedText = bleed.GetComponentInChildren<TMP_Text>();
-        bleed.GetComponent<Image>().sprite = Resources.Load<Sprite>("bloodIcon.png");
+        bleed.GetComponent<Image>().sprite = Resources.Load<Sprite>("bloodIcon");
         bloodPS = transform.parent.Find("Body").Find("Blood").gameObject;
 
 
         poison = statusEffects.transform.Find("Poison").gameObject;
         poisonText = poison.GetComponentInChildren<TMP_Text>();
-        bleed.GetComponent<Image>().sprite = Resources.Load<Sprite>("poisonIcon.png");
+        poison.GetComponent<Image>().sprite = Resources.Load<Sprite>("poisonIcon");
         #endregion status Effect Params
     }
 
