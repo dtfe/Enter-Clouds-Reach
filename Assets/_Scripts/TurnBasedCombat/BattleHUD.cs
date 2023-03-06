@@ -55,6 +55,10 @@ public class BattleHUD : MonoBehaviour
     public void SetHP(int hp)
     {
         hpSlider.value = hp;
+        if (hp <= 0)
+        {
+            hpSlider.transform.Find("Fill Area").gameObject.SetActive(false);
+        }
     }
 
     public void refreshStatus(Unit unit)

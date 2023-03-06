@@ -46,6 +46,7 @@ public class BattleLoader : MonoBehaviour
     {
         if (PlayerPrefs.GetString("BattleResult") == "Won")
         {
+            BS.ClearEnemies();
             GetComponent<ModeSwap>().ChangeToExploration();
             Instantiate(winEvent, canvas.transform);
         }
