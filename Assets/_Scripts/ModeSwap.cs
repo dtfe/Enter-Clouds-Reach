@@ -18,8 +18,6 @@ public class ModeSwap : MonoBehaviour
         exp_ui.SetActive(false);
         com_cam.SetActive(true);
         com_ui.SetActive(true);
-        Time.timeScale = 1.5f;
-        Time.fixedDeltaTime = 0.2f * Time.timeScale;
     }
 
     public void ChangeToExploration()

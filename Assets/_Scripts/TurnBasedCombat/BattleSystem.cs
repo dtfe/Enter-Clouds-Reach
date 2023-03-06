@@ -553,6 +553,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             PlayerPrefs.SetString("BattleResult", "Lost");
         }
         PlayerPrefs.SetInt("playerHealth", playerUnit.curHP);
+        
         yield return new WaitForSeconds(2f);
         FindObjectOfType<BattleLoader>().EndBattle();
     }
@@ -589,6 +590,13 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         }
     }
 
+    public void ClearStatus(Unit unit)
+    {
+        unit.addStatus(statusEffects.Stunned, -unit.stunned);
+        unit.addStatus(statusEffects.Poison, -unit.poison);
+        unit.addStatus(statusEffects.Bleed, -unit.bleed);
+    }
+
     public bool CheckHealth()
     {
         if (playerUnit.curHP <= 0)
@@ -610,5 +618,10 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     {
         Debug.Log("Received Result");
         rolledNumber = roll;
+    }
+
+    public void ClearEnemies()
+    {
+        Destroy(enemyUnit.gameObject);
     }
 }
