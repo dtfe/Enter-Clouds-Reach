@@ -24,14 +24,20 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     public void ReceiveResult()
     {   
         Debug.Log(modNumber);
-        Debug.Log("Rolled a " + rolledNumber + ". Has to beat " + difficulty);
+        Debug.Log("Rolled a " + modNumber + ". Has to beat " + difficulty);
         FindObjectOfType<UiAnimator>().clearSections();
         GameObject eventToSpawn = failedEvent;
         if (modNumber >= difficulty)
         {
             eventToSpawn = successEvent;
         }
-        GameObject spawnedGO = Instantiate(eventToSpawn, FindObjectsOfType<Canvas>().Last().transform);
+        Canvas[] canvases = FindObjectsOfType<Canvas>();
+        Canvas explorationCanvas = null;
+        foreach(Canvas i in canvases)
+        {
+            if (i.CompareTag("ExplorationUI")) explorationCanvas = i;
+        }
+        GameObject spawnedGO = Instantiate(eventToSpawn, explorationCanvas.transform);
         spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
         Destroy(gameObject);
     }
@@ -71,6 +77,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     }
     public void ReceiveRoll(int roll)
     {
+        Debug.Log("Roll Received");
         rolledNumber = roll;
         AbilityCheck();
         ReceiveResult();
