@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Reflection;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "ScriptableObjects/PlayerStats", order = 1)]
 public class PlayerStats : ScriptableObject
 {
+    public Trait[] traits;
+    public int AC;
+    public int health;
     public Dictionary<string,int> Stats = new Dictionary<string, int>();
-   //public IDictionary<string,PlayerTraits> Traits = new Dictionary<string,PlayerTraits>();
-    public PlayerTraits[] traitArray;
-    public PlayerTraits scared = new PlayerTraits("Scared","test",false);
-    public PlayerTraits brave = new PlayerTraits("Brave","",false);
-    
-    public T[] GetVariablesOfType<T>()
+
+    public PlayerTraits GetPlayerTrait(string trait)
     {
-        FieldInfo[] fields = GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-        T[] variables = new T[fields.Length];
-        int count = 0;
-        foreach (FieldInfo field in fields)
-        {
-            if (field.FieldType == typeof(T))
+        int i = 0;
+        foreach(Trait t in traits)
+        {   
+            if(traits[i].playerTraits.traitName == trait)
             {
-                variables[count] = (T)field.GetValue(this);
-                count++;
+                return traits[i].playerTraits;
             }
+            i++;
         }
-        System.Array.Resize(ref variables, count);
-        return variables;
+        return traits[0].playerTraits;
+    }
+    public int GetBonus(string stat)
+    {
+        int statNum = Stats[stat];
+        int bonus = statNum-5;
+        return bonus;
     }
 }

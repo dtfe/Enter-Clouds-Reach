@@ -40,8 +40,9 @@ public class PlayerController : MonoBehaviour
             isMoving = true;
         }
 
-        if (transform.position.x > targetPos.transform.position.x - 0.2f && transform.position.x < targetPos.transform.position.x + 0.2f && transform.position.y - 1 > targetPos.transform.position.y - 0.2f && transform.position.y - 1 < targetPos.transform.position.y + 0.2f && transform.position.z > targetPos.transform.position.z - 0.2f && transform.position.z < targetPos.transform.position.z + 0.2f)
+        if (transform.position.x > targetPos.transform.position.x - 1f && transform.position.x < targetPos.transform.position.x + 1f && transform.position.y - 1 > targetPos.transform.position.y - 1f && transform.position.y - 1 < targetPos.transform.position.y + 1f && transform.position.z > targetPos.transform.position.z - 1f && transform.position.z < targetPos.transform.position.z + 1f)
         {
+            Debug.Log("Triggering Event");
             targetPos.GetComponent<NavigationPointScript>().TriggerEvent();
             targetPos = null;
             isMoving = false;
