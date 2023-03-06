@@ -20,25 +20,25 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.36112493, g: 0.4308219, b: 0.6037736, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionMode: 1
+  m_DefaultReflectionResolution: 16
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: b17dfcd1b6a557142b6cc9f11a9b273b, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -216,6 +216,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -11
       objectReference: {fileID: 0}
+    - target: {fileID: 2041612977061743171, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cfabdc3a967a42940a8c4d4c79fcb7c4, type: 2}
     - target: {fileID: 3283389959210946653, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: isActivated
       value: 0
@@ -235,6 +239,14 @@ PrefabInstance:
     - target: {fileID: 3283389959210946653, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: criticalZoneStart
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389786292265693694, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0111
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389786292265693694, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2572
       objectReference: {fileID: 0}
     - target: {fileID: 3901064495863831918, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_RootOrder
@@ -301,6 +313,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3901064496232140835, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+      propertyPath: startBattleOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901064496232140835, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: attack.Array.data[0]
       value: 
       objectReference: {fileID: 6226760860064331139, guid: 6932fb8eada016a4d80656522c7b708c, type: 3}
@@ -328,5 +344,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0eb32fd1f36196b4d9d5ac3016534d26, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8389506596866783668, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+    - {fileID: 4439853485493271124, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+    - {fileID: 2431172830152264177, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+    - {fileID: 7669245879153980305, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}

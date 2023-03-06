@@ -19,6 +19,7 @@ public class NavigationPointScript : MonoBehaviour
 
     public void MovePlayerHere()
     {
+        if (anim) anim.enabled = true;
         FindObjectOfType<PlayerController>().agent.SetDestination(transform.position);
         FindObjectOfType<PlayerController>().SetTargetPos(gameObject);
     }
