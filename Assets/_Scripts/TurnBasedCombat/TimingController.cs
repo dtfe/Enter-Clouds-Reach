@@ -93,11 +93,11 @@ public class TimingController : MonoBehaviour
     public HitTiming Clicked()
     {
         isActivated = false;
-        if (currentPosition >= criticalZoneStart-0.1f && currentPosition <= criticalZoneEnd+0.1f)
+        if (currentPosition >= criticalZoneStart-0.01f && currentPosition <= criticalZoneEnd+0.01f)
         {
             return HitTiming.Critical;
         }
-        if (currentPosition >= successZoneStart-0.1f && currentPosition <= successZoneEnd+0.1f)
+        if (currentPosition >= successZoneStart-0.01f && currentPosition <= successZoneEnd+0.01f)
         {
             return HitTiming.Hit;
         }
