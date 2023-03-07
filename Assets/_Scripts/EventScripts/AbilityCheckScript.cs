@@ -25,8 +25,9 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     {   
         Debug.Log(modNumber);
         Debug.Log("Rolled a " + modNumber + ". Has to beat " + difficulty);
-        FindObjectOfType<UiAnimatorFinal>().clearSections();
         GameObject eventToSpawn = failedEvent;
+        transform.parent = null;
+        FindObjectOfType<UiAnimatorFinal>().clearSections();
         if (modNumber >= difficulty)
         {
             eventToSpawn = successEvent;

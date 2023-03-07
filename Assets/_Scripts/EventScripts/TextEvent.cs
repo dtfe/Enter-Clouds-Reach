@@ -9,6 +9,7 @@ public class TextEvent : MonoBehaviour
     public int numbOfActivations;
     private PlayerInput playerInput;
     private InputAction clickAction;
+    public bool stopHere;
     public bool clearEvents;
     public GameObject nextEvent;
     private UiAnimatorFinal uiAnim;
@@ -27,8 +28,11 @@ public class TextEvent : MonoBehaviour
             switch (numbOfActivations)
             {
                 case 1:
-                    uiAnim.nextSection();
-                    activateNext();
+                    if (!stopHere)
+                    {
+                        uiAnim.nextSection();
+                        activateNext();
+                    }
                     break;
                 case 2:
                     NextAction();
@@ -54,7 +58,6 @@ public class TextEvent : MonoBehaviour
         }
         else
         {
-            //nextEvent.GetComponent<TextEvent>().activateNext();
             Destroy(this);
         }
     }
