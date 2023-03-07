@@ -16,7 +16,7 @@ public class ButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttons = FindObjectOfType<UiAnimator>().GetComponentsInChildren<Button>();
+        buttons = FindObjectOfType<UiAnimatorFinal>().GetComponentsInChildren<Button>();
         self = GetComponent<Button>();
         foreach(Button i in buttons)
         {

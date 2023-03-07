@@ -43,6 +43,7 @@ public class Unit : MonoBehaviour
 
     public int takeDamage(int damage)
     {
+        anim.SetTrigger("damaged");
         curHP -= damage;
         GetComponentInChildren<BattleHUD>().SetHP(curHP);
         return damage;

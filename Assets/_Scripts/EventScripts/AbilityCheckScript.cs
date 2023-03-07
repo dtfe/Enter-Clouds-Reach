@@ -18,21 +18,27 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     {
         ps = FindObjectOfType<CharacterSheet>().playerStats;
         FindObjectOfType<RollManager>().rollAbilityCheck(gameObject, ability);
-        FindObjectOfType<UiAnimator>().clearingNow(false);
+        FindObjectOfType<UiAnimatorFinal>().clearingNow(false);
     }
 
     public void ReceiveResult()
     {   
         Debug.Log(modNumber);
-        Debug.Log("Rolled a " + rolledNumber + ". Has to beat " + difficulty);
-        FindObjectOfType<UiAnimator>().clearSections();
+        Debug.Log("Rolled a " + modNumber + ". Has to beat " + difficulty);
+        FindObjectOfType<UiAnimatorFinal>().clearSections();
         GameObject eventToSpawn = failedEvent;
         if (modNumber >= difficulty)
         {
             eventToSpawn = successEvent;
         }
-        GameObject spawnedGO = Instantiate(eventToSpawn, FindObjectsOfType<Canvas>().Last().transform);
-        spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
+        Canvas[] canvases = FindObjectsOfType<Canvas>();
+        Canvas explorationCanvas = null;
+        foreach(Canvas i in canvases)
+        {
+            if (i.CompareTag("ExplorationUI")) explorationCanvas = i;
+        }
+        GameObject spawnedGO = Instantiate(eventToSpawn, explorationCanvas.transform);
+        spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimatorFinal>().startingPos;
         Destroy(gameObject);
     }
     public void AbilityCheck()
@@ -71,6 +77,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     }
     public void ReceiveRoll(int roll)
     {
+        Debug.Log("Roll Received");
         rolledNumber = roll;
         AbilityCheck();
         ReceiveResult();

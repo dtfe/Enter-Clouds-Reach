@@ -31,7 +31,7 @@ public class NavigationPointScript : MonoBehaviour
         {
             Debug.Log("Navpoint: " + navPointId + " has triggered it's event");
             GameObject spawnedGO = Instantiate(Event, canvas.transform);
-            spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
+            spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimatorFinal>().startingPos;
             //spawnedGO.GetComponent<uiAnimator>().startSection();
         }
         else   
@@ -39,7 +39,7 @@ public class NavigationPointScript : MonoBehaviour
             canvas = FindObjectOfType<Canvas>();
             Debug.Log("Navpoint: " + navPointId + " has triggered it's event");
             GameObject spawnedGO = Instantiate(Event, canvas.transform);
-            spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimator>().startingPos;
+            spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimatorFinal>().startingPos;
             //spawnedGO.GetComponent<uiAnimator>().startSection();
         }
     }
