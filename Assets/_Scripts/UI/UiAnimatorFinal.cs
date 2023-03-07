@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UiAnimator : MonoBehaviour
+public class UiAnimatorFinal : MonoBehaviour
 {
     float t = 0;
     [HideInInspector]public bool isMoving = false;
