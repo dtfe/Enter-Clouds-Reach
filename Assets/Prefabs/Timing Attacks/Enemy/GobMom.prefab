@@ -306,21 +306,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   criticalZone: {fileID: 817889629082842659}
-  criticalZoneStart: 0.9
-  criticalZoneEnd: 0.95
+  criticalZoneStart: 0.8
+  criticalZoneEnd: 0.9
   successZone: {fileID: 1163356619705706574}
   successZoneStart: 0.6
-  successZoneEnd: 0.75
+  successZoneEnd: 0.8
   currentPosition: 0
   cursorSpeed: 0.8
   isActivated: 1
   oneShot: 0
   reverse: 0
-  regularHitStatus: 1
-  hitStatusStacks: 1
-  damage: 3
+  regularHitStatus: 0
+  hitStatusStacks: 0
+  damage: 6
   criticalHitStatus: 1
-  criticalStatusStacks: 3
+  criticalStatusStacks: 1
   CritDamage: 6
 --- !u!1 &7036162786649031975
 GameObject:
