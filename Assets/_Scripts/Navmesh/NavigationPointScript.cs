@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class NavigationPointScript : MonoBehaviour
 {
+    [Header("Point Explanation")]
+    [TextArea] public string desc;
+
+    [Header("Parameters")]
     public string navPointId;
 
     public GameObject Event;
+
 
     [SerializeField]private Canvas canvas;
 

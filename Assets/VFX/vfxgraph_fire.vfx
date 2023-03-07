@@ -67,9 +67,9 @@ MonoBehaviour:
     position:
       serializedVersion: 2
       x: 1653
-      y: -277
-      width: 982
-      height: 1812
+      y: -278
+      width: 983
+      height: 1917
     contents:
     - model: {fileID: 8926484042661614665}
       id: 0
@@ -93,9 +93,6 @@ MonoBehaviour:
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614654}
-      id: 1
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614656}
       id: 1
       isStickyNote: 0
     - model: {fileID: 8926484042661614638}
@@ -152,10 +149,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -865
+    x: -866
     y: -366
-    width: 3500
-    height: 2007
+    width: 3502
+    height: 2028
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1878,7 +1875,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614607}
       inputSlot: {fileID: 8926484042661614709}
-    position: {x: 1916, y: 886}
+    position: {x: 1916, y: 886.4}
     expandedSlots: []
     expanded: 0
   - m_Id: 2
@@ -2376,7 +2373,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614639}
       inputSlot: {fileID: 8926484042661614735}
-    position: {x: 1678, y: 1314}
+    position: {x: 1678.4, y: 1314.3999}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614639
@@ -2831,7 +2828,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614655}
       inputSlot: {fileID: 8926484042661614743}
-    position: {x: 1855, y: 584}
+    position: {x: 1855.2, y: 584}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614655
@@ -2915,13 +2912,6 @@ MonoBehaviour:
     position: {x: 776, y: 345}
     expandedSlots: []
     expanded: 0
-  - m_Id: 1
-    linkedSlots:
-    - outputSlot: {fileID: 8926484042661614657}
-      inputSlot: {fileID: 8926484042661614692}
-    position: {x: 2021, y: 315}
-    expandedSlots: []
-    expanded: 0
 --- !u!114 &8926484042661614657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2960,7 +2950,6 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661614575}
-  - {fileID: 8926484042661614692}
 --- !u!114 &8926484042661614658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3852,7 +3841,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":-0.0947951152920723,"y":0.1049470603466034,"z":-0.10000000149011612}}'
+      m_SerializableObject: '{"vector":{"x":-0.0947951152920723,"y":0.30000001192092898,"z":-0.10000000149011612}}'
     m_Space: 0
   m_Property:
     name: A
@@ -4022,7 +4011,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":0.10000000149011612,"y":0.5,"z":0.10000000149011612}}'
+      m_SerializableObject: '{"vector":{"x":0.10000000149011612,"y":0.6000000238418579,"z":0.10000000149011612}}'
     m_Space: 0
   m_Property:
     name: B
@@ -4030,8 +4019,7 @@ MonoBehaviour:
       m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Direction: 0
-  m_LinkedSlots:
-  - {fileID: 8926484042661614657}
+  m_LinkedSlots: []
 --- !u!114 &8926484042661614693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4689,7 +4677,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 3
+      m_SerializableObject: 1
     m_Space: 2147483647
   m_Property:
     name: _DissolveScale
