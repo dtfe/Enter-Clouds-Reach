@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8931245113917381243 stripped
@@ -403,6 +404,20 @@ PrefabInstance:
     - target: {fileID: 4167373348718808693, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
+      propertyPath: m_text
+      value: 'Having just entered the cursed tower, your eyes take a bit of time
+        to adjust to the sudden darkness that surrounds you.
+
+
+        Looking behind,
+        the door is gone. Replaced by what seems to be a dense black fog. In front
+        of you there''s a crossroad. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
+      propertyPath: m_fontSize
+      value: 34.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
