@@ -209,9 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'Enter room
-
-'
+      value: Make your way to the room and enter it.
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -271,9 +269,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060405332549, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'Keep going deeper into the tower
-
-'
+      value: "You take a deep breath and continue down the hallway, leaving the silent
+        door behind. \n"
       objectReference: {fileID: 0}
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: difficulty
@@ -304,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -437,12 +435,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: As you keep walking you get met with a door to the left. Its silent.
-        The torches are lighting up the paths.
+      value: 'The torches on the walls flicker and dance, casting strange shadows
+        across the hallway. You can enter the room with little light or not.
+
+        
+
+        You
+        consider your options. Continue down the path you were on, hoping to find
+        a safer way through the tower. Or you could take a chance and open the door,
+        hoping to discover what lies beyond and whether it poses a threat.
+
+        
+
+        The
+        choice is yours, but you know that whichever path you choose, there may be
+        no turning back.'
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 58.55
+      value: 21.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}

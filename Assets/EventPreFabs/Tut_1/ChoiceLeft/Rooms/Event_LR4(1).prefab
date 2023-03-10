@@ -245,9 +245,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'Keep going further into the room and enter the new path
-
-'
+      value: As you stand before the chest, you feel a strange sensation in the pit
+        of your stomach. Walk out of the room and keep going.
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -315,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060405332549, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: Open the chest
+      value: The chest looks so precious, you decide to open it.
       objectReference: {fileID: 0}
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: ps
@@ -492,11 +491,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: You searched the room and found a new chest
+      value: 'As you search the room, your eyes catch sight of something glinting
+        in the dim light. You approach the object, and to your surprise, you find
+        a chest tucked away in the corner of the room.
+
+        
+
+        The chest
+        is ornately decorated with intricate carvings and appears to be locked. You
+        notice that there is a keyhole on the front of the chest, indicating that
+        a key may be required to open it.
+
+        
+
+        You inspect the chest
+        closely, searching for any potential traps or dangers. However, upon closer
+        inspection, you find that the chest appears to be harmless, and there is
+        no sign of any traps or mechanisms.'
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 20.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}

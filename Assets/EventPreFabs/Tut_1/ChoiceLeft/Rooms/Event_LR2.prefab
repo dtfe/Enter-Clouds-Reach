@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -465,11 +466,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: 'This room dosent seem to have anything in your intrest. '
+      value: As you take a quick look around the room, you notice that there doesn't
+        seem to be anything of interest or value inside. The walls are bare, and
+        the only furniture in the room is a small, dusty table in the corner.
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 38.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
