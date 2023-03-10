@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2900739887549494090}
   - component: {fileID: 2900739887549494089}
   m_Layer: 5
-  m_Name: Event_LR1
+  m_Name: Event_LR4(1)FightWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,21 +63,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2900739887549494090}
     m_Modifications:
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 11400000, guid: a5cd63ed321d53d4380c37de3bd391f3, type: 2}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: ability
+      value: charm
+      objectReference: {fileID: 0}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: difficulty
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 33.7748
+      value: 37.5623
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 12.4662
+      value: -0.00073242
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 483.1125
+      value: 481.2189
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -118.76691
+      value: -125
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -85,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -105,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: movePlayerToPoint
+      value: EngageBattle
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -223,9 +235,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Choices
       objectReference: {fileID: 0}
+    - target: {fileID: 3261715059938595065, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261715059938595065, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
     - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: Roll to see if you got the knowledge to read it.
+      value: 'Keep going further into the room and enter the new path
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -233,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -242,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7911538403410159370}
+      objectReference: {fileID: 8931245113917381243}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -253,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartCheck
+      value: movePlayerToPoint
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -261,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AbilityCheckScript, Assembly-CSharp
+      value: ButtonScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -273,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Tut_L2
+      value: Tut_SL2
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -289,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315087, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035
+      value: 0.000061035
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060405332549, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
@@ -298,25 +320,21 @@ PrefabInstance:
 '
       objectReference: {fileID: 0}
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
-      propertyPath: ability
-      value: knowledge
-      objectReference: {fileID: 0}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 11400000, guid: a5cd63ed321d53d4380c37de3bd391f3, type: 2}
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
-      propertyPath: Abilities
-      value: 4
+      propertyPath: ability
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: difficulty
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
-      propertyPath: failedEvent
+    - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 2900739887549494091, guid: a677078b58883da49b8a65730edca448, type: 3}
-    - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
-      propertyPath: successEvent
-      value: 
-      objectReference: {fileID: 2900739887549494091, guid: 95f871b2e4e571a4bb87792566be9f38, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
 --- !u!224 &2900739888398158115 stripped
@@ -345,20 +363,20 @@ MonoBehaviour:
   stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
---- !u!114 &7911538403410159370 stripped
+--- !u!114 &8406435745969841221 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8190684164886174822, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
   m_PrefabInstance: {fileID: 361008285645060131}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4f3815d7dcf6841a5ef159f5258b60, type: 3}
+  m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8406435745969841221 stripped
+--- !u!114 &8931245113917381243 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8190684164886174822, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
   m_PrefabInstance: {fileID: 361008285645060131}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -476,11 +494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: 'You searched the room and found a note, its written in an ancient language. '
+      value: You beat up the tiny goblin.
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 61.7
+      value: 72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}

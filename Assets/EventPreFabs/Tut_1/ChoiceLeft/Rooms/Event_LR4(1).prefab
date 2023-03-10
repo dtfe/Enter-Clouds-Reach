@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: ps
       value: 
       objectReference: {fileID: 11400000, guid: a5cd63ed321d53d4380c37de3bd391f3, type: 2}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: ability
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: difficulty
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_SizeDelta.x
       value: 500
@@ -129,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
+      value: Tut_L4F
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -316,6 +324,10 @@ PrefabInstance:
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: difficulty
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190684164886174822, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: enemyPrefab
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: enemyPrefab
