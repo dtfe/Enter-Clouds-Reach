@@ -28,6 +28,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     [Header("Enemy Properties")]
     public GameObject enemyPrefab;
     public Transform enemySpawn;
+    public List<DefendTimings> enemyTimings = new List<DefendTimings>();
 
     private BattleHUD playerHUD;
     private BattleHUD enemyHUD;
@@ -81,6 +82,14 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyUnit = enemyGO.GetComponent<Unit>();
         enemyHUD = enemyGO.transform.Find("HUD").GetComponent<BattleHUD>();
+        for (int i = 0; i < enemyUnit.defendTimings.Length; i++)
+        {
+            for (int j = 0; j < enemyUnit.defendTimings[i].timingWeight; j++)
+            {
+                enemyTimings.Add(enemyUnit.defendTimings[i]);
+                Debug.Log("Added Timing: " + enemyUnit.defendTimings[i].timing.name);
+            }
+        }
 
         enemyHUD.SetHUD(enemyUnit);
 
@@ -425,10 +434,12 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         {
             yield break;
         }
-        StartCoroutine(EnemyAttack());
+        int randomNumber = Random.Range(0, enemyTimings.Count - 1);
+        Debug.Log("RandomIndex = " + randomNumber);
+        StartCoroutine(EnemyAttack(randomNumber));
     }
 
-    IEnumerator EnemyAttack()
+    IEnumerator EnemyAttack(int attackIndex)
     {
         #region old
         /*
@@ -477,7 +488,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         rolledNumber = 0;
         */
         #endregion old
-        GameObject timingGO = Instantiate(enemyUnit.defendTiming, actions.transform.parent);
+        GameObject timingGO = Instantiate(enemyTimings[attackIndex].timing, actions.transform.parent);
         TimingController timingCon = timingGO.GetComponent<TimingController>();
         timingCon.startTiming(true);
         yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) || !timingCon.isActivated));

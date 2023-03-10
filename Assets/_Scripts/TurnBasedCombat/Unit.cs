@@ -2,6 +2,8 @@ using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
 
 
 public enum statusEffects
@@ -13,13 +15,19 @@ public enum statusEffects
     
 }
 
+[System.Serializable]
+public class DefendTimings
+{
+    public GameObject timing = null;
+    public int timingWeight = 1;
+}
+
 public class Unit : MonoBehaviour
 {
     public string unitName;
     private Animator anim;
 
-    [Header("Timing Parameters")]
-    public GameObject defendTiming;
+    public DefendTimings[] defendTimings = new DefendTimings[1];
 
     [Header("Health Parameters")]
     public int maxHP;

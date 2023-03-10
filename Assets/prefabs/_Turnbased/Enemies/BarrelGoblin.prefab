@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Drunk Gob
-  defendTiming: {fileID: 6226760860064331139, guid: c617679628397044ca348a42771d79c8, type: 3}
+  defendTimings:
+  - timing: {fileID: 6226760860064331139, guid: c617679628397044ca348a42771d79c8, type: 3}
+    timingWeight: 1
   maxHP: 60
   curHP: 60
   stunnedImmune: 0

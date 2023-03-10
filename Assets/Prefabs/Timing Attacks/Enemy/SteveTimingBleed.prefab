@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 2255684090484834773}
   - component: {fileID: 8143543072363298553}
   m_Layer: 5
-  m_Name: SteveTiming
+  m_Name: SteveTimingBleed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,20 +306,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   criticalZone: {fileID: 817889629082842659}
-  criticalZoneStart: 0.8
+  criticalZoneStart: 0.7
   criticalZoneEnd: 0.9
   successZone: {fileID: 1163356619705706574}
-  successZoneStart: 0.3
-  successZoneEnd: 0.5
+  successZoneStart: 0.5
+  successZoneEnd: 0.9
   currentPosition: 0
+  cursorSpeed: 1.1
   isActivated: 1
   oneShot: 0
   reverse: 0
   regularHitStatus: 0
   hitStatusStacks: 0
   damage: 3
-  criticalHitStatus: 3
-  criticalStatusStacks: 6
+  criticalHitStatus: 2
+  criticalStatusStacks: 3
   CritDamage: 6
 --- !u!1 &7036162786649031975
 GameObject:
