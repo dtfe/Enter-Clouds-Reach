@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System.IO.Pipes;
 using UnityEngine;
 using System.Linq;
@@ -14,6 +15,17 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     public GameObject successEvent;
     public GameObject failedEvent;
 
+    enum Ability
+    {
+    None,
+    Brawn,
+    Agility,
+    Endurance,
+    Knowledge,
+    Wisdom,
+    Charm
+    }
+    [SerializeField]Ability Abilities =  new Ability();
     public void StartCheck()
     {
         ps = FindObjectOfType<CharacterSheet>().playerStats;
@@ -46,28 +58,31 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     {
         if(ps.Stats.Values.Count != 0)
         {
-            switch(ability.ToLower())
+            switch(Abilities)
             {
-            case "brawn":
+            case Ability.None:
+                Debug.Log("Choose an actual ability please");
+                break;
+            case Ability.Brawn:
                 modNumber = rolledNumber+ ps.GetBonus("BrawnText");
                 break;
-            case "agility":
+            case Ability.Agility:
                 modNumber = rolledNumber+ ps.GetBonus("AgilityText");
                 break;
-            case "endurance":
+            case Ability.Endurance:
                 modNumber = rolledNumber+ ps.GetBonus("EnduranceText");
                 break; 
-            case "wisdom":
+            case Ability.Wisdom:
                 modNumber = rolledNumber+ ps.GetBonus("WisdomText");
                 break;
-            case "knowledge":
+            case Ability.Knowledge:
                 modNumber = rolledNumber+ ps.GetBonus("KnowledgeText");
                 break;
-            case "charm":
+            case Ability.Charm:
                 modNumber = rolledNumber+ ps.GetBonus("CharmText");
                 break;
             default:
-                Debug.Log("You spell bad");
+                Debug.Log("You smell");
                 break;         
             }
         }

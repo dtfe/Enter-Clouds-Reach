@@ -302,7 +302,7 @@ PrefabInstance:
     - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: winEvent
       value: 
-      objectReference: {fileID: 2900739887549494091, guid: 7e8ff447467436547a0d1362210a09f2, type: 3}
+      objectReference: {fileID: 2900739887549494091, guid: 8dc86c39edb4c2d48938b91f700cc7e4, type: 3}
     - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: enemyPrefab
       value: 
@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
