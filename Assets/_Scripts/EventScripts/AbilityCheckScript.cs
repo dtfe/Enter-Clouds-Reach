@@ -5,7 +5,7 @@ using System.Linq;
 
 public class AbilityCheckScript : MonoBehaviour, IReceiveResult
 {
-    PlayerStats ps;
+    public PlayerStats ps;
     public int difficulty;
     public string ability;
 
