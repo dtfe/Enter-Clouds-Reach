@@ -15,6 +15,7 @@ public class BattleLoader : MonoBehaviour
 
     private void Awake()
     {
+        
         if (battleLoaderInstance == null)
         {
             battleLoaderInstance = this;
@@ -22,6 +23,20 @@ public class BattleLoader : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+     void Update()
+    {
+        if(canvas == null)
+        {
+            GameObject[] goArr = GameObject.FindGameObjectsWithTag("Exploration");
+            foreach(GameObject go in goArr)
+            {
+                if(go.TryGetComponent<Canvas>(out canvas))
+                {
+                    canvas = go.GetComponent<Canvas>();
+                }
+            }
         }
     }
 
@@ -48,6 +63,7 @@ public class BattleLoader : MonoBehaviour
         {
             BS.ClearEnemies();
             GetComponent<ModeSwap>().ChangeToExploration();
+            
             Instantiate(winEvent, canvas.transform);
         }
         else
