@@ -35,6 +35,10 @@ public class CharacterCreator : MonoBehaviour
             {
                 playerStats.Stats.Add(statText[i].name,baseStat);
             }
+            else
+            {
+                playerStats.Stats[statText[i].name] = baseStat;
+            }
         }
         int j = 0;
         foreach(Trait t in traits)
