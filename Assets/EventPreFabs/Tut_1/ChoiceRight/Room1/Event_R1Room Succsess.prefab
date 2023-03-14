@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -468,16 +469,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: 'You managed to sneak past the goblins and note wake them up. You found
-        a note: "there is a key bellow the note for the chest you guys have"
+      value: 'You manage to tiptoe past the sleeping goblins and spot a note lying
+        on a nearby shelf. As you pick it up, you notice that there''s a key attached
+        to it. The note reads: "The key unlocks the chest in this room. It contains
+        something that might aid you on your journey."
 
-        U
-        take the key and open a chest, you get a pair of boots which give you +1
-        agility.'
+        
+
+        With
+        a sense of anticipation, you insert the key into the chest''s lock and turn
+        it. The lid creaks open, revealing a pair of boots resting inside. As you
+        examine them, you notice that they''re finely crafted and seem to be enchanted.
+        You slip them on and feel a sudden boost in your agility - these boots provide
+        a +1 agility bonus.'
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 36.85
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
