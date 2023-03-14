@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2900739887549494090}
   - component: {fileID: 2900739887549494089}
   m_Layer: 5
-  m_Name: Event_L3
+  m_Name: Event_S1_Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,13 +63,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2900739887549494090}
     m_Modifications:
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: ability
+      value: knowledge
+      objectReference: {fileID: 0}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: Abilities
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: difficulty
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: failedEvent
+      value: 
+      objectReference: {fileID: 2900739887549494091, guid: 09309ab622881ae4c96f657ae3693f5a, type: 3}
+    - target: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: successEvent
+      value: 
+      objectReference: {fileID: 2900739887549494091, guid: b0eed9fcedb662c41bcaa614185cf27b, type: 3}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -78,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8406435745969841221}
+      objectReference: {fileID: 717633254614638791}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -89,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: movePlayerToPoint
+      value: AbilityCheck
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -97,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ButtonScript, Assembly-CSharp
+      value: AbilityCheckScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -109,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Room_L3
+      value: Tut_L2
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -209,9 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'I will keep going
-
-'
+      value: 'Leave the room '
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -259,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Tut_Ent2LFight
+      value: Tut_S2
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -271,12 +289,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060405332549, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'I will enter the room
-
-'
+      value: 'Search the room '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+--- !u!114 &717633254614638791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 934220649286113508, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+  m_PrefabInstance: {fileID: 361008285645060131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4f3815d7dcf6841a5ef159f5258b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2900739888398158115 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3261715059820196096, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
@@ -303,17 +330,6 @@ MonoBehaviour:
   stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
---- !u!114 &8406435745969841221 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8190684164886174822, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
-  m_PrefabInstance: {fileID: 361008285645060131}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83efeb7b256eba44bb7accd24f0b5d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8931245113917381243 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
@@ -434,24 +450,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: 'As you move forward, the path splits into two: one path leads straight
-        ahead, while the other veers off to the right. You can hear the faint sound
-        of something moving in the distance, but you can''t quite make out what it
-        is.
-
-
-        You weigh your options, but the sound coming from the right
-        path could mean that there is something valuable or dangerous there.
-
-
-        As
-        you contemplate your next move, you notice that the air around you is growing
-        colder, and a chill runs down your spine. It''s as if something ominous is
-        lurking just beyond your sight.'
+      value: "You enter the lightly dimmed room and see nothing to special at first
+        glance. \n\nYou wonder if you should search the room more or if you should
+        leave."
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 20.4
+      value: 36.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}

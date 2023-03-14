@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -453,12 +454,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: 'As you keep going further you get to a long path. You look down the
-        dark path and take a big breath. '
+      value: As you proceed down the long path, the darkness envelops you, making
+        it difficult to see. You take a deep breath, bracing yourself for whatever
+        may come your way.
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 61.7
+      value: 46.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}

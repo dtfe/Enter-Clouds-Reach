@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -431,13 +432,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: As you get further into the tower you see a path that branches off to
-        the left. There is also the option to keep going straight forward into the
-        darkness.
+      value: You defeat the goblin and take a moment to catch your breath. As you
+        survey your surroundings, you notice a fork in the path ahead. To the left,
+        the path seems to lead deeper into the darkness, while the path straight
+        ahead continues on.
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 46.15
+      value: 36.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
