@@ -242,13 +242,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: ChestGoblin
-  defendTiming: {fileID: 6226760860064331139, guid: 359c314ff7dde2749afd534395bbef72, type: 3}
+  defendTimings:
+  - timing: {fileID: 0}
+    timingWeight: 1
   maxHP: 15
   curHP: 15
   stunnedImmune: 0
   stunned: 0
   bleedImmune: 1
-  bleed: 3
+  bleed: 0
   poisonImmune: 0
   poison: 0
   ps: {fileID: 0}
@@ -568,9 +570,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body
       objectReference: {fileID: 0}
-    - target: {fileID: 2781367451477805901, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+    - target: {fileID: 1844401161983775111, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781367451477805901, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
       propertyPath: m_RootOrder
