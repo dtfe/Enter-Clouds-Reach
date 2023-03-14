@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -473,12 +474,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: A goblin is standing with his head down in a barrel. But he notices
-        you and jumps on you.
+      value: 'As you step into the room, you notice a faint flicker of light coming
+        from a torch on the wall. The rest of the room is shrouded in darkness, with
+        only the occasional outline of a barrel or shelf barely visible. Suddenly,
+        you hear a rustling noise and turn to see a small goblin emerge. It has its
+        head down in a barrel. It looks up and locks eyes with you before letting
+        out a loud screech and charging towards you.
+
+        
+
+        You have
+        no choice but to fight the goblin to defend yourself. '
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 61.7
+      value: 25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
