@@ -1,7 +1,7 @@
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine.UIElements;
-using UnityEditor.UIElements;
 
 [CustomPropertyDrawer(typeof(DefendTimings))]
 public class DefendTimings_PropertyDrawer : PropertyDrawer
@@ -41,3 +41,4 @@ public class DefendTimings_PropertyDrawer : PropertyDrawer
     }
 
 }
+#endif
