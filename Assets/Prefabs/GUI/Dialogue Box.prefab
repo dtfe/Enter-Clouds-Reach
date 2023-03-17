@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 8505149221752108367}
+  dialogueText: {fileID: 8505149221957665954}
   animationInCurve:
     serializedVersion: 2
     m_Curve:
@@ -76,6 +77,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  animationInLength: 1
   animationOutCurve:
     serializedVersion: 2
     m_Curve:
@@ -100,7 +102,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dialogueText: {fileID: 8505149221957665954}
+  animationOutLength: 1
+  dialogueTypeSpeed: 0.025
 --- !u!1 &8505149221957665952
 GameObject:
   m_ObjectHideFlags: 0
