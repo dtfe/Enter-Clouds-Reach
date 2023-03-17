@@ -41,27 +41,6 @@ public class DieRoller : MonoBehaviour
 
     public GameObject rolledDie;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //RollDie(dFaces.d4);
-            //RollDie(dFaces.d6);
-            //RollDie(dFaces.d8);
-            //RollDie(dFaces.d10);
-            //RollDie(dFaces.d12);
-            RollDie(dFaces.d20);
-        }
-    }
-
-
     /// <summary>
     /// Rolls a die identified by the dFaces enum parameter
     /// </summary>
