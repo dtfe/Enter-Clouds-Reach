@@ -27,6 +27,7 @@ public class TorchFlicker : MonoBehaviour
     // Saves us iterating every time we update, we just change by the delta
     Queue<float> smoothQueue;
     float lastSum = 0;
+    VolumetricLights.VolumetricLight VL;
 
 
     /// <summary>
@@ -48,6 +49,8 @@ public class TorchFlicker : MonoBehaviour
         {
             light = GetComponent<Light>();
         }
+
+        VL = GetComponent<VolumetricLights.VolumetricLight>();
     }
 
     void Update()
@@ -67,7 +70,11 @@ public class TorchFlicker : MonoBehaviour
         lastSum += newVal;
 
         // Calculate new smoothed average
-        light.intensity = lastSum / (float)smoothQueue.Count;
+        light.intensity = Mathf.Max(lastSum / (float)smoothQueue.Count, 0.01f);
+        if (VL != null)
+        {
+            VL.brightness = 1 / light.intensity;
+        }
     }
 
 }
