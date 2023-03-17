@@ -1,5 +1,4 @@
-using System.Runtime.InteropServices;
-using System.IO.Pipes;
+
 using UnityEngine;
 using System.Linq;
 
@@ -31,6 +30,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
         ps = FindObjectOfType<CharacterSheet>().playerStats;
         FindObjectOfType<RollManager>().rollAbilityCheck(gameObject, ability);
         FindObjectOfType<UiAnimatorFinal>().clearingNow(false);
+        
     }
 
     public void ReceiveResult()
@@ -48,7 +48,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
         Canvas explorationCanvas = null;
         foreach(Canvas i in canvases)
         {
-            if (i.CompareTag("ExplorationUI")) explorationCanvas = i;
+            if (i.CompareTag("Exploration")) explorationCanvas = i;
         }
         GameObject spawnedGO = Instantiate(eventToSpawn, explorationCanvas.transform);
         spawnedGO.transform.position = spawnedGO.GetComponent<UiAnimatorFinal>().startingPos;

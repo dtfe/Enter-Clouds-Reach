@@ -41,11 +41,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     Unit playerUnit;
     Unit enemyUnit;
-
-    private bool hasClicked;
-    private int rolledNumber = 0;
-    private bool criticalHit = false;
-    private bool criticalMiss = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -93,9 +89,6 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
         enemyHUD.SetHUD(enemyUnit);
 
-        hasClicked = false;
-        rolledNumber = 0;
-
         yield return new WaitForSeconds(0f);
 
         state = BattleState.PLAYERTURN;
@@ -140,7 +133,6 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     public void Attack(int attackNumber)
     {
-        rolledNumber = 0;
         dialogue.text = playerUnit.unitName + " is attacking " + enemyUnit.unitName + "!";
         //FindObjectOfType<RollManager>().rollAttack(gameObject);
         actions.SetActive(false);
@@ -628,7 +620,6 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     public void ReceiveRoll(int roll)
     {
         Debug.Log("Received Result");
-        rolledNumber = roll;
     }
 
     public void ClearEnemies()

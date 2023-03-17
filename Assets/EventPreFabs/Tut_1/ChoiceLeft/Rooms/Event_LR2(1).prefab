@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -467,16 +468,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: 'You searched the room and found a note in the corner of the room with
-        alot of dust on it. Read note
+      value: 'As you move closer to the barrel, you notice a piece of paper stuck
+        behind it, almost as if it was deliberately hidden. You reach out and carefully
+        pull it out from behind the barrel, the dust that had accumulated on it floats
+        up into the air, revealing a message written in faded ink:
 
-        "The darkness began to take over,
-        we tried to run further down the tower but it was to late. Whoever is reading
-        this please be careful. This tower isnt like it used to be."'
+        
+
+        "Be
+        wary, for the darkness has taken hold of this tower. If you continue down
+        this path, you may never return. Turn back now before it''s too late."
+
+        
+
+        The
+        note sends a chill down your spine'
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 36.85
+      value: 22.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
