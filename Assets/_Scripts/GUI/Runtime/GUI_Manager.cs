@@ -19,6 +19,10 @@ namespace EnterCloudsReach.GUI
             GameObject obj = Instantiate(Resources.Load<GameObject>(GUI_PREFAB));
             obj.name = "GameGUI";
 
+            // This is here to avoid it popping up in the build
+            Debug.LogError("Remove the line below to reveal the GUI");
+            obj.GetComponentInChildren<Canvas>().gameObject.SetActive(false);
+
             Manager = obj.GetComponentInChildren<GUI_Manager>();
             DialogueBox = obj.GetComponentInChildren<GUI_DialogueBox>();
         }
