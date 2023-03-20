@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2900739887549494090}
   - component: {fileID: 2900739887549494089}
   m_Layer: 5
-  m_Name: Event_F1
+  m_Name: L2FightWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,6 +63,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2900739887549494090}
     m_Modifications:
+    - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41.4307
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 31.0297
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 479.28467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261715059143938980, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -109.48517
+      objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -209,9 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'Walk past the room and keep going.
-
-'
+      value: Keep going
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -259,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Tut_S2
+      value: L3
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -269,9 +283,23 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3261715060390315087, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261715060390315087, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015259
+      objectReference: {fileID: 0}
     - target: {fileID: 3261715060405332549, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: Enter the lighly dimmed room
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: enemyPrefab
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
@@ -298,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbOfActivations: 0
+  stopHere: 0
   clearEvents: 1
   nextEvent: {fileID: 0}
 --- !u!114 &8406435745969841221 stripped
@@ -431,12 +460,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: You keep going further up the hallway. In the darkness you can see a
-        torch lighting up a little room to your right.
+      value: "You beat the guard and was about to leave, right before you left you
+        saw a glancing sight from the guards pocket. You open the pocket and get
+        a key. \nYou wonder where the keys could be used and look around but dont
+        see anything here."
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 54.7
+      value: 36.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
