@@ -5101,7 +5101,7 @@ Transform:
   m_GameObject: {fileID: 5975266007569088041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.45, z: -0}
-  m_LocalScale: {x: 0.61460197, y: 0.6730426, z: 0.6233773}
+  m_LocalScale: {x: 0.6191621, y: 0.6730427, z: 0.6191621}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 891097924508788038}
@@ -5186,8 +5186,8 @@ MonoBehaviour:
   profileSync: 0
   useCustomBounds: 0
   bounds:
-    m_Center: {x: 10.445648, y: 30.981413, z: 43.580177}
-    m_Extent: {x: 2.9449534, y: 1.9999998, z: 2.4958847}
+    m_Center: {x: -9.936814, y: 30.981325, z: 61.255035}
+    m_Extent: {x: 2.7180247, y: 2.0000002, z: 2.7180247}
   boundsInLocalSpace: 0
   profile: {fileID: 11400000, guid: b30e545885261414487c21200fc4c4de, type: 2}
   customRange: 2
@@ -5208,7 +5208,7 @@ MonoBehaviour:
   raymarchPreset: 20
   raymarchQuality: 4
   raymarchMinStep: 0.2
-  raymarchMaxSteps: 200
+  raymarchMaxSteps: 80
   jittering: 1
   dithering: 0.1
   useBlueNoise: 1
@@ -5257,7 +5257,7 @@ MonoBehaviour:
   dustDistanceAttenuation: 15
   dustAutoToggle: 0
   dustDistanceDeactivation: 70
-  enableShadows: 1
+  enableShadows: 0
   shadowIntensity: 0.9
   shadowTranslucency: 0
   shadowTranslucencyIntensity: 1
@@ -5368,7 +5368,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7439570502661365133}
-  m_LocalRotation: {x: -0.1750559, y: 0.48570472, z: -0.09996404, w: -0.8505607}
+  m_LocalRotation: {x: -0.11441952, y: 0.6146597, z: -0.09072868, w: -0.77515805}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5383,7 +5383,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7439570502661365133}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
