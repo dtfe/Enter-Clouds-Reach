@@ -8,7 +8,6 @@ public class RollManager : MonoBehaviour
     private DieRoller DR;
     public PlayerStats ps;
     private int rolledNumber;
-    private string rollType;
     private int mod;
 
     private void Start()
@@ -20,7 +19,6 @@ public class RollManager : MonoBehaviour
     public void rollAttack(GameObject requestingSystem)
     {
         requestingEvent = requestingSystem;
-        rollType = "attack";
         if (DR == null)
         {
             DR = FindObjectOfType<DieRoller>();
@@ -31,7 +29,6 @@ public class RollManager : MonoBehaviour
     public void rollAbilityCheck(GameObject rqEvent, string ability)
     {
         requestingEvent = rqEvent;
-        rollType = "ability";
         if (DR == null)
         {
             DR = FindObjectOfType<DieRoller>();
@@ -42,7 +39,6 @@ public class RollManager : MonoBehaviour
     public void rollDamage(GameObject requestingSystem, DieRoller.dFaces numbOfFaces)
     {
         requestingEvent = requestingSystem;
-        rollType = "damage";
         if (DR == null)
         {
             DR = FindObjectOfType<DieRoller>();
