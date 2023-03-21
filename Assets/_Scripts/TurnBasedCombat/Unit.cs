@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,10 +41,30 @@ public class Unit : MonoBehaviour
     public bool poisonImmune;
     public int poison;
     public PlayerStats ps;
+    public bool player;
+    CombatSFX unitNoise;
+    float t;
+    float randT;
 
     private void Start()
     {
+        unitNoise = gameObject.GetComponent<CombatSFX>();
+        t = 0;
+        randT = Random.Range(1,11);
         anim = GetComponentInChildren<Animator>();
+    }
+    void Update()
+    {
+        if(!player)
+        {
+            t += Time.deltaTime;
+            if (!unitNoise.CheckIfAudioPlay && t >= randT)
+            {
+                unitNoise.AmbientNoises();
+                t = 0;
+                randT = Random.Range(20, 30);
+            }
+        }
     }
 
     public int takeDamage(int damage)
@@ -81,8 +100,5 @@ public class Unit : MonoBehaviour
         GetComponentInChildren<BattleHUD>().refreshStatus(this);
     }
 
-    public void animationStart(string animName)
-    {
-        anim.SetTrigger(animName);
-    }
+    public void animationStart(string animName) => anim.SetTrigger(animName);
 }

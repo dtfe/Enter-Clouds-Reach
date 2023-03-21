@@ -41,13 +41,14 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
     Unit playerUnit;
     Unit enemyUnit;
+    CombatSFX enemyCSFX;
+    CombatSFX playerCSFX;
     
 
     // Start is called before the first frame update
     void Start()
     {
         rm = FindObjectOfType<RollManager>();
-
         if (startBattleOnStart)
         {
             StartCoroutine(SetupBattle());
@@ -66,6 +67,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         if (playerUnit == null)
         {
             GameObject playerGO = Instantiate(playerPrefab, playerSpawn);
+            playerCSFX = playerGO.GetComponent<CombatSFX>();
             playerUnit = playerGO.GetComponent<Unit>();
             playerHUD = playerGO.transform.Find("HUD").GetComponent<BattleHUD>();
             //This wont work with saving
@@ -77,6 +79,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyUnit = enemyGO.GetComponent<Unit>();
+        enemyCSFX = enemyGO.GetComponent<CombatSFX>();
         enemyHUD = enemyGO.transform.Find("HUD").GetComponent<BattleHUD>();
         for (int i = 0; i < enemyUnit.defendTimings.Length; i++)
         {
@@ -190,6 +193,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         {
             case (HitTiming.Miss):
                 dialogue.text = "You missed your attack!";
+                enemyCSFX.PlayHitAudio(hitStatus);
                 yield return new WaitForSeconds(1);
                 break;
 
@@ -198,6 +202,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
                 dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.damage) + " damage!";
+                enemyCSFX.PlayHitAudio(hitStatus);
                 yield return new WaitForSeconds(1);
                 enemyUnit.addStatus(timingCon.regularHitStatus, timingCon.hitStatusStacks);
                 yield return new WaitForSeconds(1);
@@ -207,6 +212,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 dialogue.text = "Critical Hit!";
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
+                enemyCSFX.PlayHitAudio(hitStatus);
                 dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.CritDamage) + " damage!";
                 yield return new WaitForSeconds(1);
                 enemyUnit.addStatus(timingCon.criticalHitStatus, timingCon.criticalStatusStacks);
@@ -490,6 +496,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         {
             case (HitTiming.Miss):
                 dialogue.text = "The enemy critically hit!";
+                playerCSFX.PlayHitAudio(HitTiming.Critical);
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
                 dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.CritDamage) + " damage!";
@@ -499,6 +506,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
             case (HitTiming.Hit):
                 dialogue.text = "The attack scraped you!";
+                playerCSFX.PlayHitAudio(HitTiming.Hit);
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
                 dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.damage) + " damage!";
@@ -508,6 +516,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
 
             case (HitTiming.Critical):
                 dialogue.text = "You blocked most of the enemy's attack!";
+                playerCSFX.PlayHitAudio(HitTiming.Miss);
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
                 dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.damage / 2) + " damage!";
