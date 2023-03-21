@@ -22,23 +22,5 @@ namespace EnterCloudsReach.GUI
             Manager = obj.GetComponentInChildren<GUI_Manager>();
             DialogueBox = obj.GetComponentInChildren<GUI_DialogueBox>();
         }
-
-        public static void QueUpDialogue(string[] Text, CallbackDelegate Callback = null)
-        {
-            DialogueBox.QueUpText(Text, Callback);
-        }
-
-        public static void QueUpDialogue(List<string> Text, CallbackDelegate Callback = null)
-        {
-            QueUpDialogue(Text.ToArray(), Callback);
-        }
-
-        public static void QueUpDialogue(string Text, CallbackDelegate Callback = null)
-        {
-            string[] text = new string[1];
-            text[0] = Text;
-
-            QueUpDialogue(text, Callback);
-        }
     }
 }

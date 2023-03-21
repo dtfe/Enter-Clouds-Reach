@@ -357,6 +357,104 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &648255567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648255569}
+  - component: {fileID: 648255568}
+  m_Layer: 0
+  m_Name: Choice3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &648255568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648255567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Choice3
+  eventText:
+  - Choice3
+  eventChoices:
+  - {fileID: 0}
+--- !u!4 &648255569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648255567}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 992532159}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &675798153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675798155}
+  - component: {fileID: 675798154}
+  m_Layer: 0
+  m_Name: Choice2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &675798154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675798153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Choice2
+  eventText:
+  - Choice2
+  eventChoices:
+  - {fileID: 0}
+--- !u!4 &675798155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675798153}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 992532159}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &748955069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -587,6 +685,9 @@ Transform:
   m_Children:
   - {fileID: 1226098255}
   - {fileID: 1342829061}
+  - {fileID: 1127732814}
+  - {fileID: 675798155}
+  - {fileID: 648255569}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -603,6 +704,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingEvent: {fileID: 1226098256}
+--- !u!1 &1127732812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127732814}
+  - component: {fileID: 1127732813}
+  m_Layer: 0
+  m_Name: Choice1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1127732813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127732812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Choice1
+  eventText:
+  - Choice1
+  eventChoices:
+  - {fileID: 0}
+--- !u!4 &1127732814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127732812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 992532159}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1226098254
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,13 +794,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1226098254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91dcaeaa4523780438e4dd5712413d69, type: 3}
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Name
+  eventName: Intro event
   eventText:
-  - This is an Event!
-  - It can have multiple lines!
+  - This is a TextEvent!
+  - It can have multiple lines, but there are no choises!
   eventChoices:
   - {fileID: 1342829062}
 --- !u!1 &1324653760
@@ -792,14 +942,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342829060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78d9dc93066a2e459c87de2bda89b31, type: 3}
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Name
+  eventName: First choise event
   eventText:
-  - This is an Event!
-  - It can have multiple lines!
-  eventChoices: []
+  - This is a ChoiceEvent!
+  - It can have multiple lines, and there will be 3 choises at the end!
+  eventChoices:
+  - {fileID: 1127732813}
+  - {fileID: 675798154}
+  - {fileID: 648255568}
 --- !u!1 &1346048700
 GameObject:
   m_ObjectHideFlags: 0

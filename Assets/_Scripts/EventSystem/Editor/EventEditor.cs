@@ -58,7 +58,7 @@ namespace EnterCloudsReach.EventSystem
 
             if (EditorGUI.EndChangeCheck())
             {
-                Undo.RecordObject(target, "Modified EventClass in " + script.gameObject.name);
+                //Undo.RecordObject(target, "Modified EventClass in " + script.gameObject.name);
             }
         }
 
@@ -66,6 +66,10 @@ namespace EnterCloudsReach.EventSystem
         {
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Event Name", GUILayout.Width(100));
+            if (script.eventName == "{ This Is A Specific Name To Be Replaced By Editor (DoNotRemove!) }")
+            {
+                script.eventName = script.gameObject.name;
+            }
             script.eventName = EditorGUILayout.TextField(script.eventName);
             EditorGUILayout.LabelField("Text Boxes", GUILayout.Width(100));
             int boxes = Mathf.Max(EditorGUILayout.IntField(script.eventText.Length), 1);
@@ -77,7 +81,7 @@ namespace EnterCloudsReach.EventSystem
             }
             for (int i = 0; i < script.eventText.Length; i++)
             {
-                script.eventText[i] = EditorGUILayout.TextArea(script.eventText[i]);
+                script.eventText[i] = EditorGUILayout.TextField(script.eventText[i]);
             }
 
             EditorGUILayout.BeginHorizontal();
@@ -85,11 +89,13 @@ namespace EnterCloudsReach.EventSystem
 
             if (GUILayout.Button("Add Event Choice") && script.eventChoices.Length < 5)
             {
+                Undo.RecordObject(target, "Added Event Choice in " + script.gameObject.name);
                 script.eventChoices = ResizeArray(script.eventChoices, script.eventChoices.Length + 1);
             }
 
             if (GUILayout.Button("Remove Event Choice") && script.eventChoices.Length > 1)
             {
+                Undo.RecordObject(target, "Removed Event Choice in " + script.gameObject.name);
                 script.eventChoices = ResizeArray(script.eventChoices, script.eventChoices.Length - 1);
             }
 

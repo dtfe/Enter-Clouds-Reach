@@ -6,9 +6,9 @@ namespace EnterCloudsReach.EventSystem
 {
     public abstract class EventClass : MonoBehaviour
     {
-        [HideInInspector] public string eventName = "Name";
+        [HideInInspector] public string eventName = "{ This Is A Specific Name To Be Replaced By Editor (DoNotRemove!) }";
         [HideInInspector] public string[] eventText = { "This is an Event!", "It can have multiple lines!" };
-        [HideInInspector] public EventClass[] eventChoices = null;
+        [HideInInspector] public EventClass[] eventChoices = new EventClass[0];
 
         public abstract void StartEvent();
         public abstract void StartChoice();
