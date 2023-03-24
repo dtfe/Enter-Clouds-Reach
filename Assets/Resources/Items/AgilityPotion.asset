@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 862fb487f7d0e4a448ce00df39d499b0, type: 3}
-  m_Name: Shortsword
+  m_Name: AgilityPotion
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: Shortsword
+  id: 1
+  itemName: Agility Potion
   weight: 1
-  value: 1
-  icon: {fileID: 21300000, guid: 1542f5463740bc94a9a032d8dd2657b3, type: 3}
+  value: 0
+  icon: {fileID: 21300000, guid: 6f40caaf35ed71949abee4ac3ac81ad3, type: 3}
   notes: 
-  consumableUses: 0
-  affectStats: 1
-  Brawn: 2
+  consumableUses: 3
+  affectStats: 0
+  Brawn: 0
   Agility: 0
   Endurance: 0
   Knowledge: 0
   Wisdom: 0
   Charm: 0
-  itemClass: 3
+  itemClass: 2
