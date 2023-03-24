@@ -24,8 +24,8 @@ public class CharacterCreator : MonoBehaviour
     void Start()
     { 
         Trait[] traits = playerStats.traits;
-        ACText = GameObject.Find("AC").GetComponent<TMP_Text>();
-        healthText = GameObject.Find("Health").GetComponent<TMP_Text>();
+        //ACText = GameObject.Find("AC").GetComponent<TMP_Text>();
+        //healthText = GameObject.Find("Health").GetComponent<TMP_Text>();
         int statLength = statText.Length;
         
         for(int i = 0; i < statLength;i++)
@@ -48,13 +48,13 @@ public class CharacterCreator : MonoBehaviour
         }
        
     }
-    void Update()
-    {
-        setHealth();
-        setAc();
-    }
+    // void Update()
+    // {
+    //     setHealth();
+    //     setAc();
+    // }
     public void posIncrement(TMP_Text posText)
-    {setHealth();
+    {//setHealth();
         if(playerStats.Stats.ContainsKey(posText.name) && playerStats.Stats.Values.Sum() < maxTotal && playerStats.Stats[posText.name] < maxStat)
         {
             
@@ -63,7 +63,7 @@ public class CharacterCreator : MonoBehaviour
         }
     }
     public void negIncrement(TMP_Text negText)
-    {   setHealth();
+    {   //setHealth();
         if(playerStats.Stats.ContainsKey(negText.name) && playerStats.Stats[negText.name] > minStat)
         {
             
@@ -72,22 +72,22 @@ public class CharacterCreator : MonoBehaviour
         }
     }
     
-    void setHealth()
-    {
-        int health = playerStats.GetBonus("EnduranceText")*10;
-        if(health <= 0)
-        {
-            health = 10;
-        }
-        playerStats.health = health;
-        healthText.SetText(health.ToString());
-    }
-    void setAc()
-    {
-        int Ac = 10 + playerStats.GetBonus("AgilityText");
-        playerStats.AC = Ac;
-        ACText.SetText(Ac.ToString());
-    }
+//    void setHealth()
+//     {
+//         int health = playerStats.GetBonus("EnduranceText")*10;
+//         if(health <= 0)
+//         {
+//             health = 10;
+//         }
+//         playerStats.health = health;
+//         healthText.SetText(health.ToString());
+//     }
+    // void setAc()
+    // {
+    //     int Ac = 10 + playerStats.GetBonus("AgilityText");
+    //     playerStats.AC = Ac;
+    //     ACText.SetText(Ac.ToString());
+    // }
     public void Trait(string traitName)
     {   
         Button = GameObject.Find(traitName);

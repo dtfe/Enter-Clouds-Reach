@@ -20,7 +20,7 @@ namespace EnterCloudsReach.GUI
             obj.name = "GameGUI";
 
             // This is here to avoid it popping up in the build
-            Debug.LogError("Remove the line below to reveal the GUI");
+            Debug.LogWarning("Remove the line below to reveal the GUI");
             obj.GetComponentInChildren<Canvas>().gameObject.SetActive(false);
 
             Manager = obj.GetComponentInChildren<GUI_Manager>();

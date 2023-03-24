@@ -55,7 +55,7 @@ public class TimingController : MonoBehaviour
         cursor = transform.Find("Cursor").gameObject;
 
         DifficultyController dif = FindObjectOfType<DifficultyController>();
-        if (dif.curMod != 0)
+        if (dif != null && dif.curMod != 0)
         {
             float successMid = successZoneEnd - successZoneStart;
             float criticalMid = criticalZoneEnd - criticalZoneStart;
