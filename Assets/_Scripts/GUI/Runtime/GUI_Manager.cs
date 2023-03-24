@@ -21,6 +21,7 @@ namespace EnterCloudsReach.GUI
 
             Manager = obj.GetComponentInChildren<GUI_Manager>();
             DialogueBox = obj.GetComponentInChildren<GUI_DialogueBox>();
+            DontDestroyOnLoad(obj);
         }
     }
 }
