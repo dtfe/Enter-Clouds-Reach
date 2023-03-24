@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TestScript : MonoBehaviour
+public class MainMenuController : MonoBehaviour
 {
     public void PlayGame()
     {
         SceneManager.LoadScene("CHARACTER_CREATOR");
+    }
+    public void EnterScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()
