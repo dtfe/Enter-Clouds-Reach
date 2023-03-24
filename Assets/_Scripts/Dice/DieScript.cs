@@ -53,7 +53,6 @@ public class DieScript : MonoBehaviour
             isGrounded = false;
         }
 
-        Debug.Log(isRolling + "  :  " + isGrounded + "  :  " + hasBeenRolled);
         if (isRolling && isGrounded && hasBeenRolled)
         {
             rolledNumber = GetResult();
