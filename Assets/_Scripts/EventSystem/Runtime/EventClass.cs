@@ -11,14 +11,13 @@ namespace EnterCloudsReach.EventSystem
         [HideInInspector] public EventClass[] eventChoices = new EventClass[0];
 
         public abstract void StartEvent();
-        public abstract void StartChoice();
 
-        public void SelectNextEvent(int NextEventID)
+        public void EndEvent(int NextEventID)
         {
-            SelectNextEvent(eventChoices[NextEventID]);
+            EndEvent(eventChoices[NextEventID]);
         }
 
-        public void SelectNextEvent(EventClass NextEvent)
+        public void EndEvent(EventClass NextEvent)
         {
             NextEvent.StartEvent();
         }

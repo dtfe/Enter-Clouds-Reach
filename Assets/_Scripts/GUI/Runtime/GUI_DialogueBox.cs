@@ -29,7 +29,7 @@ namespace EnterCloudsReach.GUI
         private List<GUI_DialogueEvent> events = new List<GUI_DialogueEvent>();
         public int eventReturnIndex = -1;
 
-        private float timer = 0;
+        private float timer = 100;
         private bool open = false;
         private bool pressed = false;
 
