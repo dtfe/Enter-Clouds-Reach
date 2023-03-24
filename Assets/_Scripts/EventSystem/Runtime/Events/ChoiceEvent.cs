@@ -5,15 +5,10 @@ using UnityEngine;
 
 namespace EnterCloudsReach.EventSystem
 {
+    [Event(true, 5)]
     public class ChoiceEvent : EventClass
     {
-
         public override void StartEvent()
-        {
-            StartChoice();
-        }
-
-        public override void StartChoice()
         {
             string[] commands = new string[eventChoices.Length];
             for (int i = 0; i < eventChoices.Length; i++)
@@ -21,7 +16,7 @@ namespace EnterCloudsReach.EventSystem
                 commands[i] = eventChoices[i].eventName;
             }
 
-            GUI_Manager.DialogueBox.QueUpText(eventText, commands, SelectNextEvent);
+            GUI_Manager.DialogueBox.QueUpText(eventText, commands, EndEvent);
         }
     }
 }

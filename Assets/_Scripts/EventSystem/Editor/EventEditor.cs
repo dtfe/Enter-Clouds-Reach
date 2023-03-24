@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Reflection;
 
 namespace EnterCloudsReach.EventSystem
 {
@@ -26,10 +27,10 @@ namespace EnterCloudsReach.EventSystem
             {
                 if ("m_Script" == property.propertyPath)
                 {
-                    GUI.enabled = false;
+                    UnityEngine.GUI.enabled = false;
                     EditorGUILayout.PropertyField(property, true);
                     EditorGUILayout.Space();
-                    GUI.enabled = true;
+                    UnityEngine.GUI.enabled = true;
 
                     eventFold = EditorGUILayout.Foldout(eventFold, "Event Settings", EditorStyles.foldoutHeader);
                     if (eventFold)
@@ -64,6 +65,13 @@ namespace EnterCloudsReach.EventSystem
 
         private void DrawCustomGUI()
         {
+            EventAttribute attribute = target.GetType().GetCustomAttribute<EventAttribute>();
+            if (attribute == null)
+            {
+                EditorGUILayout.LabelField("There is no \"EventAttribute\" in this class!");
+                return;
+            }
+
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Event Name", GUILayout.Width(100));
             if (script.eventName == "{ This Is A Specific Name To Be Replaced By Editor (DoNotRemove!) }")
@@ -71,32 +79,52 @@ namespace EnterCloudsReach.EventSystem
                 script.eventName = script.gameObject.name;
             }
             script.eventName = EditorGUILayout.TextField(script.eventName);
-            EditorGUILayout.LabelField("Text Boxes", GUILayout.Width(100));
-            int boxes = Mathf.Max(EditorGUILayout.IntField(script.eventText.Length), 1);
-            EditorGUILayout.EndHorizontal();
 
-            if (boxes != script.eventText.Length)
+            if (attribute.enableText)
             {
-                script.eventText = ResizeArray(script.eventText, boxes);
+                EditorGUILayout.LabelField("Text Boxes", GUILayout.Width(100));
+                int boxes = Mathf.Max(EditorGUILayout.IntField(script.eventText.Length), 1);
+                EditorGUILayout.EndHorizontal();
+
+                if (boxes != script.eventText.Length)
+                {
+                    script.eventText = ResizeArray(script.eventText, boxes);
+                }
+                for (int i = 0; i < script.eventText.Length; i++)
+                {
+                    script.eventText[i] = EditorGUILayout.TextField(script.eventText[i]);
+                }
             }
-            for (int i = 0; i < script.eventText.Length; i++)
+            else
             {
-                script.eventText[i] = EditorGUILayout.TextField(script.eventText[i]);
+                EditorGUILayout.EndHorizontal();
             }
 
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("", GUILayout.Width(11));
 
-            if (GUILayout.Button("Add Event Choice") && script.eventChoices.Length < 5)
             {
-                Undo.RecordObject(target, "Added Event Choice in " + script.gameObject.name);
-                script.eventChoices = ResizeArray(script.eventChoices, script.eventChoices.Length + 1);
+                UnityEngine.GUI.enabled = (script.eventChoices.Length < attribute.maxEvents);
+
+                if (GUILayout.Button("Add Event Choice"))
+                {
+                    Undo.RecordObject(target, "Added Event Choice in " + script.gameObject.name);
+                    script.eventChoices = ResizeArray(script.eventChoices, script.eventChoices.Length + 1);
+                }
+
+                UnityEngine.GUI.enabled = true;
             }
 
-            if (GUILayout.Button("Remove Event Choice") && script.eventChoices.Length > 1)
             {
-                Undo.RecordObject(target, "Removed Event Choice in " + script.gameObject.name);
-                script.eventChoices = ResizeArray(script.eventChoices, script.eventChoices.Length - 1);
+                UnityEngine.GUI.enabled = (script.eventChoices.Length > 1);
+
+                if (GUILayout.Button("Remove Event Choice") && script.eventChoices.Length > 1)
+                {
+                    Undo.RecordObject(target, "Removed Event Choice in " + script.gameObject.name);
+                    script.eventChoices = ResizeArray(script.eventChoices, script.eventChoices.Length - 1);
+                }
+
+                UnityEngine.GUI.enabled = true;
             }
 
             EditorGUILayout.EndHorizontal();
