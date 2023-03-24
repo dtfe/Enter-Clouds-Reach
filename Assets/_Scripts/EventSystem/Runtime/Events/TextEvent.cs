@@ -5,16 +5,12 @@ using UnityEngine;
 
 namespace EnterCloudsReach.EventSystem
 {
+    [Event(true, 1)]
     public class TextEvent : EventClass
     {
         public override void StartEvent()
         {
-            StartChoice();
-        }
-
-        public override void StartChoice()
-        {
-            GUI_Manager.DialogueBox.QueUpText(eventText, new string[0], SelectNextEvent);
+            GUI_Manager.DialogueBox.QueUpText(eventText, new string[0], EndEvent);
         }
     }
 }

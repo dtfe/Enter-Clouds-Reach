@@ -8,8 +8,9 @@ namespace EnterCloudsReach.EventSystem
     {
         public EventClass startingEvent = null;
 
-        public void Start()
+        public IEnumerator Start()
         {
+            yield return new WaitForSecondsRealtime(1.0f);
             startingEvent.StartEvent();
         }
     }
