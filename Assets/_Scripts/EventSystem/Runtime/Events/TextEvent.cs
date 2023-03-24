@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EnterCloudsReach.EventSystem
 {
-    [Event(true, 1)]
+    [Event(true, 1, 1)]
     public class TextEvent : EventClass
     {
         public override void StartEvent()

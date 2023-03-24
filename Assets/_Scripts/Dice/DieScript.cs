@@ -4,84 +4,90 @@ using UnityEngine;
 
 public class DieScript : MonoBehaviour
 {
+    [SerializeField] private int rolledNumber = 0;
+    [SerializeField] private Rigidbody diceRB;
+    public DieFaceScript[] dieFaces;
+
+    DieRoller.dFaces die;
+    DieRoller.RollCallback callback;
+
     private bool isGrounded = false;
+    private bool isRolling = true;
 
     private bool hasBeenRolled = false;
 
-    [SerializeField]
-    private int rolledNumber = 0;
-
-    private DieRoller.dFaces self;
-
-    private Rigidbody rb;
-
-    public DieFaceScript[] dieFaces;
-
-    // Start is called before the first frame update
-    void Start()
+    public void Initialize(DieRoller.dFaces Die, DieRoller.RollCallback Callback)
     {
-        isGrounded = false;
-        rb = GetComponent<Rigidbody>();
         dieFaces = GetComponentsInChildren<DieFaceScript>();
-        Debug.Log("Rolling a " + dieFaces.Length + "-sided die!");
 
-        rb.AddForce(new Vector3(Random.Range(1, 4f), 0, Random.Range(1, 4f)) * 5000, ForceMode.Force);
-        rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 2000);
+        die = Die;
+        callback = Callback;
+
+        RollDie();
     }
 
-    // Update is called once per frame
+    private void RollDie()
+    {
+        isGrounded = false;
+        hasBeenRolled = false;
+
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+
+        Debug.Log("Rolling a " + die + " die!");
+        diceRB.velocity = Quaternion.Euler(0, Random.Range(0f, 90f), 0) * Vector3.forward * Random.Range(25f, 75f);
+        diceRB.angularVelocity = new Vector3(Random.Range(-90f, 90f), Random.Range(-90f, 90f), Random.Range(-90f, 90f));
+    }
+
     void Update()
     {
+        if (!isRolling) { return; }
 
-        if(rb.velocity.magnitude == 0 && hasBeenRolled)
+        if(diceRB.velocity.magnitude <= 0.025f && hasBeenRolled)
         {
             isGrounded = true;
-        } else if (rb.velocity.magnitude > 0.1f)
+        }
+        else if (diceRB.velocity.magnitude > 0.025f)
         {
             hasBeenRolled = true;
             isGrounded = false;
         }
 
-
-        if (isGrounded && hasBeenRolled)
+        Debug.Log(isRolling + "  :  " + isGrounded + "  :  " + hasBeenRolled);
+        if (isRolling && isGrounded && hasBeenRolled)
         {
-            getResult();
-            hasBeenRolled = false;
-            if (rolledNumber == 0)
+            rolledNumber = GetResult();
+
+            if (rolledNumber <= 0)
             {
-                Debug.Log("Roll was scuffed");
-                rb.AddForce(new Vector3(Random.Range(0, 2f), 0, Random.Range(0, 2f)) * 900, ForceMode.Force);
-                rb.AddTorque(new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f)) * 500);
-                isGrounded = false;
+                RollDie();
                 return;
             }
+
             Debug.Log(rolledNumber + " has been rolled!");
-            FindObjectOfType<RollManager>().giveResult(rolledNumber);
-            StartCoroutine(destroyDice());
+            callback?.Invoke(rolledNumber);
+            //Destroy(gameObject, 1);
+            isRolling = false;
         }
     }
 
-    IEnumerator destroyDice()
+    private void FixedUpdate()
     {
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
+        diceRB.useGravity = false;
+        diceRB.AddForce(Physics.gravity * 2.5f, ForceMode.Acceleration);
     }
 
 
-    private void getResult()
+    private int GetResult()
     {
         foreach(DieFaceScript number in dieFaces)
         {
             if (number.isTouchingGround() == true)
             {
-                rolledNumber = (dieFaces.Length + 1) - number.number;
-                break;
+                return (dieFaces.Length + 1) - number.number;
             }
         }
-    }
 
-    public void DFace(DieRoller.dFaces dface)
-    {
-        self = dface;
+        return -1;
     }
 }
