@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+
+#if UNITY_EDITOR
 using UnityEditor.Presets;
+#endif
 
 namespace EnterCloudsReach.GUI
 {
