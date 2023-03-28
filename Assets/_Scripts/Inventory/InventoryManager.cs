@@ -43,6 +43,7 @@ namespace EnterCloudsReach.Inventory
             foreach(Item item in itemList)
             {
                 GameObject obj = Instantiate(inventoryItem, itemContent);
+                obj.GetComponent<ItemUIController>().itemReference = item;
                 var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
                 var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
 

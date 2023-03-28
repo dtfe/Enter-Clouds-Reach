@@ -23,6 +23,12 @@ public class PlayerStats : ScriptableObject
         }
         return traits[0].playerTraits;
     }
+
+    public int GetStat(string stat)
+    {
+        return Stats[stat];
+    }
+
     public int GetBonus(string stat)
     {
         int statNum = Stats[stat];
