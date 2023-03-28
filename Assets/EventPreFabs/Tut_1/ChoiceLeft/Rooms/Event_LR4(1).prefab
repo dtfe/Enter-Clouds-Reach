@@ -248,6 +248,10 @@ PrefabInstance:
       value: As you stand before the chest, you feel a strange sensation in the pit
         of your stomach. Walk out of the room and keep going.
       objectReference: {fileID: 0}
+    - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_margin.x
+      value: 4.835968
+      objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -331,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 4386765821987018786, guid: ab3736e4792fdb244bc70089ff841a46, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
 --- !u!224 &2900739888398158115 stripped
@@ -495,19 +499,16 @@ PrefabInstance:
         in the dim light. You approach the object, and to your surprise, you find
         a chest tucked away in the corner of the room.
 
-        
 
-        The chest
-        is ornately decorated with intricate carvings and appears to be locked. You
-        notice that there is a keyhole on the front of the chest, indicating that
-        a key may be required to open it.
+        You notice that
+        there is a keyhole on the front of the chest, indicating that a key may be
+        required to open it.
 
-        
 
-        You inspect the chest
-        closely, searching for any potential traps or dangers. However, upon closer
-        inspection, you find that the chest appears to be harmless, and there is
-        no sign of any traps or mechanisms.'
+        You inspect the chest closely, searching for
+        any potential traps or dangers. However, upon closer inspection, you find
+        that the chest appears to be harmless, and there is no sign of any traps
+        or mechanisms.'
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
