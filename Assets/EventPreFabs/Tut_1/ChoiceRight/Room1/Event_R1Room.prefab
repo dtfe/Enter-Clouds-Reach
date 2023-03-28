@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Tut_R2
+      value: Room_R1Fight
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059143938981, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -301,9 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060405332549, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'Leave room and keep going
-
-'
+      value: Ambush the freaks
       objectReference: {fileID: 0}
     - target: {fileID: 7550814040898346793, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: ability
@@ -484,11 +482,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_text
-      value: "As you enter the room, you notice three small figures curled up in
+      value: 'As you enter the room, you notice three small figures curled up in
         a corner, snoring loudly. Upon closer inspection, you realize they are tiny
-        goblins, likely too weak to pose a threat.\n\nYou can see a chest in the
-        corner \n\nYou weigh your options: do you risk waking the goblins to search
-        for  loot, or do you just leave the room be?"
+        goblins, likely too weak to pose a threat.
+
+
+        You can see something
+        in the corner of the room
+
+
+        You weigh your options: do you risk waking
+        the goblins to search for  loot, or do you take your chance getting a ambush
+        on the little freaks.'
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
