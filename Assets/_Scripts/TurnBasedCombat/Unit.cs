@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-
+namespace EnterCloudsReach.Combat{
 public enum statusEffects
 {
     None,
@@ -101,4 +101,5 @@ public class Unit : MonoBehaviour
     }
 
     public void animationStart(string animName) => anim.SetTrigger(animName);
+}
 }

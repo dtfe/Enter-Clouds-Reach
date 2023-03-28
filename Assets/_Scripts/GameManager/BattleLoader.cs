@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using EnterCloudsReach.EventSystem;
+
+namespace EnterCloudsReach.Combat{
 
 public class BattleLoader : MonoBehaviour
 {
     private BattleSystem BS;
 
     private GameObject winEvent;
+    private EventClass winEventNew;
 
     public Canvas canvas;
 
@@ -45,6 +49,11 @@ public class BattleLoader : MonoBehaviour
         Debug.Log("Loading Combat");
         StartCoroutine(SwitchScenes(enemyPrefab, WinEvent));
     }
+    public void StartBattleNew(GameObject enemyPrefab, EventClass WinEvent)
+    {
+        Debug.Log("Loading Combat");
+        StartCoroutine(SwitchScenesNew(enemyPrefab, WinEvent));
+    }
 
     IEnumerator SwitchScenes(GameObject enemyPrefab, GameObject WinEvent)
     {
@@ -56,6 +65,16 @@ public class BattleLoader : MonoBehaviour
         BS.startSetup();
         GetComponent<ModeSwap>().ChangeToCombat();
     }
+    IEnumerator SwitchScenesNew(GameObject enemyPrefab, EventClass WinEvent)
+    {
+        yield return new WaitForSeconds(2);
+        Debug.Log("Scene Loaded");
+        BS = FindObjectOfType<BattleSystem>();
+        BS.enemyPrefab = enemyPrefab;
+        winEventNew = WinEvent;
+        BS.startSetup();
+        GetComponent<ModeSwap>().ChangeToCombat();
+    }
 
     public void EndBattle()
     {
@@ -63,12 +82,16 @@ public class BattleLoader : MonoBehaviour
         {
             BS.ClearEnemies();
             GetComponent<ModeSwap>().ChangeToExploration();
-            
-            Instantiate(winEvent, canvas.transform);
+            EventClass eventClass = FindObjectOfType<EventClass>();
+            if(eventClass != null){
+            eventClass.EndEvent(winEventNew);}
+            else {
+            Instantiate(winEvent, canvas.transform);}
         }
         else
         {
             SceneManager.LoadScene("MAIN_MENU");
         }
     }
+}
 }
