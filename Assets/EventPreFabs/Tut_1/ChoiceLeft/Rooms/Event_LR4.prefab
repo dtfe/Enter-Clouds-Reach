@@ -237,10 +237,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_text
-      value: 'You notice a new pathway leading deeper into the tower. The path appears
-        to be dark. Take this new path.
-
-'
+      value: "You notice a new pathway leading deeper into the tower. \nThe path
+        appears to be dark. Take this new path.\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261715059938595066, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
+      propertyPath: m_margin.x
+      value: 33.398987
       objectReference: {fileID: 0}
     - target: {fileID: 3261715060390315080, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -321,7 +323,7 @@ PrefabInstance:
     - target: {fileID: 9146994474552238680, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 4386765821987018786, guid: ab3736e4792fdb244bc70089ff841a46, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9517c9dd1d515ce40a728e7b6c47e1d3, type: 3}
 --- !u!224 &2900739888398158115 stripped
@@ -484,12 +486,11 @@ PrefabInstance:
       value: As you step into the large room, the flickering light of the torches
         illuminates the area, revealing a few objects scattered about. Two barrels
         sit against one wall, their contents unknown. On the opposite side of the
-        room, a wooden shelf displays a few dusty trinkets, long forgotten. In the
-        center of the room, nothing.
+        room, a wooden shelf. In the center of the room, nothing.
       objectReference: {fileID: 0}
     - target: {fileID: 4167373350111053219, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
       propertyPath: m_fontSize
-      value: 32.55
+      value: 36.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958129eaf517f2e429636867b99ef63d, type: 3}
