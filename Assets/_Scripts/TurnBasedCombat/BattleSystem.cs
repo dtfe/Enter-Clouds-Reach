@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+namespace EnterCloudsReach.Combat{
 public enum BattleState 
 {
     START,
@@ -635,4 +635,5 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     {
         Destroy(enemyUnit.gameObject);
     }
+}
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+namespace EnterCloudsReach.Combat
+{
 public class BattleHUD : MonoBehaviour
 {
 
@@ -96,4 +97,5 @@ public class BattleHUD : MonoBehaviour
             poison.SetActive(false);
         }
     }
+}
 }

@@ -23,7 +23,7 @@ public class RollManager : MonoBehaviour
         {
             DR = FindObjectOfType<DieRoller>();
         }
-        DR.RollDie(DieRoller.dFaces.d20);
+        DieRoller.RollDie(DieRoller.dFaces.d20, GiveResult);
     }
 
     public void rollAbilityCheck(GameObject rqEvent, string ability)
@@ -33,7 +33,7 @@ public class RollManager : MonoBehaviour
         {
             DR = FindObjectOfType<DieRoller>();
         }
-        DR.RollDie(DieRoller.dFaces.d20);
+        DieRoller.RollDie(DieRoller.dFaces.d20, GiveResult);
     }
 
     public void rollDamage(GameObject requestingSystem, DieRoller.dFaces numbOfFaces)
@@ -43,10 +43,10 @@ public class RollManager : MonoBehaviour
         {
             DR = FindObjectOfType<DieRoller>();
         }
-        DR.RollDie(DieRoller.dFaces.d20);
+        DieRoller.RollDie(DieRoller.dFaces.d20, GiveResult);
     }
 
-    public void giveResult(int resultNumber)
+    public void GiveResult(int resultNumber)
     {
         requestingEvent.GetComponent<IReceiveResult>().ReceiveRoll(resultNumber);
         /*

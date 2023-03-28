@@ -1,4 +1,5 @@
 using UnityEngine;
+using EnterCloudsReach.Combat;
 
 #if UNITY_EDITOR
 using UnityEditor;

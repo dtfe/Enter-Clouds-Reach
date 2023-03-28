@@ -8,6 +8,7 @@ namespace EnterCloudsReach.EventSystem
     public class EventAttribute : System.Attribute
     {
         public bool enableText { get; private set; }
+        public byte minEvents { get; private set; }
         public byte maxEvents { get; private set; }
 
         private EventAttribute()
@@ -15,9 +16,10 @@ namespace EnterCloudsReach.EventSystem
             throw new System.NotImplementedException();
         }
 
-        public EventAttribute(bool EnableText, byte MaxEvents)
+        public EventAttribute(bool EnableText, byte MinEvents, byte MaxEvents)
         {
             enableText = EnableText;
+            minEvents = MinEvents;
             maxEvents = MaxEvents;
         }
     }

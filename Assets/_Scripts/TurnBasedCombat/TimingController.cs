@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+namespace EnterCloudsReach.Combat
+{
 public enum HitTiming
 {
     Critical,
@@ -155,4 +156,5 @@ public class TimingController : MonoBehaviour
 
         zone.GetComponent<MeshFilter>().mesh = mesh;
     }
+}
 }

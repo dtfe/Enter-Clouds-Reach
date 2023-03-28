@@ -5,80 +5,114 @@ using UnityEngine;
 
 public class DieRoller : MonoBehaviour
 {
-    public enum dFaces
-    {
-        /// <summary>
-        /// Rolls a d4
-        /// </summary>
-        d4 = 4,
+    public static DieRoller Instance { get; private set; }
 
-        /// <summary>
-        /// Rolls a d6
-        /// </summary>
-        d6 = 6,
-        
-        /// <summary>
-        /// Rolls a d8
-        /// </summary>
-        d8 = 8,
-
-        /// <summary>
-        /// Rolls a d10
-        /// </summary>
-        d10 = 10,
-
-        /// <summary>
-        /// Rolls a D12
-        /// </summary>
-        d12 = 12,
-
-        /// <summary>
-        /// Rolls a d20
-        /// </summary>
-        d20 = 20,
-    }
     public GameObject d4, d6, d8, d10, d12, d20;
 
     public GameObject rolledDie;
 
-    /// <summary>
-    /// Rolls a die identified by the dFaces enum parameter
-    /// </summary>
-    /// <param name="die"></param>
-    public void RollDie(dFaces die)
+    public void Awake()
     {
-        switch (die)
+        if (Instance == null)
         {
-            case dFaces.d4:
-                rolledDie = Instantiate(d4, transform);
-                break;
-
-            case dFaces.d6:
-                rolledDie = Instantiate(d6, transform);
-                break;
-
-            case dFaces.d8:
-                rolledDie = Instantiate(d8, transform);
-                break;
-
-            case dFaces.d10:
-                rolledDie = Instantiate(d10, transform);
-                break;
-
-            case dFaces.d12:
-                rolledDie = Instantiate(d12, transform);
-                break;
-
-            case dFaces.d20:
-                rolledDie = Instantiate(d20, transform);
-                break;
+            Instance = this;
         }
-
-        rolledDie.GetComponent<DieScript>().DFace(die);
+        else
+        {
+            Debug.LogError("Can only have one \"DieRoller\"!");
+            Destroy(gameObject);
+        }
     }
 
-    public void rerollDie(dFaces dieToReroll)
+#if UNITY_EDITOR
+    public void Update()
     {
-        RollDie(dieToReroll);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            switch (Random.Range(0, 6))
+            {
+                case 0:
+                    RollDie(dFaces.d4, null);
+                    return;
+
+                case 1:
+                    RollDie(dFaces.d6, null);
+                    return;
+
+                case 2:
+                    RollDie(dFaces.d8, null);
+                    return;
+
+                case 3:
+                    RollDie(dFaces.d10, null);
+                    return;
+
+                case 4:
+                    RollDie(dFaces.d12, null);
+                    return;
+
+                case 5:
+                    RollDie(dFaces.d20, null);
+                    return;
+            }
+        }
+    }
+#endif
+
+    /// <summary>
+    /// Rolls a die identified by the dFaces enum parameter and calls the inputted callback
+    /// </summary>
+    public static void RollDie(dFaces Die, RollCallback Callback) // Wrapper for a local function
+    {
+        Instance._RollDie(Die, Callback);
+    }
+
+    private void _RollDie(dFaces Die, RollCallback Callback)
+    {
+        if (rolledDie != null)
+        {
+            Destroy(rolledDie);
+        }
+
+        rolledDie = Instantiate(GetDiePrefab(Die), transform);
+        rolledDie.GetComponent<DieScript>().Initialize(Die, Callback);
+    }
+
+    private GameObject GetDiePrefab(dFaces Die)
+    {
+        switch (Die)
+        {
+            case dFaces.d4:
+                return d4;
+
+            case dFaces.d6:
+                return d6;
+
+            case dFaces.d8:
+                return d8;
+
+            case dFaces.d10:
+                return d10;
+
+            case dFaces.d12:
+                return d12;
+
+            case dFaces.d20:
+                return d20;
+        }
+
+        return null;
+    }
+
+    public delegate void RollCallback(int RollValue);
+
+    public enum dFaces
+    {
+        d4  =  4,
+        d6  =  6,
+        d8  =  8,
+        d10 = 10,
+        d12 = 12,
+        d20 = 20,
     }
 }

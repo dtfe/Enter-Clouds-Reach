@@ -5,7 +5,7 @@ using EnterCloudsReach.Player;
 
 namespace EnterCloudsReach.EventSystem
 {
-    [Event(false, 1)]   
+    [Event(false, 1, 1)]   
     public class MoveEvent : EventClass
     {
         public override void StartEvent()
