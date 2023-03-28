@@ -5,179 +5,191 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public enum itemType
+namespace EnterCloudsReach.Inventory
 {
-    Weapon,
-    Note,
-    Consumable,
-    Armor
-}
+    public enum itemType
+    {
+        Weapon,
+        Note,
+        Consumable,
+        Armor
+    }
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Items/Create New Item")]
-public class Item : ScriptableObject
-{
-    public int id;
-    public string itemName;
-    public int weight;
-    public int value;
-    public Sprite icon;
+    [CreateAssetMenu(fileName = "New Item", menuName = "Items/Create New Item")]
+    public class Item : ScriptableObject
+    {
+        public int id;
+        public string itemName;
+        public int weight;
+        public int value;
+        public Sprite icon;
 
-    // Notes Params
-    [HideInInspector][SerializeField]public string notes;
+        // Notes Params
+        [HideInInspector] [SerializeField] public string notes;
 
-    // Consumables Params
-    [HideInInspector][SerializeField]public int consumableUses;
+        // Consumables Params
+        [HideInInspector] [SerializeField] public int consumableUses;
 
-    // Stat Modifiers
-    
-    [HideInInspector][SerializeField]public bool affectStats;
-    [HideInInspector][SerializeField]public int Brawn;
-    [HideInInspector][SerializeField]public int Agility;
-    [HideInInspector][SerializeField]public int Endurance;
-    [HideInInspector][SerializeField]public int Knowledge;
-    [HideInInspector][SerializeField]public int Wisdom;
-    [HideInInspector][SerializeField]public int Charm;
+        // Stat Modifiers
 
-    [Header("Presets")]
-    public itemType itemClass;
+        [HideInInspector] [SerializeField] public bool affectStats;
+        [HideInInspector] [SerializeField] public int Brawn;
+        [HideInInspector] [SerializeField] public int Agility;
+        [HideInInspector] [SerializeField] public int Endurance;
+        [HideInInspector] [SerializeField] public int Knowledge;
+        [HideInInspector] [SerializeField] public int Wisdom;
+        [HideInInspector] [SerializeField] public int Charm;
+
+        // Armor params
+        [HideInInspector, SerializeField] public slotType equipmentSlot;
+
+        [Header("Presets")]
+        public itemType itemClass;
 
 
 #if UNITY_EDITOR
 
-    [CustomEditor(typeof(Item))]
-    public class ItemEditor : Editor
-    {
-        private Item targetItem;
-
-        private string notesText;
-
-        private int consumeableUses;
-
-        private bool affectStats;
-        private int Brawn;
-        private int Agility;
-        private int Endurance;
-        private int Knowledge;
-        private int Wisdom;
-        private int Charm;
-
-        public override void OnInspectorGUI()
+        [CustomEditor(typeof(Item))]
+        public class ItemEditor : Editor
         {
-            targetItem = (Item)target;
-            EditorGUI.BeginChangeCheck();
+            private Item targetItem;
 
-            base.OnInspectorGUI();
-            switch (targetItem.itemClass)
+            private string notesText;
+
+            private int consumeableUses;
+
+            private bool affectStats;
+            private int Brawn;
+            private int Agility;
+            private int Endurance;
+            private int Knowledge;
+            private int Wisdom;
+            private int Charm;
+
+            private slotType equipmentSlot;
+
+            public override void OnInspectorGUI()
             {
-                case itemType.Weapon:
-                    Weapon();
-                    break;
+                targetItem = (Item)target;
+                EditorGUI.BeginChangeCheck();
 
-                case itemType.Note:
-                    Notes();
-                    break;
+                base.OnInspectorGUI();
+                switch (targetItem.itemClass)
+                {
+                    case itemType.Weapon:
+                        Weapon();
+                        break;
 
-                case itemType.Consumable:
-                    Consumables();
-                    break;
+                    case itemType.Note:
+                        Notes();
+                        break;
 
-                case itemType.Armor:
-                    Armor();
-                    break;
+                    case itemType.Consumable:
+                        Consumables();
+                        break;
+
+                    case itemType.Armor:
+                        Armor();
+                        break;
+                }
+
+
+                if (EditorGUI.EndChangeCheck())
+                {
+                    Undo.RecordObject(targetItem, "Undo");
+                    targetItem.notes = notesText;
+                    targetItem.consumableUses = consumeableUses;
+                    targetItem.affectStats = affectStats;
+                    targetItem.Brawn = Brawn;
+                    targetItem.Agility = Agility;
+                    targetItem.Endurance = Endurance;
+                    targetItem.Knowledge = Knowledge;
+                    targetItem.Wisdom = Wisdom;
+                    targetItem.Charm = Charm;
+                    targetItem.equipmentSlot = equipmentSlot;
+                }
             }
-
-
-            if (EditorGUI.EndChangeCheck())
+            private void Weapon()
             {
-                Undo.RecordObject(targetItem, "Undo");
-                targetItem.notes = notesText;
-                targetItem.consumableUses = consumeableUses;
-                targetItem.affectStats = affectStats;
-                targetItem.Brawn = Brawn;
-                targetItem.Agility = Agility;
-                targetItem.Endurance = Endurance;
-                targetItem.Knowledge = Knowledge;
-                targetItem.Wisdom = Wisdom;
-                targetItem.Charm = Charm;
+                EditorGUILayout.LabelField("Weapon data");
+                equipmentSlot = (slotType)EditorGUILayout.EnumPopup(targetItem.equipmentSlot);
             }
-        }
-        private void Weapon()
-        {
-            EditorGUILayout.LabelField("Weapon data");
-        }
-        private void Notes()
-        {
-            EditorGUILayout.LabelField("Note Text");
-            notesText = EditorGUILayout.TextArea(targetItem.notes, GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true), GUILayout.MaxWidth(300), GUILayout.MaxHeight(200));
-        }
-        private void Consumables()
-        {
-            EditorGUILayout.LabelField("Consumable Parameters");
-            EditorGUILayout.Space();
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Uses");
-            consumeableUses = EditorGUILayout.IntField(targetItem.consumableUses);
-            EditorGUILayout.EndHorizontal();
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Stat Modifications?");
-            affectStats = EditorGUILayout.Toggle(targetItem.affectStats);
-            EditorGUILayout.EndHorizontal();
-            if (affectStats)
+            private void Notes()
             {
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Brawn", GUILayout.Width(50));
-                Brawn = EditorGUILayout.IntField(targetItem.Brawn);
-                EditorGUILayout.LabelField("Agility", GUILayout.Width(50));
-                Agility = EditorGUILayout.IntField(targetItem.Agility);
-                EditorGUILayout.EndHorizontal();
-
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Endurance", GUILayout.Width(70));
-                Endurance = EditorGUILayout.IntField(targetItem.Endurance);
-                EditorGUILayout.LabelField("Knowledge", GUILayout.Width(70));
-                Knowledge = EditorGUILayout.IntField(targetItem.Knowledge);
-                EditorGUILayout.EndHorizontal();
-
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Wisdom", GUILayout.Width(50));
-                Wisdom = EditorGUILayout.IntField(targetItem.Wisdom);
-                EditorGUILayout.LabelField("Charm", GUILayout.Width(50));
-                Charm = EditorGUILayout.IntField(targetItem.Charm);
-                EditorGUILayout.EndHorizontal();
+                EditorGUILayout.LabelField("Note Text");
+                notesText = EditorGUILayout.TextArea(targetItem.notes, GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true), GUILayout.MaxWidth(300), GUILayout.MaxHeight(200));
             }
-            EditorGUILayout.Space();
-        }
-        private void Armor()
-        {
-            EditorGUILayout.LabelField("Armor Parameters");
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Stat Modifications?");
-            affectStats = EditorGUILayout.Toggle(targetItem.affectStats);
-            EditorGUILayout.EndHorizontal();
-            if (affectStats)
+            private void Consumables()
             {
+                EditorGUILayout.LabelField("Consumable Parameters");
+                EditorGUILayout.Space();
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Brawn", GUILayout.Width(50));
-                Brawn = EditorGUILayout.IntField(targetItem.Brawn);
-                EditorGUILayout.LabelField("Agility", GUILayout.Width(50));
-                Agility = EditorGUILayout.IntField(targetItem.Agility);
+                EditorGUILayout.LabelField("Uses");
+                consumeableUses = EditorGUILayout.IntField(targetItem.consumableUses);
                 EditorGUILayout.EndHorizontal();
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Stat Modifications?");
+                affectStats = EditorGUILayout.Toggle(targetItem.affectStats);
+                EditorGUILayout.EndHorizontal();
+                if (affectStats)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("Brawn", GUILayout.Width(50));
+                    Brawn = EditorGUILayout.IntField(targetItem.Brawn);
+                    EditorGUILayout.LabelField("Agility", GUILayout.Width(50));
+                    Agility = EditorGUILayout.IntField(targetItem.Agility);
+                    EditorGUILayout.EndHorizontal();
 
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Endurance", GUILayout.Width(70));
-                Endurance = EditorGUILayout.IntField(targetItem.Endurance);
-                EditorGUILayout.LabelField("Knowledge", GUILayout.Width(70));
-                Knowledge = EditorGUILayout.IntField(targetItem.Knowledge);
-                EditorGUILayout.EndHorizontal();
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("Endurance", GUILayout.Width(70));
+                    Endurance = EditorGUILayout.IntField(targetItem.Endurance);
+                    EditorGUILayout.LabelField("Knowledge", GUILayout.Width(70));
+                    Knowledge = EditorGUILayout.IntField(targetItem.Knowledge);
+                    EditorGUILayout.EndHorizontal();
 
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("Wisdom", GUILayout.Width(50));
+                    Wisdom = EditorGUILayout.IntField(targetItem.Wisdom);
+                    EditorGUILayout.LabelField("Charm", GUILayout.Width(50));
+                    Charm = EditorGUILayout.IntField(targetItem.Charm);
+                    EditorGUILayout.EndHorizontal();
+                }
+                EditorGUILayout.Space();
+            }
+            private void Armor()
+            {
+                EditorGUILayout.LabelField("Armor Parameters");
+                equipmentSlot = (slotType)EditorGUILayout.EnumPopup(targetItem.equipmentSlot);
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Wisdom", GUILayout.Width(50));
-                Wisdom = EditorGUILayout.IntField(targetItem.Wisdom);
-                EditorGUILayout.LabelField("Charm", GUILayout.Width(50));
-                Charm = EditorGUILayout.IntField(targetItem.Charm);
+                EditorGUILayout.LabelField("Stat Modifications?");
+                affectStats = EditorGUILayout.Toggle(targetItem.affectStats);
                 EditorGUILayout.EndHorizontal();
+                if (affectStats)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("Brawn", GUILayout.Width(50));
+                    Brawn = EditorGUILayout.IntField(targetItem.Brawn);
+                    EditorGUILayout.LabelField("Agility", GUILayout.Width(50));
+                    Agility = EditorGUILayout.IntField(targetItem.Agility);
+                    EditorGUILayout.EndHorizontal();
+
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("Endurance", GUILayout.Width(70));
+                    Endurance = EditorGUILayout.IntField(targetItem.Endurance);
+                    EditorGUILayout.LabelField("Knowledge", GUILayout.Width(70));
+                    Knowledge = EditorGUILayout.IntField(targetItem.Knowledge);
+                    EditorGUILayout.EndHorizontal();
+
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("Wisdom", GUILayout.Width(50));
+                    Wisdom = EditorGUILayout.IntField(targetItem.Wisdom);
+                    EditorGUILayout.LabelField("Charm", GUILayout.Width(50));
+                    Charm = EditorGUILayout.IntField(targetItem.Charm);
+                    EditorGUILayout.EndHorizontal();
+                }
             }
         }
-    }
 #endif
+    }
 }
+

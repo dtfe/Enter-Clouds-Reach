@@ -8,14 +8,17 @@ namespace EnterCloudsReach.Inventory
     public class InventoryController : MonoBehaviour
     {
         private Animator self;
+        private InventoryManager invManager;
 
         private void Start()
         {
             self = GetComponent<Animator>();
+            invManager = GetComponent<InventoryManager>();
         }
 
         private void Update()
         {
+            /*
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 if(self.GetBool("OpenInventory") == false)
@@ -26,12 +29,12 @@ namespace EnterCloudsReach.Inventory
                 {
                     CloseInventory();
                 }
-            }
+            }*/
         }
 
         public void OpenInventory()
         {
-            GetComponent<InventoryManager>().ListItems();
+            invManager.ListItems();
             self.SetBool("OpenInventory", true);
         }
 
