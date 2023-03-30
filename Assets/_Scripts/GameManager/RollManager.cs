@@ -6,7 +6,7 @@ public class RollManager : MonoBehaviour
 {
     private GameObject requestingEvent;
     private DieRoller DR;
-    public PlayerStats ps;
+    // public PlayerStats ps;
     private int rolledNumber;
     private int mod;
 

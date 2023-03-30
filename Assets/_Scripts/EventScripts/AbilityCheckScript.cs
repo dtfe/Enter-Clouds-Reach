@@ -4,7 +4,7 @@ using System.Linq;
 
 public class AbilityCheckScript : MonoBehaviour, IReceiveResult
 {
-    public PlayerStats ps;
+    private PlayerStats ps;
     public int difficulty;
     public string ability;
 
@@ -14,7 +14,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     public GameObject successEvent;
     public GameObject failedEvent;
 
-    enum Ability
+     public enum Ability
     {
     None,
     Brawn,
@@ -25,9 +25,12 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     Charm
     }
     [SerializeField]Ability Abilities =  new Ability();
+    private void Start()
+    {
+        ps = Resources.Load<PlayerStats>("PlayerStatsObject");
+    }
     public void StartCheck()
     {
-        ps = FindObjectOfType<CharacterSheet>().playerStats;
         FindObjectOfType<RollManager>().rollAbilityCheck(gameObject, ability);
         FindObjectOfType<UiAnimatorFinal>().clearingNow(false);
         

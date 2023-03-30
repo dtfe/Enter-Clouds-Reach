@@ -40,7 +40,7 @@ public class Unit : MonoBehaviour
 
     public bool poisonImmune;
     public int poison;
-    public PlayerStats ps;
+    private PlayerStats ps;
     public bool player;
     CombatSFX unitNoise;
     float t;

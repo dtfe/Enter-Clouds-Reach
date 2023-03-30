@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using System;
 using System.Linq;
 using System.Collections;
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 
 public class CharacterCreator : MonoBehaviour
 {   
-    public PlayerStats playerStats;
+    private PlayerStats playerStats;
     private TMP_Text healthText;
     private TMP_Text ACText;
     [SerializeField] private TMP_Text[] statText;
@@ -23,13 +24,14 @@ public class CharacterCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
+        playerStats = Resources.Load<PlayerStats>("PlayerStatsObject");
         Trait[] traits = playerStats.traits;
         //ACText = GameObject.Find("AC").GetComponent<TMP_Text>();
         //healthText = GameObject.Find("Health").GetComponent<TMP_Text>();
         int statLength = statText.Length;
         
         for(int i = 0; i < statLength;i++)
-        {   
+        {
             statText[i].SetText(baseStat.ToString());
             if(!playerStats.Stats.ContainsKey(statText[i].name))
             {

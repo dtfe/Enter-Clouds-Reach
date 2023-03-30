@@ -10,7 +10,7 @@ public class AbilityStatUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stats = Resources.Load<PlayerStats>("PlayerStats");
+        stats = Resources.Load<PlayerStats>("PlayerStatsObject");
 
         GetComponentInChildren<TMP_Text>().text = stats.GetStat(Stat).ToString();
     }

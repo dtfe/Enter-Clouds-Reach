@@ -7,7 +7,7 @@ using TMPro;
 public class CharacterSheet : MonoBehaviour
 {
     float time = 0;
-    public PlayerStats playerStats;
+    private PlayerStats playerStats;
     bool isMove;
     [SerializeField]
     TMP_Text traitText;
@@ -20,6 +20,7 @@ public class CharacterSheet : MonoBehaviour
     ButtonSFX buttonSFX;
     void Start()
     {
+        playerStats = Resources.Load<PlayerStats>("PlayerStatsObject");
         buttonSFX = gameObject.GetComponent<ButtonSFX>();
         c_RectTransform = GetComponent<RectTransform>();
         c_RectTransform.localPosition = c_RectTransform.localPosition + new Vector3(0,500,0);

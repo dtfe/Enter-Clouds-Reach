@@ -7,11 +7,16 @@ using TMPro;
 
 public class TraitTextHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public PlayerStats playerStats;
+    private PlayerStats playerStats;
     PlayerTraits trait;
     public TMP_Text text;
     TMP_Text sText;
     bool spawnText = true;
+
+    private void Start()
+    {
+        playerStats = Resources.Load<PlayerStats>("PlayerStatsObject");
+    }
     public void OnPointerEnter(PointerEventData pointerEventData)
     {   
         if(spawnText){
