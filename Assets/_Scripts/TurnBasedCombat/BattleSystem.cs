@@ -74,8 +74,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             PlayerPrefs.SetInt("playerHealth", playerUnit.maxHP);
         }
         playerUnit.curHP = PlayerPrefs.GetInt("playerHealth");
-
-        playerHUD.SetHUD(playerUnit);
+       
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyUnit = enemyGO.GetComponent<Unit>();
@@ -91,9 +90,9 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         }
 
         enemyHUD.SetHUD(enemyUnit);
-
+        
         yield return new WaitForSeconds(0f);
-
+        playerHUD.SetHUD(playerUnit);
         state = BattleState.PLAYERTURN;
         StartCoroutine(PlayerTurn());
     }

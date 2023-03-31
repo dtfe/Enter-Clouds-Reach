@@ -2,12 +2,13 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EnterCloudsReach.Player;
 using TMPro;
 
 public class CharacterSheet : MonoBehaviour
 {
     float time = 0;
-    public PlayerStats playerStats;
+    private PlayerStats playerStats;
     bool isMove;
     [SerializeField]
     TMP_Text traitText;
@@ -17,10 +18,11 @@ public class CharacterSheet : MonoBehaviour
     public Vector2 prePos;
     public Vector2 startPos;
     public Vector2 tarPos;
-    ButtonSFX buttonSFX;
+    // ButtonSFX buttonSFX;
     void Start()
     {
-        buttonSFX = gameObject.GetComponent<ButtonSFX>();
+        playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
+        // buttonSFX = gameObject.GetComponent<ButtonSFX>();
         c_RectTransform = GetComponent<RectTransform>();
         c_RectTransform.localPosition = c_RectTransform.localPosition + new Vector3(0,500,0);
         startPos = c_RectTransform.anchoredPosition;
@@ -73,10 +75,10 @@ public class CharacterSheet : MonoBehaviour
     }
     public void MoveSheet()
     {
-        if(buttonSFX != null)
-        {
-            buttonSFX.ButtonSFXPlay();
-        }
+        // if(buttonSFX != null)
+        // {
+        //     buttonSFX.ButtonSFXPlay();
+        // }
         if(prePos.y == startPos.y)
         {
         time = 0;

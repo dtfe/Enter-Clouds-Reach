@@ -96,7 +96,7 @@ namespace EnterCloudsReach.Inventory
 
                 if (EditorGUI.EndChangeCheck())
                 {
-                    Undo.RecordObject(targetItem, "Undo");
+                    Undo.RecordObject(targetItem, "Undo Item");
                     targetItem.notes = notesText;
                     targetItem.consumableUses = consumeableUses;
                     targetItem.affectStats = affectStats;

@@ -1,10 +1,11 @@
 
 using UnityEngine;
 using System.Linq;
+using EnterCloudsReach.Player;
 
 public class AbilityCheckScript : MonoBehaviour, IReceiveResult
 {
-    public PlayerStats ps;
+    private PlayerStats ps;
     public int difficulty;
     public string ability;
 
@@ -14,7 +15,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     public GameObject successEvent;
     public GameObject failedEvent;
 
-    enum Ability
+     public enum Ability
     {
     None,
     Brawn,
@@ -25,9 +26,12 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     Charm
     }
     [SerializeField]Ability Abilities =  new Ability();
+    private void Start()
+    {
+        ps = FindObjectOfType<PlayerStatDDOL>().playerStats;
+    }
     public void StartCheck()
     {
-        ps = FindObjectOfType<CharacterSheet>().playerStats;
         FindObjectOfType<RollManager>().rollAbilityCheck(gameObject, ability);
         FindObjectOfType<UiAnimatorFinal>().clearingNow(false);
         
@@ -64,22 +68,22 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
                 Debug.Log("Choose an actual ability please");
                 break;
             case Ability.Brawn:
-                modNumber = rolledNumber+ ps.GetBonus("BrawnText");
+                modNumber = rolledNumber+ ps.GetBonus("Brawn");
                 break;
             case Ability.Agility:
-                modNumber = rolledNumber+ ps.GetBonus("AgilityText");
+                modNumber = rolledNumber+ ps.GetBonus("Agility");
                 break;
             case Ability.Endurance:
-                modNumber = rolledNumber+ ps.GetBonus("EnduranceText");
+                modNumber = rolledNumber+ ps.GetBonus("Endurance");
                 break; 
             case Ability.Wisdom:
-                modNumber = rolledNumber+ ps.GetBonus("WisdomText");
+                modNumber = rolledNumber+ ps.GetBonus("Wisdom");
                 break;
             case Ability.Knowledge:
-                modNumber = rolledNumber+ ps.GetBonus("KnowledgeText");
+                modNumber = rolledNumber+ ps.GetBonus("Knowledge");
                 break;
             case Ability.Charm:
-                modNumber = rolledNumber+ ps.GetBonus("CharmText");
+                modNumber = rolledNumber+ ps.GetBonus("Charm");
                 break;
             default:
                 Debug.Log("You smell");

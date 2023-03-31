@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,12 +5,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using EnterCloudsReach.Player;
 
 public class CharacterCreator : MonoBehaviour
 {   
-    public PlayerStats playerStats;
+    private PlayerStats playerStats;
     private TMP_Text healthText;
     private TMP_Text ACText;
+    private TMP_InputField nameInput;
+    int pointsLeft;
+    PointCounter pointCounter;
     [SerializeField] private TMP_Text[] statText;
     //[SerializeField] private TMP_Text[] traitText;
     [SerializeField] int baseStat = 5;
@@ -23,13 +26,16 @@ public class CharacterCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
+        pointCounter = FindObjectOfType<PointCounter>();
+        nameInput = FindObjectOfType<TMP_InputField>();
+        playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
         Trait[] traits = playerStats.traits;
         //ACText = GameObject.Find("AC").GetComponent<TMP_Text>();
         //healthText = GameObject.Find("Health").GetComponent<TMP_Text>();
         int statLength = statText.Length;
         
         for(int i = 0; i < statLength;i++)
-        {   
+        {
             statText[i].SetText(baseStat.ToString());
             if(!playerStats.Stats.ContainsKey(statText[i].name))
             {
@@ -39,6 +45,7 @@ public class CharacterCreator : MonoBehaviour
             {
                 playerStats.Stats[statText[i].name] = baseStat;
             }
+            Debug.Log(playerStats.Stats.Values.Count);
         }
         int j = 0;
         foreach(Trait t in traits)
@@ -46,7 +53,10 @@ public class CharacterCreator : MonoBehaviour
             Debug.Log(traits[j].playerTraits.traitName);
             j++;
         }
-       
+        playerStats.playerName = "Hero";
+        nameInput.SetTextWithoutNotify(playerStats.playerName);
+        pointsLeft = maxTotal - playerStats.Stats.Values.Sum();
+        pointCounter.pointLeft.SetText(pointsLeft.ToString());
     }
     // void Update()
     // {
@@ -58,8 +68,10 @@ public class CharacterCreator : MonoBehaviour
         if(playerStats.Stats.ContainsKey(posText.name) && playerStats.Stats.Values.Sum() < maxTotal && playerStats.Stats[posText.name] < maxStat)
         {
             
-            playerStats.Stats[posText.name]++;
+            playerStats.Stats[posText.name] = playerStats.Stats[posText.name]+1;
             posText.SetText(playerStats.Stats[posText.name].ToString());
+            pointsLeft--;
+            ChangePointText();
         }
     }
     public void negIncrement(TMP_Text negText)
@@ -67,8 +79,10 @@ public class CharacterCreator : MonoBehaviour
         if(playerStats.Stats.ContainsKey(negText.name) && playerStats.Stats[negText.name] > minStat)
         {
             
-            playerStats.Stats[negText.name]--;
+            playerStats.Stats[negText.name] = playerStats.Stats[negText.name]-1;
             negText.SetText(playerStats.Stats[negText.name].ToString());
+            pointsLeft++;
+            ChangePointText();
         }
     }
     
@@ -129,10 +143,23 @@ public class CharacterCreator : MonoBehaviour
         { button.GetComponent<Image>().sprite = traitUnChecked; }
 
     }  
+    
+    public void nameChange()
+    {
+        playerStats.playerName = nameInput.text;
+    }
     public void nextScene(string scene)
     {
+        playerStats.health = 11;
+        Debug.Log(playerStats.Stats.Values.Count);
         SceneManager.LoadScene(scene);
     }
+
+    public void ChangePointText()
+    {
+        pointCounter.pointLeft.SetText(pointsLeft.ToString());
+    }
+
     // //AAAAAAAAAAAAAAH 
     // void negTrait(PlayerTraits traits)
     // {      
@@ -170,7 +197,7 @@ public class CharacterCreator : MonoBehaviour
     //         }
     //         }
     //         traitCheck = false;
-            
+
     // }
     // void posTrait(PlayerTraits traits)
     // {   
@@ -216,6 +243,6 @@ public class CharacterCreator : MonoBehaviour
     //         statText[i].SetText(playerStats.Stats[statText[i].name].ToString());
     //         i++;
     //     }
-        
+
     // }
 }
