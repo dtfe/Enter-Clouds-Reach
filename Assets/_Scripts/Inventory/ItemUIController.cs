@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 namespace EnterCloudsReach.Inventory
 {
-    public class ItemUIController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class ItemUIController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public Color draggingColor;
 
         public Item itemReference;
 
+        public GameObject menuPopup;
+        private GameObject spawnedPopup;
+
         private GameObject draggedItem;
         private Rect selfRect;
+
+        private bool isOver;
 
         private EquipmentSlotManager equipmentManager;
 
@@ -84,6 +89,33 @@ namespace EnterCloudsReach.Inventory
             }
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            Debug.Log("MouseIsOverItem");
+            isOver = true;
+        }
 
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Debug.Log("MouseIsOffItem");
+            isOver = false;
+        }
+
+
+        public bool GetIsOver
+        {
+
+            get { return isOver; }
+        }
+
+        public void SpawnMenuPopup()
+        {
+            if (spawnedPopup)
+            {
+                return;
+            }
+            spawnedPopup = Instantiate(menuPopup, transform);
+            spawnedPopup.GetComponentInChildren<ItemMenuPopupController>().SetItemUiController = this;
+        }
     }
 }

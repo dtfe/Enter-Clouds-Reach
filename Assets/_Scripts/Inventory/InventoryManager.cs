@@ -24,11 +24,13 @@ namespace EnterCloudsReach.Inventory
         public void AddItem(Item item)
         {
             itemList.Add(item);
+            ListItems();
         }
 
         public void RemoveItem(Item item)
         {
             itemList.Remove(item);
+            ListItems();
         }
 
         public void ListItems()
