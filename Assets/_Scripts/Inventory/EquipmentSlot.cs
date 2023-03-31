@@ -13,8 +13,10 @@ namespace EnterCloudsReach.Inventory
         private Item equipmentItem;
 
         private Image icon;
-
-        private Sprite iconSprite;
+        
+        private Image startIcon;
+        private Color startColor;
+        private Sprite startIconSprite;
 
         private EquipmentSlotManager manager;
 
@@ -22,6 +24,9 @@ namespace EnterCloudsReach.Inventory
 
         private void Start()
         {
+            startIcon = GetComponent<Image>();
+            startIconSprite = startIcon.sprite;
+            startColor = startIcon.color;
             manager = GetComponentInParent<EquipmentSlotManager>();
             icon = transform.Find("Icon").GetComponent<Image>();
         }
@@ -50,8 +55,24 @@ namespace EnterCloudsReach.Inventory
 
         private void updateSlot()
         {
-            icon.sprite = equipmentItem.icon;
-            icon.color = Color.white;
+            if(equipmentItem != null)
+            {
+                icon.sprite = equipmentItem.icon;
+                icon.color = Color.white;
+            }
+            else
+            {
+                icon.sprite = startIconSprite;
+                icon.color = startColor;
+            }
+        }
+
+        public void UnqeuipItem()
+        {
+            GetComponentInParent<InventoryManager>().AddItem(equipmentItem);
+            equipmentItem = null;
+            updateSlot();
         }
     }
+
 }
