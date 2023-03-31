@@ -65,7 +65,7 @@ public class DieScript : MonoBehaviour
 
             Debug.Log(rolledNumber + " has been rolled!");
             callback?.Invoke(rolledNumber);
-            //Destroy(gameObject, 1);
+            Destroy(gameObject, 1);
             isRolling = false;
         }
     }

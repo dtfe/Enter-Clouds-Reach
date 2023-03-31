@@ -1,18 +1,17 @@
-using System.Xml;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace EnterCloudsReach.Player{
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "ScriptableObjects/PlayerStats", order = 1)]
 public class PlayerStats : ScriptableObject
 {
     public Trait[] traits;
+    public string playerName = new string("Hero");
     public int AC;
     public int health;
     public Dictionary<string,int> Stats = new Dictionary<string, int>();
-
     public PlayerTraits GetPlayerTrait(string trait)
-    {
+    {  
         int i = 0;
         foreach(Trait t in traits)
         {   
@@ -36,4 +35,4 @@ public class PlayerStats : ScriptableObject
         int bonus = statNum-5;
         return bonus;
     }
-}
+}}

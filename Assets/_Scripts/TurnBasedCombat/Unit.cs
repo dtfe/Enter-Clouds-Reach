@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using EnterCloudsReach.Player;
 
 namespace EnterCloudsReach.Combat{
 public enum statusEffects
@@ -22,6 +23,7 @@ public class DefendTimings
 
 public class Unit : MonoBehaviour
 {
+    private PlayerStats playerStats;
     public string unitName;
     private Animator anim;
 
@@ -40,7 +42,6 @@ public class Unit : MonoBehaviour
 
     public bool poisonImmune;
     public int poison;
-    private PlayerStats ps;
     public bool player;
     CombatSFX unitNoise;
     float t;
@@ -48,6 +49,11 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
+        playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
+        if(player)
+        {
+            unitName = playerStats.playerName;
+        }
         unitNoise = gameObject.GetComponent<CombatSFX>();
         t = 0;
         randT = Random.Range(1,11);

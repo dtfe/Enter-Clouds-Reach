@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using EnterCloudsReach.Player;
 
 
 public class TraitTextHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -15,7 +16,7 @@ public class TraitTextHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private void Start()
     {
-        playerStats = Resources.Load<PlayerStats>("PlayerStatsObject");
+        playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
     }
     public void OnPointerEnter(PointerEventData pointerEventData)
     {   

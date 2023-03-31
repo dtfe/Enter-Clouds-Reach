@@ -6,6 +6,7 @@ namespace EnterCloudsReach.Inventory
 {
     public enum slotType
     {
+        NONE,
         HEAD,
         CHEST,
         HAND,

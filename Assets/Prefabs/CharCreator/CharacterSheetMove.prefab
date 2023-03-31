@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 704417425299282328}
   - component: {fileID: 704417425299282329}
   m_Layer: 5
-  m_Name: AgilityText
+  m_Name: Agility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,7 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5431aabe382f3ed4990ee209c8785453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: a5cd63ed321d53d4380c37de3bd391f3, type: 2}
   traitText: {fileID: 300549343182100953, guid: 667ac7affd250814da15507540e6d7b7, type: 3}
   statText:
   - {fileID: 704417425635211452}
@@ -443,6 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b067a01acc2c2d74e863c2f8a0f8be6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 2817593325282717688}
   bSFX: {fileID: 8300000, guid: b4fa9c6162d772e428dc2f3a63848917, type: 3}
 --- !u!1 &704417425635211450
 GameObject:
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 704417425635211455}
   - component: {fileID: 704417425635211452}
   m_Layer: 5
-  m_Name: BrawnText
+  m_Name: Brawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 704417425975952189}
   - component: {fileID: 704417425975952186}
   m_Layer: 5
-  m_Name: WisdomText
+  m_Name: Wisdom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 704417426166611762}
   - component: {fileID: 704417426166611763}
   m_Layer: 5
-  m_Name: KnowledgeText
+  m_Name: Knowledge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 704417426480848595}
   - component: {fileID: 704417426480848592}
   m_Layer: 5
-  m_Name: EnduranceText
+  m_Name: Endurance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 704417426852588646}
   - component: {fileID: 704417426852588647}
   m_Layer: 5
-  m_Name: CharmText
+  m_Name: Charm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
