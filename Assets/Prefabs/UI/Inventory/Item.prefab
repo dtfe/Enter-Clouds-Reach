@@ -123,7 +123,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2556947660148914695}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2842813251072729204}
+        m_TargetAssemblyTypeName: EnterCloudsReach.Inventory.ItemUIController, Assembly-CSharp
+        m_MethodName: SpawnMenuPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2842813251072729204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggingColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 0.5019608}
+  itemReference: {fileID: 0}
+  menuPopup: {fileID: 6893384634059219256, guid: d979b4c40e01fb242a6e43e73268dc91, type: 3}
 --- !u!1 &2556947660915719944
 GameObject:
   m_ObjectHideFlags: 0

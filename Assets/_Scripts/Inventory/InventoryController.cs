@@ -34,7 +34,6 @@ namespace EnterCloudsReach.Inventory
 
         public void OpenInventory()
         {
-            invManager.ListItems();
             self.SetBool("OpenInventory", true);
         }
 
