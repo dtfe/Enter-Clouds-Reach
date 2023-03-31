@@ -272,8 +272,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6621468025982871246, guid: 79487f49bf05ba441976fda7b0a9e52c, type: 3}
-        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
+      - m_Target: {fileID: 5957334053412121728}
+        m_TargetAssemblyTypeName: EnterCloudsReach.Audio.ButtonSFX, Assembly-CSharp
         m_MethodName: ButtonSFXPlay
         m_Mode: 1
         m_Arguments:
@@ -306,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474237741836246428}
   - component: {fileID: 5624889632243177036}
+  - component: {fileID: 5957334053412121728}
   m_Layer: 5
   m_Name: Dialogue Event
   m_TagString: Untagged
@@ -347,3 +348,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventText: {fileID: 4002238924858263621}
+--- !u!114 &5957334053412121728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440208458750402071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b067a01acc2c2d74e863c2f8a0f8be6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bSFX: {fileID: 8300000, guid: b4fa9c6162d772e428dc2f3a63848917, type: 3}
