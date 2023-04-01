@@ -116,8 +116,11 @@ namespace EnterCloudsReach.Inventory
             }
             private void Notes()
             {
+                GUIStyle myStyle = new GUIStyle(EditorStyles.textField);
+                myStyle.wordWrap = true;
+                
                 EditorGUILayout.LabelField("Note Text");
-                notesText = EditorGUILayout.TextArea(targetItem.notes, GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true), GUILayout.MaxWidth(300), GUILayout.MaxHeight(200));
+                notesText = EditorGUILayout.TextArea(targetItem.notes, myStyle, GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(false), GUILayout.MaxWidth(300), GUILayout.MaxHeight(200));
             }
             private void Consumables()
             {
