@@ -25,7 +25,7 @@ namespace EnterCloudsReach.Inventory
 
         private void Update()
         {
-            if (!parentController.GetIsOver)
+            if (parentController != null && !parentController.GetIsOver)
             {
                 Deselected();
             }

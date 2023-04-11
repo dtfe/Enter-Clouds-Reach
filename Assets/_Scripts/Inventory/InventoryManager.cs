@@ -48,9 +48,12 @@ namespace EnterCloudsReach.Inventory
                 obj.GetComponent<ItemUIController>().itemReference = item;
                 var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
                 var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+                var weightIcon = obj.transform.Find("WeightIcon").GetComponent<Image>();
+                var weightNumber = weightIcon.transform.Find("WeightNumber").GetComponent<TMP_Text>();
 
                 itemName.text = item.itemName;
                 itemIcon.sprite = item.icon;
+                weightNumber.text = item.weight.ToString();
             }
         }
     }

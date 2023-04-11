@@ -10,6 +10,10 @@ namespace EnterCloudsReach.Inventory
     {
         public Item referencedItem;
 
+        private float textTimer;
+        private string notesTextToDisplay;
+        private TMP_Text notesText;
+
         private bool isOver;
 
         private void Start()
@@ -25,7 +29,10 @@ namespace EnterCloudsReach.Inventory
                     break;
 
                 case itemType.Note:
-                    transform.Find("Text").GetComponent<TMP_Text>().text = referencedItem.notes;
+                    notesTextToDisplay = transform.Find("Text").GetComponent<TMP_Text>().text = referencedItem.notes;
+                    notesText = transform.Find("Text").GetComponent<TMP_Text>();
+                    notesText.text = "";
+                    StartCoroutine(WriteLetters());
                     break;
 
                 case itemType.Consumable:
@@ -47,12 +54,29 @@ namespace EnterCloudsReach.Inventory
 
         private void Update()
         {
+
             if (!isOver)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
                     CloseExamine();
                 }
+            }
+        }
+
+        IEnumerator WriteLetters()
+        {
+            for(int i = 0; i < notesTextToDisplay.Length; i++)
+            {
+                notesText.text += notesTextToDisplay[i];
+                if (notesTextToDisplay[i] == 46)
+                {
+                    yield return new WaitForSeconds(0.5f);
+                } else if (notesTextToDisplay[i] == 44)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                }
+                yield return new WaitForSeconds(0.025f);
             }
         }
 
