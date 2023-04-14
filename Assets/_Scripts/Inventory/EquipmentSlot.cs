@@ -96,6 +96,7 @@ namespace EnterCloudsReach.Inventory
             playerStats.Stats["Charm"] += item.Charm; 
             foreach(var obj in abi) {
                 obj.UpdateStat();
+                obj.UpdateBonus();
             }
             }
         }   
@@ -110,6 +111,7 @@ namespace EnterCloudsReach.Inventory
             playerStats.Stats["Charm"] -= item.Charm; 
             foreach(var obj in abi) {
                 obj.UpdateStat();
+                obj.UpdateBonus();
             }
             }
         }   
