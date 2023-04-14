@@ -13,7 +13,7 @@ namespace EnterCloudsReach.EventSystem
         private InventoryManager inv;
         private void Start()
         {
-            if(item ==null)
+            if(item == null)
             {
                 Debug.Log("Set Item please at " + gameObject.name);
             }

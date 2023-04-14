@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 [RequireComponent(typeof(AudioSource))]
 public class MainMenu : MonoBehaviour
 {   
+
    AudioSource audioSource;
    public AudioClip bSFX;
    void Start()
    {
       audioSource = gameObject.GetComponent<AudioSource>();
+
    }
    public void goToScene(string sceneName)
    { 
