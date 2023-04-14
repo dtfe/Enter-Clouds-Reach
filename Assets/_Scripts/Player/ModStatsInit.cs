@@ -18,6 +18,11 @@ namespace EnterCloudsReach.Player
             playerStats.ModStats = playerStats.BaseStats;
             Debug.Log(playerStats.ModStats.Values.Count);
             }
+            else
+            {
+                playerStats.ModStats.Clear();
+                playerStats.ModStats = playerStats.BaseStats;
+            }
         }
     }
 }
