@@ -14,7 +14,7 @@ public class AbilityStatUI : MonoBehaviour
     {
         stats = FindObjectOfType<PlayerStatDDOL>().playerStats;
         Debug.Log(stats.health);
-        Debug.Log(stats.Stats.Values.Count);
+        Debug.Log(stats.ModStats.Values.Count);
         TMP_Text[] texts = GetComponentsInChildren<TMP_Text>();
         foreach(TMP_Text text in texts){
             if(text.name == "BonusText")
@@ -22,11 +22,11 @@ public class AbilityStatUI : MonoBehaviour
                 Bonus = text;
             }
         }
-        if(stats.Stats.Values.Count != 0){
+        if(stats.ModStats.Values.Count != 0){
         UpdateStat();
         UpdateBonus();
     }}
-    public void UpdateStat() => GetComponentInChildren<TMP_Text>().text = stats.GetStat(Stat).ToString();
+    public void UpdateStat() => GetComponentInChildren<TMP_Text>().text = stats.ModStats[Stat].ToString();
     public void UpdateBonus()
     {
         int bonus = stats.GetBonus(Stat);

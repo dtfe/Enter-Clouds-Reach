@@ -87,13 +87,13 @@ namespace EnterCloudsReach.Inventory
         
         void ItemStatPos(Item item)
         {
-            if(playerStats.Stats.Values.Count != 0){
-            playerStats.Stats["Brawn"] += item.Brawn;
-            playerStats.Stats["Agility"] += item.Agility;
-            playerStats.Stats["Endurance"] += item.Endurance;
-            playerStats.Stats["Knowledge"] += item.Knowledge;
-            playerStats.Stats["Wisdom"] += item.Wisdom;
-            playerStats.Stats["Charm"] += item.Charm; 
+            if(playerStats.ModStats.Values.Count != 0){
+            playerStats.ModStats["Brawn"] += item.Brawn;
+            playerStats.ModStats["Agility"] += item.Agility;
+            playerStats.ModStats["Endurance"] += item.Endurance;
+            playerStats.ModStats["Knowledge"] += item.Knowledge;
+            playerStats.ModStats["Wisdom"] += item.Wisdom;
+            playerStats.ModStats["Charm"] += item.Charm; 
             foreach(var obj in abi) {
                 obj.UpdateStat();
                 obj.UpdateBonus();
@@ -102,13 +102,13 @@ namespace EnterCloudsReach.Inventory
         }   
          void ItemStatNeg(Item item)
         {
-            if(playerStats.Stats.Values.Count != 0){
-            playerStats.Stats["Brawn"] -= item.Brawn;
-            playerStats.Stats["Agility"] -= item.Agility;
-            playerStats.Stats["Endurance"] -= item.Endurance;
-            playerStats.Stats["Knowledge"] -= item.Knowledge;
-            playerStats.Stats["Wisdom"] -= item.Wisdom;
-            playerStats.Stats["Charm"] -= item.Charm; 
+            if(playerStats.ModStats.Values.Count != 0){
+            playerStats.ModStats["Brawn"] -= item.Brawn;
+            playerStats.ModStats["Agility"] -= item.Agility;
+            playerStats.ModStats["Endurance"] -= item.Endurance;
+            playerStats.ModStats["Knowledge"] -= item.Knowledge;
+            playerStats.ModStats["Wisdom"] -= item.Wisdom;
+            playerStats.ModStats["Charm"] -= item.Charm; 
             foreach(var obj in abi) {
                 obj.UpdateStat();
                 obj.UpdateBonus();

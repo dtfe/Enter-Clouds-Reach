@@ -9,7 +9,8 @@ public class PlayerStats : ScriptableObject
     public string playerName = new string("Hero");
     public int AC;
     public int health;
-    public Dictionary<string,int> Stats = new Dictionary<string, int>();
+    public Dictionary<string,int> ModStats = new Dictionary<string, int>();
+    public Dictionary<string,int> BaseStats = new Dictionary<string, int>();
     public PlayerTraits GetPlayerTrait(string trait)
     {  
         int i = 0;
@@ -24,14 +25,14 @@ public class PlayerStats : ScriptableObject
         return traits[0].playerTraits;
     }
 
-    public int GetStat(string stat)
+    public int GetBaseStat(string stat)
     {
-        return Stats[stat];
+        return BaseStats[stat];
     }
 
     public int GetBonus(string stat)
     {
-        int statNum = Stats[stat];
+        int statNum = ModStats[stat];
         int bonus = statNum-5;
         return bonus;
     }

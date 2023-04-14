@@ -37,15 +37,15 @@ public class CharacterCreator : MonoBehaviour
         for(int i = 0; i < statLength;i++)
         {
             statText[i].SetText(baseStat.ToString());
-            if(!playerStats.Stats.ContainsKey(statText[i].name))
+            if(!playerStats.BaseStats.ContainsKey(statText[i].name))
             {
-                playerStats.Stats.Add(statText[i].name,baseStat);
+                playerStats.BaseStats.Add(statText[i].name,baseStat);
             }
             else
             {
-                playerStats.Stats[statText[i].name] = baseStat;
+                playerStats.BaseStats[statText[i].name] = baseStat;
             }
-            Debug.Log(playerStats.Stats.Values.Count);
+            Debug.Log(playerStats.BaseStats.Values.Count);
         }
         int j = 0;
         foreach(Trait t in traits)
@@ -55,7 +55,7 @@ public class CharacterCreator : MonoBehaviour
         }
         playerStats.playerName = "Hero";
         nameInput.SetTextWithoutNotify(playerStats.playerName);
-        pointsLeft = maxTotal - playerStats.Stats.Values.Sum();
+        pointsLeft = maxTotal - playerStats.BaseStats.Values.Sum();
         pointCounter.pointLeft.SetText(pointsLeft.ToString());
     }
     // void Update()
@@ -65,22 +65,22 @@ public class CharacterCreator : MonoBehaviour
     // }
     public void posIncrement(TMP_Text posText)
     {//setHealth();
-        if(playerStats.Stats.ContainsKey(posText.name) && playerStats.Stats.Values.Sum() < maxTotal && playerStats.Stats[posText.name] < maxStat)
+        if(playerStats.BaseStats.ContainsKey(posText.name) && playerStats.BaseStats.Values.Sum() < maxTotal && playerStats.BaseStats[posText.name] < maxStat)
         {
             
-            playerStats.Stats[posText.name] = playerStats.Stats[posText.name]+1;
-            posText.SetText(playerStats.Stats[posText.name].ToString());
+            playerStats.BaseStats[posText.name] = playerStats.BaseStats[posText.name]+1;
+            posText.SetText(playerStats.BaseStats[posText.name].ToString());
             pointsLeft--;
             ChangePointText();
         }
     }
     public void negIncrement(TMP_Text negText)
     {   //setHealth();
-        if(playerStats.Stats.ContainsKey(negText.name) && playerStats.Stats[negText.name] > minStat)
+        if(playerStats.BaseStats.ContainsKey(negText.name) && playerStats.BaseStats[negText.name] > minStat)
         {
             
-            playerStats.Stats[negText.name] = playerStats.Stats[negText.name]-1;
-            negText.SetText(playerStats.Stats[negText.name].ToString());
+            playerStats.BaseStats[negText.name] = playerStats.BaseStats[negText.name]-1;
+            negText.SetText(playerStats.BaseStats[negText.name].ToString());
             pointsLeft++;
             ChangePointText();
         }
@@ -151,7 +151,7 @@ public class CharacterCreator : MonoBehaviour
     public void nextScene(string scene)
     {
         playerStats.health = 11;
-        Debug.Log(playerStats.Stats.Values.Count);
+        Debug.Log(playerStats.BaseStats.Values.Count);
         SceneManager.LoadScene(scene);
     }
 

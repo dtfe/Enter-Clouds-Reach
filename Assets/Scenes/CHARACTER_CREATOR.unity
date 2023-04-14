@@ -4045,6 +4045,7 @@ GameObject:
   - component: {fileID: 1078763232}
   - component: {fileID: 1078763238}
   - component: {fileID: 1078763237}
+  - component: {fileID: 1078763239}
   m_Layer: 5
   m_Name: CharCreator
   m_TagString: Untagged
@@ -4211,6 +4212,18 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 626231109}
+--- !u!114 &1078763239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078763231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ca9de19cc5586429db10a6010e3290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1097289868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,6 +4277,7 @@ GameObject:
   - component: {fileID: 1126451560}
   - component: {fileID: 1126451564}
   - component: {fileID: 1126451563}
+  - component: {fileID: 1126451565}
   m_Layer: 5
   m_Name: NextScene
   m_TagString: Untagged
@@ -4336,6 +4350,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1126451565}
+        m_TargetAssemblyTypeName: EnterCloudsReach.Player.ModStatsInit, Assembly-CSharp
+        m_MethodName: SetModStatsInit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1126451563}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: goToScene
@@ -4495,6 +4521,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1126451565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126451558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ca9de19cc5586429db10a6010e3290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179757366
 GameObject:
   m_ObjectHideFlags: 0
