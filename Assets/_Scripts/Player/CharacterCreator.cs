@@ -54,9 +54,10 @@ public class CharacterCreator : MonoBehaviour
             j++;
         }
         playerStats.playerName = "Hero";
-        nameInput.SetTextWithoutNotify(playerStats.playerName);
+        nameInput?.SetTextWithoutNotify(playerStats.playerName);
+        
         pointsLeft = maxTotal - playerStats.BaseStats.Values.Sum();
-        pointCounter.pointLeft.SetText(pointsLeft.ToString());
+        pointCounter?.pointLeft.SetText(pointsLeft.ToString());
     }
     // void Update()
     // {
@@ -157,7 +158,7 @@ public class CharacterCreator : MonoBehaviour
 
     public void ChangePointText()
     {
-        pointCounter.pointLeft.SetText(pointsLeft.ToString());
+        pointCounter?.pointLeft.SetText(pointsLeft.ToString());
     }
 
     // //AAAAAAAAAAAAAAH 
