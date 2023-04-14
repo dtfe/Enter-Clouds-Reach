@@ -41,7 +41,7 @@ namespace EnterCloudsReach.EventSystem
         int ModifyRoll(int modRoll)
         {
             
-            if(playerStats.Stats.Count != 0)
+            if(playerStats.ModStats.Count != 0)
             {
             switch(statName)
             {   

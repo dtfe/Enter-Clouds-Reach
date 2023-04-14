@@ -60,7 +60,7 @@ public class AbilityCheckScript : MonoBehaviour, IReceiveResult
     }
     public void AbilityCheck()
     {
-        if(ps.Stats.Values.Count != 0)
+        if(ps.ModStats.Values.Count != 0)
         {
             switch(Abilities)
             {

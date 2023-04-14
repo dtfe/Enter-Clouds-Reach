@@ -30,10 +30,10 @@ public class CharacterSheet : MonoBehaviour
         startPos = c_RectTransform.anchoredPosition;
         for(int i = 0; i < statText.Length; i++)
         {
-            if(playerStats.Stats.ContainsKey(statText[i].name)){
-                statText[i].SetText(playerStats.Stats[statText[i].name].ToString());
+            if(playerStats.BaseStats.ContainsKey(statText[i].name)){
+                statText[i].SetText(playerStats.BaseStats[statText[i].name].ToString());
             }
-            else Debug.Log(playerStats.Stats.Keys.ToString());
+            else Debug.Log(playerStats.BaseStats.Keys.ToString());
             Debug.Log(statText[i]);
         }
         int j = 0;
