@@ -7,6 +7,7 @@ using EnterCloudsReach.Player;
 public class AbilityStatUI : MonoBehaviour
 {
     public string Stat;
+    private TMP_Text Bonus;
     private PlayerStats stats;
     // Start is called before the first frame update
     void Start()
@@ -14,8 +15,28 @@ public class AbilityStatUI : MonoBehaviour
         stats = FindObjectOfType<PlayerStatDDOL>().playerStats;
         Debug.Log(stats.health);
         Debug.Log(stats.Stats.Values.Count);
+        TMP_Text[] texts = GetComponentsInChildren<TMP_Text>();
+        foreach(TMP_Text text in texts){
+            if(text.name == "BonusText")
+            {
+                Bonus = text;
+            }
+        }
         if(stats.Stats.Values.Count != 0){
         UpdateStat();
+        UpdateBonus();
     }}
     public void UpdateStat() => GetComponentInChildren<TMP_Text>().text = stats.GetStat(Stat).ToString();
+    public void UpdateBonus()
+    {
+        int bonus = stats.GetBonus(Stat);
+        if(bonus <= 0)
+        {
+            Bonus.SetText(bonus.ToString());
+        }
+        else
+        {
+            Bonus.SetText("+"+bonus.ToString());
+        }
+    }
 }
