@@ -13,8 +13,11 @@ namespace EnterCloudsReach.Player
         }
         public void SetModStatsInit()
         {
+            if(playerStats.ModStats.Values.Count == 0)
+            {
             playerStats.ModStats = playerStats.BaseStats;
             Debug.Log(playerStats.ModStats.Values.Count);
+            }
         }
     }
 }
