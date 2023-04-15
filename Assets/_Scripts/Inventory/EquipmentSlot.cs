@@ -9,6 +9,11 @@ namespace EnterCloudsReach.Inventory
 {
     public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        // Bonus Overview Stuff
+        public GameObject bonusOverview;
+        public GameObject bonusOverviewInfo;
+        private GameObject curBonusUI;
+
         public slotType typeOfSlot;
 
         private Item equipmentItem;
@@ -59,7 +64,9 @@ namespace EnterCloudsReach.Inventory
             }
             equipmentItem = item;
             if(item.affectStats){
-               ItemStatPos(item);
+                ItemStatPos(item);
+                curBonusUI = Instantiate(bonusOverviewInfo, bonusOverview.transform);
+                curBonusUI.GetComponent<BonusOverviewItemController>().ApplyItem(equipmentItem);
             }
             updateSlot();
         }
