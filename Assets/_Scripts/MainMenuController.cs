@@ -7,7 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("TUT_LEVEL");
+        SceneManager.LoadScene("GAME_INTRO");
     }
     public void EnterScene(string sceneName)
     {

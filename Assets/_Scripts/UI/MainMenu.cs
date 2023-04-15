@@ -6,27 +6,32 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {   
 
-   AudioSource audioSource;
-   public AudioClip bSFX;
-   void Start()
-   {
-      audioSource = gameObject.GetComponent<AudioSource>();
+    AudioSource audioSource;
+    public AudioClip bSFX;
+    void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
+    public void goToScene(string sceneName)
+    { 
+        if(!audioSource.isPlaying)
+        {
+            StartCoroutine(LoadScene(sceneName));
+        }
+    }
 
-   }
-   public void goToScene(string sceneName)
-   { 
-      if(!audioSource.isPlaying)
-      {
-      StartCoroutine(LoadScene(sceneName));
-      }
-   }
-   IEnumerator LoadScene(string sceneName)
-   {
-      audioSource.PlayOneShot(bSFX); 
-      yield return new WaitForSeconds(bSFX.length);
-      SceneManager.LoadScene(sceneName);
-   }
-
+    IEnumerator LoadScene(string sceneName)
+    {
+        Debug.Log("Loading Scene" + sceneName);
+        audioSource.PlayOneShot(bSFX); 
+        yield return new WaitForSeconds(bSFX.length);
+        SceneManager.LoadScene(sceneName);
+        if (!SceneManager.GetSceneByName(sceneName).IsValid())
+        {
+            Debug.Log("Did not find Scene with name: " + sceneName);
+        }
+    }
+    
 }
 
 
