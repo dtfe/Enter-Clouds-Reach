@@ -903,6 +903,61 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &23556142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23556144}
+  - component: {fileID: 23556143}
+  m_Layer: 5
+  m_Name: S1_GuardMove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &23556143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23556142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Pickup the key and keep going
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 41614718}
+--- !u!224 &23556144
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23556142}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 40.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 66
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.44, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &29625117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1130,6 +1185,218 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &34640514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34640515}
+  - component: {fileID: 34640516}
+  m_Layer: 0
+  m_Name: S3_RoomSearchChest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34640515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34640514}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 85
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34640516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34640514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Choice event
+  eventText:
+  - Dont have the key leave. If you got the key open the chest. (will be feature)
+  eventChoices:
+  - {fileID: 847083327}
+  - {fileID: 0}
+--- !u!1 &41614717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 41614719}
+  - component: {fileID: 41614718}
+  m_Layer: 0
+  m_Name: S1_GuardText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &41614718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41614717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Text Event
+  eventText:
+  - 'A guard is blocking the way. '
+  - You could try to trick the guard, or you could choose to fight him.
+  - Attempt to trick the guard to letting you get past by telling him you are here
+    to help make food for the goblins.
+  eventChoices:
+  - {fileID: 394287137}
+--- !u!4 &41614719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41614717}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 68
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &45733145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 45733146}
+  - component: {fileID: 45733147}
+  m_Layer: 5
+  m_Name: S1_GuardMoveLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &45733146
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45733145}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 41.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6.18, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &45733147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45733145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Keep going further
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 394287137}
+--- !u!1 &46852903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46852904}
+  - component: {fileID: 46852905}
+  m_Layer: 5
+  m_Name: L4_Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &46852904
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46852903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 55.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 88
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.72, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &46852905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46852903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Go left
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 1920137162}
 --- !u!1001 &53024776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1913,6 +2180,60 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &89244169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 89244170}
+  - component: {fileID: 89244171}
+  m_Layer: 0
+  m_Name: S1_GuardFightCharm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &89244170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89244169}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 71
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89244171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89244169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Trick the guard
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 1905269225}
+  - {fileID: 1607421968}
+  rollCheck: 13
+  faceType: 20
+  statName: 6
 --- !u!1001 &90898050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2425,6 +2746,61 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &97967851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97967852}
+  - component: {fileID: 97967853}
+  m_Layer: 5
+  m_Name: S3_Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &97967852
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97967851}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 72.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 77
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 13.46, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &97967853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97967851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Go straight
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 324316859}
 --- !u!43 &108983261
 Mesh:
   m_ObjectHideFlags: 0
@@ -3160,119 +3536,6 @@ MonoBehaviour:
     lit up then the last one you were in.
   eventChoices:
   - {fileID: 1782972760}
---- !u!21 &117845657
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DustParticle(Clone)
-  m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3102
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ed6dc1204147d451d96326c7fedc6727, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cookie2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClip: 0
-    - _Blend: 0
-    - _BlendOp: 0
-    - _Border: 0.5
-    - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
-    - _ColorMode: 0
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _DistanceFallOff: 1
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 0
-    - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
-    - _FlipbookMode: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _ParticleDistanceAtten: 100
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZWrite: 1
-    m_Colors:
-    - _AreaExtents: {r: 1.4425175, g: 1.4474167, b: 12.043495, a: 0}
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _BoundsCenter: {r: 1168.9934, g: -828.9409, b: -1036.8422, a: 0}
-    - _BoundsExtents: {r: 2.5000474, g: 6.6373386, b: 2.1150277, a: 0}
-    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ConeAxis: {r: 0.00007338626, g: 12.043497, b: -0.000035892666, a: 145.04578}
-    - _ConeTipData: {r: 1168.9934, g: -835.57825, b: -1036.8422, a: 0}
-    - _Cookie2D_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Cookie2D_SS: {r: 1, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ExtraGeoData: {r: 0, g: -0.006894375, b: 1, a: 12.043495}
-    - _FallOff: {r: 1, g: 2, b: 1, a: 0}
-    - _ParticleLightColor: {r: 1.1267097, g: 1.5282238, b: 1.8837734, a: 3.84}
-    - _ShadowIntensity: {r: 0.9, g: 0.100000024, b: 0, a: 0}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-  m_BuildTextureStacks: []
 --- !u!4 &125963328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -816917632019859498, guid: 681f1d6a20afb754f8d73a4e54c2d93c, type: 3}
@@ -4494,7 +4757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.458
+      value: 0.558
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4502,11 +4765,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.084
+      value: -1.036
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9824786
+      value: 0.15930352
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4514,7 +4777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.18637557
+      value: 0.98722965
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4526,7 +4789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -21.483
+      value: 161.667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4710,7 +4973,7 @@ MonoBehaviour:
   - You can hear him making weird sounds behind you
   - Better get to running...
   eventChoices:
-  - {fileID: 531704268}
+  - {fileID: 45733147}
 --- !u!1 &202619525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,6 +5029,56 @@ MonoBehaviour:
   - It can have multiple lines!
   eventChoices:
   - {fileID: 1847516795}
+--- !u!1 &204049787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204049788}
+  - component: {fileID: 204049789}
+  m_Layer: 0
+  m_Name: S2_Choices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204049788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204049787}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 76
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &204049789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204049787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: So which one is it
+  eventText:
+  - Walk left or keep going straight ahead
+  eventChoices:
+  - {fileID: 46852905}
+  - {fileID: 97967853}
 --- !u!1001 &206206706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5128,6 +5441,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7982657710777550867, guid: ed6248a1b4b64b449a641567d47e2518, type: 3}
   m_PrefabInstance: {fileID: 221667203}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &223250516 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6658422389066570499, guid: 86f01a2da9728f544b2e66d778e62751, type: 3}
+  m_PrefabInstance: {fileID: 206206706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &224166516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5262,6 +5580,61 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228314663}
   m_Mesh: {fileID: -3431635307137101345, guid: 433b2f7718cf9214781f62f255fc6912, type: 3}
+--- !u!1 &239829868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 239829869}
+  - component: {fileID: 239829870}
+  m_Layer: 5
+  m_Name: S3_RoomMoveSearch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &239829869
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239829868}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 68.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 83
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20.34, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &239829870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239829868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Move Event
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 1473692214}
 --- !u!1 &242648633
 GameObject:
   m_ObjectHideFlags: 0
@@ -5830,6 +6203,57 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &275593217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275593219}
+  - component: {fileID: 275593218}
+  m_Layer: 0
+  m_Name: L4_FightLittleGoblinWin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &275593218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275593217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Text Event
+  eventText:
+  - The little goblin got destroyed...
+  - however...
+  - in the process the potion got destroyed aswell
+  eventChoices:
+  - {fileID: 847083327}
+--- !u!4 &275593219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275593217}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 106
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &277345063
 Mesh:
   m_ObjectHideFlags: 0
@@ -6090,6 +6514,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &296435599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1406726787}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.10520187
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.09677993
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.10520187
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7433359
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6689184
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 83.967
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b9235081fd7d9d44dbecf05e96461351, type: 2}
+    - target: {fileID: 919132149155446097, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+      propertyPath: m_Name
+      value: ChestnotOpen (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
 --- !u!1 &300253553
 GameObject:
   m_ObjectHideFlags: 0
@@ -6567,6 +7064,56 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &311418038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311418039}
+  - component: {fileID: 311418040}
+  m_Layer: 0
+  m_Name: L4_PicklockSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &311418039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311418038}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 101
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311418040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311418038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 
+  eventText:
+  - 
+  - 
+  eventChoices:
+  - {fileID: 0}
 --- !u!43 &316375243
 Mesh:
   m_ObjectHideFlags: 0
@@ -6731,43 +7278,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!84 &321544779
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 4096
-  m_Height: 4096
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 90
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!43 &322724899
 Mesh:
   m_ObjectHideFlags: 0
@@ -7096,6 +7606,56 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &324316857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 324316858}
+  - component: {fileID: 324316859}
+  m_Layer: 0
+  m_Name: S3_Choice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &324316858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324316857}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 79
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324316859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324316857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: So
+  eventText:
+  - Keep going or enter the room?
+  eventChoices:
+  - {fileID: 847083327}
+  - {fileID: 1104549134}
 --- !u!1 &324957230
 GameObject:
   m_ObjectHideFlags: 0
@@ -7324,6 +7884,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -3717009634482506002, guid: 4d9d4cb5c43bea5468777fa9b5b6a0a7, type: 3}
   m_PrefabInstance: {fileID: 796585105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &347500895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 347500897}
+  - component: {fileID: 347500896}
+  m_Layer: 0
+  m_Name: R2_EnduranceFail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &347500896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347500895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Failed to run away
+  eventText:
+  - You failed to run away from the goblin
+  - Now furious she lunges at you. Get ready to fight
+  eventChoices:
+  - {fileID: 1727431962}
+--- !u!4 &347500897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347500895}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 63
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &354869883
 Mesh:
   m_ObjectHideFlags: 0
@@ -7613,7 +8223,7 @@ MonoBehaviour:
   - While checking closer you see its a potion
   - Pick up the potion and keep going
   eventChoices:
-  - {fileID: 531704268}
+  - {fileID: 45733147}
 --- !u!4 &358075113
 Transform:
   m_ObjectHideFlags: 0
@@ -8036,6 +8646,106 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &389316659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389316661}
+  - component: {fileID: 389316660}
+  m_Layer: 0
+  m_Name: R2_BrawnFail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &389316660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389316659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Failed to scare the goblin
+  eventText:
+  - It was a good attempt but the goblin mom dosent get faced. She looks at you with
+    a weird face.
+  eventChoices:
+  - {fileID: 1727431962}
+--- !u!4 &389316661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389316659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 61
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &394287135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394287136}
+  - component: {fileID: 394287137}
+  m_Layer: 0
+  m_Name: S1_GuardFightChoice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394287136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394287135}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 69
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394287137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394287135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Trick the guard
+  eventText:
+  - Fight the guard or trick him.
+  eventChoices:
+  - {fileID: 1057825935}
+  - {fileID: 89244171}
 --- !u!1001 &395445300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8622,6 +9332,60 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &425474845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425474847}
+  - component: {fileID: 425474846}
+  m_Layer: 0
+  m_Name: L4_ForceOpen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &425474846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425474845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 'try to force open the chest '
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 1097116402}
+  - {fileID: 1143745613}
+  rollCheck: 10
+  faceType: 20
+  statName: 1
+--- !u!4 &425474847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425474845}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 94
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430291143
 GameObject:
   m_ObjectHideFlags: 0
@@ -8652,7 +9416,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 41
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &430291145
 MonoBehaviour:
@@ -8968,6 +9732,120 @@ Material:
     - _ExtraGeoData: {r: 0, g: -0.25, b: 1, a: 2}
     - _FallOff: {r: 1, g: 2, b: 15, a: 0}
     - _ParticleLightColor: {r: 0.9509434, g: 0.64198697, b: 0, a: 1.2}
+    - _ShadowIntensity: {r: 0.9, g: 0.100000024, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &461655318
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DustParticle(Clone)
+  m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _FLIPBOOKBLENDING_OFF
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3102
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: ed6dc1204147d451d96326c7fedc6727, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cookie2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BlendOp: 0
+    - _Border: 0.5
+    - _BumpScale: 1
+    - _CameraFadingEnabled: 0
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 1
+    - _ColorMode: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DistanceFallOff: 1
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
+    - _DistortionStrength: 1
+    - _DistortionStrengthScaled: 0.1
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FlipbookBlending: 0
+    - _FlipbookMode: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _ParticleDistanceAtten: 100
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SoftParticlesEnabled: 0
+    - _SoftParticlesFarFadeDistance: 1
+    - _SoftParticlesNearFadeDistance: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _AreaExtents: {r: 1.4425175, g: 1.4474167, b: 12.043495, a: 0}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BoundsCenter: {r: 1168.9934, g: -828.9409, b: -1036.8422, a: 0}
+    - _BoundsExtents: {r: 2.5000474, g: 6.6373386, b: 2.1150277, a: 0}
+    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ConeAxis: {r: 0.00007338626, g: 12.043497, b: -0.000035892666, a: 145.04578}
+    - _ConeTipData: {r: 1168.9934, g: -835.57825, b: -1036.8422, a: 0}
+    - _Cookie2D_Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Cookie2D_SS: {r: 1, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ExtraGeoData: {r: 0, g: -0.006894375, b: 1, a: 12.043495}
+    - _FallOff: {r: 1, g: 2, b: 1, a: 0}
+    - _ParticleLightColor: {r: 1.1267097, g: 1.5282238, b: 1.8837734, a: 3.84}
     - _ShadowIntensity: {r: 0.9, g: 0.100000024, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
@@ -9508,6 +10386,56 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &493193965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 493193967}
+  - component: {fileID: 493193966}
+  m_Layer: 0
+  m_Name: L4_ChestOpenChoice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &493193966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493193965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Maybe
+  eventText:
+  - try to charm the little goblin or fight him
+  eventChoices:
+  - {fileID: 1082191222}
+  - {fileID: 1287794528}
+--- !u!4 &493193967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493193965}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 98
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &495173651
 GameObject:
   m_ObjectHideFlags: 0
@@ -9556,7 +10484,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 52
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10062,12 +10990,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Choice event
+  eventName: The goblin mom got destroyed
   eventText:
-  - 
+  - While she lays on the ground you can see that there is a box next to it which
+    is open. A key is inside.
   eventChoices:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 23556143}
 --- !u!4 &515977338
 Transform:
   m_ObjectHideFlags: 0
@@ -10081,7 +11009,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 63
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &518362878
 PrefabInstance:
@@ -10612,61 +11540,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &531704267
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 531704269}
-  - component: {fileID: 531704268}
-  m_Layer: 5
-  m_Name: LR_Guard
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &531704268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531704267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: Keep going further
-  eventText:
-  - This is an Event!
-  - It can have multiple lines!
-  eventChoices:
-  - {fileID: 0}
---- !u!224 &531704269
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531704267}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 41.27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2121255766}
-  m_RootOrder: 57
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.87, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &534085699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10816,6 +11689,160 @@ PrefabInstance:
       objectReference: {fileID: 1617929216}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+--- !u!1 &537472759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537472761}
+  - component: {fileID: 537472760}
+  m_Layer: 0
+  m_Name: L4_PickLock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &537472760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537472759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: try to picklock the chest
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 1542776208}
+  - {fileID: 311418040}
+  rollCheck: 12
+  faceType: 20
+  statName: 4
+--- !u!4 &537472761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537472759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 99
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &544257108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544257109}
+  - component: {fileID: 544257110}
+  m_Layer: 0
+  m_Name: S3_RoomText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &544257109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544257108}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 81
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &544257110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544257108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 
+  eventText:
+  - 'The room is pretty lit up but no one is around. '
+  - Pherhaps you should search around the
+  eventChoices:
+  - {fileID: 653440652}
+--- !u!1 &547429567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547429568}
+  - component: {fileID: 547429569}
+  m_Layer: 0
+  m_Name: S3_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &547429568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547429567}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 78
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &547429569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547429567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: ss
+  eventText:
+  - As you walk down the dimmly lit up path a new room pops up to ur right.
+  - It looks like there is a table some barrels inside of the room.
+  eventChoices:
+  - {fileID: 324316859}
 --- !u!1001 &547727984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11082,6 +12109,59 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &561846768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561846770}
+  - component: {fileID: 561846769}
+  m_Layer: 0
+  m_Name: L4_RoomChestText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &561846769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561846768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: The chest
+  eventText:
+  - The chest seemed to move a little bit. Maybe its just the darkness making the
+    eyes go mad.
+  - 'When taking a closer look you can see that the chest is locked. '
+  - Maybe with your strenght you can force open the chest.
+  - 'Or maybe you can picklock the chest with ur '
+  eventChoices:
+  - {fileID: 2016104980}
+--- !u!4 &561846770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561846768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 92
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575018041
 GameObject:
   m_ObjectHideFlags: 0
@@ -11112,7 +12192,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 47
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &575018043
 MonoBehaviour:
@@ -11166,7 +12246,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11221,7 +12301,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 45
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &603031773
 MonoBehaviour:
@@ -11235,7 +12315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6ec354a60ab764f9a375daa82e873a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Combat Event
+  eventName: Sneak attack
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -11855,6 +12935,56 @@ PrefabInstance:
       objectReference: {fileID: 1417209671}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+--- !u!1 &653440650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653440651}
+  - component: {fileID: 653440652}
+  m_Layer: 0
+  m_Name: S3_RoomChoice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653440651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653440650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 82
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653440652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653440650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: What would you like to do
+  eventText:
+  - Maybe search the room, or leave and keep going
+  eventChoices:
+  - {fileID: 239829870}
+  - {fileID: 847083327}
 --- !u!4 &655856178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 937096994271271509, guid: 6721e91a683741f4c81e0d3b29793497, type: 3}
@@ -12116,13 +13246,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: BrawnCheck
+  eventName: Try to scare her with ur size
   eventText:
   - This is an Event!
   - It can have multiple lines!
   eventChoices:
-  - {fileID: 0}
-  rollCheck: 13
+  - {fileID: 389316660}
+  - {fileID: 23556143}
+  rollCheck: 14
   faceType: 20
   statName: 1
 --- !u!4 &668434541
@@ -14146,7 +15277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.032739032
+      value: -0.03286
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14154,7 +15285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.091805376
+      value: -0.09521
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14366,6 +15497,56 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &815180669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815180671}
+  - component: {fileID: 815180670}
+  m_Layer: 0
+  m_Name: L4_Choice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &815180670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815180669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: What will you do
+  eventText:
+  - Leave the room and keep going or go over to the chest and open it.
+  eventChoices:
+  - {fileID: 847083327}
+  - {fileID: 1214969279}
+--- !u!4 &815180671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815180669}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 90
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &819313215
 Material:
   serializedVersion: 8
@@ -14977,10 +16158,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: 
   eventText:
-  - Enter room or keep going
+  - Go into the room? or keep going further into the tower
   eventChoices:
   - {fileID: 202619527}
-  - {fileID: 531704268}
+  - {fileID: 45733147}
 --- !u!1 &835067412
 GameObject:
   m_ObjectHideFlags: 0
@@ -15011,7 +16192,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 50
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &835067414
 MonoBehaviour:
@@ -15220,6 +16401,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -1440120038825204477, guid: 5b612583ea5ee5b42830503c1fe9ba62, type: 3}
   m_PrefabInstance: {fileID: 90898050}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &847083325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847083326}
+  - component: {fileID: 847083327}
+  m_Layer: 5
+  m_Name: S4_Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &847083326
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847083325}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 81.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 87
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 13.17, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &847083327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847083325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Keep going further
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 0}
 --- !u!4 &847616716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9180773976250322912, guid: d3e45e6ea120f2643a679ef89531f70c, type: 3}
@@ -15701,15 +16937,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1027534
+      value: -1.653
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.010887846
+      value: 0.054
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10652542
+      value: 0.576
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16331,7 +17567,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 51
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &898369688
 MonoBehaviour:
@@ -17982,10 +19218,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Text R2
   eventText:
-  - 'As you keep walking, you begin to hear strange noises coming from a room to
-    your right. '
-  - It's difficult to make out exactly what the sounds are, but there's definitely
-    some sort of commotion inside.
+  - As you enter the room a huge figure towers in the corner
+  - It seems to be a female goblin. She dosent look very happy with you being in
+    her space.
+  - maybe you could try to scream at the top of ur lunges scaring the goblin mom.
   eventChoices:
   - {fileID: 1310586798}
 --- !u!4 &955122362
@@ -18167,6 +19403,56 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &970221438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970221440}
+  - component: {fileID: 970221439}
+  m_Layer: 0
+  m_Name: L4_CharmLittleGoblinFail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &970221439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970221438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 
+  eventText:
+  - The little goblin gets anoyed at you for talking so much
+  - He jumps towards you to attack
+  eventChoices:
+  - {fileID: 1287794528}
+--- !u!4 &970221440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970221438}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 103
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &970520360
 Mesh:
   m_ObjectHideFlags: 0
@@ -18414,119 +19700,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978378774}
   m_Mesh: {fileID: -3443740061407470950, guid: 433b2f7718cf9214781f62f255fc6912, type: 3}
---- !u!21 &984822073
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DustParticle(Clone)
-  m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3102
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ed6dc1204147d451d96326c7fedc6727, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cookie2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClip: 0
-    - _Blend: 0
-    - _BlendOp: 0
-    - _Border: 0.576
-    - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
-    - _ColorMode: 0
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _DistanceFallOff: 1
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 0
-    - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
-    - _FlipbookMode: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _ParticleDistanceAtten: 225
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZWrite: 1
-    m_Colors:
-    - _AreaExtents: {r: 0, g: 0, b: 0, a: 1}
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _BoundsCenter: {r: 1166.3694, g: -830.383, b: -1039, a: 0}
-    - _BoundsExtents: {r: 13.417139, g: 13.435714, b: 9.957341, a: 0}
-    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ConeAxis: {r: 0, g: 0, b: 2, a: 4}
-    - _ConeTipData: {r: 1166.3694, g: -830.383, b: -1039, a: 0}
-    - _Cookie2D_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Cookie2D_SS: {r: 1, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ExtraGeoData: {r: 0, g: -0.25, b: 1, a: 2}
-    - _FallOff: {r: 1, g: 2, b: 15, a: 0}
-    - _ParticleLightColor: {r: 1.1649057, g: 0.786434, b: 0, a: 1.47}
-    - _ShadowIntensity: {r: 0, g: 1, b: 0, a: 0}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-  m_BuildTextureStacks: []
 --- !u!43 &988284923
 Mesh:
   m_ObjectHideFlags: 0
@@ -19196,7 +20369,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 54
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1052204929
 GameObject:
@@ -19254,6 +20427,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -827486991973151910, guid: 67f305fb09da7fc4598720261ba649b5, type: 3}
   m_PrefabInstance: {fileID: 1340453925}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1057825933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057825934}
+  - component: {fileID: 1057825935}
+  m_Layer: 0
+  m_Name: S1_GuardFight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1057825934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057825933}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 70
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1057825935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057825933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6ec354a60ab764f9a375daa82e873a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Fight the guard
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 1653547320}
+  enemyPrefab: {fileID: 4386765821987018786, guid: 0f555c66757eaf9429bf0f117ef64923, type: 3}
 --- !u!1001 &1060028790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19327,6 +20551,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bae38b69d0fb53b4ea69fee0ae74e4f7, type: 3}
+--- !u!1 &1064196220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064196222}
+  - component: {fileID: 1064196221}
+  m_Layer: 0
+  m_Name: L4_CharmLittleGoblinSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1064196221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064196220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 
+  eventText:
+  - As you talked to the little goblin you managed to befriend him
+  - He seemed happy to have made a friend
+  - As he talks to you he says he wants to give you his potion
+  - You get the potion and say your goodbyes to your new friend
+  eventChoices:
+  - {fileID: 847083327}
+--- !u!4 &1064196222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064196220}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 104
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1072436425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19488,6 +20764,43 @@ PrefabInstance:
       objectReference: {fileID: 1731554133}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+--- !u!84 &1077158985
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 4096
+  m_Height: 4096
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 90
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!43 &1078962409
 Mesh:
   m_ObjectHideFlags: 0
@@ -19806,48 +21119,117 @@ PrefabInstance:
       objectReference: {fileID: 556107161}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
---- !u!84 &1088898479
-RenderTexture:
+--- !u!1 &1082191221
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1082191223}
+  - component: {fileID: 1082191222}
+  m_Layer: 0
+  m_Name: L4_CharmLittleGoblin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1082191222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082191221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
   m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 4096
-  m_Height: 4096
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 90
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
+  m_EditorClassIdentifier: 
+  eventName: Befriend the goblin
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 970221439}
+  - {fileID: 1064196221}
+  rollCheck: 11
+  faceType: 6
+  statName: 6
+--- !u!4 &1082191223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082191221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 102
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1095582036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7982657710777550867, guid: ed6248a1b4b64b449a641567d47e2518, type: 3}
   m_PrefabInstance: {fileID: 1613879124}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1097116400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097116401}
+  - component: {fileID: 1097116402}
+  m_Layer: 0
+  m_Name: L4_ForceOpenFail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097116401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097116400}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 95
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1097116402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097116400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Text Event
+  eventText:
+  - With your amazing strenght you managed to open the chest
+  - But.....
+  - The chest went so fast up that it closed itself again
+  - When it closed itself it also welded itself shut, making it impossible to open
+  eventChoices:
+  - {fileID: 847083327}
 --- !u!1 &1103773335
 GameObject:
   m_ObjectHideFlags: 0
@@ -20095,6 +21477,61 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1104549132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1104549133}
+  - component: {fileID: 1104549134}
+  m_Layer: 5
+  m_Name: S3_RoomMove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1104549133
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104549132}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 73.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 80
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19.16, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1104549134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104549132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Enter the room
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 544257110}
 --- !u!21 &1113175980
 Material:
   serializedVersion: 8
@@ -20824,6 +22261,56 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1143745611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1143745612}
+  - component: {fileID: 1143745613}
+  m_Layer: 0
+  m_Name: L4_ForceOpenSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1143745612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143745611}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 96
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1143745613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143745611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Text Event
+  eventText:
+  - You managed to open the chest without a problem
+  - Inside you see a tiny goblin holding onto a potion
+  eventChoices:
+  - {fileID: 1342545030}
 --- !u!1 &1150337533
 GameObject:
   m_ObjectHideFlags: 0
@@ -20854,7 +22341,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 49
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1150337535
 MonoBehaviour:
@@ -21079,7 +22566,7 @@ MonoBehaviour:
   - You managed to trick the goblin that your just here in his head
   - The goblin sits back into has barrel again sounding distressed
   eventChoices:
-  - {fileID: 531704268}
+  - {fileID: 0}
 --- !u!4 &1172255238
 Transform:
   m_ObjectHideFlags: 0
@@ -21953,6 +23440,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -1251095926745239203, guid: d3e45e6ea120f2643a679ef89531f70c, type: 3}
   m_PrefabInstance: {fileID: 29625117}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1214969278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214969280}
+  - component: {fileID: 1214969279}
+  m_Layer: 5
+  m_Name: L4_RoomMove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214969279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214969278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Go over to the chest
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 561846769}
+--- !u!224 &1214969280
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214969278}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 54.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 91
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -15.34, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1215531956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23179,6 +24721,57 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &1287794527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287794529}
+  - component: {fileID: 1287794528}
+  m_Layer: 0
+  m_Name: L4_FightLittleGoblin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1287794528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287794527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6ec354a60ab764f9a375daa82e873a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 'Fight '
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 275593218}
+  enemyPrefab: {fileID: 5444936775081559331, guid: 8dd09c6e1b7321d4c92eaa353a71c020, type: 3}
+--- !u!4 &1287794529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287794527}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 105
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1288100993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23798,7 +25391,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 43
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1301065764
 MonoBehaviour:
@@ -25116,6 +26709,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &1342545029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342545031}
+  - component: {fileID: 1342545030}
+  m_Layer: 0
+  m_Name: L4_ForceOpenSuccessText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1342545030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342545029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Text Event
+  eventText:
+  - The little goblin dosent seem to want to let go of the potion as he is tightly
+    holding onto it while staring you down.
+  - 'Charming him might be a good option or fighting him and taking the potion afterwards... '
+  - if you win that is
+  eventChoices:
+  - {fileID: 493193966}
+--- !u!4 &1342545031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342545029}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 97
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1344702884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26338,7 +27983,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28315,6 +29960,57 @@ PrefabInstance:
     - {fileID: 8526575120734629204, guid: 1d9dd118e8d873b468e776553e530543, type: 3}
     - {fileID: 1606895369551987082, guid: 1d9dd118e8d873b468e776553e530543, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1d9dd118e8d873b468e776553e530543, type: 3}
+--- !u!1 &1473692212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1473692213}
+  - component: {fileID: 1473692214}
+  m_Layer: 0
+  m_Name: S3_RoomSearchText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1473692213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473692212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 84
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1473692214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473692212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Searched
+  eventText:
+  - As you search the room you find a chest that was hidden.
+  - It seems to need a spesific key.. If you picked one up on the way maybe you could
+    try.
+  eventChoices:
+  - {fileID: 34640516}
 --- !u!4 &1474013352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5311816928027272547, guid: 5b612583ea5ee5b42830503c1fe9ba62, type: 3}
@@ -28816,6 +30512,56 @@ PrefabInstance:
       objectReference: {fileID: 1487785606}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+--- !u!1 &1542776206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542776207}
+  - component: {fileID: 1542776208}
+  m_Layer: 0
+  m_Name: L4_PicklockFail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1542776207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542776206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 100
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542776208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542776206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 'You '
+  eventText:
+  - 
+  - 
+  eventChoices:
+  - {fileID: 0}
 --- !u!21 &1544596910
 Material:
   serializedVersion: 8
@@ -28940,7 +30686,7 @@ GameObject:
   - component: {fileID: 1555953747}
   - component: {fileID: 1555953746}
   m_Layer: 0
-  m_Name: R2_AgilityCheck
+  m_Name: R2_EnduranceCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28958,15 +30704,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Agility check
+  eventName: Attempt to run out of the room and get away
   eventText:
   - This is an Event!
   - It can have multiple lines!
   eventChoices:
-  - {fileID: 0}
-  rollCheck: 13
+  - {fileID: 347500896}
+  - {fileID: 23556143}
+  rollCheck: 10
   faceType: 20
-  statName: 2
+  statName: 3
 --- !u!4 &1555953747
 Transform:
   m_ObjectHideFlags: 0
@@ -28980,7 +30727,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 61
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1572925077
 PrefabInstance:
@@ -29667,6 +31414,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed6248a1b4b64b449a641567d47e2518, type: 3}
+--- !u!1 &1607421967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607421969}
+  - component: {fileID: 1607421968}
+  m_Layer: 0
+  m_Name: S2_TextCharmSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1607421968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607421967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Tricked the guard
+  eventText:
+  - The guard fell straight for your lies. *dont look back*
+  - 'You then get to this new cross road. '
+  eventChoices:
+  - {fileID: 1653547320}
+--- !u!4 &1607421969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607421967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 73
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1608623204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29858,7 +31655,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 42
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -30110,7 +31907,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 40
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1613368418
 MonoBehaviour:
@@ -30527,7 +32324,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 44
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1630288499
 MonoBehaviour:
@@ -30972,6 +32769,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -6100882106890102185, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
   m_PrefabInstance: {fileID: 1342383352}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1653547319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653547321}
+  - component: {fileID: 1653547320}
+  m_Layer: 5
+  m_Name: S2_Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1653547320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653547319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: You managed to trick the guard
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 204049789}
+--- !u!224 &1653547321
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653547319}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 48.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 74
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.5, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!43 &1687681146
 Mesh:
   m_ObjectHideFlags: 0
@@ -31166,7 +33018,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 55
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31632,13 +33484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6ec354a60ab764f9a375daa82e873a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Combat Event
+  eventName: Fight her
   eventText:
   - This is an Event!
   - It can have multiple lines!
   eventChoices:
   - {fileID: 515977337}
-  enemyPrefab: {fileID: 6226760860064331139, guid: e0f278fe6f5ee4248a2577fa4a633924, type: 3}
+  enemyPrefab: {fileID: 4386765821987018786, guid: e324457ee786d99489e8bcc47263d458, type: 3}
 --- !u!4 &1727431963
 Transform:
   m_ObjectHideFlags: 0
@@ -31652,7 +33504,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 62
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &1731554133
 Material:
@@ -31767,6 +33619,56 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &1731847450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731847451}
+  - component: {fileID: 1731847452}
+  m_Layer: 0
+  m_Name: S3_RoomSearchSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731847451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731847450}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 86
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731847452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731847450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: You had the key
+  eventText:
+  - You got the chest opened. Guess it was the key from the goblin mom.
+  - Inside lays a weapon of some sort (will be able to tell which one later)
+  eventChoices:
+  - {fileID: 847083327}
 --- !u!21 &1735041922
 Material:
   serializedVersion: 8
@@ -32199,6 +34101,120 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!21 &1746285373
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DustParticle(Clone)
+  m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _FLIPBOOKBLENDING_OFF
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3102
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: ed6dc1204147d451d96326c7fedc6727, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cookie2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BlendOp: 0
+    - _Border: 0.576
+    - _BumpScale: 1
+    - _CameraFadingEnabled: 0
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 1
+    - _ColorMode: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DistanceFallOff: 1
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
+    - _DistortionStrength: 1
+    - _DistortionStrengthScaled: 0.1
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FlipbookBlending: 0
+    - _FlipbookMode: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _ParticleDistanceAtten: 225
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SoftParticlesEnabled: 0
+    - _SoftParticlesFarFadeDistance: 1
+    - _SoftParticlesNearFadeDistance: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _AreaExtents: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BoundsCenter: {r: 1166.3694, g: -830.383, b: -1039, a: 0}
+    - _BoundsExtents: {r: 13.417139, g: 13.435714, b: 9.957341, a: 0}
+    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ConeAxis: {r: 0, g: 0, b: 2, a: 4}
+    - _ConeTipData: {r: 1166.3694, g: -830.383, b: -1039, a: 0}
+    - _Cookie2D_Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Cookie2D_SS: {r: 1, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ExtraGeoData: {r: 0, g: -0.25, b: 1, a: 2}
+    - _FallOff: {r: 1, g: 2, b: 15, a: 0}
+    - _ParticleLightColor: {r: 1.1649057, g: 0.786434, b: 0, a: 1.47}
+    - _ShadowIntensity: {r: 0, g: 1, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_BuildTextureStacks: []
 --- !u!43 &1761878076
 Mesh:
   m_ObjectHideFlags: 0
@@ -32814,7 +34830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0820965
+      value: 0.689
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32822,7 +34838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1208507
+      value: 0.207
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33370,6 +35386,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2411280944414579199, guid: b5265e6e69636ce4aaddc4b9fa503994, type: 3}
   m_PrefabInstance: {fileID: 1810085684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1820190968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1820190970}
+  - component: {fileID: 1820190969}
+  m_Layer: 5
+  m_Name: S1_GuardMoveNoKey
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1820190969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820190968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Dont mind the room and keep going
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 41614718}
+--- !u!224 &1820190970
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820190968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 40.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 67
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.44, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1829595466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33572,11 +35643,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Text Event
   eventText:
-  - As you step into the room, you notice a faint flicker of light coming from a
-    torch on the wall.
+  - As you step into the room, you see ALOT of barrels
   - While looking at all the barrels
-  - you hear a rustling noise and turn to see a small goblin emerge. It has its head
-    down in a barrel.
+  - you hear a rustling noise and turn to see a goblin emerge. It has its head down
+    in a barrel.
   - It looks up and locks eyes with you before letting out a loud screech and charging
     towards you.
   eventChoices:
@@ -34478,7 +36548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 56
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1880492047
 MonoBehaviour:
@@ -34496,7 +36566,7 @@ MonoBehaviour:
   eventText:
   - Keep going or enter
   eventChoices:
-  - {fileID: 531704268}
+  - {fileID: 1820190969}
   - {fileID: 1689399869}
 --- !u!1 &1885145945 stripped
 GameObject:
@@ -34533,7 +36603,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1891932163
 MonoBehaviour:
@@ -34650,6 +36720,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6261942618543568708, guid: 1628fd9d73141374499916f0c80f5503, type: 3}
   m_PrefabInstance: {fileID: 1403251145}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1905269223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1905269224}
+  - component: {fileID: 1905269225}
+  m_Layer: 0
+  m_Name: S1_GuardFightCharmFail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1905269224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905269223}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 72
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905269225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905269223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: You failed to trick the guard
+  eventText:
+  - You failed to trick the guard. Confused of what you attempted doing he walks
+    towards you.
+  - As this is the only way you know of further into the tower... you take the fight.
+  eventChoices:
+  - {fileID: 1057825935}
 --- !u!1001 &1906903602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34995,6 +37116,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917095910}
   m_Mesh: {fileID: -3431635307137101345, guid: 433b2f7718cf9214781f62f255fc6912, type: 3}
+--- !u!1 &1920137160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920137161}
+  - component: {fileID: 1920137162}
+  m_Layer: 0
+  m_Name: L4_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1920137161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920137160}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 89
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1920137162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920137160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Room text
+  eventText:
+  - As you get up to this new room you notice its quite big yet not alot of furniture
+  - Something must be in here, it does look like there is a chest in shelf.
+  eventChoices:
+  - {fileID: 815180670}
 --- !u!1 &1925533784
 GameObject:
   m_ObjectHideFlags: 0
@@ -35754,7 +37925,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121255766}
-  m_RootOrder: 48
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35788,12 +37959,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1288836177517137735, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1288836177517137735, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 321544779}
+      objectReference: {fileID: 1077158985}
     - target: {fileID: 2507697988622471827, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -80
@@ -35805,7 +37976,7 @@ PrefabInstance:
     - target: {fileID: 3301673853986254766, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 984822073}
+      objectReference: {fileID: 1746285373}
     - target: {fileID: 3646034149348491285, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: VelocityModule.x.scalar
       value: 0.11761322
@@ -35941,7 +38112,7 @@ PrefabInstance:
     - target: {fileID: 5992073878092704565, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 117845657}
+      objectReference: {fileID: 461655318}
     - target: {fileID: 6322965934740253539, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -36000,6 +38171,108 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+--- !u!1 &2007871931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2007871932}
+  - component: {fileID: 2007871933}
+  m_Layer: 0
+  m_Name: S2_GuardFightWin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2007871932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007871931}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 75
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2007871933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007871931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: You won
+  eventText:
+  - 'After beating the guard you keep going up untill here. '
+  - 'A new crossroad seems to have apeared. '
+  eventChoices:
+  - {fileID: 204049789}
+--- !u!1 &2016104979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016104981}
+  - component: {fileID: 2016104980}
+  m_Layer: 0
+  m_Name: L4_ChestChoice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2016104980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016104979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: The options are
+  eventText:
+  - Leave the chest be and leave. Attempt to force open the chest or picklock the
+    chest.
+  eventChoices:
+  - {fileID: 847083327}
+  - {fileID: 425474846}
+  - {fileID: 537472760}
+--- !u!4 &2016104981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016104979}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121255766}
+  m_RootOrder: 93
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016839020
 GameObject:
   m_ObjectHideFlags: 0
@@ -36460,6 +38733,80 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &2095008891
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 223250516}
+    m_Modifications:
+    - target: {fileID: 515669529511823806, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_Name
+      value: Body (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07311956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07311957
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07311956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.203
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.784109
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.014289356
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.62035316
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.011439939
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 2.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 283.301
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088689482002361337, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4171496765435235693, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 3bcea08e31f340441a4bc1b69b47091a, type: 3}
 --- !u!43 &2095841450
 Mesh:
   m_ObjectHideFlags: 0
@@ -36788,6 +39135,155 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &2107763466
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 329405426}
+    m_Modifications:
+    - target: {fileID: 515486008817107480, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.619162
+      objectReference: {fileID: 0}
+    - target: {fileID: 515486008817107480, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67304265
+      objectReference: {fileID: 0}
+    - target: {fileID: 515486008817107480, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.619162
+      objectReference: {fileID: 0}
+    - target: {fileID: 688527724241560607, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720914545992697467, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.83640206
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.13967955
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5227803
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08730458
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063128263759776681, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 490253533}
+    - target: {fileID: 3598968278466408565, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598968278466408565, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945674643979517098, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370410205794764464, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062136189724174702, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: 0.07397086
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773658014672050819, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773658014672050819, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.002390491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0020230687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.002390491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0327
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00006674186
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.10761
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5013997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -9.69576e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.86521584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 7.330822e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792255910597519078, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_Name
+      value: Torch (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792255910597519078, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027757029101881045, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 86516600}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
 --- !u!43 &2107798061
 Mesh:
   m_ObjectHideFlags: 0
@@ -37410,6 +39906,7 @@ Transform:
   - {fileID: 199211512}
   - {fileID: 1052204930}
   - {fileID: 358075113}
+  - {fileID: 45733146}
   - {fileID: 1382832773}
   - {fileID: 1613368417}
   - {fileID: 430291144}
@@ -37428,13 +39925,55 @@ Transform:
   - {fileID: 1039358763}
   - {fileID: 1689399868}
   - {fileID: 1880492046}
-  - {fileID: 531704269}
   - {fileID: 955122362}
   - {fileID: 1310586799}
   - {fileID: 668434541}
+  - {fileID: 389316661}
   - {fileID: 1555953747}
+  - {fileID: 347500897}
   - {fileID: 1727431963}
   - {fileID: 515977338}
+  - {fileID: 23556144}
+  - {fileID: 1820190970}
+  - {fileID: 41614719}
+  - {fileID: 394287136}
+  - {fileID: 1057825934}
+  - {fileID: 89244170}
+  - {fileID: 1905269224}
+  - {fileID: 1607421969}
+  - {fileID: 1653547321}
+  - {fileID: 2007871932}
+  - {fileID: 204049788}
+  - {fileID: 97967852}
+  - {fileID: 547429568}
+  - {fileID: 324316858}
+  - {fileID: 1104549133}
+  - {fileID: 544257109}
+  - {fileID: 653440651}
+  - {fileID: 239829869}
+  - {fileID: 1473692213}
+  - {fileID: 34640515}
+  - {fileID: 1731847451}
+  - {fileID: 847083326}
+  - {fileID: 46852904}
+  - {fileID: 1920137161}
+  - {fileID: 815180671}
+  - {fileID: 1214969280}
+  - {fileID: 561846770}
+  - {fileID: 2016104981}
+  - {fileID: 425474847}
+  - {fileID: 1097116401}
+  - {fileID: 1143745612}
+  - {fileID: 1342545031}
+  - {fileID: 493193967}
+  - {fileID: 537472761}
+  - {fileID: 1542776207}
+  - {fileID: 311418039}
+  - {fileID: 1082191223}
+  - {fileID: 970221440}
+  - {fileID: 1064196222}
+  - {fileID: 1287794529}
+  - {fileID: 275593219}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
