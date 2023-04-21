@@ -8,8 +8,11 @@ namespace EnterCloudsReach.EventSystem
     [Event(false, 1, 1)]   
     public class MoveEvent : EventClass
     {
+        [SerializeField] Animator terrainAmin;
         public override void StartEvent()
         {
+            if (terrainAmin != null){
+            terrainAmin.enabled = true;}
             NavMeshPlayerController.QueUpMovement(transform.position, FinishMovement);
         }
 
