@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("CHARACTER_CREATOR");
+        SceneManager.LoadScene("GAME_INTRO");
     }
     public void EnterScene(string sceneName)
     {
@@ -22,5 +22,10 @@ public class MainMenuController : MonoBehaviour
     public void Settings()
     {
         Debug.Log("Open Settings");
+    }
+    public void PageTurn()
+    {
+        GameObject.Find("Continue").GetComponent<Button>().interactable = true;
+        GameObject.Find("Pivot").GetComponent<Animator>().enabled = true;
     }
 }
