@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using EnterCloudsReach.EventSystem;
 
 namespace EnterCloudsReach.GUI
 {
@@ -9,7 +10,7 @@ namespace EnterCloudsReach.GUI
     {
         [Header("Referances")]
         [SerializeField] private TMP_Text eventText;
-
+        
         private int index;
 
         public void Initialize(string EventName, int Index)
@@ -20,6 +21,7 @@ namespace EnterCloudsReach.GUI
 
         public void SelectEvent()
         {
+            GUI_Manager.DialogueBox.EmptyRollInfo();
             GUI_Manager.DialogueBox.eventReturnIndex = index;
         }
     }
