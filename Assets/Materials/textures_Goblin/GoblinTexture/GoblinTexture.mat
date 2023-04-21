@@ -7,12 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: material_Goblin
+  m_Name: GoblinTexture
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
   - _EMISSION
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
+  - _OCCLUSIONMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -25,11 +26,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 8bc836756c1e05d44b531ccb7e6b4d44, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29d38326a7e232542ad3272152299d57, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 70b8b94f335531d4389b15e3c1f650cc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7be9c3f47f58d0a4a9debfea86ad2d8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -45,19 +46,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: abd192dfcf637864e878e73f6d4b5f01, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9f58c4f4b9cec3e4e863d545bb5df93a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8bc836756c1e05d44b531ccb7e6b4d44, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29d38326a7e232542ad3272152299d57, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 4dbedf0a0528042429d4e130a1f4448e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9f58c4f4b9cec3e4e863d545bb5df93a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 61ee8c301163a1a4e89b3498190cf4ea, type: 3}
+        m_Texture: {fileID: 2800000, guid: 951271f4da48e4d44b422bc099c4f96d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -111,10 +112,10 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 142.70158, g: 132.91634, b: 155.74858, a: 1}
+    - _EmissionColor: {r: 28.859226, g: 3.8344984, b: 54.92663, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4601805163520935616
+--- !u!114 &6970337588912373017
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
