@@ -116,6 +116,7 @@ namespace EnterCloudsReach.Inventory
             }
             spawnedPopup = Instantiate(menuPopup, transform);
             spawnedPopup.GetComponentInChildren<ItemMenuPopupController>().SetItemUiController = this;
+            spawnedPopup.GetComponentInChildren<ItemMenuPopupController>().setItem = itemReference;
         }
     }
 }
