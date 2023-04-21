@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace EnterCloudsReach.Inventory
 {
@@ -14,9 +15,12 @@ namespace EnterCloudsReach.Inventory
         public GameObject consumableExamine;
         public GameObject armorExamine;
 
+
+        private Item itemRef;
         private Animator animSelf;
 
         private ItemUIController parentController;
+        private EquipmentSlot parentSlot;
 
         private void Start()
         {
@@ -25,9 +29,23 @@ namespace EnterCloudsReach.Inventory
 
         private void Update()
         {
-            if (parentController != null && !parentController.GetIsOver)
+            if (parentController != null && !parentController.GetIsOver || parentSlot != null && !parentSlot.isOver)
             {
                 Deselected();
+            }
+        }
+
+        public Item setItem
+        {
+            get { return itemRef; }
+            set { itemRef = value; }
+        }
+
+        public EquipmentSlot setParentSlot
+        {
+            set 
+            {
+                parentSlot = value;
             }
         }
 
@@ -40,7 +58,8 @@ namespace EnterCloudsReach.Inventory
         public void ExamineItem()
         {
             GameObject spawnedExamine = null;
-            switch (parentController.itemReference.itemClass)
+
+            switch (itemRef.itemClass)
             {
 
                 default:
@@ -64,24 +83,35 @@ namespace EnterCloudsReach.Inventory
             }
             if (spawnedExamine != null)
             {
-                spawnedExamine.GetComponent<InvExamineController>().referencedItem = parentController.itemReference;
+                spawnedExamine.GetComponent<InvExamineController>().referencedItem = itemRef;
             }
             Deselected();
         }
 
         public void DropItem()
         {
+            Deselected();
             FindObjectOfType<InventoryManager>().RemoveItem(parentController.itemReference);
         }
 
         public void Deselected()
         {
+            foreach(Button btn in GetComponentsInChildren<Button>())
+            {
+                btn.interactable = false;
+            }
             animSelf.SetTrigger("Exit");
         }
 
         public void DestroyMenu()
         {
             Destroy(parent);
+        }
+
+        public void UnequipItem()
+        {
+            Deselected();
+            parentSlot.UnqeuipItem();
         }
     }
 }

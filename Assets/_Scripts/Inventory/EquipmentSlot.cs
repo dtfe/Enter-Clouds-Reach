@@ -7,12 +7,15 @@ using EnterCloudsReach.Player;
 
 namespace EnterCloudsReach.Inventory
 {
-    public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         // Bonus Overview Stuff
         public GameObject bonusOverview;
         public GameObject bonusOverviewInfo;
         private GameObject curBonusUI;
+
+        // Equipment Actions
+        public GameObject equipmentActions;
 
         public slotType typeOfSlot;
 
@@ -21,7 +24,7 @@ namespace EnterCloudsReach.Inventory
 
         private Image icon;
         
-        private Image startIcon;
+        private Image selfIcon;
         private Color startColor;
         private Sprite startIconSprite;
 
@@ -32,15 +35,15 @@ namespace EnterCloudsReach.Inventory
 
         private void Start()
         {
-            startIcon = GetComponent<Image>();
-            startIconSprite = startIcon.sprite;
-            startColor = startIcon.color;
+            selfIcon = GetComponent<Image>();
             playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
             manager = GetComponentInParent<EquipmentSlotManager>();
             icon = transform.Find("Icon").GetComponent<Image>();
+            startIconSprite = icon.sprite;
+            startColor = icon.color;
             abi = FindObjectsOfType<AbilityStatUI>();
         }
-
+            
         public void OnPointerEnter(PointerEventData eventData)
         {
             Debug.Log("Mouse Entered: " + gameObject.name);
@@ -58,9 +61,14 @@ namespace EnterCloudsReach.Inventory
         }
 
         public void equipItem(Item item)
-        {   if(equipmentItem != null && equipmentItem.affectStats)
+        {   
+            if(equipmentItem != null && equipmentItem.affectStats)
             {   
                 ItemStatNeg(equipmentItem);
+                if (curBonusUI)
+                {
+                    Destroy(curBonusUI);
+                }
             }
             equipmentItem = item;
             if(item.affectStats){
@@ -87,9 +95,17 @@ namespace EnterCloudsReach.Inventory
 
         public void UnqeuipItem()
         {
+            if (equipmentItem != null && equipmentItem.affectStats)
+            {
+                ItemStatNeg(equipmentItem);
+                if (curBonusUI)
+                {
+                    Destroy(curBonusUI);
+                }
+            }
             GetComponentInParent<InventoryManager>().AddItem(equipmentItem);
             equipmentItem = null;
-            updateSlot();
+                        updateSlot();
         }
         
         void ItemStatPos(Item item)
@@ -116,12 +132,24 @@ namespace EnterCloudsReach.Inventory
             playerStats.ModStats["Knowledge"] -= item.Knowledge;
             playerStats.ModStats["Wisdom"] -= item.Wisdom;
             playerStats.ModStats["Charm"] -= item.Charm; 
-            foreach(var obj in abi) {
-                obj.UpdateStat();
-                obj.UpdateBonus();
+            foreach(var obj in abi) 
+                {
+                    obj.UpdateStat();
+                    obj.UpdateBonus();
+                }
             }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if(equipmentItem != null)
+            {
+                GameObject go = Instantiate(equipmentActions, transform);
+                ItemMenuPopupController eaController = go.GetComponentInChildren<ItemMenuPopupController>();
+                eaController.setParentSlot = this;
+                eaController.setItem = equipmentItem;
             }
-        }   
+        }
     }
 
 }
