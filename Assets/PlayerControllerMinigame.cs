@@ -10,6 +10,7 @@ namespace EnterCloudsReach.Combat
         // Movement
         [SerializeField] private float speed = 1;
         private float movementX, movementY;
+        public float rayLengthMultiplier;
         private Rigidbody2D rb2d;
 
         // Raycast
@@ -25,34 +26,42 @@ namespace EnterCloudsReach.Combat
         // Update is called once per frame
         void Update()
         {
-            Vector2 movement = new Vector2(movementX, movementY);
-            RaycastHit2D xDirHit = Physics2D.Raycast(transform.position, new Vector2(movementX * 100, 0), 50, layermask);
-            Debug.Log(movement.magnitude);
-            Debug.DrawRay(transform.position, new Vector2(movementX, 0) * 50, Color.yellow);
-            RaycastHit2D yDirHit = Physics2D.Raycast(transform.position, new Vector2(0, movementY * 100), 50, layermask);
-            Debug.DrawRay(transform.position, new Vector2(0, movementY) * 50, Color.green);
+            Vector2 movement = new Vector3(movementX, movementY, 0);
+            RaycastHit2D xDirHit = Physics2D.Raycast(transform.position, new Vector3(movementX, 0, 0), 1.5f, layermask);
+            Debug.DrawRay(transform.position, new Vector3(movementX*rayLengthMultiplier, 0, 0), Color.yellow);
+            RaycastHit2D zDirHit = Physics2D.Raycast(transform.position, new Vector3(0, movementY, 0), 1.5f, layermask);
+            Debug.DrawRay(transform.position, new Vector3(0, movementY*rayLengthMultiplier, 0), Color.green);
             if (xDirHit.collider != null && xDirHit.collider.CompareTag("CombatWall"))
             {
                 movementX = 0;
             }
-            if (yDirHit.collider != null && yDirHit.collider.CompareTag("CombatWall"))
+            if (zDirHit.collider != null && zDirHit.collider.CompareTag("CombatWall"))
             {
                 movementY = 0;
             }
-            movement = new Vector2(movementX, movementY);
-            /*RaycastHit2D hit = Physics2D.Raycast(transform.position, movement, movement.magnitude * 50, layermask);
-            Debug.DrawRay(transform.position, movement * 50, Color.red);
-
-            if (hit.collider != null)
+            if(movementX == 0 && movementY != 0)
             {
-                Debug.Log("hit a collider!");
-                if (hit.collider.CompareTag("CombatWall"))
+                if(movementY > 0)
                 {
-                    Debug.Log("Hitting Wall!");
-                    return;
+                    movementY = 1;
                 }
-                transform.Translate(movement * speed);
-            }*/
+                else if (movementY < 0)
+                {
+                    movementY = -1;
+                }
+            }
+            if (movementY == 0 && movementX != 0)
+            {
+                if (movementY > 0)
+                {
+                    movementY = 1;
+                }
+                else if (movementY < 0)
+                {
+                    movementY = -1;
+                }
+            }
+            movement = new Vector2(-movementX, movementY);
             transform.Translate(movement * speed);
         }
 
@@ -64,9 +73,13 @@ namespace EnterCloudsReach.Combat
             movementY = movementVector.y;
         }
 
-        private void FixedUpdate()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-
+            Debug.Log("Hit Trigger");
+            if (collision.gameObject.CompareTag("MGAttack"))
+            {
+                Debug.Log("Got hit!");
+            }
         }
     }
 }
