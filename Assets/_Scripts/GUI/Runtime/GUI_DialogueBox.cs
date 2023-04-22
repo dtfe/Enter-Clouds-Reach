@@ -35,6 +35,8 @@ namespace EnterCloudsReach.GUI
         private float timer = 100;
         private bool open = false;
         private bool pressed = false;
+        [SerializeField] private TMP_Text rollC;
+        [SerializeField] private TMP_Text rollToBeat;
 
         public void QueUpText(string Text)
         {
@@ -214,9 +216,23 @@ namespace EnterCloudsReach.GUI
                 GameObject obj = Instantiate(dialogueEventPrefab, dialogueEventParent);
                 events.Add(obj.GetComponent<GUI_DialogueEvent>());
             }
-
             events[Index].Initialize(EventName, Index);
             events[Index].gameObject.SetActive(true);
+        }
+        public void SetRollCheckInfo(string txt)
+        {
+            StartCoroutine(rollinfodelay(txt));
+        }
+        IEnumerator rollinfodelay(string txt)
+        {
+            yield return new WaitForSeconds(1f);
+            rollC.text = txt;
+            rollToBeat.gameObject.SetActive(true);
+        }
+        public void EmptyRollInfo()
+        {
+        rollC.SetText(""); 
+        rollToBeat.gameObject.SetActive(false);
         }
     }
 }
