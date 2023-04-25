@@ -15,7 +15,7 @@ namespace EnterCloudsReach.EventSystem
         {
             if(item == null)
             {
-                Debug.Log("Set Item please at " + gameObject.name);
+                Debug.LogWarning("Set Item please at " + gameObject.name);
             }
             inv = FindObjectOfType<InventoryManager>();
         }

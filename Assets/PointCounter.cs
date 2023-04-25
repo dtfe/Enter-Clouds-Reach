@@ -15,6 +15,6 @@ namespace EnterCloudsReach.Player
             characterCreator = FindObjectOfType<CharacterCreator>();
             pointLeft = gameObject.GetComponent<TMP_Text>();
         }
-
+        
     }
 }
