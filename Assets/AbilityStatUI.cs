@@ -22,11 +22,17 @@ public class AbilityStatUI : MonoBehaviour
                 Bonus = text;
             }
         }
-        if(stats.ModStats.Values.Count != 0){
+        if(stats.ModStats.Values.Count < 6)
+        {
+            stats.ModStats.Add(Stat,5);
+        }
         UpdateStat();
         UpdateBonus();
-    }}
-    public void UpdateStat() => GetComponentInChildren<TMP_Text>().text = stats.ModStats[Stat].ToString();
+    }
+    public void UpdateStat() 
+    {
+        GetComponentInChildren<TMP_Text>().text = stats.ModStats[Stat].ToString();
+    }
     public void UpdateBonus()
     {
         int bonus = stats.GetBonus(Stat);

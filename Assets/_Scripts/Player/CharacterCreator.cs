@@ -10,7 +10,6 @@ using EnterCloudsReach.Player;
 public class CharacterCreator : MonoBehaviour
 {   
     private PlayerStats playerStats;
-    private TMP_Text healthText;
     private TMP_Text ACText;
     private TMP_InputField nameInput;
     int pointsLeft;
@@ -21,11 +20,16 @@ public class CharacterCreator : MonoBehaviour
     [SerializeField]int maxStat = 40;
     [SerializeField]int minStat = 0;
     // bool traitCheck = false;
+    [SerializeField] private TMP_Text healthText;
     GameObject Button;
     [SerializeField] int maxTotal = 40;   
     // Start is called before the first frame update
     void Start()
     { 
+        if(healthText == null)
+        {
+            healthText = GameObject.Find("Health").GetComponent<TMP_Text>();
+        }
         pointCounter = FindObjectOfType<PointCounter>();
         nameInput = FindObjectOfType<TMP_InputField>();
         playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
@@ -39,6 +43,7 @@ public class CharacterCreator : MonoBehaviour
             statText[i].SetText(baseStat.ToString());
             if(!playerStats.BaseStats.ContainsKey(statText[i].name))
             {
+                Debug.Log(statText[i].name);
                 playerStats.BaseStats.Add(statText[i].name,baseStat);
             }
             else
@@ -59,11 +64,11 @@ public class CharacterCreator : MonoBehaviour
         pointsLeft = maxTotal - playerStats.BaseStats.Values.Sum();
         pointCounter?.pointLeft.SetText(pointsLeft.ToString());
     }
-    // void Update()
-    // {
-    //     setHealth();
+    void Update()
+    {
+        setHealth();
     //     setAc();
-    // }
+    }
     public void posIncrement(TMP_Text posText)
     {//setHealth();
         if(playerStats.BaseStats.ContainsKey(posText.name) && playerStats.BaseStats.Values.Sum() < maxTotal && playerStats.BaseStats[posText.name] < maxStat)
@@ -87,16 +92,17 @@ public class CharacterCreator : MonoBehaviour
         }
     }
     
-//    void setHealth()
-//     {
-//         int health = playerStats.GetBonus("EnduranceText")*10;
-//         if(health <= 0)
-//         {
-//             health = 10;
-//         }
-//         playerStats.health = health;
-//         healthText.SetText(health.ToString());
-//     }
+   void setHealth()
+    {
+        if(playerStats.BaseStats.ContainsKey("Endurance")){
+        int health = playerStats.GetBaseBonus("Endurance")*10;
+        if(health <= 0)
+        {
+            health = 10;
+        }
+        playerStats.health = health;
+        healthText.SetText(health.ToString());}
+    }
     // void setAc()
     // {
     //     int Ac = 10 + playerStats.GetBonus("AgilityText");

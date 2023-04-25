@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using EnterCloudsReach.EventSystem;
 
 #if UNITY_EDITOR
 using UnityEditor.Presets;
@@ -37,6 +38,9 @@ namespace EnterCloudsReach.GUI
         private bool pressed = false;
         [SerializeField] private TMP_Text rollC;
         [SerializeField] private TMP_Text rollToBeat;
+        [HideInInspector] public EventClass rollEvent;
+        [HideInInspector] public int indexRoll;
+        public GameObject RollPopUP;
 
         public void QueUpText(string Text)
         {
@@ -233,6 +237,11 @@ namespace EnterCloudsReach.GUI
         {
         rollC.SetText(""); 
         rollToBeat.gameObject.SetActive(false);
+        }
+        public void RollEvent(EventClass rollevent, int i)
+        {
+            rollEvent = rollevent;
+            indexRoll = i;
         }
     }
 }

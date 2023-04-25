@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using EnterCloudsReach.Player;
 namespace EnterCloudsReach.Combat{
 public enum BattleState 
 {
@@ -43,11 +44,13 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     Unit enemyUnit;
     CombatSFX enemyCSFX;
     CombatSFX playerCSFX;
+    PlayerStats playerStats;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
         rm = FindObjectOfType<RollManager>();
         if (startBattleOnStart)
         {
@@ -71,10 +74,11 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             playerUnit = playerGO.GetComponent<Unit>();
             playerHUD = playerGO.transform.Find("HUD").GetComponent<BattleHUD>();
             //This wont work with saving
-            PlayerPrefs.SetInt("playerHealth", playerUnit.maxHP);
+            //PlayerPrefs.SetInt("playerHealth", playerUnit.maxHP);
         }
-        playerUnit.curHP = PlayerPrefs.GetInt("playerHealth");
-       
+        //playerUnit.curHP = PlayerPrefs.GetInt("playerHealth");
+        playerUnit.curHP = playerStats.health;
+        playerUnit.maxHP = playerStats.maxHealth;
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyUnit = enemyGO.GetComponent<Unit>();
@@ -563,8 +567,8 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
             dialogue.text = playerUnit.unitName + " has been defeated!";
             PlayerPrefs.SetString("BattleResult", "Lost");
         }
-        PlayerPrefs.SetInt("playerHealth", playerUnit.curHP);
-        
+        // PlayerPrefs.SetInt("playerHealth", playerUnit.curHP);
+            playerStats.health = playerUnit.curHP;
         yield return new WaitForSeconds(2f);
         FindObjectOfType<BattleLoader>().EndBattle();
     }
