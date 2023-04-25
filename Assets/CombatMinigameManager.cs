@@ -6,9 +6,13 @@ namespace EnterCloudsReach.Combat
 {
     public class CombatMinigameManager : MonoBehaviour
     {
+        [SerializeField] private GameObject timingSpawner;
+        private List<GameObject> timings = new List<GameObject>();
+
         // Start is called before the first frame update
         void Start()
         {
+
         
         }
 
@@ -18,12 +22,22 @@ namespace EnterCloudsReach.Combat
 
         }
 
+        public void AddTimingToList(GameObject timing)
+        {
+            timings.Add(timing);
+        }
+
         public void StartMinigame()
         {
 
         }
 
         public void EndMinigame()
+        {
+
+        }
+
+        public void TakeDamage()
         {
 
         }
