@@ -20,10 +20,27 @@ namespace EnterCloudsReach.Inventory
         public Item draggedItem;
 
         public EquipmentSlot overSlot;
+        public List<Item> eqWeapons = new List<Item>();
 
         public void equipToSlot()
         {
             overSlot.equipItem(draggedItem);
+        }
+
+        public void SetWeapon(Item item)
+        {
+            if(item.itemClass == itemType.Weapon)
+            {
+                eqWeapons.Add(item);
+            }
+        }
+        public void RemoveWeapon(Item item)
+        {
+            if(item.itemClass == itemType.Weapon && eqWeapons.Contains(item))
+            {
+                int i = eqWeapons.IndexOf(item);
+                eqWeapons.RemoveAt(i);
+            }
         }
 
     }
