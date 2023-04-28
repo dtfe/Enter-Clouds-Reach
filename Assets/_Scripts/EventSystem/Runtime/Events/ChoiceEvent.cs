@@ -16,8 +16,7 @@ namespace EnterCloudsReach.EventSystem
                 commands[i] = eventChoices[i].eventName;
                 if(eventChoices[i].GetComponent<RollEvent>() != null)
                 {
-                    string txt = eventChoices[i].GetComponent<RollEvent>().rollCheck.ToString();
-                    GUI_Manager.DialogueBox.SetRollCheckInfo(txt);
+                    GUI_Manager.DialogueBox.RollEvent(eventChoices[i], i);
                 }
             }
 
