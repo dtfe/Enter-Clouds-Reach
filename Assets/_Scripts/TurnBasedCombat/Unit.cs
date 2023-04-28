@@ -61,7 +61,7 @@ public class Unit : MonoBehaviour
     }
     void Update()
     {
-        if(!player)
+        if(!player && unitNoise != null)
         {
             t += Time.deltaTime;
             if (!unitNoise.CheckIfAudioPlay && t >= randT)
