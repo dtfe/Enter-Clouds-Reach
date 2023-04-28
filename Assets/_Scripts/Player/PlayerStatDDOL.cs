@@ -7,5 +7,9 @@ namespace EnterCloudsReach.Player
     public class PlayerStatDDOL : MonoBehaviour
     {
         public PlayerStats playerStats;
+        private void OnEnable()
+        {
+            playerStats.health = playerStats.maxHealth;
+        }
     }
 }
