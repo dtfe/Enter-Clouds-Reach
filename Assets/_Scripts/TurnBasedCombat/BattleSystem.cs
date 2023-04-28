@@ -205,7 +205,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         {
             case (HitTiming.Miss):
                 dialogue.text = "You missed your attack!";
-                enemyCSFX.PlayHitAudio(hitStatus);
+                enemyCSFX?.PlayHitAudio(hitStatus);
                 yield return new WaitForSeconds(1);
                 break;
 
@@ -214,7 +214,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
                 dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.damage) + " damage!";
-                enemyCSFX.PlayHitAudio(hitStatus);
+                enemyCSFX?.PlayHitAudio(hitStatus);
                 yield return new WaitForSeconds(1);
                 enemyUnit.addStatus(timingCon.regularHitStatus, timingCon.hitStatusStacks);
                 yield return new WaitForSeconds(1);
@@ -224,7 +224,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
                 dialogue.text = "Critical Hit!";
                 yield return new WaitForSeconds(1);
                 timingGO.SetActive(false);
-                enemyCSFX.PlayHitAudio(hitStatus);
+                enemyCSFX?.PlayHitAudio(hitStatus);
                 dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(timingCon.CritDamage) + " damage!";
                 yield return new WaitForSeconds(1);
                 enemyUnit.addStatus(timingCon.criticalHitStatus, timingCon.criticalStatusStacks);
