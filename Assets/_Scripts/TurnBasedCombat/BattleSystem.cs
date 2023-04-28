@@ -1,8 +1,11 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using EnterCloudsReach.Player;
+using EnterCloudsReach.Inventory;
 namespace EnterCloudsReach.Combat{
 public enum BattleState 
 {
@@ -20,7 +23,9 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     public GameObject actions;
 
     [Header("Attack Prefabs")]
-    public GameObject[] attack;
+    private GameObject[] attack;
+    
+    public GameObject[] defaultAttack;
 
     [Header("Player Properties")]
     public GameObject playerPrefab;
@@ -45,13 +50,16 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     CombatSFX enemyCSFX;
     CombatSFX playerCSFX;
     PlayerStats playerStats;
-    
+    EquipmentSlotManager eqM;
+    Button[] attackButtons;
 
     // Start is called before the first frame update
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
+        eqM = FindObjectOfType<EquipmentSlotManager>();
         rm = FindObjectOfType<RollManager>();
+        attackButtons = actions.GetComponentsInChildren<Button>();
         if (startBattleOnStart)
         {
             StartCoroutine(SetupBattle());
@@ -79,6 +87,7 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
         //playerUnit.curHP = PlayerPrefs.GetInt("playerHealth");
         playerUnit.curHP = playerStats.health;
         playerUnit.maxHP = playerStats.maxHealth;
+        SetAttacks();
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
         enemyUnit = enemyGO.GetComponent<Unit>();
@@ -637,6 +646,59 @@ public class BattleSystem : MonoBehaviour, IReceiveResult
     public void ClearEnemies()
     {
         Destroy(enemyUnit.gameObject);
+    }
+
+    private void SetAttacks()
+    {
+        if(eqM.eqWeapons.Any())
+        {
+            switch(eqM.eqWeapons.Count)
+            {
+                case 1:
+                    attack = eqM.eqWeapons[0].attacks;
+                    break;
+                case 2:
+                    Item fWeapon = eqM.eqWeapons[0];
+                    Item sWeapon = eqM.eqWeapons[1];
+                    //make a temp array
+                    GameObject[] go;
+                    //if weapons are the same don't bother with the second weapon Don't know if we are going to use ids
+                    if(fWeapon.id == sWeapon.id && fWeapon.itemName == sWeapon.itemName)
+                    {
+                        go = fWeapon.attacks;
+                    }
+                    else
+                    {   
+                        go = fWeapon.attacks.Concat(sWeapon.attacks).ToArray();
+                    }
+                    //Now time to remove duplicate attacks, which SHOULDN'T happen with the same item but it might happen;
+                    attack = go.Distinct().ToArray();
+                    break;
+            }
+        }
+        else
+        {
+            attack = defaultAttack;
+        }
+        //remove all nulls
+        attack = attack.Where(c => c != null).ToArray();
+        //if all attacks where null
+        if(attack.Length == 0)
+        {
+            attack = defaultAttack;
+        }
+        TMP_Text[] attackText = new TMP_Text[attackButtons.Length];
+        for(int i = 0; i < attackButtons.Length; i++)
+        {
+            
+            attackText[i] = attackButtons[i].GetComponentInChildren<TMP_Text>();
+            attackButtons[i].gameObject.SetActive(false);
+        }
+        for(int i = 0; i < attack.Length; i++)
+        {
+            attackText[i].SetText(attack[i].name);
+            attackButtons[i].gameObject.SetActive(true);
+        }
     }
 }
 }

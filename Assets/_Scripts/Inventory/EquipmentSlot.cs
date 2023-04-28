@@ -64,11 +64,16 @@ namespace EnterCloudsReach.Inventory
         {   
             if(equipmentItem != null && equipmentItem.affectStats)
             {   
+                
                 ItemStatNeg(equipmentItem);
                 if (curBonusUI)
                 {
                     Destroy(curBonusUI);
                 }
+            }
+            if(equipmentItem != null)
+            {
+                manager.RemoveWeapon(equipmentItem);
             }
             equipmentItem = item;
             if(item.affectStats){
@@ -76,18 +81,19 @@ namespace EnterCloudsReach.Inventory
                 curBonusUI = Instantiate(bonusOverviewInfo, bonusOverview.transform);
                 curBonusUI.GetComponent<BonusOverviewItemController>().ApplyItem(equipmentItem);
             }
+            manager.SetWeapon(equipmentItem);
             updateSlot();
         }
 
         private void updateSlot()
         {
             if(equipmentItem != null)
-            {
+            {   
                 icon.sprite = equipmentItem.icon;
                 icon.color = Color.white;
             }
             else
-            {
+            {   
                 icon.sprite = startIconSprite;
                 icon.color = startColor;
             }
@@ -104,6 +110,7 @@ namespace EnterCloudsReach.Inventory
                 }
             }
             GetComponentInParent<InventoryManager>().AddItem(equipmentItem);
+            manager.RemoveWeapon(equipmentItem);
             equipmentItem = null;
                         updateSlot();
         }
