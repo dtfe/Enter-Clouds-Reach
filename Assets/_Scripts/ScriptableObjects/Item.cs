@@ -42,6 +42,8 @@ namespace EnterCloudsReach.Inventory
 
         // Armor params
         [HideInInspector, SerializeField] public slotType equipmentSlot;
+        // Weapon params
+        [HideInInspector, SerializeField] public GameObject[] attacks;
 
         [Header("Presets")]
         public itemType itemClass;
@@ -113,6 +115,11 @@ namespace EnterCloudsReach.Inventory
             {
                 EditorGUILayout.LabelField("Weapon data");
                 equipmentSlot = (slotType)EditorGUILayout.EnumPopup(targetItem.equipmentSlot);
+                serializedObject.Update();
+                var sO = serializedObject.FindProperty("attacks");
+                sO.arraySize = 2;
+		        EditorGUILayout.PropertyField(sO);
+		        serializedObject.ApplyModifiedProperties();
             }
             private void Notes()
             {
