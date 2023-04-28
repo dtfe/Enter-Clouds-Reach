@@ -10045,7 +10045,8 @@ Material:
   m_Name: DustParticle(Clone)
   m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _FLIPBOOKBLENDING_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -22510,7 +22511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2785975955365185711, guid: ac4e4b227f97cc24da15dcbecfbdbb51, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2785975955365185711, guid: ac4e4b227f97cc24da15dcbecfbdbb51, type: 3}
       propertyPath: m_AnchorMin.x
@@ -22518,7 +22519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2785975955365185711, guid: ac4e4b227f97cc24da15dcbecfbdbb51, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2785975955365185711, guid: ac4e4b227f97cc24da15dcbecfbdbb51, type: 3}
       propertyPath: m_SizeDelta.x
@@ -22558,11 +22559,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2785975955365185711, guid: ac4e4b227f97cc24da15dcbecfbdbb51, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 2785975955365185711, guid: ac4e4b227f97cc24da15dcbecfbdbb51, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1032
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 2785975955365185711, guid: ac4e4b227f97cc24da15dcbecfbdbb51, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30901,7 +30902,8 @@ Material:
   m_Name: DustParticle(Clone)
   m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _FLIPBOOKBLENDING_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -38910,6 +38912,10 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Scale.z
       value: 13.274633
       objectReference: {fileID: 0}
+    - target: {fileID: 5732413596602250429, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MAIN_MENU_NEW
+      objectReference: {fileID: 0}
     - target: {fileID: 5901098461203949185, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -38946,6 +38952,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7838276248756510632, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+      propertyPath: bSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: b4fa9c6162d772e428dc2f3a63848917, type: 3}
     - target: {fileID: 7848175347463539350, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
       propertyPath: m_IsActive
       value: 1
