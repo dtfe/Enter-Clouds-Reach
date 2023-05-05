@@ -90,7 +90,7 @@ public class BattleLoader : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("MAIN_MENU");
+            SceneManager.LoadScene("MAIN_MENU_NEW");
         }
     }
 }
