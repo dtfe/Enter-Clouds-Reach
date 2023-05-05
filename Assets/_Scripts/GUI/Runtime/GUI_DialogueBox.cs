@@ -243,5 +243,6 @@ namespace EnterCloudsReach.GUI
             rollEvent = rollevent;
             indexRoll = i;
         }
+        public void MainMenuReset() => eventReturnIndex = 20;
     }
 }
