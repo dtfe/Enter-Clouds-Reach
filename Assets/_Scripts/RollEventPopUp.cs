@@ -15,6 +15,10 @@ namespace EnterCloudsReach.EventSystem
         public void AcceptRoll()
         {
             GUI_Manager.DialogueBox.eventReturnIndex = index;
+            for(int i = 0; i < GUI_Manager.DialogueBox.rollEvent.Length; i++) 
+            {
+                GUI_Manager.DialogueBox.rollEvent[i] = null;
+            } 
             gameObject.SetActive(false);
         }
         public void DeclineRoll()

@@ -96,7 +96,6 @@ public class CharacterCreator : MonoBehaviour
     {
         if(playerStats.BaseStats.ContainsKey("Endurance")){
         int health = 5* playerStats.GetBaseBonus("Endurance") +35;
-
         playerStats.health = health;
         playerStats.maxHealth = health;
         healthText.SetText(health.ToString());}
