@@ -95,12 +95,10 @@ public class CharacterCreator : MonoBehaviour
    void setHealth()
     {
         if(playerStats.BaseStats.ContainsKey("Endurance")){
-        int health = playerStats.GetBaseBonus("Endurance")*10;
-        if(health <= 0)
-        {
-            health = 10;
-        }
+        int health = 5* playerStats.GetBaseBonus("Endurance") +35;
+
         playerStats.health = health;
+        playerStats.maxHealth = health;
         healthText.SetText(health.ToString());}
     }
     // void setAc()

@@ -38,13 +38,9 @@ namespace EnterCloudsReach.Player
             {
                 slider.maxValue = playerStats.maxHealth;
             }
-            if(health != playerStats.health)
+            if(health != playerStats.health || slider.value != health)
             {   
                 health = playerStats.health;
-                healthTxt.SetText(health + "/" + slider.maxValue);
-            }
-            if(slider.value != health)
-            { 
                 slider.value = health;
                 healthTxt.SetText(health + "/" + slider.maxValue);
             }
