@@ -11,6 +11,10 @@ namespace EnterCloudsReach.EventSystem
         public override void StartEvent()
         {
             string[] commands = new string[eventChoices.Length];
+            for(int i = 0; i < GUI_Manager.DialogueBox.rollEvent.Length; i++) 
+            {
+                GUI_Manager.DialogueBox.rollEvent[i] = null;
+            } 
             for (int i = 0; i < eventChoices.Length; i++)
             {
                 commands[i] = eventChoices[i].eventName;

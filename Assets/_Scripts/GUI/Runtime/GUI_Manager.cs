@@ -21,6 +21,7 @@ namespace EnterCloudsReach.GUI
 
             Manager = obj.GetComponentInChildren<GUI_Manager>();
             DialogueBox = obj.GetComponentInChildren<GUI_DialogueBox>();
+            DialogueBox.rollEvent = new EventSystem.EventClass[5];
             DontDestroyOnLoad(obj);
         }
     }
