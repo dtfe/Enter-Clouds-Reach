@@ -38,8 +38,7 @@ namespace EnterCloudsReach.GUI
         private bool pressed = false;
         [SerializeField] private TMP_Text rollC;
         [SerializeField] private TMP_Text rollToBeat;
-        [HideInInspector] public EventClass rollEvent;
-        [HideInInspector] public int indexRoll;
+        [HideInInspector] public EventClass[] rollEvent;
         public GameObject RollPopUP;
 
         public void QueUpText(string Text)
@@ -240,9 +239,15 @@ namespace EnterCloudsReach.GUI
         }
         public void RollEvent(EventClass rollevent, int i)
         {
-            rollEvent = rollevent;
-            indexRoll = i;
+            rollEvent[i] = rollevent;
         }
-        public void MainMenuReset() => eventReturnIndex = 20;
+        public void MainMenuReset() 
+        {
+            for(int i = 0; i < rollEvent.Length; i++) 
+            {
+                rollEvent[i] = null;
+            } 
+            eventReturnIndex = 20;
+        }
     }
 }
