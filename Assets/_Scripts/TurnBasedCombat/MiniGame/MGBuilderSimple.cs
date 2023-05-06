@@ -8,31 +8,27 @@ namespace EnterCloudsReach.Combat
     {
         [SerializeField] private GameObject point;
         [SerializeField] private Canvas ui;
+        [SerializeField] private MGLoader loader;
         public List<MGPoint> points = new List<MGPoint>();
-        private float time;
 
-        private void Update()
+        private void Start()
         {
-            time += Time.deltaTime;
-            foreach(MGPoint p in points)
-            {
-                GameObject spawnedGO;
-                if(p.whenToSpawn < time)
-                {
-                    spawnedGO = Instantiate(p.prefabToSpawn, ui.transform);
-                    spawnedGO.GetComponent<RectTransform>().anchoredPosition = p.position;
-                    Destroy(spawnedGO, 3);
-
-                }
-            }
+            loader.QueueUp(points.ToArray());
         }
     }
 
     [System.Serializable]
     public class MGPoint
     {
+        public enum TypeOfPoint
+        {
+            Point,
+            Slide
+        }
+        [SerializeField] public TypeOfPoint type;
         [SerializeField] public GameObject prefabToSpawn;
         [SerializeField] public Vector3 position;
+        [SerializeField] public Vector3 endPos;
         [SerializeField] public float whenToSpawn;
         [SerializeField] public bool showParameters = true;
         [SerializeField] public bool hasSpawned = false;

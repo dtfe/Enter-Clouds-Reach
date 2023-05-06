@@ -8,12 +8,16 @@ namespace EnterCloudsReach.Combat
     [CustomPropertyDrawer(typeof(MGPoint))]
     public class CustomDrawerEditor : PropertyDrawer
     {
+        private List<Rect> rects = new List<Rect>();
+        private int numbOfRects;
+
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             EditorGUI.BeginProperty(position, label, property);
 
             // Get the index of the element being drawn
             int index = int.Parse(property.propertyPath.Split('[', ']')[1]);
+            rects.Clear();
 
             // Set the label for the element
             GUIContent elementLabel;
@@ -36,16 +40,31 @@ namespace EnterCloudsReach.Combat
             {
                 EditorGUI.indentLevel++;
 
-                Rect goRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
+                Rect typeRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * rects.Count + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
+                EditorGUI.PropertyField(typeRect, property.FindPropertyRelative("type"));
+                rects.Add(typeRect);
+
+                Rect goRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * rects.Count + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
                 EditorGUI.PropertyField(goRect, property.FindPropertyRelative("prefabToSpawn"));
+                rects.Add(goRect);
 
-                Rect vecRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * 2, position.width, EditorGUIUtility.singleLineHeight);
+                Rect vecRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * rects.Count + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
                 EditorGUI.PropertyField(vecRect, property.FindPropertyRelative("position"));
+                rects.Add(vecRect);
 
-                Rect floatRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * 3, position.width, EditorGUIUtility.singleLineHeight);
+                if (property.FindPropertyRelative("type").enumValueIndex == (int)MGPoint.TypeOfPoint.Slide)
+                {
+                    Rect endvecRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * rects.Count + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
+                    EditorGUI.PropertyField(endvecRect, property.FindPropertyRelative("endPos"));
+                    rects.Add(endvecRect);
+                }
+
+                Rect floatRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * rects.Count + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
                 EditorGUI.PropertyField(floatRect, property.FindPropertyRelative("whenToSpawn"));
+                rects.Add(floatRect);
 
                 EditorGUI.indentLevel--;
+                numbOfRects = rects.Count;
             }
 
             // Update the showParameters bool field
@@ -61,7 +80,7 @@ namespace EnterCloudsReach.Combat
 
             if (property.isExpanded)
             {
-                height += EditorGUIUtility.singleLineHeight * 3;
+                height += EditorGUIUtility.singleLineHeight * numbOfRects;
             }
 
             return height;
