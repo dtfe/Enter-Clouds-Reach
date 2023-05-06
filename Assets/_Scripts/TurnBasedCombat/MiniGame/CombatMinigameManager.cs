@@ -1,30 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace EnterCloudsReach.Combat
 {
     public class CombatMinigameManager : MonoBehaviour
     {
-        [SerializeField] private GameObject timingSpawner;
-        private List<GameObject> timings = new List<GameObject>();
+        [SerializeField] private TMP_Text hit;
+        [SerializeField] private TMP_Text miss;
+        private int hits;
+        private int misses;
 
-        // Start is called before the first frame update
-        void Start()
+        public void Hit()
         {
-
-        
+            hits++;
+            UpdateUI();
         }
 
-        // Update is called once per frame
-        void Update()
+        public void Miss()
         {
-
+            misses++;
+            UpdateUI();
         }
 
-        public void AddTimingToList(GameObject timing)
+        private void UpdateUI()
         {
-            timings.Add(timing);
+            hit.text = "Hits: " + hits;
+            miss.text = "Miss: " + misses;
         }
 
         public void StartMinigame()
