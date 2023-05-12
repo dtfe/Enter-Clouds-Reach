@@ -1,8 +1,8 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EnterCloudsReach.Combat;
+using EnterCloudsReach.Audio;
 
 public class ModeSwap : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class ModeSwap : MonoBehaviour
     public GameObject com_ui;
     GameObject[] exp;
     GameObject com;
+    MusicController music;
 
     public void ChangeToCombat()
     {
@@ -22,6 +23,7 @@ public class ModeSwap : MonoBehaviour
         exp_ui.SetActive(false);
         com_cam.SetActive(true);
         com_ui.SetActive(true);
+        music.CombatMusic();
     }
 
     public void ChangeToExploration()
@@ -30,12 +32,13 @@ public class ModeSwap : MonoBehaviour
         exp_ui.SetActive(true);
         com_cam.SetActive(false);
         com_ui.SetActive(false);
+        music.ExplorationMusic();
     }
 
     // Start is called before the first frame update
     void Start()
     {   
-       
+        music = MusicController.musicController;
         ChangeToExploration();
     }
 
