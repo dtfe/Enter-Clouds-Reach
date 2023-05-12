@@ -54,6 +54,11 @@ namespace EnterCloudsReach.Combat
             }
         }
 
+        public void LoadSequence(MGSequence seq)
+        {
+            QueueUp(seq.points.ToArray());
+        }
+
         public void QueueUp(MGPoint[] points)
         {
             for (int i = 0; i < points.Length; i++)
