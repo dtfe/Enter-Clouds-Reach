@@ -463,7 +463,9 @@ namespace EnterCloudsReach.Combat
             MGManager.StartMinigame();
             yield return new WaitUntil(() => MGManager.isPlaying == false);
 
-            yield return new WaitForSeconds(1);
+            dialogue.text = "Player has taken a total of " + (MGManager.misses * enemyUnit.damage) + " damage!";
+
+            yield return new WaitForSeconds(2);
 
             if (playerUnit.curHP <= 0)
             {
@@ -675,6 +677,12 @@ namespace EnterCloudsReach.Combat
         {
             Destroy(enemyUnit.gameObject);
         }
+
+        public void DealDamageToPlayer(int numberOfMisses)
+        {
+            playerUnit.takeDamage(numberOfMisses * enemyUnit.damage);
+        }
+
         /*
         private void SetAttacks()
         {

@@ -28,6 +28,8 @@ namespace EnterCloudsReach.Combat
         public string unitName;
         private Animator anim;
 
+        public MGSequence defaultSequence;
+
         public DefendTimings[] defendTimings = new DefendTimings[1];
 
         public MGSequence[] sequences = new MGSequence[1];
@@ -35,6 +37,9 @@ namespace EnterCloudsReach.Combat
         [Header("Health Parameters")]
         public int maxHP;
         public int curHP;
+
+        [Header("Damage Parameters")]
+        public int damage = 1;
 
         [Header("Status Effects")]
         public bool stunnedImmune;
@@ -49,6 +54,14 @@ namespace EnterCloudsReach.Combat
         CombatSFX unitNoise;
         float t;
         float randT;
+
+        private void Awake()
+        {
+            if (sequences[0] == null)
+            {
+                sequences[0] = defaultSequence;
+            }
+        }
 
         private void Start()
         {

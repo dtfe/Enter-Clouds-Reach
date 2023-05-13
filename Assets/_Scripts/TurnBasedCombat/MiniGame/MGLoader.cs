@@ -11,8 +11,11 @@ namespace EnterCloudsReach.Combat
         [SerializeField] private CombatMinigameManager manager;
         [SerializeField] private float whenToStart = 3;
         private bool startMinigame = false;
+        private bool spawningActive = false;
         private Queue<MGPoint> pointQueue = new Queue<MGPoint>();
         private List<float> whenToSpawn = new List<float>();
+        private Queue<GameObject> spawnedPoints = new Queue<GameObject>();
+        private List<GameObject> activePoints = new List<GameObject>();
         private float time;
         private int curIndex = 0;
         private int curSortingOrder = 999;
@@ -33,7 +36,7 @@ namespace EnterCloudsReach.Combat
             if (startMinigame)
             {
                 time += Time.deltaTime;
-                if (curIndex < whenToSpawn.Count && whenToSpawn[curIndex] < time)
+                if (spawningActive && curIndex < whenToSpawn.Count && whenToSpawn[curIndex] < time)
                 {
                     GameObject spawnedGO;
                     spawnedGO = Instantiate(pointQueue.Peek().prefabToSpawn, ui.transform);
@@ -42,20 +45,31 @@ namespace EnterCloudsReach.Combat
                     spawnedGO.GetComponent<Renderer>().sortingOrder = curSortingOrder;
                     spawnedGO.GetComponent<MGTimingController>().manager = manager;
                     spawnedGO.transform.SetAsFirstSibling();
+                    spawnedPoints.Enqueue(spawnedGO);
                     curSortingOrder--;
                     //Destroy(spawnedGO, 3);
                     pointQueue.Dequeue();
                     curIndex++;
                 }
-                if (pointQueue.Count == 0)
+                if(spawningActive && pointQueue.Count == 0)
                 {
-                    startMinigame = false;
+                    spawningActive = false;
+                }
+                if(spawningActive == false && spawnedPoints.Peek() == null)
+                {
+                    spawnedPoints.Dequeue();
+                    if (spawnedPoints.Count == 0)
+                    {
+                        startMinigame = false;
+                        manager.EndMinigame();
+                    }
                 }
             }
         }
 
         public void LoadSequence(MGSequence seq)
         {
+            sequence = seq;
             QueueUp(seq.points.ToArray());
         }
 
@@ -76,6 +90,7 @@ namespace EnterCloudsReach.Combat
             curIndex = 0;
             yield return new WaitForSeconds(whenToStart);
             startMinigame = true;
+            spawningActive = true;
         }
 
         public void testStart()

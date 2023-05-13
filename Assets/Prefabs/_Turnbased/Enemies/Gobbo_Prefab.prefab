@@ -49,18 +49,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Gobbo
+  defaultSequence: {fileID: 11400000, guid: e12a6dfaf5a0aa04c9b2234618a24eaf, type: 2}
   defendTimings:
   - timing: {fileID: 0}
     timingWeight: 1
+  sequences:
+  - {fileID: 0}
   maxHP: 10
   curHP: 10
+  damage: 1
   stunnedImmune: 0
   stunned: 0
   bleedImmune: 0
   bleed: 0
   poisonImmune: 0
   poison: 0
-  ps: {fileID: 0}
   player: 0
 --- !u!82 &1271901798894838203
 AudioSource:
