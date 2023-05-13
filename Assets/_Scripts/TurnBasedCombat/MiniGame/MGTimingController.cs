@@ -69,9 +69,8 @@ namespace EnterCloudsReach.Combat
 
         private void Miss()
         {
-            Debug.Log("Start of Miss()");
-            hasBeenClicked = true;
             Destroy(GetComponent<Image>());
+            hasBeenClicked = true;
             vfxSelf.SetBool("Clicked", true);
             Debug.Log("Missed");
             vfxSelf.SendEvent("OnMiss");

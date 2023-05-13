@@ -47,18 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: ChestGoblin
+  defaultSequence: {fileID: 11400000, guid: e12a6dfaf5a0aa04c9b2234618a24eaf, type: 2}
   defendTimings:
   - timing: {fileID: 0}
     timingWeight: 1
+  sequences:
+  - {fileID: 0}
   maxHP: 15
   curHP: 15
+  damage: 1
   stunnedImmune: 0
   stunned: 0
   bleedImmune: 1
   bleed: 0
   poisonImmune: 0
   poison: 0
-  ps: {fileID: 0}
   player: 0
 --- !u!1001 &1823804635251486281
 PrefabInstance:

@@ -14,6 +14,7 @@ namespace EnterCloudsReach.Combat
         //Parameters
         [SerializeField] private MGLoader loader;
         [SerializeField] private MGSequence sequence;
+        [SerializeField] private BattleSystem battleSystem;
         public bool isPlaying = false;
 
         //Minigame specific UI elements
@@ -23,18 +24,19 @@ namespace EnterCloudsReach.Combat
         [SerializeField] private GameObject actions;
         [SerializeField] private GameObject curActions;
         private int hits;
-        private int misses;
+        public int misses;
 
         public void Hit()
         {
             hits++;
-            UpdateUI();
+            //UpdateUI();
         }
 
         public void Miss()
         {
             misses++;
-            UpdateUI();
+            battleSystem.DealDamageToPlayer(1);
+            //UpdateUI();
         }
 
         private void UpdateUI()
@@ -45,6 +47,8 @@ namespace EnterCloudsReach.Combat
 
         public void StartMinigame()
         {
+            hits = 0;
+            misses = 0;
             background.gameObject.SetActive(true);
             actions.SetActive(false);
             curActions.SetActive(false);
@@ -54,19 +58,14 @@ namespace EnterCloudsReach.Combat
 
         public void EndMinigame()
         {
-            actions.SetActive(true);
             curActions.SetActive(true);
+            background.gameObject.SetActive(false);
             isPlaying = false;
         }
 
         public void SetSequence(MGSequence seq)
         {
             sequence = seq;
-        }
-
-        public void TakeDamage()
-        {
-
         }
     }
 }
