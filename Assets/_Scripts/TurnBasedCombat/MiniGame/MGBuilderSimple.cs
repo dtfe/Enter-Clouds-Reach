@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 namespace EnterCloudsReach.Combat
 {
@@ -18,8 +17,6 @@ namespace EnterCloudsReach.Combat
         }
     }
 
-
-
     [System.Serializable]
     public class MGPoint
     {
@@ -31,10 +28,6 @@ namespace EnterCloudsReach.Combat
         [SerializeField] public TypeOfPoint type;
         [SerializeField] public GameObject prefabToSpawn;
         [SerializeField] public Vector3 position;
-        public void SetPositionToCurrentTransform(Transform transform)
-        {
-            position = transform.position;
-        }
         [SerializeField] public Vector3 endPos;
         [SerializeField] public float whenToSpawn;
         [SerializeField] public bool showParameters = true;

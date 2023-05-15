@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.VFX;
 
@@ -21,7 +20,7 @@ namespace EnterCloudsReach.Combat
         //VFX stuff
         private VisualEffect vfxSelf;
 
-        [SerializeField]private bool hasBeenClicked = false;
+        private bool hasBeenClicked;
 
         private void Start()
         {
@@ -32,9 +31,11 @@ namespace EnterCloudsReach.Combat
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            List<GameObject> obj = eventData.hovered;
+
             Debug.Log("Clicked");
             hasBeenClicked = true;
-            if(curTime < timeToHit - timeDeadzone)
+            if(curTime > timeToHit + timeDeadzone || curTime < timeToHit - timeDeadzone)
             {
                 Miss();
             }
@@ -46,11 +47,6 @@ namespace EnterCloudsReach.Combat
 
         private void Update()
         {
-            if (hasBeenClicked)
-            {
-                Debug.Log("Stop Counting!");
-                return;
-            }
             if (curTime > timeToHit + timeDeadzone || curTime < timeToHit - timeDeadzone)
             {
                 vfxSelf.SetVector4("ShieldColor", Color.red);
@@ -64,29 +60,30 @@ namespace EnterCloudsReach.Combat
                 vfxSelf.SetVector4("ShieldColor", Color.green);
                 Debug.Log("Turn Green!");
             }
-            curTime += Time.deltaTime;
+
+            if (hasBeenClicked)
+            {
+                return;
+            }
+            else
+            {
+                curTime += Time.deltaTime;
+            }
         }
 
         private void Miss()
         {
-            Destroy(GetComponent<Image>());
-            hasBeenClicked = true;
-            vfxSelf.SetBool("Clicked", true);
             Debug.Log("Missed");
-            vfxSelf.SendEvent("OnMiss");
             manager?.Miss();
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
 
         private void Hit()
         {
-            Destroy(GetComponent<Image>());
-            hasBeenClicked = true;
             vfxSelf.SetBool("Clicked", true);
-            vfxSelf.SendEvent("OnHit");
             Debug.Log("Hit!");
             manager?.Hit();
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
     }
 }

@@ -633,7 +633,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Steve
-  defaultSequence: {fileID: 11400000, guid: e12a6dfaf5a0aa04c9b2234618a24eaf, type: 2}
   defendTimings:
   - timing: {fileID: 6226760860064331139, guid: 45eb41c8d73412547b8f65f3c920fd6f, type: 3}
     timingWeight: 1
@@ -641,17 +640,15 @@ MonoBehaviour:
     timingWeight: 3
   - timing: {fileID: 6226760860064331139, guid: dae6df94b5d5c8b4bbbb496c1d140255, type: 3}
     timingWeight: 2
-  sequences:
-  - {fileID: 0}
   maxHP: 500
   curHP: 500
-  damage: 1
   stunnedImmune: 0
   stunned: 0
   bleedImmune: 0
   bleed: 0
   poisonImmune: 0
   poison: 0
+  ps: {fileID: 0}
   player: 0
 --- !u!82 &-1140973367000198058
 AudioSource:
