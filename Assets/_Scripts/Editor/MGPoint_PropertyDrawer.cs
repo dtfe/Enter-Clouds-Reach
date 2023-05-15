@@ -51,6 +51,19 @@ namespace EnterCloudsReach.Combat
                 Rect vecRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * rects.Count + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
                 EditorGUI.PropertyField(vecRect, property.FindPropertyRelative("position"));
                 rects.Add(vecRect);
+                /*
+                SerializedProperty posProp = property.FindPropertyRelative("position");
+                EditorGUI.PropertyField(vecRect, posProp);
+                Rect buttonRect = new Rect(position.x + position.width - 55f, vecRect.y, 50f, vecRect.height + EditorGUIUtility.singleLineHeight);
+                if (UnityEngine.GUI.Button(buttonRect, new GUIContent("Set", "Set position to current transform"), EditorStyles.miniButton))
+                {
+                    Transform transform = ((MonoBehaviour)property.serializedObject.targetObject).transform;
+
+                    // Call the SetPositionToCurrentTransform method with the GameObject reference
+                    MGPoint point = (MGPoint)fieldInfo.GetValue(property.serializedObject.targetObject);
+                    point.SetPositionToCurrentTransform(transform);
+                    posProp.vector3Value = point.position;
+                }*/
 
                 if (property.FindPropertyRelative("type").enumValueIndex == (int)MGPoint.TypeOfPoint.Slide)
                 {
