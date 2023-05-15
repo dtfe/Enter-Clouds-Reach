@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using EnterCloudsReach.GUI;
+using EnterCloudsReach.Player;
 [RequireComponent(typeof(AudioSource))]
 public class MainMenu : MonoBehaviour
 {   
-
+    [SerializeField]internal NavMeshPlayerController navPlayer;
     AudioSource audioSource;
     public AudioClip bSFX;
     void Start()
@@ -24,6 +25,10 @@ public class MainMenu : MonoBehaviour
     IEnumerator LoadScene(string sceneName)
     {
         Debug.Log("Loading Scene" + sceneName);
+        if(navPlayer != null)
+        {
+            yield return new WaitUntil(() => navPlayer.MovementFinished());
+        }
         audioSource.PlayOneShot(bSFX); 
         if(sceneName == "MAIN_MENU_NEW")
         {

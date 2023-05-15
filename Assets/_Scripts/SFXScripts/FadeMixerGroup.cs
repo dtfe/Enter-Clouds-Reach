@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
+
+namespace EnterCloudsReach.Audio
+{
 public static class FadeMixerGroup {
     public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
     {
@@ -19,4 +22,5 @@ public static class FadeMixerGroup {
         }
         yield break;
     }
+}
 }

@@ -45,7 +45,7 @@ namespace EnterCloudsReach.Player
             }
         }
 
-        private bool MovementFinished()
+        internal bool MovementFinished()
         {
             if (!playerAgent.pathPending)
             {
