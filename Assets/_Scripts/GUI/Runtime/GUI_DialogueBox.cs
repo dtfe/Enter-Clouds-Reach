@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using EnterCloudsReach.EventSystem;
+using UnityEngine.EventSystems;
 
 #if UNITY_EDITOR
 using UnityEditor.Presets;
@@ -11,7 +12,7 @@ using UnityEditor.Presets;
 
 namespace EnterCloudsReach.GUI
 {
-    public class GUI_DialogueBox : MonoBehaviour
+    public class GUI_DialogueBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("Referances")]
         [SerializeField] private GameObject dialogueEventPrefab;
@@ -40,6 +41,7 @@ namespace EnterCloudsReach.GUI
         [SerializeField] private TMP_Text rollToBeat;
         [HideInInspector] public EventClass[] rollEvent;
         public GameObject RollPopUP;
+        private bool hover;
 
         public void QueUpText(string Text)
         {
@@ -112,7 +114,7 @@ namespace EnterCloudsReach.GUI
                                 yield return new WaitForSeconds(dialogueTypeSpeed);
                             }
 
-                            if (!pressed && (Input.GetKey(KeyCode.Return) || Input.GetMouseButton(0)))
+                            if (!pressed && (Input.GetKey(KeyCode.Return) || Input.GetMouseButton(0)) && hover)
                             {
                                 pressed = true;
                                 dialogueText.text = text;
@@ -125,7 +127,7 @@ namespace EnterCloudsReach.GUI
                             yield return new WaitForSeconds(dialogueTypeSpeed * 3);
                         }
 
-                        yield return new WaitUntil(() => !pressed && (Input.GetKey(KeyCode.Return) || Input.GetMouseButton(0)));
+                        yield return new WaitUntil(() => !pressed && (Input.GetKey(KeyCode.Return) || Input.GetMouseButton(0) && hover));
                         pressed = true;
                     }
 
@@ -248,6 +250,16 @@ namespace EnterCloudsReach.GUI
                 rollEvent[i] = null;
             } 
             eventReturnIndex = 20;
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            hover = true;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            hover = false;
         }
     }
 }
