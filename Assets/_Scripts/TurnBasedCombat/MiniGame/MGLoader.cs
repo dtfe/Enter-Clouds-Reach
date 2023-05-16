@@ -12,7 +12,7 @@ namespace EnterCloudsReach.Combat
         [SerializeField] private float whenToStart = 3;
         private bool startMinigame = false;
         private bool spawningActive = false;
-        private Queue<MGPoint> pointQueue = new Queue<MGPoint>();
+        public Queue<MGPoint> pointQueue = new Queue<MGPoint>();
         private List<float> whenToSpawn = new List<float>();
         private Queue<GameObject> spawnedPoints = new Queue<GameObject>();
         private List<GameObject> activePoints = new List<GameObject>();
@@ -47,7 +47,6 @@ namespace EnterCloudsReach.Combat
                     spawnedGO.transform.SetAsFirstSibling();
                     spawnedPoints.Enqueue(spawnedGO);
                     curSortingOrder--;
-                    //Destroy(spawnedGO, 3);
                     pointQueue.Dequeue();
                     curIndex++;
                 }
