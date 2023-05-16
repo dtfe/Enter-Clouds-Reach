@@ -32,30 +32,29 @@ namespace EnterCloudsReach.Combat
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("Clicked");
-            hasBeenClicked = true;
-            if(curTime < timeToHit - timeDeadzone)
+            if (!hasBeenClicked)
             {
-                Miss();
-            }
-            else if (curTime > timeToHit - timeDeadzone && curTime < timeToHit + timeDeadzone)
-            {
-                Hit();
+                hasBeenClicked = true;
+                Debug.Log("Clicked");
+                hasBeenClicked = true;
+                if (curTime < timeToHit - timeDeadzone)
+                {
+                    Miss();
+                }
+                else if (curTime > timeToHit - timeDeadzone && curTime < timeToHit + timeDeadzone)
+                {
+                    Hit();
+                }
             }
         }
 
         private void Update()
         {
-            if (hasBeenClicked)
-            {
-                Debug.Log("Stop Counting!");
-                return;
-            }
             if (curTime > timeToHit + timeDeadzone || curTime < timeToHit - timeDeadzone)
             {
                 vfxSelf.SetVector4("ShieldColor", Color.red);
             }
-            if(curTime > timeToHit + timeDeadzone)
+            if(!hasBeenClicked && curTime > timeToHit + timeDeadzone )
             {
                 Miss();
             }
