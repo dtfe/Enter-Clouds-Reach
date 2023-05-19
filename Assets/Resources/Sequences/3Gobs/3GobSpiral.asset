@@ -10,76 +10,69 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35f665294dbe4c741b6ce79eaf696221, type: 3}
-  m_Name: Test Sequence
+  m_Name: 3GobSpiral
   m_EditorClassIdentifier: 
   points:
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -488, y: 134, z: 0}
+    position: {x: 0, y: -300, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 0
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: -300, y: 0, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 0.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: 0, y: 300, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 1
     showParameters: 1
     hasSpawned: 0
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -476, y: 78, z: 0}
+    position: {x: 300, y: 0, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 1.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: 0, y: -150, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 2
     showParameters: 1
     hasSpawned: 0
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -439, y: 4, z: 0}
+    position: {x: -150, y: 0, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 2.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: 0, y: 150, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 3
-    showParameters: 1
+    showParameters: 0
     hasSpawned: 0
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 150, z: 0}
+    position: {x: 150, y: 0, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 3.5
+    showParameters: 0
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: 0, y: 0, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 4
-    showParameters: 1
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 110, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.2
-    showParameters: 1
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 70, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.4
-    showParameters: 1
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 30, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.6
     showParameters: 0
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: -10, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.8
-    showParameters: 0
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: -50, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 5
-    showParameters: 0
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -86, y: 390, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 6
-    showParameters: 1
     hasSpawned: 0

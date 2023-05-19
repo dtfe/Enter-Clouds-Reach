@@ -10,76 +10,69 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35f665294dbe4c741b6ce79eaf696221, type: 3}
-  m_Name: Test Sequence
+  m_Name: GobMomDefault
   m_EditorClassIdentifier: 
   points:
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -488, y: 134, z: 0}
+    position: {x: -691.7789, y: 242.4997, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 0
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: -636.9521, y: 313.9514, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 0.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: -565.50037, y: 368.77832, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 1
     showParameters: 1
     hasSpawned: 0
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -476, y: 78, z: 0}
+    position: {x: -482.29288, y: 403.2441, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 1.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: -393.00052, y: 414.99982, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 2
     showParameters: 1
     hasSpawned: 0
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -439, y: 4, z: 0}
+    position: {x: -303.7081, y: 403.24448, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 2.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: -220.50041, y: 368.77902, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 3
-    showParameters: 1
+    showParameters: 0
     hasSpawned: 0
   - type: 0
     prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 150, z: 0}
+    position: {x: -149.04851, y: 313.95245, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 3.5
+    showParameters: 0
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
+    position: {x: -94.221275, y: 242.50061, z: 0}
     endPos: {x: 0, y: 0, z: 0}
     whenToSpawn: 4
-    showParameters: 1
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 110, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.2
-    showParameters: 1
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 70, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.4
-    showParameters: 1
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: 30, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.6
     showParameters: 0
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: -10, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 4.8
-    showParameters: 0
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: 411, y: -50, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 5
-    showParameters: 0
-    hasSpawned: 0
-  - type: 0
-    prefabToSpawn: {fileID: 5249539130573406380, guid: b9b74e904cf4dc14e9e266cdd4fc4487, type: 3}
-    position: {x: -86, y: 390, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
-    whenToSpawn: 6
-    showParameters: 1
     hasSpawned: 0
