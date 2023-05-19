@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5249539130573406382}
   - component: {fileID: 5249539130573406373}
   m_Layer: 9
-  m_Name: MGTimingDefense
+  m_Name: MGTimingDefense Bleed
   m_TagString: MGAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   timeToHit: 3
   timeDeadzone: 0.2
+  statusToApply: 2
   hasBeenClicked: 0
 --- !u!2083052967 &5249539130573406369
 VisualEffect:
@@ -102,7 +103,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 2800000, guid: db83b58071775bf4a92548307181d4d7, type: 3}
+        m_Name: ParticleTexture
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!73398921 &5249539130573406382

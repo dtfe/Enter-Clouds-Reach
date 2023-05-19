@@ -15,6 +15,7 @@ namespace EnterCloudsReach.Combat
         [SerializeField] private float timeToHit = 2f;
         [Tooltip("The amount of leeway the timing has in seconds")]
         [SerializeField] private float timeDeadzone = 0.5f;
+        [SerializeField] private statusEffects statusToApply;
         private float curTime;
         private Renderer rend;
 
@@ -71,9 +72,8 @@ namespace EnterCloudsReach.Combat
             Destroy(GetComponent<Image>());
             hasBeenClicked = true;
             vfxSelf.SetBool("Clicked", true);
-            Debug.Log("Missed");
             vfxSelf.SendEvent("OnMiss");
-            manager?.Miss();
+            manager?.Miss(statusToApply);
             Destroy(gameObject, 1);
         }
 
@@ -83,7 +83,6 @@ namespace EnterCloudsReach.Combat
             hasBeenClicked = true;
             vfxSelf.SetBool("Clicked", true);
             vfxSelf.SendEvent("OnHit");
-            Debug.Log("Hit!");
             manager?.Hit();
             Destroy(gameObject, 1);
         }

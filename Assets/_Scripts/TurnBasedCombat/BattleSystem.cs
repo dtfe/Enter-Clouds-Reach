@@ -41,6 +41,7 @@ namespace EnterCloudsReach.Combat
 
         private BattleHUD playerHUD;
         private BattleHUD enemyHUD;
+        private int enemyCurAttackIndex = 0;
 
         [Header("Game Information")]
         public BattleState state;
@@ -99,6 +100,7 @@ namespace EnterCloudsReach.Combat
             enemyUnit = enemyGO.GetComponent<Unit>();
             enemyCSFX = enemyGO.GetComponent<CombatSFX>();
             enemyHUD = enemyGO.transform.Find("HUD").GetComponent<BattleHUD>();
+            enemyCurAttackIndex = 0;
             for (int i = 0; i < enemyUnit.defendTimings.Length; i++)
             {
                 for (int j = 0; j < enemyUnit.defendTimings[i].timingWeight; j++)
@@ -450,11 +452,18 @@ namespace EnterCloudsReach.Combat
             {
                 yield break;
             }
+            #region oldCombat
             //int randomNumber = Random.Range(0, enemyTimings.Count - 1);
             //Debug.Log("RandomIndex = " + randomNumber);
             //StartCoroutine(EnemyAttack(randomNumber));
-            int rndmNumb = Random.Range(0, enemyUnit.sequences.Length);
-            StartCoroutine(EnemySequenceAttacks(rndmNumb));
+            #endregion oldCombat
+            StartCoroutine(EnemySequenceAttacks(enemyCurAttackIndex));
+            enemyCurAttackIndex++;
+            if (enemyCurAttackIndex + 1 > enemyUnit.sequences.Length)
+            {
+                enemyCurAttackIndex = 0;
+                Debug.Log("Restarting sequence queue");
+            }
         }
 
         IEnumerator EnemySequenceAttacks(int attackIndex)
@@ -463,6 +472,7 @@ namespace EnterCloudsReach.Combat
             MGManager.StartMinigame();
             yield return new WaitUntil(() => MGManager.isPlaying == false);
 
+            enemyUnit.animationStart("attacking");
             dialogue.text = "Player has taken a total of " + (MGManager.misses * enemyUnit.damage) + " damage!";
 
             yield return new WaitForSeconds(2);
@@ -478,7 +488,7 @@ namespace EnterCloudsReach.Combat
             }
         }
 
-        
+        // EnemyAttack is no longer used due to changes in the combat
         IEnumerator EnemyAttack(int attackIndex)
         {
             #region old
@@ -680,7 +690,13 @@ namespace EnterCloudsReach.Combat
 
         public void DealDamageToPlayer(int numberOfMisses)
         {
+            enemyUnit.animationStart("attacking");
             playerUnit.takeDamage(numberOfMisses * enemyUnit.damage);
+        }
+
+        public void ApplyStatusToPlayer(statusEffects statusToApply)
+        {
+            playerUnit.addStatus(statusToApply, 1);
         }
 
         /*

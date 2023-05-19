@@ -32,10 +32,11 @@ namespace EnterCloudsReach.Combat
             //UpdateUI();
         }
 
-        public void Miss()
+        public void Miss(statusEffects statusToApply)
         {
             misses++;
             battleSystem.DealDamageToPlayer(1);
+            battleSystem.ApplyStatusToPlayer(statusToApply);
             //UpdateUI();
         }
 
