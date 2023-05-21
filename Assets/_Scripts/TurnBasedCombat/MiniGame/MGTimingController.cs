@@ -29,6 +29,7 @@ namespace EnterCloudsReach.Combat
             rend = GetComponent<Renderer>();
             vfxSelf = GetComponent<VisualEffect>();
             vfxSelf.SetFloat("TimingToHit", timeToHit);
+            Destroy(gameObject, 7f);
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -37,8 +38,7 @@ namespace EnterCloudsReach.Combat
             {
                 hasBeenClicked = true;
                 Debug.Log("Clicked");
-                hasBeenClicked = true;
-                if (curTime < timeToHit - timeDeadzone)
+                if (curTime < timeToHit - timeDeadzone || curTime > timeToHit + timeDeadzone)
                 {
                     Miss();
                 }
@@ -59,7 +59,7 @@ namespace EnterCloudsReach.Combat
             {
                 Miss();
             }
-            else if (curTime > timeToHit - timeDeadzone && curTime < timeToHit + timeDeadzone)
+            if (curTime > timeToHit - timeDeadzone && curTime < timeToHit + timeDeadzone)
             {
                 vfxSelf.SetVector4("ShieldColor", Color.green);
                 Debug.Log("Turn Green!");

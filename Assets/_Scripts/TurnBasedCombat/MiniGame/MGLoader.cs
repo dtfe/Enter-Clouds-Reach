@@ -74,6 +74,8 @@ namespace EnterCloudsReach.Combat
 
         public void QueueUp(MGPoint[] points)
         {
+            pointQueue.Clear();
+            whenToSpawn.Clear();
             for (int i = 0; i < points.Length; i++)
             {
                 pointQueue.Enqueue(points[i]);

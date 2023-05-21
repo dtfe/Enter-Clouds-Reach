@@ -1336,6 +1336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9efb914e02a3f42b45b44eacb3c58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navPlayer: {fileID: 0}
   bSFX: {fileID: 8300000, guid: b4fa9c6162d772e428dc2f3a63848917, type: 3}
 --- !u!82 &160832118172528113
 AudioSource:
@@ -9843,6 +9844,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3901064497147728797}
     m_Modifications:
+    - target: {fileID: 5690582062441789910, guid: dc14c66842a83f149b74bae2339e7b2d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 887f25d20b04b334fb48a34733e5649d, type: 3}
     - target: {fileID: 8452454088593235931, guid: dc14c66842a83f149b74bae2339e7b2d, type: 3}
       propertyPath: m_RootOrder
       value: 3
