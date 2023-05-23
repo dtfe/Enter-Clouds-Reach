@@ -39779,6 +39779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+--- !u!1 &2004002612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3901064495863831919, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
+  m_PrefabInstance: {fileID: 2004002611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2007871931
 GameObject:
   m_ObjectHideFlags: 0
@@ -41914,6 +41919,10 @@ PrefabInstance:
       propertyPath: exp_cam
       value: 
       objectReference: {fileID: 628957673}
+    - target: {fileID: 7970579026073709594, guid: 65d8959c864053a4aabe86d26aef4987, type: 3}
+      propertyPath: combatScene
+      value: 
+      objectReference: {fileID: 2004002612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65d8959c864053a4aabe86d26aef4987, type: 3}
 --- !u!1001 &2138567446
