@@ -11,6 +11,7 @@ public class ModeSwap : MonoBehaviour
     public GameObject exp_ui;
 
     [Header("Combat Properties")]
+    public GameObject combatScene;
     public GameObject com_cam;
     public GameObject com_ui;
     GameObject[] exp;
@@ -21,17 +22,19 @@ public class ModeSwap : MonoBehaviour
     {
         exp_cam.SetActive(false);
         exp_ui.SetActive(false);
-        com_cam.SetActive(true);
-        com_ui.SetActive(true);
+        combatScene.SetActive(true);
+        //com_cam.SetActive(true);
+        //com_ui.SetActive(true);
         music.CombatMusic();
     }
-
+    
     public void ChangeToExploration()
     {
         exp_cam.SetActive(true);
         exp_ui.SetActive(true);
-        com_cam.SetActive(false);
-        com_ui.SetActive(false);
+        combatScene.SetActive(false);
+        //com_cam.SetActive(false);
+        //com_ui.SetActive(false);
         music.ExplorationMusic();
     }
 
