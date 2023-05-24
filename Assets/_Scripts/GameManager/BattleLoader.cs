@@ -8,7 +8,7 @@ namespace EnterCloudsReach.Combat{
 
 public class BattleLoader : MonoBehaviour
 {
-    private BattleSystem BS;
+    [SerializeField]private BattleSystem BS;
 
     private GameObject winEvent;
     private EventClass winEventNew;
@@ -59,21 +59,21 @@ public class BattleLoader : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Debug.Log("Scene Loaded");
+        GetComponent<ModeSwap>().ChangeToCombat();
         BS = FindObjectOfType<BattleSystem>();
         BS.enemyPrefab = enemyPrefab;
         winEvent = WinEvent;
         BS.startSetup();
-        GetComponent<ModeSwap>().ChangeToCombat();
     }
     IEnumerator SwitchScenesNew(GameObject enemyPrefab, EventClass WinEvent)
     {
         yield return new WaitForSeconds(2);
         Debug.Log("Scene Loaded");
+        GetComponent<ModeSwap>().ChangeToCombat();
         BS = FindObjectOfType<BattleSystem>();
         BS.enemyPrefab = enemyPrefab;
         winEventNew = WinEvent;
         BS.startSetup();
-        GetComponent<ModeSwap>().ChangeToCombat();
     }
 
     public void EndBattle()
