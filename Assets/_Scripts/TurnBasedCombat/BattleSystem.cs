@@ -92,8 +92,12 @@ namespace EnterCloudsReach.Combat
                 //PlayerPrefs.SetInt("playerHealth", playerUnit.maxHP);
             }
             //playerUnit.curHP = PlayerPrefs.GetInt("playerHealth");
-            playerUnit.curHP = playerStats.health;
-            playerUnit.maxHP = playerStats.maxHealth;
+            if(playerStats) 
+            {
+                playerUnit.curHP = playerStats.health;
+                playerUnit.maxHP = playerStats.maxHealth;
+            }
+            
             //SetAttacks();
 
             GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
