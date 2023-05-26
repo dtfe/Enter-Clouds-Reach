@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f665294dbe4c741b6ce79eaf696221, type: 3}
+  m_Name: CurvedAttack
+  m_EditorClassIdentifier: 
+  points:
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: -611.41437, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 0
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: -597, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 0.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: -434.74496, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 1
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: -102.752106, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 1.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: 81, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 2
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: 179.60461, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 2.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: 160.34357, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 3
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: 84.0356, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 3.5
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: 36.06253, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 4
+    showParameters: 1
+    hasSpawned: 0
+  - type: 0
+    prefabToSpawn: {fileID: 5249539130573406380, guid: bb230283670aa7f408660118d426c2b3, type: 3}
+    position: {x: 0, y: 700, z: 0}
+    endPos: {x: 0, y: 0, z: 0}
+    whenToSpawn: 4.5
+    showParameters: 1
+    hasSpawned: 0

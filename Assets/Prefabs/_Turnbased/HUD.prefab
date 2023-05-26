@@ -615,7 +615,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &418661052560577971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,8 +659,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 418661051902736770}
   hpSlider: {fileID: 418661052401989419}
-  statusEffects: {fileID: 0}
+  statusEffects: {fileID: 7932540572588381939}
+  stunTexture: {fileID: 21300000, guid: 6764c4c5dd69be3488a62f5bfd9051b2, type: 3}
+  stunImmunityTexture: {fileID: 21300000, guid: d958a8ca241fab24fb6df6e6195c6832, type: 3}
+  stunned: {fileID: 4329064555857101090}
+  stunnedImage: {fileID: 5040662124776075848}
+  StunnedText: {fileID: 8872867167293611321}
+  bloodTexture: {fileID: 21300000, guid: db83b58071775bf4a92548307181d4d7, type: 3}
+  bloodImmunityTexture: {fileID: 21300000, guid: 9f7f2983b86675b429d3894d5812ef18, type: 3}
+  bleed: {fileID: 5340951701172632553}
+  bleedImage: {fileID: 3561158630376065386}
   bloodPS: {fileID: 0}
+  bleedText: {fileID: 6422455941045537278}
+  poisonTexture: {fileID: 21300000, guid: 21b3550825f75354dab3661164e4874d, type: 3}
+  poisonImmunityTexture: {fileID: 21300000, guid: 1edfc602923e5c24ab27d61db1467feb, type: 3}
+  poison: {fileID: 561769765690493148}
+  poisonImage: {fileID: 8730066098659549728}
+  poisonText: {fileID: 7277673855122659705}
 --- !u!1 &561769765690493148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1035,7 @@ GameObject:
   - component: {fileID: 2658842570320436431}
   - component: {fileID: 5040662124776075848}
   m_Layer: 5
-  m_Name: Confusion
+  m_Name: Stunned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,6 +15,12 @@ public enum BattleState
     LOST
 }
 
+
+public enum BattleType
+{
+    Regular,
+    GoblinBoss
+}
 namespace EnterCloudsReach.Combat
 {
 
@@ -24,11 +30,18 @@ namespace EnterCloudsReach.Combat
         public TMP_Text dialogue;
         public GameObject actions;
         private CombatMinigameManager MGManager;
+        [SerializeField] private GameObject cam;
+        [SerializeField] private Transform[] camPos;
+
+        [Header("Arena Specific")]
+        [SerializeField] private GameObject[] ArenaEnvironment;
+        [SerializeField] private Transform[] enemySpawnPoints;
+        [SerializeField] private Transform[] playerSpawnPoints;
 
         [Header("Attack Prefabs")]
         [SerializeField]public GameObject[] attack;
 
-        public GameObject[] defaultAttack;
+        private GameObject[] defaultAttack;
 
         [Header("Player Properties")]
         public GameObject playerPrefab;
@@ -46,6 +59,7 @@ namespace EnterCloudsReach.Combat
         [Header("Game Information")]
         public BattleState state;
         [SerializeField] private bool startBattleOnStart = false;
+        [SerializeField] private BattleType typeToStart;
 
         private RollManager rm;
 
@@ -69,18 +83,43 @@ namespace EnterCloudsReach.Combat
             attackButtons = actions.GetComponentsInChildren<Button>();
             if (startBattleOnStart)
             {
-                startSetup();
+                StartCoroutine(SetupBattle(typeToStart));
             }
         }
 
         #region battleSetup
-        public void startSetup()
+        public void startSetup(BattleType type)
         {
-            StartCoroutine(SetupBattle());
+            StartCoroutine(SetupBattle(type));
         }
 
-        IEnumerator SetupBattle()
+        IEnumerator SetupBattle(BattleType type)
         {
+            int battletypeIndex = 0;
+            switch (type)
+            {
+                default:
+                    battletypeIndex = 0;
+                    break;
+
+                case BattleType.GoblinBoss:
+                    battletypeIndex = 1;
+                    break;
+            }
+            cam.transform.position = camPos[battletypeIndex].position;
+            cam.transform.rotation = camPos[battletypeIndex].rotation;
+            for (int i = 0; i < ArenaEnvironment.Length-1; i++)
+            {
+                ArenaEnvironment[i].SetActive(false);
+                if (i == battletypeIndex)
+                {
+                    ArenaEnvironment[i].SetActive(true);
+                }
+            }
+            playerSpawn = playerSpawnPoints[battletypeIndex];
+            enemySpawn = enemySpawnPoints[battletypeIndex];
+
+
             state = BattleState.START;
             if (playerUnit == null)
             {
@@ -106,19 +145,12 @@ namespace EnterCloudsReach.Combat
             
             //SetAttacks();
 
+
             GameObject enemyGO = Instantiate(enemyPrefab, enemySpawn);
             enemyUnit = enemyGO.GetComponent<Unit>();
             enemyCSFX = enemyGO.GetComponent<CombatSFX>();
             enemyHUD = enemyGO.transform.Find("HUD").GetComponent<BattleHUD>();
             enemyCurAttackIndex = 0;
-            for (int i = 0; i < enemyUnit.defendTimings.Length; i++)
-            {
-                for (int j = 0; j < enemyUnit.defendTimings[i].timingWeight; j++)
-                {
-                    enemyTimings.Add(enemyUnit.defendTimings[i]);
-                    Debug.Log("Added Timing: " + enemyUnit.defendTimings[i].timing.name);
-                }
-            }
 
             enemyHUD.SetHUD(enemyUnit);
 
@@ -486,107 +518,6 @@ namespace EnterCloudsReach.Combat
             dialogue.text = "Player has taken a total of " + (MGManager.misses * enemyUnit.damage) + " damage!";
 
             yield return new WaitForSeconds(2);
-
-            if (playerUnit.curHP <= 0)
-            {
-                state = BattleState.LOST;
-                StartCoroutine(EndBattle());
-            }
-            else
-            {
-                StartCoroutine(EnemyEndOfTurn());
-            }
-        }
-
-        // EnemyAttack is no longer used due to changes in the combat
-        IEnumerator EnemyAttack(int attackIndex)
-        {
-            #region old
-            /*
-            rolledNumber = 0;
-            dialogue.text = enemyUnit.unitName + " is attacking " + playerUnit.unitName + "!";
-            yield return new WaitForSeconds(2f);
-
-            FindObjectOfType<RollManager>().rollAttack(gameObject);
-            yield return new WaitUntil(() => rolledNumber != 0);
-            criticalMiss = false;
-            criticalHit = false;
-            if (rolledNumber == 1)
-            {
-                criticalMiss = true;
-            }
-            else if (rolledNumber == 20)
-            {
-                criticalHit = true;
-            }
-            if (criticalMiss)
-            {
-                dialogue.text = enemyUnit.unitName + " has critically missed!";
-            }
-            else
-            {
-                dialogue.text = enemyUnit.unitName + " has rolled a " + rolledNumber + " + " + enemyUnit.attackBonus + " for a total of " + (rolledNumber + enemyUnit.attackBonus);
-            }
-            yield return new WaitForSeconds(2f);
-            if (rolledNumber + enemyUnit.defense >= playerUnit.defense && !criticalMiss)
-            {
-                if (criticalHit)
-                {
-                    dialogue.text = enemyUnit.unitName + " has critically hit the hero!";
-                }
-                else
-                {
-                    dialogue.text = enemyUnit.unitName + " beat the hero's defense!";
-                }
-                rolledNumber = 0;
-                rm.rollDamage(gameObject, enemyUnit.damage);
-                yield return new WaitUntil(() => rolledNumber != 0);
-                dialogue.text = playerUnit.unitName + " has taken " + playerUnit.takeDamage(rolledNumber + enemyUnit.damageBonus) + " damage!";
-                playerHUD.SetHP(playerUnit.curHP);
-                yield return new WaitForSeconds(2);
-            }
-            rolledNumber = 0;
-            */
-            #endregion old
-            GameObject timingGO = Instantiate(enemyTimings[attackIndex].timing, actions.transform.parent);
-            TimingController timingCon = timingGO.GetComponent<TimingController>();
-            timingCon.startTiming(true);
-            yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) || !timingCon.isActivated));
-            enemyUnit.animationStart("attacking");
-            HitTiming hitStatus = timingCon.Clicked();
-            switch (hitStatus)
-            {
-                case (HitTiming.Miss):
-                    dialogue.text = "The enemy critically hit!";
-                    playerCSFX.PlayHitAudio(HitTiming.Critical);
-                    yield return new WaitForSeconds(1);
-                    timingGO.SetActive(false);
-                    dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.CritDamage) + " damage!";
-                    yield return new WaitForSeconds(1);
-                    playerUnit.addStatus(timingCon.criticalHitStatus, timingCon.criticalStatusStacks);
-                    break;
-
-                case (HitTiming.Hit):
-                    dialogue.text = "The attack scraped you!";
-                    playerCSFX.PlayHitAudio(HitTiming.Hit);
-                    yield return new WaitForSeconds(1);
-                    timingGO.SetActive(false);
-                    dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.damage) + " damage!";
-                    yield return new WaitForSeconds(1);
-                    playerUnit.addStatus(timingCon.regularHitStatus, timingCon.hitStatusStacks);
-                    break;
-
-                case (HitTiming.Critical):
-                    dialogue.text = "You blocked most of the enemy's attack!";
-                    playerCSFX.PlayHitAudio(HitTiming.Miss);
-                    yield return new WaitForSeconds(1);
-                    timingGO.SetActive(false);
-                    dialogue.text = "You have taken " + playerUnit.takeDamage(timingCon.damage / 2) + " damage!";
-                    break;
-            }
-            Destroy(timingGO);
-
-            yield return new WaitForSeconds(1);
 
             if (playerUnit.curHP <= 0)
             {

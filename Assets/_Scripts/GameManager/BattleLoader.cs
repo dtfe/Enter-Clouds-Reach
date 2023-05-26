@@ -44,18 +44,18 @@ public class BattleLoader : MonoBehaviour
         }
     }
 
-    public void StartBattle(GameObject enemyPrefab, GameObject WinEvent)
+    public void StartBattle(GameObject enemyPrefab, GameObject WinEvent, BattleType type)
     {
         Debug.Log("Loading Combat");
-        StartCoroutine(SwitchScenes(enemyPrefab, WinEvent));
+        StartCoroutine(SwitchScenes(enemyPrefab, WinEvent, type));
     }
-    public void StartBattleNew(GameObject enemyPrefab, EventClass WinEvent)
+    public void StartBattleNew(GameObject enemyPrefab, EventClass WinEvent, BattleType type)
     {
         Debug.Log("Loading Combat");
-        StartCoroutine(SwitchScenesNew(enemyPrefab, WinEvent));
+        StartCoroutine(SwitchScenesNew(enemyPrefab, WinEvent, type));
     }
 
-    IEnumerator SwitchScenes(GameObject enemyPrefab, GameObject WinEvent)
+    IEnumerator SwitchScenes(GameObject enemyPrefab, GameObject WinEvent, BattleType type)
     {
         yield return new WaitForSeconds(2);
         Debug.Log("Scene Loaded");
@@ -63,9 +63,9 @@ public class BattleLoader : MonoBehaviour
         BS = FindObjectOfType<BattleSystem>();
         BS.enemyPrefab = enemyPrefab;
         winEvent = WinEvent;
-        BS.startSetup();
+        BS.startSetup(type);
     }
-    IEnumerator SwitchScenesNew(GameObject enemyPrefab, EventClass WinEvent)
+    IEnumerator SwitchScenesNew(GameObject enemyPrefab, EventClass WinEvent, BattleType type)
     {
         yield return new WaitForSeconds(2);
         Debug.Log("Scene Loaded");
@@ -73,7 +73,7 @@ public class BattleLoader : MonoBehaviour
         BS = FindObjectOfType<BattleSystem>();
         BS.enemyPrefab = enemyPrefab;
         winEventNew = WinEvent;
-        BS.startSetup();
+        BS.startSetup(type);
     }
 
     public void EndBattle()

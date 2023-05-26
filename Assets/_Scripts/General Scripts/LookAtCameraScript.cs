@@ -11,7 +11,7 @@ public class LookAtCameraScript : MonoBehaviour
 
         foreach(Camera cam in cams)
         {
-            if (cam.name == "Main Camera")
+            if (cam.name == "CombatCamera")
             {
                 transform.LookAt(cam.transform);
             }
