@@ -92,8 +92,14 @@ namespace EnterCloudsReach.Combat
                 //PlayerPrefs.SetInt("playerHealth", playerUnit.maxHP);
             }
             //playerUnit.curHP = PlayerPrefs.GetInt("playerHealth");
-            if(playerStats) 
+            if(playerStats)
             {
+                playerUnit.curHP = playerStats.health;
+                playerUnit.maxHP = playerStats.maxHealth;
+            }
+            else
+            {
+                playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
                 playerUnit.curHP = playerStats.health;
                 playerUnit.maxHP = playerStats.maxHealth;
             }
