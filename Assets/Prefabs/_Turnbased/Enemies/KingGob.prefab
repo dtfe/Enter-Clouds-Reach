@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 4386765821987018786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.62662935, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4386765822358416476}
   - {fileID: 5542144676706755043}
@@ -54,7 +54,11 @@ MonoBehaviour:
   - timing: {fileID: 0}
     timingWeight: 1
   sequences:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 78e39445bcfad204fb70ba47498ce1ce, type: 2}
+  - {fileID: 11400000, guid: 63bfe4ccab4bdfe4dbc8a2a4d6a7bc36, type: 2}
+  - {fileID: 11400000, guid: 8cc8b51b987882b42ab45b754de2d894, type: 2}
+  - {fileID: 11400000, guid: feb88e12fca263647bd9742997672e9a, type: 2}
+  - {fileID: 11400000, guid: a8683cec8e9dff846a4fbfdc274f0d38, type: 2}
   maxHP: 150
   curHP: 150
   damage: 4

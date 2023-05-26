@@ -10,12 +10,15 @@ namespace EnterCloudsReach.EventSystem
     public class CombatEvent : EventClass
     {
         public GameObject enemyPrefab;
+
+        [SerializeField] private BattleType typeOfBattle;
+
         BattleLoader battleLoader;
         public override void StartEvent()
         {   
             battleLoader = FindObjectOfType<BattleLoader>();
             
-            battleLoader.StartBattleNew(enemyPrefab,eventChoices[0]);
+            battleLoader.StartBattleNew(enemyPrefab,eventChoices[0], typeOfBattle);
         }
     }
 }

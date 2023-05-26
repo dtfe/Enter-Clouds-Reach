@@ -14,6 +14,8 @@ public class ButtonScript : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject winEvent;
 
+    public BattleType type;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +27,9 @@ public class ButtonScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
-
     public void EngageBattle()
     {
-        FindObjectOfType<BattleLoader>().StartBattle(enemyPrefab, winEvent);
+        FindObjectOfType<BattleLoader>().StartBattle(enemyPrefab, winEvent, type);
     }
 
     public void movePlayerToPoint(string ID)

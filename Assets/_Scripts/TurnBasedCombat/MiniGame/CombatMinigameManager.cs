@@ -35,8 +35,11 @@ namespace EnterCloudsReach.Combat
         public void Miss(statusEffects statusToApply)
         {
             misses++;
-            battleSystem.DealDamageToPlayer(1);
-            battleSystem.ApplyStatusToPlayer(statusToApply);
+            if (battleSystem != null)
+            {
+                battleSystem.DealDamageToPlayer(1);
+                battleSystem.ApplyStatusToPlayer(statusToApply);
+            }
             //UpdateUI();
         }
 
@@ -59,9 +62,12 @@ namespace EnterCloudsReach.Combat
 
         public void EndMinigame()
         {
-            curActions.SetActive(true);
-            background.gameObject.SetActive(false);
-            isPlaying = false;
+            if (curActions != null)
+            {
+                curActions.SetActive(true);
+                background.gameObject.SetActive(false);
+                isPlaying = false;
+            }
         }
 
         public void SetSequence(MGSequence seq)

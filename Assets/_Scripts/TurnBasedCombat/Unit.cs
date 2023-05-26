@@ -27,6 +27,7 @@ namespace EnterCloudsReach.Combat
         private PlayerStats playerStats;
         public string unitName;
         private Animator anim;
+        private BattleHUD hud;
 
         public MGSequence defaultSequence;
 
@@ -65,6 +66,7 @@ namespace EnterCloudsReach.Combat
 
         private void Start()
         {
+            hud = GetComponentInChildren<BattleHUD>();
             playerStats = FindObjectOfType<PlayerStatDDOL>().playerStats;
             if (player)
             {
@@ -93,7 +95,7 @@ namespace EnterCloudsReach.Combat
         {
             anim.SetTrigger("damaged");
             curHP -= damage;
-            GetComponentInChildren<BattleHUD>().SetHP(curHP);
+            hud.SetHP(curHP);
             return damage;
         }
 
@@ -105,21 +107,31 @@ namespace EnterCloudsReach.Combat
                     break;
 
                 case statusEffects.Stunned:
-                    stunned += amount;
+                    if (!stunnedImmune)
+                    {
+                        stunned += amount;
+                    }
                     break;
 
                 case statusEffects.Bleed:
-                    bleed += amount;
+                    if (!bleedImmune)
+                    {
+                        bleed += amount;
+                    }
+
                     break;
 
                 case statusEffects.Poison:
-                    poison += amount;
+                    if (!poisonImmune)
+                    {
+                        poison += amount;
+                    }
                     break;
 
 
             }
 
-            GetComponentInChildren<BattleHUD>().refreshStatus(this);
+            hud.refreshStatus(this);
         }
 
         public void animationStart(string animName) => anim.SetTrigger(animName);
