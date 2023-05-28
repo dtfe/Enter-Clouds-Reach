@@ -108,7 +108,7 @@ namespace EnterCloudsReach.Combat
             }
             cam.transform.position = camPos[battletypeIndex].position;
             cam.transform.rotation = camPos[battletypeIndex].rotation;
-            for (int i = 0; i < ArenaEnvironment.Length-1; i++)
+            for (int i = 0; i < ArenaEnvironment.Length; i++)
             {
                 ArenaEnvironment[i].SetActive(false);
                 if (i == battletypeIndex)
@@ -560,7 +560,16 @@ namespace EnterCloudsReach.Combat
             // PlayerPrefs.SetInt("playerHealth", playerUnit.curHP);
             playerStats.health = playerUnit.curHP;
             yield return new WaitForSeconds(2f);
-            FindObjectOfType<BattleLoader>().EndBattle();
+            if (FindObjectOfType<BattleLoader>())
+            {
+                FindObjectOfType<BattleLoader>().EndBattle();
+            }
+            else if (FindObjectOfType<CombatSceneController>())
+            {
+                playerStats.health = playerStats.maxHealth;
+                FindObjectOfType<CombatSceneController>().RestartScene();
+            }
+
         }
 
         private bool CheckStatuses(Unit unitToCheck, statusEffects status)

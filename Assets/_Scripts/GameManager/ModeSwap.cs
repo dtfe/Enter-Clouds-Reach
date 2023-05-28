@@ -25,7 +25,7 @@ public class ModeSwap : MonoBehaviour
         combatScene.SetActive(true);
         //com_cam.SetActive(true);
         //com_ui.SetActive(true);
-        music.CombatMusic();
+        music?.CombatMusic();
     }
     
     public void ChangeToExploration()
@@ -35,7 +35,7 @@ public class ModeSwap : MonoBehaviour
         combatScene.SetActive(false);
         //com_cam.SetActive(false);
         //com_ui.SetActive(false);
-        music.ExplorationMusic();
+        music?.ExplorationMusic();
     }
 
     // Start is called before the first frame update
