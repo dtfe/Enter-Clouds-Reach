@@ -11,18 +11,6 @@ namespace EnterCloudsReach.Combat
         [SerializeField] private BattleSystem bs;
         [SerializeField] private ModeSwap modeSwap;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-
         public void LoadEnemyBattle(GameObject enemyToSpawn)
         {
             modeSwap.ChangeToCombat();
@@ -39,6 +27,7 @@ namespace EnterCloudsReach.Combat
 
         public void RestartScene()
         {
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
