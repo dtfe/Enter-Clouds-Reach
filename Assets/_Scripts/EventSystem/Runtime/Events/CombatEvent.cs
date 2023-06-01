@@ -13,12 +13,19 @@ namespace EnterCloudsReach.EventSystem
 
         [SerializeField] private BattleType typeOfBattle;
 
+        [Tooltip("Will activate this bool in playerprefs")]
+        [SerializeField] private string BoolToEnable;
+
         BattleLoader battleLoader;
         public override void StartEvent()
         {   
             battleLoader = FindObjectOfType<BattleLoader>();
             
             battleLoader.StartBattleNew(enemyPrefab,eventChoices[0], typeOfBattle);
+            if(BoolToEnable != "")
+            {
+                PlayerPrefs.SetInt(BoolToEnable, 1);
+            }
         }
     }
 }

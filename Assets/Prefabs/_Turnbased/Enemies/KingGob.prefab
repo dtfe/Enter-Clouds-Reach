@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4386765821987018789}
   - component: {fileID: 1271901798894838203}
   - component: {fileID: 503859696395752297}
+  - component: {fileID: 5734354358063431535}
   m_Layer: 0
   m_Name: KingGob
   m_TagString: Untagged
@@ -184,6 +185,19 @@ MonoBehaviour:
   poisonSFX: {fileID: 0}
   bleedSFX: {fileID: 0}
   stunSFX: {fileID: 0}
+--- !u!114 &5734354358063431535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4386765821987018786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f43fca6d4d84c4cb6ae11bd7daab62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
 --- !u!1 &4781694402822726268
 GameObject:
   m_ObjectHideFlags: 0
