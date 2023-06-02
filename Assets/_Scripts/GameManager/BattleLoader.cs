@@ -80,7 +80,7 @@ namespace EnterCloudsReach.Combat{
         {
             if (PlayerPrefs.GetString("BattleResult") == "Won")
             {
-                BS.ClearEnemies();
+                BS.ClearUnits();
                 GetComponent<ModeSwap>().ChangeToExploration();
                 EventClass eventClass = FindObjectOfType<EventClass>();
                 if(eventClass != null){

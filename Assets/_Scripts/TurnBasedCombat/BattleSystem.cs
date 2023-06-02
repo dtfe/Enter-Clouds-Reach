@@ -468,7 +468,7 @@ namespace EnterCloudsReach.Combat
         {
             if (CheckStatuses(enemyUnit, statusEffects.Poison))
             {
-                dialogue.text = "Enemy has taken " + playerUnit.takeDamage(enemyUnit.poison) + " poison damage!";
+                dialogue.text = "Enemy has taken " + enemyUnit.takeDamage(enemyUnit.poison) + " poison damage!";
                 if (enemyUnit.poison == 1)
                 {
                     enemyUnit.addStatus(statusEffects.Poison, -1);
@@ -633,9 +633,10 @@ namespace EnterCloudsReach.Combat
             Debug.Log("Received Result");
         }
 
-        public void ClearEnemies()
+        public void ClearUnits()
         {
             Destroy(enemyUnit.gameObject);
+            Destroy(playerUnit.gameObject);
         }
 
         public void DealDamageToPlayer(int numberOfMisses)
