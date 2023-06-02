@@ -18,13 +18,8 @@ namespace EnterCloudsReach.Combat
             if(PlayerPrefs.GetInt("GobKingPotPoisoned") == 1)
             {
                 unit.addStatus(statusEffects.Poison, 30);
+                PlayerPrefs.DeleteKey("GobKingPotPoisoned");
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
         }
     }
 }
