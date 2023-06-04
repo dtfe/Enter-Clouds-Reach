@@ -1072,7 +1072,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 28
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &17418412
 MonoBehaviour:
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Charm Goblin
+  eventName: Deceive
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -1704,7 +1704,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 23
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &34640516
 MonoBehaviour:
@@ -1755,10 +1755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Text Event
   eventText:
-  - 'A guard is blocking the way. '
-  - You could try to trick the guard, or you could choose to fight him.
-  - Attempt to trick the guard to letting you get past by telling him you are here
-    to help make food for the goblins.
+  - As you get closer to the mumbling, you see a goblin standing guard.
+  - The slumped over goblin notices you and suddenly jumps into position
   eventChoices:
   - {fileID: 394287137}
   BoolToEnable: 
@@ -1862,7 +1860,7 @@ MonoBehaviour:
   - This is an Event!
   - It can have multiple lines!
   eventChoices:
-  - {fileID: 394287137}
+  - {fileID: 41614718}
   terrainAmin:
   - {fileID: 1829595469}
 --- !u!1 &46852903
@@ -2263,7 +2261,7 @@ GameObject:
   - component: {fileID: 55673078}
   - component: {fileID: 55673077}
   m_Layer: 0
-  m_Name: L3_Choises
+  m_Name: L3_RoomChoices
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2283,8 +2281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Choices L3
   eventText:
-  - Attack the goblin, try to charm the drunk goblin or attempt to run out of the
-    room
+  - It turns around and spots you
   eventChoices:
   - {fileID: 17418412}
   - {fileID: 324957232}
@@ -2302,7 +2299,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 27
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &55923755 stripped
 Transform:
@@ -2772,7 +2769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Move further into the tower
+  eventName: Move on
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -2898,119 +2895,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4097834786523996338, guid: 86f01a2da9728f544b2e66d778e62751, type: 3}
   m_PrefabInstance: {fileID: 206206706}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &84967023
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DustParticle(Clone)
-  m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3102
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ed6dc1204147d451d96326c7fedc6727, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cookie2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClip: 0
-    - _Blend: 0
-    - _BlendOp: 0
-    - _Border: 0.576
-    - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
-    - _ColorMode: 0
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _DistanceFallOff: 1
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 0
-    - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
-    - _FlipbookMode: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _ParticleDistanceAtten: 225
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZWrite: 1
-    m_Colors:
-    - _AreaExtents: {r: 0, g: 0, b: 0, a: 1}
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _BoundsCenter: {r: -21.955917, g: 30.387526, b: 10.545358, a: 0}
-    - _BoundsExtents: {r: 9.957341, g: 9.999999, b: 9.957341, a: 0}
-    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ConeAxis: {r: 0, g: 0, b: 2, a: 4}
-    - _ConeTipData: {r: -21.955917, g: 30.387526, b: 10.545358, a: 0}
-    - _Cookie2D_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Cookie2D_SS: {r: 1, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ExtraGeoData: {r: 0, g: -0.25, b: 1, a: 2}
-    - _FallOff: {r: 1, g: 2, b: 15, a: 0}
-    - _ParticleLightColor: {r: 0.9509434, g: 0.64198697, b: 0, a: 1.2}
-    - _ShadowIntensity: {r: 0.9, g: 0.100000024, b: 0, a: 0}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-  m_BuildTextureStacks: []
 --- !u!21 &86516600
 Material:
   serializedVersion: 8
@@ -3154,7 +3038,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &89244171
 MonoBehaviour:
@@ -3168,7 +3052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Trick the guard
+  eventName: Lie
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -3828,7 +3712,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4344,175 +4228,6 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!1001 &115344659
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1368275169}
-    m_Modifications:
-    - target: {fileID: 515486008817107480, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.71781576
-      objectReference: {fileID: 0}
-    - target: {fileID: 515486008817107480, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.66035104
-      objectReference: {fileID: 0}
-    - target: {fileID: 515486008817107480, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.71781576
-      objectReference: {fileID: 0}
-    - target: {fileID: 688527724241560607, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 720914545992697467, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.511904
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.14018393
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.81743085
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478221891557843722, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.22385186
-      objectReference: {fileID: 0}
-    - target: {fileID: 3063128263759776681, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 480040101}
-    - target: {fileID: 3598968278466408565, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3598968278466408565, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3945674643979517098, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5370410205794764464, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5724064370434660058, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975266007569088041, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062136189724174702, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: VelocityModule.x.scalar
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062136189724174702, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: VelocityModule.z.scalar
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062136189724174702, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: VelocityModule.x.minScalar
-      value: -0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062136189724174702, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: VelocityModule.z.minScalar
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773658014672050819, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773658014672050819, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.20000009
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.20000009
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.236
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.027950145
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.548
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8792255910597519078, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_Name
-      value: Torch
-      objectReference: {fileID: 0}
-    - target: {fileID: 8792255910597519078, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9027757029101881045, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 84967023}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
 --- !u!1001 &116651132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4728,8 +4443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: L2_Text
   eventText:
-  - As you walk further into the halls of the tower you keep feeling a sense of eeriness.
-  - 'The path your on leads further forward, there is also a room to the right. '
+  - The echoes of your own footsteps ring out through the hallway
   eventChoices:
   - {fileID: 1782972760}
   BoolToEnable: 
@@ -6023,7 +5737,7 @@ Transform:
   m_Father: {fileID: 641466771}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.0029119225, y: -0.000010444959, z: 1.817275e-17}
---- !u!1 &171083197
+--- !u!1 &170603857
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6031,52 +5745,132 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 171083199}
-  - component: {fileID: 171083198}
+  - component: {fileID: 170603858}
+  - component: {fileID: 170603860}
+  - component: {fileID: 170603859}
   m_Layer: 0
-  m_Name: S1_GuardTextMama
+  m_Name: E_Column_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &171083198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171083197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: Text Event
-  eventText:
-  - You scared the mama goblin and managed to get away without fighting
-  - 'A guard is blocking the way. '
-  - You could try to trick the guard, or you could choose to fight him.
-  - Attempt to trick the guard to letting you get past by telling him you are here
-    to help make food for the goblins.
-  eventChoices:
-  - {fileID: 394287137}
-  BoolToEnable: 
---- !u!4 &171083199
+--- !u!4 &170603858
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171083197}
+  m_GameObject: {fileID: 170603857}
+  m_LocalRotation: {x: 2.6007958e-25, y: -0.6910412, z: 9.3548664e-24, w: 0.72281545}
+  m_LocalPosition: {x: -0.012, y: 0.37914062, z: 0.77}
+  m_LocalScale: {x: 32.858757, y: 27.80843, z: 31.64391}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 175587587}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -7.4032526, z: 0}
+--- !u!23 &170603859
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170603857}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &170603860
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170603857}
+  m_Mesh: {fileID: 2135267005533308286, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
+--- !u!1 &174627695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174627696}
+  - component: {fileID: 174627697}
+  m_Layer: 0
+  m_Name: L2_SearchedRoomDisarmSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &174627696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174627695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1866698017}
-  m_RootOrder: 5
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &174627697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174627695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897891d1aa1aedf4181589d525a290f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: AddItem Event
+  eventText:
+  - You successfully disarm the trap and get your hands on a beautiful helmet.
+  - Helmet Of Knowledge has been added to your inventory.
+  eventChoices:
+  - {fileID: 674257802}
+  item: {fileID: 11400000, guid: 95aa05ca55d29d44f8687d37dbad2be7, type: 2}
 --- !u!4 &175587587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8603975586591223385, guid: d3e45e6ea120f2643a679ef89531f70c, type: 3}
@@ -6384,8 +6178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: You couldnt find anything in the room
   eventText:
-  - Must be empty for anything intresting in this room.
-  - Keep going further seems to be the only option from here.
+  - As you look around the room, nothing seems to stand out.
   eventChoices:
   - {fileID: 77899950}
   BoolToEnable: 
@@ -6451,7 +6244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 16
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &180760971
 MonoBehaviour:
@@ -6465,15 +6258,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Open box
+  eventName: Open the chest
   eventText:
-  - As you look at the box you think
-  - what could be in this thing?
-  - While thinking of all the good this box could bring you start opening it.
-  - 'The box opens..... '
-  - A gas starts leaking out of it fast. You start to lose concusines fast, while
-    grasping for air you attempt to run out of the room without getting poisned by
-    this mysterious gass
+  - As you open the lid you hear a small click as a puff of purple gas hits you in
+    the face.
   eventChoices:
   - {fileID: 300253554}
   BoolToEnable: 
@@ -6734,7 +6522,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 33
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &199211513
 MonoBehaviour:
@@ -6750,9 +6538,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: RUN
   eventText:
-  - You managed to run away from the drunken goblin
-  - You can hear him making weird sounds behind you
-  - Better get to running...
+  - You avoided the sticky tiles on the floor and ran out the door, closing the door
+    shut.
+  - The goblin shrieks behind the door, but doesn't follow.
   eventChoices:
   - {fileID: 45733147}
   BoolToEnable: 
@@ -6786,7 +6574,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 25
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6805,7 +6593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: enter room
+  eventName: Enter the room
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -6927,7 +6715,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &204049789
 MonoBehaviour:
@@ -6943,7 +6731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: So which one is it
   eventText:
-  - Walk left or keep going straight ahead
+  - You successfully dealt with the guard you are now at another crossroad.
   eventChoices:
   - {fileID: 46852905}
   - {fileID: 97967853}
@@ -7318,6 +7106,58 @@ Transform:
   m_Father: {fileID: 534561631}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -6.546, y: 0.411, z: -3.598}
+--- !u!1 &217909128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 217909129}
+  - component: {fileID: 217909130}
+  m_Layer: 0
+  m_Name: S1_GuardFightCharmSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &217909129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217909128}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1866698017}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217909130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217909128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: You tricked the guard
+  eventText:
+  - You hand the guard a piece of paper which you quickly scribbled on
+  - The goblin falls for your deception thinking they just got a free manicure
+  - You easily slip past the distracted guard
+  eventChoices:
+  - {fileID: 717815896}
+  BoolToEnable: 
 --- !u!21 &218264899
 Material:
   serializedVersion: 8
@@ -7608,8 +7448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: L1_Choice
   eventText:
-  - You could open the door and enter the room or keep going further into the tower.
-    The choice is up to you.
+  - There's an old wooden door hanging loosely on its hinges
+  - You can't hear any noises behind the door
   eventChoices:
   - {fileID: 631724782}
   - {fileID: 77899950}
@@ -8081,7 +7921,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9294,56 +9134,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!1 &288544121
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 288544123}
-  - component: {fileID: 288544122}
-  m_Layer: 0
-  m_Name: L2_Choice
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &288544122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288544121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: Open chest or leave the room
-  eventText:
-  - open? eave the room?
-  eventChoices:
-  - {fileID: 180760971}
-  - {fileID: 674257802}
---- !u!4 &288544123
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288544121}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1607379283}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290276589
 GameObject:
   m_ObjectHideFlags: 0
@@ -9709,7 +9499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Attempt to run out of the room in time
+  eventName: Survive the gas
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -9718,7 +9508,7 @@ MonoBehaviour:
   - {fileID: 1217323517}
   rollCheck: 12
   faceType: 20
-  statName: 2
+  statName: 3
 --- !u!4 &300253555
 Transform:
   m_ObjectHideFlags: 0
@@ -9732,7 +9522,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 19
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &307492622
 PrefabInstance:
@@ -10225,6 +10015,89 @@ MonoBehaviour:
   eventChoices:
   - {fileID: 1342545030}
   BoolToEnable: 
+--- !u!1 &315621943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 315621944}
+  - component: {fileID: 315621946}
+  - component: {fileID: 315621945}
+  m_Layer: 0
+  m_Name: E_Column_01 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &315621944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315621943}
+  m_LocalRotation: {x: -8.549131e-17, y: -0.7912751, z: 8.6406625e-17, w: 0.6114604}
+  m_LocalPosition: {x: -0.756, y: 0.427, z: 0.96}
+  m_LocalScale: {x: 32.8589, y: 27.80843, z: 32.8589}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 638378715}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -7.4032526, z: 0}
+--- !u!23 &315621945
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315621943}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &315621946
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315621943}
+  m_Mesh: {fileID: 2135267005533308286, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
 --- !u!1 &316184418
 GameObject:
   m_ObjectHideFlags: 0
@@ -10779,7 +10652,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &324316859
 MonoBehaviour:
@@ -10799,6 +10672,57 @@ MonoBehaviour:
   eventChoices:
   - {fileID: 847083327}
   - {fileID: 1104549134}
+--- !u!1 &324543724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 324543725}
+  - component: {fileID: 324543726}
+  m_Layer: 0
+  m_Name: L2_RoomSearchCheckSuccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &324543725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324543724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324543726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324543724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: RoomSearched
+  eventText:
+  - As you search the room, you slowly begin to piece together the smell
+  - It's clear there's some sort of poisonous gas inside the chest.
+  eventChoices:
+  - {fileID: 1562738630}
+  BoolToEnable: 
 --- !u!1 &324957230
 GameObject:
   m_ObjectHideFlags: 0
@@ -10829,7 +10753,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 30
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &324957232
 MonoBehaviour:
@@ -10843,7 +10767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Attempt to run away from goblin
+  eventName: Run away
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -10852,7 +10776,7 @@ MonoBehaviour:
   - {fileID: 934077852}
   rollCheck: 10
   faceType: 20
-  statName: 0
+  statName: 2
 --- !u!43 &328608342
 Mesh:
   m_ObjectHideFlags: 0
@@ -11558,10 +11482,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: GoblinBarrelWin
   eventText:
-  - 'You beat the goblin barrel. He clearly wasnt sober.. i dont think. '
-  - 'You see that he had something hidden in the barrel '
-  - While checking closer you see its a potion
-  - Pick up the potion and keep going
+  - After having defeated the goblin, you search the room.
+  - The things you find are either drenched in ale or too small for you
   eventChoices:
   - {fileID: 45733147}
   BoolToEnable: 
@@ -11578,7 +11500,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 35
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &360622270
 PrefabInstance:
@@ -12146,6 +12068,60 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &385417947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385417948}
+  - component: {fileID: 385417949}
+  m_Layer: 0
+  m_Name: L2_SearchedRoomCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &385417948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385417947}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385417949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385417947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Disarm the trap
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 180760971}
+  - {fileID: 174627697}
+  rollCheck: 14
+  faceType: 20
+  statName: 2
 --- !u!1 &385681702
 GameObject:
   m_ObjectHideFlags: 0
@@ -12349,7 +12325,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &394287137
 MonoBehaviour:
@@ -12365,7 +12341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Trick the guard
   eventText:
-  - Fight the guard or trick him.
+  - They stand there with their sharpened claws at the ready
   eventChoices:
   - {fileID: 1057825935}
   - {fileID: 89244171}
@@ -12400,6 +12376,89 @@ Transform:
   m_Father: {fileID: 1697750438}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -6.546, y: 0.411, z: -3.598}
+--- !u!1 &395196017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395196018}
+  - component: {fileID: 395196020}
+  - component: {fileID: 395196019}
+  m_Layer: 0
+  m_Name: E_Column_01 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &395196018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395196017}
+  m_LocalRotation: {x: 5.6945486e-24, y: -0.13614137, z: 7.426526e-24, w: 0.99068946}
+  m_LocalPosition: {x: 0.156, y: 0.529, z: 1.462}
+  m_LocalScale: {x: 32.858902, y: 27.80843, z: 32.858894}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1642467654}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -7.4032526, z: 0}
+--- !u!23 &395196019
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395196017}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &395196020
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395196017}
+  m_Mesh: {fileID: 2135267005533308286, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
 --- !u!1001 &395445300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12783,7 +12842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalScale.x
@@ -12799,7 +12858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.463
+      value: -0.464
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12807,7 +12866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.08
+      value: 0.126
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13860,7 +13919,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 31
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &470225276
 MonoBehaviour:
@@ -13876,180 +13935,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Failed to run away from drunk goblin
   eventText:
-  - Somehow... you managed to get grabbed by the drunk goblin
-  - He is now even angrier
+  - As you try to run, you find yourself stuck to the sticky floor.
+  - The goblin had spilt ale all over the floor!
   eventChoices:
   - {fileID: 1052204931}
-  BoolToEnable: 
+  BoolToEnable: PlayerStunned
 --- !u!4 &479044887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3973112171089148523, guid: 4d9d4cb5c43bea5468777fa9b5b6a0a7, type: 3}
   m_PrefabInstance: {fileID: 796585105}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &480040101
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sphere
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 2304
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 402
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 9.957341, y: 10, z: 9.957341}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 0
-  m_KeepIndices: 0
-  m_IndexFormat: 0
-  m_IndexBuffer: 0200010000000300020000000400030000000500040000000600050000000700060000000800070000000900080000000a00090000000b000a0000000c000b0000000d000c0000000e000d0000000f000e00000010000f000000110010000000120011000000130012000000140013000000150014000000160015000000170016000000180017000000190018000000010002001b0001001b001a00020003001c0002001c001b00030004001d0003001d001c00040005001e0004001e001d00050006001f0005001f001e00060007002000060020001f0007000800210007002100200008000900220008002200210009000a0023000900230022000a000b0024000a00240023000b000c0025000b00250024000c000d0026000c00260025000d000e0027000d00270026000e000f0028000e00280027000f00100029000f0029002800100011002a0010002a002900110012002b0011002b002a00120013002c0012002c002b00130014002d0013002d002c00140015002e0014002e002d00150016002f0015002f002e00160017003000160030002f001700180031001700310030001800190032001800320031001a001b0034001a00340033001b001c0035001b00350034001c001d0036001c00360035001d001e0037001d00370036001e001f0038001e00380037001f00200039001f0039003800200021003a0020003a003900210022003b0021003b003a00220023003c0022003c003b00230024003d0023003d003c00240025003e0024003e003d00250026003f0025003f003e00260027004000260040003f0027002800410027004100400028002900420028004200410029002a0043002900430042002a002b0044002a00440043002b002c0045002b00450044002c002d0046002c00460045002d002e0047002d00470046002e002f0048002e00480047002f00300049002f0049004800300031004a0030004a004900310032004b0031004b004a00330034004d0033004d004c00340035004e0034004e004d00350036004f0035004f004e00360037005000360050004f0037003800510037005100500038003900520038005200510039003a0053003900530052003a003b0054003a00540053003b003c0055003b00550054003c003d0056003c00560055003d003e0057003d00570056003e003f0058003e00580057003f00400059003f0059005800400041005a0040005a005900410042005b0041005b005a00420043005c0042005c005b00430044005d0043005d005c00440045005e0044005e005d00450046005f0045005f005e00460047006000460060005f0047004800610047006100600048004900620048006200610049004a0063004900630062004a004b0064004a00640063004c004d0066004c00660065004d004e0067004d00670066004e004f0068004e00680067004f00500069004f0069006800500051006a0050006a006900510052006b0051006b006a00520053006c0052006c006b00530054006d0053006d006c00540055006e0054006e006d00550056006f0055006f006e00560057007000560070006f0057005800710057007100700058005900720058007200710059005a0073005900730072005a005b0074005a00740073005b005c0075005b00750074005c005d0076005c00760075005d005e0077005d00770076005e005f0078005e00780077005f00600079005f0079007800600061007a0060007a007900610062007b0061007b007a00620063007c0062007c007b00630064007d0063007d007c00650066007f0065007f007e00660067008000660080007f0067006800810067008100800068006900820068008200810069006a0083006900830082006a006b0084006a00840083006b006c0085006b00850084006c006d0086006c00860085006d006e0087006d00870086006e006f0088006e00880087006f00700089006f0089008800700071008a0070008a008900710072008b0071008b008a00720073008c0072008c008b00730074008d0073008d008c00740075008e0074008e008d00750076008f0075008f008e00760077009000760090008f0077007800910077009100900078007900920078009200910079007a0093007900930092007a007b0094007a00940093007b007c0095007b00950094007c007d0096007c00960095007e007f0098007e00980097007f00800099007f0099009800800081009a0080009a009900810082009b0081009b009a00820083009c0082009c009b00830084009d0083009d009c00840085009e0084009e009d00850086009f0085009f009e0086008700a0008600a0009f0087008800a1008700a100a00088008900a2008800a200a10089008a00a3008900a300a2008a008b00a4008a00a400a3008b008c00a5008b00a500a4008c008d00a6008c00a600a5008d008e00a7008d00a700a6008e008f00a8008e00a800a7008f009000a9008f00a900a80090009100aa009000aa00a90091009200ab009100ab00aa0092009300ac009200ac00ab0093009400ad009300ad00ac0094009500ae009400ae00ad0095009600af009500af00ae0097009800b1009700b100b00098009900b2009800b200b10099009a00b3009900b300b2009a009b00b4009a00b400b3009b009c00b5009b00b500b4009c009d00b6009c00b600b5009d009e00b7009d00b700b6009e009f00b8009e00b800b7009f00a000b9009f00b900b800a000a100ba00a000ba00b900a100a200bb00a100bb00ba00a200a300bc00a200bc00bb00a300a400bd00a300bd00bc00a400a500be00a400be00bd00a500a600bf00a500bf00be00a600a700c000a600c000bf00a700a800c100a700c100c000a800a900c200a800c200c100a900aa00c300a900c300c200aa00ab00c400aa00c400c300ab00ac00c500ab00c500c400ac00ad00c600ac00c600c500ad00ae00c700ad00c700c600ae00af00c800ae00c800c700b000b100ca00b000ca00c900b100b200cb00b100cb00ca00b200b300cc00b200cc00cb00b300b400cd00b300cd00cc00b400b500ce00b400ce00cd00b500b600cf00b500cf00ce00b600b700d000b600d000cf00b700b800d100b700d100d000b800b900d200b800d200d100b900ba00d300b900d300d200ba00bb00d400ba00d400d300bb00bc00d500bb00d500d400bc00bd00d600bc00d600d500bd00be00d700bd00d700d600be00bf00d800be00d800d700bf00c000d900bf00d900d800c000c100da00c000da00d900c100c200db00c100db00da00c200c300dc00c200dc00db00c300c400dd00c300dd00dc00c400c500de00c400de00dd00c500c600df00c500df00de00c600c700e000c600e000df00c700c800e100c700e100e000c900ca00e300c900e300e200ca00cb00e400ca00e400e300cb00cc00e500cb00e500e400cc00cd00e600cc00e600e500cd00ce00e700cd00e700e600ce00cf00e800ce00e800e700cf00d000e900cf00e900e800d000d100ea00d000ea00e900d100d200eb00d100eb00ea00d200d300ec00d200ec00eb00d300d400ed00d300ed00ec00d400d500ee00d400ee00ed00d500d600ef00d500ef00ee00d600d700f000d600f000ef00d700d800f100d700f100f000d800d900f200d800f200f100d900da00f300d900f300f200da00db00f400da00f400f300db00dc00f500db00f500f400dc00dd00f600dc00f600f500dd00de00f700dd00f700f600de00df00f800de00f800f700df00e000f900df00f900f800e000e100fa00e000fa00f900e200e300fc00e200fc00fb00e300e400fd00e300fd00fc00e400e500fe00e400fe00fd00e500e600ff00e500ff00fe00e600e7000001e6000001ff00e700e8000101e70001010001e800e9000201e80002010101e900ea000301e90003010201ea00eb000401ea0004010301eb00ec000501eb0005010401ec00ed000601ec0006010501ed00ee000701ed0007010601ee00ef000801ee0008010701ef00f0000901ef0009010801f000f1000a01f0000a010901f100f2000b01f1000b010a01f200f3000c01f2000c010b01f300f4000d01f3000d010c01f400f5000e01f4000e010d01f500f6000f01f5000f010e01f600f7001001f60010010f01f700f8001101f70011011001f800f9001201f80012011101f900fa001301f90013011201fb00fc001501fb0015011401fc00fd001601fc0016011501fd00fe001701fd0017011601fe00ff001801fe0018011701ff0000011901ff0019011801000101011a0100011a011901010102011b0101011b011a01020103011c0102011c011b01030104011d0103011d011c01040105011e0104011e011d01050106011f0105011f011e01060107012001060120011f0107010801210107012101200108010901220108012201210109010a0123010901230122010a010b0124010a01240123010b010c0125010b01250124010c010d0126010c01260125010d010e0127010d01270126010e010f0128010e01280127010f01100129010f0129012801100111012a0110012a012901110112012b0111012b012a01120113012c0112012c012b01140115012e0114012e012d01150116012f0115012f012e01160117013001160130012f0117011801310117013101300118011901320118013201310119011a0133011901330132011a011b0134011a01340133011b011c0135011b01350134011c011d0136011c01360135011d011e0137011d01370136011e011f0138011e01380137011f01200139011f0139013801200121013a0120013a013901210122013b0121013b013a01220123013c0122013c013b01230124013d0123013d013c01240125013e0124013e013d01250126013f0125013f013e01260127014001260140013f0127012801410127014101400128012901420128014201410129012a0143012901430142012a012b0144012a01440143012b012c0145012b01450144012d012e0147012d01470146012e012f0148012e01480147012f01300149012f0149014801300131014a0130014a014901310132014b0131014b014a01320133014c0132014c014b01330134014d0133014d014c01340135014e0134014e014d01350136014f0135014f014e01360137015001360150014f0137013801510137015101500138013901520138015201510139013a0153013901530152013a013b0154013a01540153013b013c0155013b01550154013c013d0156013c01560155013d013e0157013d01570156013e013f0158013e01580157013f01400159013f0159015801400141015a0140015a015901410142015b0141015b015a01420143015c0142015c015b01430144015d0143015d015c01440145015e0144015e015d01460147016001460160015f0147014801610147016101600148014901620148016201610149014a0163014901630162014a014b0164014a01640163014b014c0165014b01650164014c014d0166014c01660165014d014e0167014d01670166014e014f0168014e01680167014f01500169014f0169016801500151016a0150016a016901510152016b0151016b016a01520153016c0152016c016b01530154016d0153016d016c01540155016e0154016e016d01550156016f0155016f016e01560157017001560170016f0157015801710157017101700158015901720158017201710159015a0173015901730172015a015b0174015a01740173015b015c0175015b01750174015c015d0176015c01760175015d015e0177015d01770176015f01600179015f0179017801600161017a0160017a017901610162017b0161017b017a01620163017c0162017c017b01630164017d0163017d017c01640165017e0164017e017d01650166017f0165017f017e01660167018001660180017f0167016801810167018101800168016901820168018201810169016a0183016901830182016a016b0184016a01840183016b016c0185016b01850184016c016d0186016c01860185016d016e0187016d01870186016e016f0188016e01880187016f01700189016f0189018801700171018a0170018a018901710172018b0171018b018a01720173018c0172018c018b01730174018d0173018d018c01740175018e0174018e018d01750176018f0175018f018e01760177019001760190018f0191018f01900191018e018f0191018d018e0191018c018d0191018b018c0191018a018b01910189018a0191018801890191018701880191018601870191018501860191018401850191018301840191018201830191018101820191018001810191017f01800191017e017f0191017d017e0191017c017d0191017b017c0191017a017b01910179017a01910178017901
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 402
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 4824
-    _typelessdata: 0000000000002041000000000a33eb3f94461d4100000000662fe33f94461d410e7ff33e4ab0cb3f94461d410a336b3fa24fa63f94461d41a24fa63f09336b3f94461d414bb0cb3f107ff33e94461d41662fe33f187cacb394461d410a33eb3f157ff3be94461d41662fe33f0c336bbf94461d414ab0cb3fa24fa6bf94461d41a24fa63f4ab0cbbf94461d410c336b3f662fe3bf94461d41067ff33e0a33ebbf94461d41187c2cb4662fe3bf94461d41107ff3be48b0cbbf94461d410f336bbfa04fa6bf94461d41a44fa6bf08336bbf94461d414bb0cbbf0a7ff3be94461d41662fe3bfcd38bc3294461d410a33ebbf0c7ff33e94461d41662fe3bf08336b3f94461d414bb0cbbfa64fa63f94461d419f4fa6bf4db0cb3f94461d4103336bbf662fe33f94461d41017ff3be0a33eb3f94461d4100000000d6316740103215410000000020515f4010321541b0596f3f7038484010321541d631e73fb47a234010321541b47a2340d431e73f1032154171384840b1596f3f1032154120515f40418c29b410321541d6316740b6596fbf1032154120515f40d731e7bf1032154170384840b47a23c010321541b47a2340703848c010321541d731e73f22515fc010321541a8596f3fd63167c010321541418ca9b420515fc010321541b1596fbf6e3848c010321541db31e7bfb37a23c010321541b67a23c0d331e7bf10321541713848c0ac596fbf1032154122515fc05e04393310321541d63167c0ad596f3f1032154120515fc0d331e73f10321541713848c0b87a234010321541b07a23c07238484010321541ce31e7bf22515f4010321541a3596fbfd631674010321541000000005275a840e408084100000000ddb7a240e40808419f66ae3fa0e39140e4080841527528406a3c6e40e40808416a3c6e4051752840e4080841a0e39140a066ae3fe4080841ddb7a240611477b4e40808415275a840a466aebfe4080841ddb7a240547528c0e4080841a0e391406a3c6ec0e40808416a3c6e40a0e391c0e408084154752840ddb7a2c0e40808419966ae3f5275a8c0e40808416114f7b4ddb7a2c0e4080841a066aebf9fe391c0e4080841567528c0673c6ec0e40808416c3c6ec0507528c0e4080841a0e391c09b66aebfe4080841ddb7a2c0b2cf8633e40808415275a8c09c66ae3fe4080841ddb7a2c050752840e4080841a0e391c0703c6e40e4080841653c6ec0a2e39140e40808414e7528c0ddb7a240e40808419566aebf5275a840e4080841000000002595d7409c7bec40000000009e3cd0409c7bec400230df3f33b3ba409c7bec40259557409e7098409c7bec409e709840249557409c7bec4034b3ba400430df3f9c7bec409e3cd04042199eb49c7bec402595d7400930dfbf9c7bec409e3cd040269557c09c7bec4033b3ba409e7098c09c7bec409e70984033b3bac09c7bec4026955740a03cd0c09c7bec40fb2fdf3f2595d7c09c7bec4042191eb59e3cd0c09c7bec400430dfbf32b3bac09c7bec402a9557c09d7098c09c7bec40a07098c0239557c09c7bec4034b3bac0ff2fdfbf9c7bec40a03cd0c0f485ac339c7bec402595d7c00030df3f9c7bec409e3cd0c0239557409c7bec4034b3bac0a27098409c7bec409b7098c036b3ba409c7bec401f9557c0a03cd0409c7bec40f62fdfbf2595d7409c7bec4000000000935dff40d4d7c0400000000005aaf640d4d7c040da2f04402d27dd40d4d7c040935d7f401992b440d4d7c0401992b440925d7f40d4d7c0402e27dd40db2f0440d4d7c04005aaf6401146bbb4d4d7c040935dff40de2f04c0d4d7c04005aaf640965d7fc0d4d7c0402d27dd401992b4c0d4d7c0401992b4402d27ddc0d4d7c040965d7f4006aaf6c0d4d7c040d62f0440935dffc0d4d7c04011463bb505aaf6c0d4d7c040db2f04c02a27ddc0d4d7c040995d7fc01792b4c0d4d7c0401a92b4c0905d7fc0d4d7c0402e27ddc0d82f04c0d4d7c04006aaf6c0325ccc33d4d7c040935dffc0d92f0440d4d7c04005aaf6c0905d7f40d4d7c0402e27ddc01d92b440d4d7c0401492b4c03027dd40d4d7c0408c5d7fc006aaf640d4d7c040d32f04c0935dff40d4d7c04000000000e4390f41e3a28e400000000087580a41e3a28e40524714402f13f840e3a28e40e4398f40668dca40e3a28e40668dca40e3398f40e3a28e403013f84054471440e3a28e4087580a414212d2b4e3a28e40e4390f41574714c0e3a28e4087580a41e5398fc0e3a28e402f13f840668dcac0e3a28e40668dca402f13f8c0e3a28e40e5398f4088580ac1e3a28e404e471440e4390fc1e3a28e40421252b587580ac1e3a28e40544714c02c13f8c0e3a28e40e7398fc0648dcac0e3a28e40678dcac0e2398fc0e3a28e403013f8c0504714c0e3a28e4088580ac1de3ce533e3a28e40e4390fc151471440e3a28e4087580ac1e2398f40e3a28e403013f8c06a8dca40e3a28e40618dcac03113f840e3a28e40df398fc088580a41e3a28e404a4714c0e4390f41e3a28e400000000061e41941f2242f4000000000fba51441f2242f4022521f4044460541f2242f4061e49940e4a2d940f2242f40e4a2d94060e49940f2242f404446054123521f40f2242f40fba5144118b7e1b4f2242f4061e4194127521fc0f2242f40fba5144162e499c0f2242f4044460541e4a2d9c0f2242f40e4a2d940444605c1f2242f4062e49940fba514c1f2242f401d521f4061e419c1f2242f4018b761b5fba514c1f2242f4023521fc0424605c1f2242f4065e499c0e2a2d9c0f2242f40e7a2d9c05fe499c0f2242f40444605c120521fc0f2242f40fba514c11a4ff633f2242f4061e419c121521f40f2242f40fba514c15fe49940f2242f40444605c1eaa2d940f2242f40e0a2d9c046460541f2242f405ce499c0fba51441f2242f401a521fc061e41941f2242f400000000045511f4100356c3f000000008ce3194100356c3f05f0244014f9094100356c3f45519f40154fe14000356c3f154fe14045519f4000356c3f15f9094106f0244000356c3f8ce3194132ace9b400356c3f45511f410af024c000356c3f8ce3194147519fc000356c3f14f90941154fe1c000356c3f154fe14014f909c100356c3f47519f408de319c100356c3f00f0244045511fc100356c3f32ac69b58ce319c100356c3f06f024c013f909c100356c3f49519fc0124fe1c000356c3f184fe1c044519fc000356c3f15f909c102f024c000356c3f8de319c111fefe3300356c3f45511fc104f0244000356c3f8ce319c144519f4000356c3f15f909c11a4fe14000356c3f104fe1c016f9094100356c3f40519fc08de3194100356c3ffcef24c045511f4100356c3f0000000045511f410e356cbf000000008ce319410e356cbf05f0244014f909410e356cbf45519f40154fe1400e356cbf154fe14045519f400e356cbf15f9094106f024400e356cbf8ce3194132ace9b40e356cbf45511f410af024c00e356cbf8ce3194147519fc00e356cbf14f90941154fe1c00e356cbf154fe14014f909c10e356cbf47519f408de319c10e356cbf00f0244045511fc10e356cbf32ac69b58ce319c10e356cbf06f024c013f909c10e356cbf49519fc0124fe1c00e356cbf184fe1c044519fc00e356cbf15f909c102f024c00e356cbf8de319c111fefe330e356cbf45511fc104f024400e356cbf8ce319c144519f400e356cbf15f909c11a4fe1400e356cbf104fe1c016f909410e356cbf40519fc08de319410e356cbffcef24c045511f410e356cbf0000000060e41941f5242fc000000000faa51441f5242fc021521f4043460541f5242fc060e49940e3a2d940f5242fc0e3a2d94060e49940f5242fc04446054123521f40f5242fc0faa5144117b7e1b4f5242fc060e4194126521fc0f5242fc0faa5144162e499c0f5242fc043460541e3a2d9c0f5242fc0e3a2d940434605c1f5242fc062e49940fba514c1f5242fc01c521f4060e419c1f5242fc017b761b5faa514c1f5242fc023521fc0424605c1f5242fc064e499c0e1a2d9c0f5242fc0e6a2d9c05fe499c0f5242fc0444605c11f521fc0f5242fc0fba514c1194ff633f5242fc060e419c120521f40f5242fc0faa514c15fe49940f5242fc0444605c1e8a2d940f5242fc0e0a2d9c045460541f5242fc05ce499c0fba51441f5242fc019521fc060e41941f5242fc000000000e4390f41e2a28ec00000000087580a41e2a28ec0524714402f13f840e2a28ec0e4398f40668dca40e2a28ec0668dca40e3398f40e2a28ec03013f84054471440e2a28ec087580a414212d2b4e2a28ec0e4390f41574714c0e2a28ec087580a41e5398fc0e2a28ec02f13f840668dcac0e2a28ec0668dca402f13f8c0e2a28ec0e5398f4088580ac1e2a28ec04e471440e4390fc1e2a28ec0421252b587580ac1e2a28ec0544714c02c13f8c0e2a28ec0e7398fc0648dcac0e2a28ec0678dcac0e2398fc0e2a28ec03013f8c0504714c0e2a28ec088580ac1de3ce533e2a28ec0e4390fc151471440e2a28ec087580ac1e2398f40e2a28ec03013f8c06a8dca40e2a28ec0618dcac03113f840e2a28ec0df398fc088580a41e2a28ec04a4714c0e4390f41e2a28ec000000000925dff40d5d7c0c00000000005aaf640d5d7c0c0d92f04402c27dd40d5d7c0c0925d7f401892b440d5d7c0c01892b440905d7f40d5d7c0c02d27dd40da2f0440d5d7c0c005aaf6401046bbb4d5d7c0c0925dff40de2f04c0d5d7c0c005aaf640945d7fc0d5d7c0c02c27dd401892b4c0d5d7c0c01892b4402c27ddc0d5d7c0c0945d7f4005aaf6c0d5d7c0c0d62f0440925dffc0d5d7c0c010463bb505aaf6c0d5d7c0c0da2f04c02927ddc0d5d7c0c0985d7fc01692b4c0d5d7c0c01a92b4c08f5d7fc0d5d7c0c02d27ddc0d72f04c0d5d7c0c005aaf6c0315ccc33d5d7c0c0925dffc0d92f0440d5d7c0c005aaf6c08f5d7f40d5d7c0c02d27ddc01c92b440d5d7c0c01492b4c02e27dd40d5d7c0c08a5d7fc005aaf640d5d7c0c0d22f04c0925dff40d5d7c0c0000000002395d7409e7becc0000000009c3cd0409e7becc0ff2fdf3f31b3ba409e7becc0239557409d7098409e7becc09d709840229557409e7becc032b3ba400230df3f9e7becc09c3cd04040199eb49e7becc02395d7400630dfbf9e7becc09c3cd040249557c09e7becc031b3ba409d7098c09e7becc09d70984031b3bac09e7becc0249557409d3cd0c09e7becc0f92fdf3f2395d7c09e7becc040191eb59c3cd0c09e7becc00230dfbf30b3bac09e7becc0289557c09b7098c09e7becc09e7098c0209557c09e7becc032b3bac0fc2fdfbf9e7becc09d3cd0c0f185ac339e7becc02395d7c0fe2fdf3f9e7becc09c3cd0c0209557409e7becc032b3bac0a07098409e7becc0997098c033b3ba409e7becc01c9557c09d3cd0409e7becc0f42fdfbf2395d7409e7becc0000000005275a840e50808c100000000ddb7a240e50808c19f66ae3fa0e39140e50808c1527528406a3c6e40e50808c16a3c6e4051752840e50808c1a0e39140a066ae3fe50808c1ddb7a240611477b4e50808c15275a840a466aebfe50808c1ddb7a240547528c0e50808c1a0e391406a3c6ec0e50808c16a3c6e40a0e391c0e50808c154752840ddb7a2c0e50808c19966ae3f5275a8c0e50808c16114f7b4ddb7a2c0e50808c1a066aebf9fe391c0e50808c1567528c0673c6ec0e50808c16c3c6ec0507528c0e50808c1a0e391c09b66aebfe50808c1ddb7a2c0b2cf8633e50808c15275a8c09c66ae3fe50808c1ddb7a2c050752840e50808c1a0e391c0703c6e40e50808c1653c6ec0a2e39140e50808c14e7528c0ddb7a240e50808c19566aebf5275a840e50808c100000000d1316740113215c1000000001b515f40113215c1ab596f3f6c384840113215c1d131e73fb07a2340113215c1b07a2340d031e73f113215c16c384840ac596f3f113215c11b515f403d8c29b4113215c1d1316740b1596fbf113215c11b515f40d231e7bf113215c16c384840b07a23c0113215c1b07a23406c3848c0113215c1d231e73f1c515fc0113215c1a3596f3fd13167c0113215c13d8ca9b41b515fc0113215c1ac596fbf693848c0113215c1d631e7bfaf7a23c0113215c1b37a23c0ce31e7bf113215c16c3848c0a7596fbf113215c11c515fc058043933113215c1d13167c0a8596f3f113215c11b515fc0ce31e73f113215c16c3848c0b47a2340113215c1ae7a23c06e384840113215c1c931e7bf1c515f40113215c19d596fbfd1316740113215c1000000000c33eb3f94461dc100000000682fe33f94461dc10f7ff33e4bb0cb3f94461dc10c336b3fa44fa63f94461dc1a44fa63f0a336b3f94461dc14cb0cb3f127ff33e94461dc1682fe33f187cacb394461dc10c33eb3f167ff3be94461dc1682fe33f0d336bbf94461dc14bb0cb3fa44fa6bf94461dc1a44fa63f4bb0cbbf94461dc10d336b3f682fe3bf94461dc1087ff33e0c33ebbf94461dc1187c2cb4682fe3bf94461dc1127ff3be4ab0cbbf94461dc110336bbfa14fa6bf94461dc1a54fa6bf09336bbf94461dc14cb0cbbf0b7ff3be94461dc1682fe3bfce38bc3294461dc10c33ebbf0e7ff33e94461dc1682fe3bf09336b3f94461dc14cb0cbbfa64fa63f94461dc1a04fa6bf4eb0cb3f94461dc104336bbf682fe33f94461dc1027ff3be0c33eb3f94461dc10000000000000000000020c100000000
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 9.957341, y: 10, z: 9.957341}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &489690311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15569,9 +15464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Text Event
   eventText:
-  - 'You enter the room and you can see some more furniture. '
-  - Maybe look around for more.
-  - 'You can see a chest though, by the table. '
+  - Inside the room you spot some furniture, and an old wooden chest.
+  - There's a shelf next to you which smells of mold.
   eventChoices:
   - {fileID: 690844468}
   BoolToEnable: 
@@ -16165,7 +16059,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &544257110
 MonoBehaviour:
@@ -16247,7 +16141,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &547429569
 MonoBehaviour:
@@ -17389,7 +17283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Enter room
+  eventName: Open the door
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -17989,7 +17883,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &653440652
 MonoBehaviour:
@@ -18389,7 +18283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Keep walking further
+  eventName: Continue on
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -18410,7 +18304,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 23
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19802,9 +19696,92 @@ MonoBehaviour:
   - This is an Event!
   - It can have multiple lines!
   eventChoices:
-  - {fileID: 1607421970}
+  - {fileID: 204049789}
   terrainAmin:
   - {fileID: 1424349345}
+--- !u!1 &719288697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719288698}
+  - component: {fileID: 719288700}
+  - component: {fileID: 719288699}
+  m_Layer: 0
+  m_Name: E_Column_01 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &719288698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719288697}
+  m_LocalRotation: {x: 5.6945486e-24, y: -0.13614137, z: 7.426526e-24, w: 0.99068946}
+  m_LocalPosition: {x: 0.388, y: 0.529, z: 0.597}
+  m_LocalScale: {x: 32.858902, y: 27.80843, z: 32.858894}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1642467654}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -7.4032526, z: 0}
+--- !u!23 &719288699
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719288697}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &719288700
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719288697}
+  m_Mesh: {fileID: 2135267005533308286, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
 --- !u!1 &723663776
 GameObject:
   m_ObjectHideFlags: 0
@@ -22291,7 +22268,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 24
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &834689991
 MonoBehaviour:
@@ -22307,7 +22284,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: 
   eventText:
-  - Go into the room? or keep going further into the tower
+  - Another door in this endless corridor.
+  - The mumbling is growing louder. It's coming from around the corner
+  - From the door you hear some scrambling noises.
   eventChoices:
   - {fileID: 202619527}
   - {fileID: 45733147}
@@ -22584,7 +22563,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 25
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23560,6 +23539,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7982657710777550867, guid: ed6248a1b4b64b449a641567d47e2518, type: 3}
   m_PrefabInstance: {fileID: 885890825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &887715896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 887715897}
+  - component: {fileID: 887715898}
+  m_Layer: 0
+  m_Name: L2_SearchedRoomBreak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &887715897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887715896}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &887715898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887715896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Break the chest
+  eventText:
+  - You hit the chest. Unfortunately that seems to trigger the trap.
+  eventChoices:
+  - {fileID: 300253554}
+  BoolToEnable: 
 --- !u!1 &890544514
 GameObject:
   m_ObjectHideFlags: 0
@@ -24779,9 +24808,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Choice event
   eventText:
-  - open? search? leave the room?
+  - Approaching the table and chest, there's an odd smell in the air.
   eventChoices:
-  - {fileID: 2128916066}
+  - {fileID: 1298727816}
   - {fileID: 180760971}
   - {fileID: 674257802}
 --- !u!4 &910801413
@@ -24853,7 +24882,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 975980512}
+  - {fileID: 1207185356}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -30021,7 +30050,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 32
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &934077852
 MonoBehaviour:
@@ -31205,119 +31234,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!21 &975980512
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DustParticle(Clone)
-  m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3102
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ed6dc1204147d451d96326c7fedc6727, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cookie2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClip: 0
-    - _Blend: 0
-    - _BlendOp: 0
-    - _Border: 1
-    - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
-    - _ColorMode: 0
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _DistanceFallOff: 1.28
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 0
-    - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
-    - _FlipbookMode: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _ParticleDistanceAtten: 100
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZWrite: 1
-    m_Colors:
-    - _AreaExtents: {r: 0, g: 0, b: 0, a: 1}
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _BoundsCenter: {r: 28.49173, g: 33.1397, b: 35.434338, a: 0}
-    - _BoundsExtents: {r: 2.63644, g: 1.870342, b: 2.9003215, a: 0}
-    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ConeAxis: {r: -0.010342509, g: 2.8783677, b: 0.25883418, a: 8.3521}
-    - _ConeTipData: {r: 28.521301, g: 31.55124, b: 35.29619, a: 0.04}
-    - _Cookie2D_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Cookie2D_SS: {r: 1, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ExtraGeoData: {r: 2.4123752, g: -0.09353935, b: 0.78125, a: 2.89}
-    - _FallOff: {r: 1, g: 2, b: 1, a: 0}
-    - _ParticleLightColor: {r: 0.68181187, g: 1.1948999, b: 0.64552444, a: 1.1948999}
-    - _ShadowIntensity: {r: 0, g: 1, b: 0, a: 0}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &978378774
 GameObject:
   m_ObjectHideFlags: 0
@@ -32468,7 +32384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: You found a note containing some info
   eventText:
-  - Pickup the note and read it ?
+  - Rummaging through the crates, all you find are scraps of metal, food or wood.
+  - As your eyes turn to the table, you see a note from a previous adventurer.
+  - Journal #1 has been added to your inventory
   eventChoices:
   - {fileID: 77899950}
   item: {fileID: 11400000, guid: 43fc7659f4c60404192095f4537c8a96, type: 2}
@@ -32585,6 +32503,89 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &1026890110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026890111}
+  - component: {fileID: 1026890113}
+  - component: {fileID: 1026890112}
+  m_Layer: 0
+  m_Name: E_Column_01 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1026890111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026890110}
+  m_LocalRotation: {x: -8.549131e-17, y: -0.7912751, z: 8.6406625e-17, w: 0.6114604}
+  m_LocalPosition: {x: 0.119, y: 0.427, z: 1.08}
+  m_LocalScale: {x: 32.8589, y: 27.80843, z: 32.8589}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 638378715}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -7.4032526, z: 0}
+--- !u!23 &1026890112
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026890110}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1026890113
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026890110}
+  m_Mesh: {fileID: 2135267005533308286, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
 --- !u!1 &1027199805
 GameObject:
   m_ObjectHideFlags: 0
@@ -32648,11 +32649,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: L2_GassSuccessText
   eventText:
-  - So close to being poisoned by whatever that was
-  - Thankfully you made it out... barely
-  - There is only one way from here
+  - You manage to hold your breath, keeping the gas from entering your lungs.
+  - Inside the chest you find a helmet
   eventChoices:
-  - {fileID: 674257802}
+  - {fileID: 1975749831}
   BoolToEnable: 
 --- !u!4 &1035094511
 Transform:
@@ -32667,7 +32667,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 22
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035169485
 GameObject:
@@ -32755,7 +32755,7 @@ MonoBehaviour:
   - This is an Event!
   - It can have multiple lines!
   eventChoices:
-  - {fileID: 171083198}
+  - {fileID: 41614718}
   terrainAmin: []
 --- !u!1 &1039358761
 GameObject:
@@ -32837,7 +32837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 34
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1052204931
 MonoBehaviour:
@@ -32900,7 +32900,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1057825935
 MonoBehaviour:
@@ -32914,7 +32914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6ec354a60ab764f9a375daa82e873a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Fight the guard
+  eventName: Fight
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -34363,7 +34363,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35747,9 +35747,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Charmed the goblin
   eventText:
-  - You managed to trick the goblin by telling him ur all in his head. That you are
-    one of the voices.
-  - The goblin sits back into has barrel again sounding distressed
+  - You somehow convince the Goblin you're part of his imagination
+  - The goblin shrugs and goes back to the barrel.
   eventChoices:
   - {fileID: 45733147}
   BoolToEnable: 
@@ -35766,7 +35765,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 29
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176349581
 GameObject:
@@ -36187,7 +36186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalScale.x
@@ -36736,6 +36735,119 @@ Transform:
   m_Father: {fileID: 2091476549}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1207185356
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DustParticle(Clone)
+  m_Shader: {fileID: 4800000, guid: fc2655527708b470d9b23bfe28ede3e9, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3102
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: ed6dc1204147d451d96326c7fedc6727, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cookie2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BlendOp: 0
+    - _Border: 1
+    - _BumpScale: 1
+    - _CameraFadingEnabled: 0
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 1
+    - _ColorMode: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DistanceFallOff: 1.28
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
+    - _DistortionStrength: 1
+    - _DistortionStrengthScaled: 0.1
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FlipbookBlending: 0
+    - _FlipbookMode: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _ParticleDistanceAtten: 100
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SoftParticlesEnabled: 0
+    - _SoftParticlesFarFadeDistance: 1
+    - _SoftParticlesNearFadeDistance: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _AreaExtents: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BoundsCenter: {r: 28.49173, g: 33.1397, b: 35.434338, a: 0}
+    - _BoundsExtents: {r: 2.63644, g: 1.870342, b: 2.9003215, a: 0}
+    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ConeAxis: {r: -0.010342509, g: 2.8783677, b: 0.25883418, a: 8.3521}
+    - _ConeTipData: {r: 28.521301, g: 31.55124, b: 35.29619, a: 0.04}
+    - _Cookie2D_Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Cookie2D_SS: {r: 1, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ExtraGeoData: {r: 2.4123752, g: -0.09353935, b: 0.78125, a: 2.89}
+    - _FallOff: {r: 1, g: 2, b: 1, a: 0}
+    - _ParticleLightColor: {r: 0.68181187, g: 1.1948999, b: 0.64552444, a: 1.1948999}
+    - _ShadowIntensity: {r: 0, g: 1, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1208987679
 GameObject:
   m_ObjectHideFlags: 0
@@ -37115,7 +37227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8749659734494232478, guid: 427d3692c95d7f24690f40a75b4ab109, type: 3}
       propertyPath: m_LocalScale.x
@@ -37236,7 +37348,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 21
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38452,7 +38564,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 27
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -39045,6 +39157,60 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &1298727814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298727815}
+  - component: {fileID: 1298727816}
+  m_Layer: 0
+  m_Name: L2_RoomSearchCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1298727815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298727814}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1298727816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298727814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2566776fbce99114fafe9f46502a26dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Search the room
+  eventText:
+  - This is an Event!
+  - It can have multiple lines!
+  eventChoices:
+  - {fileID: 1894831923}
+  - {fileID: 324543726}
+  rollCheck: 8
+  faceType: 20
+  statName: 5
 --- !u!21 &1299009089
 Material:
   serializedVersion: 8
@@ -40373,11 +40539,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: L1
   eventText:
-  - You start walking down the lit up path. The tower feels eery but no signs of
-    enemies yet.
+  - You wander down the left corridor, finding yourself next to a door in the hallway
   - The torches on the walls flicker and dance, casting strange shadows across the
     hallway
-  - There is a room to the left. You have some options
   eventChoices:
   - {fileID: 224166518}
   BoolToEnable: 
@@ -42087,11 +42251,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363421033}
   m_Mesh: {fileID: 2135267005533308286, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
---- !u!4 &1368275169 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4737228263913708687, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
-  m_PrefabInstance: {fileID: 1342383352}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1369570738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42595,7 +42754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42603,7 +42762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.147
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42707,19 +42866,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Didnt manage to runaway in time
+  eventName: You got poisoned
   eventText:
-  - 'As you try to run away '
-  - You pass out....
-  - ......
-  - '*gasping for air*'
-  - '*eyes opens*'
-  - 'You finaly get a grasp of whats going on again. '
-  - Your on the flo... * cough* floor.
-  - Clearly you fell for a trap, now poisned you walk out the room and keep going.
+  - As the poison seeps into your lungs, you feel your lungs burning.
+  - Whatever was in the chest has been turned to mush by the acidity of the poison.
+  - You quickly get out, not wanting to lower your life expectancy any more than
+    it already has.
   eventChoices:
   - {fileID: 674257802}
-  BoolToEnable: 
+  BoolToEnable: PotPoisonFailed
 --- !u!4 &1387027126
 Transform:
   m_ObjectHideFlags: 0
@@ -42733,7 +42888,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 20
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387401799
 GameObject:
@@ -43502,7 +43657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a2c3282c45f034e832c9096d662d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Enter room
+  eventName: Enter the room
   eventText:
   - This is an Event!
   - It can have multiple lines!
@@ -44433,12 +44588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: L1_RoomText
   eventText:
-  - 'As you enter the room, you dont notice alot.  You see a few wooden boxes but
-    nothing you are eager about. '
-  - ake a moment to survey the area, trying to see if there might be something you
-    can see in the shadows.
-  - From the quick look you cant see anything that you think is worth your time.
-    However there still might be something in the room.
+  - Taking a step into the room you feel the humid air against your skin.
   eventChoices:
   - {fileID: 2017762020}
   BoolToEnable: 
@@ -45575,7 +45725,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 22
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1473692214
 MonoBehaviour:
@@ -47112,6 +47262,57 @@ Transform:
   m_Father: {fileID: 759501890}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -11.358, y: -52.324, z: 51.107}
+--- !u!1 &1562738628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1562738629}
+  - component: {fileID: 1562738630}
+  m_Layer: 0
+  m_Name: L2_SearchedRoomChoice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1562738629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562738628}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562738630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562738628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Choice event
+  eventText:
+  - Looking over the chest, you notice a small string between the lid and the base.
+  eventChoices:
+  - {fileID: 887715898}
+  - {fileID: 385417949}
+  - {fileID: 674257802}
 --- !u!1 &1568205326
 GameObject:
   m_ObjectHideFlags: 0
@@ -48202,13 +48403,20 @@ Transform:
   - {fileID: 523950593}
   - {fileID: 690844469}
   - {fileID: 910801413}
+  - {fileID: 1298727815}
+  - {fileID: 324543725}
+  - {fileID: 1894831922}
+  - {fileID: 1740910403}
+  - {fileID: 1562738629}
+  - {fileID: 887715897}
+  - {fileID: 385417948}
+  - {fileID: 174627696}
   - {fileID: 180760970}
-  - {fileID: 2128916067}
-  - {fileID: 288544123}
   - {fileID: 300253555}
   - {fileID: 1387027126}
   - {fileID: 1217323518}
   - {fileID: 1035094511}
+  - {fileID: 1975749830}
   - {fileID: 674257803}
   - {fileID: 834689990}
   - {fileID: 202619526}
@@ -48225,59 +48433,6 @@ Transform:
   m_Father: {fileID: 2121255766}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1607421967
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1607421969}
-  - component: {fileID: 1607421970}
-  m_Layer: 0
-  m_Name: S2_TextCharmSuccess
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1607421969
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607421967}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1866698017}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1607421970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607421967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 897891d1aa1aedf4181589d525a290f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: You tricked the guard
-  eventText:
-  - The guard fell straight for your lies. At the same time he also decides to give
-    you a note that he found on the floor.
-  - You thank him and keep going *dont look back*
-  - 'You then get to this new cross road. '
-  eventChoices:
-  - {fileID: 204049789}
-  item: {fileID: 11400000, guid: b74f0f2c92625214cb823e9f00428243, type: 2}
 --- !u!1001 &1608623204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48952,7 +49107,7 @@ MonoBehaviour:
   - This is an Event!
   - It can have multiple lines!
   eventChoices:
-  - {fileID: 2007871933}
+  - {fileID: 204049789}
   terrainAmin:
   - {fileID: 1424349345}
 --- !u!224 &1619108999
@@ -48968,7 +49123,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -51257,7 +51412,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 24
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1731847453
 MonoBehaviour:
@@ -51592,6 +51747,56 @@ Transform:
   m_Father: {fileID: 1982974200}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -173.635, y: -193.04, z: 136.795}
+--- !u!1 &1740910402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1740910403}
+  - component: {fileID: 1740910404}
+  m_Layer: 0
+  m_Name: L2_SearchedRoomFailChoice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1740910403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740910402}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1740910404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740910402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e743af2586b684b9647f0fef2d7ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Choice event
+  eventText:
+  - You are standing in front of a chest.
+  eventChoices:
+  - {fileID: 180760971}
+  - {fileID: 674257802}
 --- !u!21 &1741171000
 Material:
   serializedVersion: 8
@@ -52906,7 +53111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Keep going or enter the room
   eventText:
-  - Keep going further on or enter the room to the left
+  - You don't hear anything coming from the door
+  - However further down the corridor you hear some mumbling.
   eventChoices:
   - {fileID: 674257802}
   - {fileID: 1406298707}
@@ -53337,6 +53543,89 @@ Transform:
   m_Father: {fileID: 1980690084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1819323152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1819323153}
+  - component: {fileID: 1819323155}
+  - component: {fileID: 1819323154}
+  m_Layer: 0
+  m_Name: E_Column_01 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1819323153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819323152}
+  m_LocalRotation: {x: 2.6007958e-25, y: -0.6910412, z: 9.3548664e-24, w: 0.72281545}
+  m_LocalPosition: {x: -0.89, y: 0.37914062, z: 0.862}
+  m_LocalScale: {x: 32.858757, y: 27.80843, z: 31.64391}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 175587587}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -7.4032526, z: 0}
+--- !u!23 &1819323154
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819323152}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1819323155
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819323152}
+  m_Mesh: {fileID: 2135267005533308286, guid: 83321994ac2bc9942b232a735d648f2d, type: 3}
 --- !u!1 &1820190968
 GameObject:
   m_ObjectHideFlags: 0
@@ -53677,7 +53966,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1607379283}
-  m_RootOrder: 26
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1847516795
 MonoBehaviour:
@@ -53693,12 +53982,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Text Event
   eventText:
-  - As you step into the room, you see ALOT of barrels
-  - While looking at all the barrels
-  - you hear a rustling noise and turn to see a goblin emerge. It has its head down
-    in a barrel.
-  - It looks up and locks eyes with you before letting out a loud screech and charging
-    towards you.
+  - The first thing that strikes you are the barrels.
+  - The room is filled with them. On top of that there's a goblin here
+  - The goblin's got their head inside one of the barrels
+  - It turns around and spots you
   eventChoices:
   - {fileID: 55673077}
   BoolToEnable: 
@@ -54309,15 +54596,13 @@ Transform:
   - {fileID: 1037265960}
   - {fileID: 1820190970}
   - {fileID: 41614719}
-  - {fileID: 171083199}
   - {fileID: 394287136}
   - {fileID: 1057825934}
   - {fileID: 89244170}
   - {fileID: 1905269224}
+  - {fileID: 217909129}
   - {fileID: 717815895}
-  - {fileID: 1607421969}
   - {fileID: 1619108999}
-  - {fileID: 2007871932}
   - {fileID: 204049788}
   - {fileID: 97967852}
   - {fileID: 547429568}
@@ -55253,6 +55538,56 @@ MonoBehaviour:
   eventChoices:
   - {fileID: 589433690}
   BoolToEnable: 
+--- !u!1 &1894831921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894831922}
+  - component: {fileID: 1894831923}
+  m_Layer: 0
+  m_Name: L2_RoomSearchCheckFail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1894831922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894831921}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894831923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894831921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: Room Search Failed
+  eventText:
+  - Searching the room, nothing really appears out of the ordinary
+  eventChoices:
+  - {fileID: 1740910404}
+  BoolToEnable: 
 --- !u!1001 &1896373975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55378,7 +55713,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1905269225
 MonoBehaviour:
@@ -55394,12 +55729,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: You failed to trick the guard
   eventText:
-  - You failed to trick the guard. Confused of what you attempted doing he walks
-    towards you.
-  - As this is the only way you know of further into the tower... you take the fight.
+  - You hand the guard the slip of paper, but he doesnt fall for it and slashes you.
+  - Holding your injured hand you get ready for the fight
   eventChoices:
   - {fileID: 1057825935}
-  BoolToEnable: 
+  BoolToEnable: PlayerBleed
 --- !u!1001 &1906903602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56691,6 +57025,56 @@ Transform:
   m_Father: {fileID: 150498191}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 9.928212, y: 42.007233, z: 4.5327263}
+--- !u!1 &1975749829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975749830}
+  - component: {fileID: 1975749831}
+  m_Layer: 0
+  m_Name: L2_ChestItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1975749830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975749829}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1607379283}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1975749831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975749829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897891d1aa1aedf4181589d525a290f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: AddItem Event
+  eventText:
+  - Helmet Of Knowledge has been added to your inventory.
+  eventChoices:
+  - {fileID: 674257802}
+  item: {fileID: 11400000, guid: 95aa05ca55d29d44f8687d37dbad2be7, type: 2}
 --- !u!1 &1979663457
 GameObject:
   m_ObjectHideFlags: 0
@@ -56802,7 +57186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56810,7 +57194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57041,7 +57425,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1866698017}
-  m_RootOrder: 26
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -57578,58 +57962,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3901064495863831919, guid: bf712911abd6d3e4bb48dd0c0963fb12, type: 3}
   m_PrefabInstance: {fileID: 2004002611}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2007871931
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2007871932}
-  - component: {fileID: 2007871933}
-  m_Layer: 0
-  m_Name: S2_GuardFightWin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2007871932
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007871931}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.826431, y: 0.7240801, z: 7.0491424}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1866698017}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2007871933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007871931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 897891d1aa1aedf4181589d525a290f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: You won
-  eventText:
-  - 'After beating the guard you notice a note flies out of his pocket. '
-  - You pick it up and start going again up untill this new point.
-  - 'A new crossroad seems to have apeared. '
-  eventChoices:
-  - {fileID: 204049789}
-  item: {fileID: 11400000, guid: b74f0f2c92625214cb823e9f00428243, type: 2}
 --- !u!1001 &2011112733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57655,7 +57987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57663,7 +57995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.202
       objectReference: {fileID: 0}
     - target: {fileID: 7805291276822566596, guid: 57cb9af633ebbc64bb47ff9b3de29714, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57902,7 +58234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Choice event
   eventText:
-  - 'Search the room or leave the room. '
+  - There's an old table in the corner, and a lot of unopened boxes scattered around
+    the room.
   eventChoices:
   - {fileID: 768196971}
   - {fileID: 77899950}
@@ -60015,59 +60348,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &2128916065
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2128916067}
-  - component: {fileID: 2128916066}
-  m_Layer: 0
-  m_Name: L2_Search
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2128916066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128916065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02f1f73592e0b4418e1304a7b4155c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: Search room
-  eventText:
-  - As you decide to search the room first you come to find something intresting
-  - On the chair which is right next to the chest there is a note
-  - It says "Be careful, what you see might attempt to decive you"
-  - After reading this you can decide what you would like to do again
-  eventChoices:
-  - {fileID: 288544122}
-  BoolToEnable: 
---- !u!4 &2128916067
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128916065}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1607379283}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2129322238
 GameObject:
   m_ObjectHideFlags: 0
