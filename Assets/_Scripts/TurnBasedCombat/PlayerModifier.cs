@@ -25,6 +25,12 @@ namespace EnterCloudsReach.Combat
                 PlayerPrefs.DeleteKey("PlayerStunned");
             }
 
+            if (PlayerPrefs.GetInt("PlayerBleed") == 1)
+            {
+                unit.addStatus(statusEffects.Bleed, 3);
+                PlayerPrefs.DeleteKey("PlayerBleed");
+            }
+
         }
     }
 }
