@@ -27,6 +27,8 @@ namespace EnterCloudsReach.Combat
     public class BattleSystem : MonoBehaviour, IReceiveResult
     {
         [Header("Properties")]
+        [SerializeField] private GameObject GameOverGO;
+        [SerializeField] private Animator[] GameOverAnims;
         public TMP_Text dialogue;
         public GameObject actions;
         private CombatMinigameManager MGManager;
@@ -81,6 +83,7 @@ namespace EnterCloudsReach.Combat
             eqM = FindObjectOfType<EquipmentSlotManager>();
             rm = FindObjectOfType<RollManager>();
             attackButtons = actions.GetComponentsInChildren<Button>();
+            GameOverGO.SetActive(false);
             if (startBattleOnStart)
             {
                 StartCoroutine(SetupBattle(typeToStart));
@@ -550,25 +553,31 @@ namespace EnterCloudsReach.Combat
                 // Win!
                 dialogue.text = playerUnit.unitName + " has defeated the enemy!";
                 PlayerPrefs.SetString("BattleResult", "Won");
+                playerStats.health = playerUnit.curHP;
+                yield return new WaitForSeconds(2f);
+                if (FindObjectOfType<BattleLoader>())
+                {
+                    FindObjectOfType<BattleLoader>().EndBattle();
+                }
+                else if (FindObjectOfType<CombatSceneController>())
+                {
+                    playerStats.health = playerStats.maxHealth;
+                    FindObjectOfType<CombatSceneController>().RestartScene();
+                }
             }
             else if (state == BattleState.LOST)
             {
-                // Lost!
-                dialogue.text = playerUnit.unitName + " has been defeated!";
-                PlayerPrefs.SetString("BattleResult", "Lost");
+                yield return new WaitForSeconds(0.1f);
+                GameOverGO.SetActive(true);
+                foreach (Animator anim in GameOverAnims)
+                {
+                    Debug.Log("Playing Animation for: " + anim.gameObject.name);
+                    anim.SetTrigger("GameOver");
+                }
+
+
             }
             // PlayerPrefs.SetInt("playerHealth", playerUnit.curHP);
-            playerStats.health = playerUnit.curHP;
-            yield return new WaitForSeconds(2f);
-            if (FindObjectOfType<BattleLoader>())
-            {
-                FindObjectOfType<BattleLoader>().EndBattle();
-            }
-            else if (FindObjectOfType<CombatSceneController>())
-            {
-                playerStats.health = playerStats.maxHealth;
-                FindObjectOfType<CombatSceneController>().RestartScene();
-            }
 
         }
 

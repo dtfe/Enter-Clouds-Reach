@@ -59,7 +59,7 @@ namespace EnterCloudsReach.Combat
             hpSlider.value = hp;
             if (hp <= 0)
             {
-                hpSlider.transform.Find("Fill Area").gameObject.SetActive(false);
+                hpSlider.transform.Find("BarMask").transform.Find("Fill Area").gameObject.SetActive(false);
             }
         }
 
