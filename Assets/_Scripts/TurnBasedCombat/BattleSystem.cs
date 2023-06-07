@@ -28,6 +28,7 @@ namespace EnterCloudsReach.Combat
     {
         [Header("Properties")]
         [SerializeField] private GameObject GameOverGO;
+        [SerializeField] private GameObject GameOverMenuGO;
         [SerializeField] private Animator[] GameOverAnims;
         public TMP_Text dialogue;
         public GameObject actions;
@@ -84,6 +85,7 @@ namespace EnterCloudsReach.Combat
             rm = FindObjectOfType<RollManager>();
             attackButtons = actions.GetComponentsInChildren<Button>();
             GameOverGO.SetActive(false);
+            GameOverMenuGO.SetActive(false);
             if (startBattleOnStart)
             {
                 StartCoroutine(SetupBattle(typeToStart));
@@ -569,6 +571,7 @@ namespace EnterCloudsReach.Combat
             {
                 yield return new WaitForSeconds(0.1f);
                 GameOverGO.SetActive(true);
+                GameOverMenuGO.SetActive(true);
                 foreach (Animator anim in GameOverAnims)
                 {
                     Debug.Log("Playing Animation for: " + anim.gameObject.name);
