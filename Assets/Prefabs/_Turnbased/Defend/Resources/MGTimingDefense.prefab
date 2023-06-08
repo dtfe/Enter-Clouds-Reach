@@ -64,6 +64,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   timeToHit: 3
   timeDeadzone: 0.2
+  statusToApply: 0
   hasBeenClicked: 0
 --- !u!2083052967 &5249539130573406369
 VisualEffect:
@@ -82,7 +83,7 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.7
+      - m_Value: 1
         m_Name: Adjustment
         m_Overridden: 1
     m_Vector2f:
