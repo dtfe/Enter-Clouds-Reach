@@ -12,6 +12,7 @@ namespace EnterCloudsReach.EventSystem
         int index;
         public TMP_Text rollInfo;
         int rollN;
+        RollEvent.StatName statN;
         public void AcceptRoll()
         {
             GUI_Manager.DialogueBox.eventReturnIndex = index;
@@ -29,8 +30,40 @@ namespace EnterCloudsReach.EventSystem
         {
             rollE = e;
             index = i;
+            statN = rollE.GetComponent<RollEvent>().statName;
+            string StatToRoll = "";
+            switch (statN)
+            {
+                default:
+                    StatToRoll = "Missing Stat";
+                    break;
+
+                case RollEvent.StatName.Brawn:
+                    StatToRoll = "Brawn";
+                    break;
+
+                case RollEvent.StatName.Agility:
+                    StatToRoll = "Agility";
+                    break;
+
+                case RollEvent.StatName.Endurance:
+                    StatToRoll = "Endurance";
+                    break;
+
+                case RollEvent.StatName.Knowledge:
+                    StatToRoll = "Knowledge";
+                    break;
+
+                case RollEvent.StatName.Wisdom:
+                    StatToRoll = "Wisdom";
+                    break;
+
+                case RollEvent.StatName.Charm:
+                    StatToRoll = "Charm";
+                    break;
+            }
             rollN= rollE.GetComponent<RollEvent>().rollCheck;
-            string infoText = $"You need a {rollN} or higher. You can choose to test your luck or check if a different path";
+            string infoText = $"Your dice give you a vision of your chances: You need to beat a {rollN} {StatToRoll} check to succeed this action";
             rollInfo.SetText(infoText);
         }
     }
