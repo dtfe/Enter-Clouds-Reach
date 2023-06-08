@@ -8,10 +8,10 @@ namespace EnterCloudsReach.EventSystem
     [Event(false, 2, 2)]
     public class RollEvent : EventClass
     {
-        enum StatName{None,Brawn,Agility,Endurance,Knowledge,Wisdom,Charm}
+        public enum StatName{None,Brawn,Agility,Endurance,Knowledge,Wisdom,Charm}
         [SerializeField] internal int rollCheck = 4;
         [SerializeField] private DieRoller.dFaces faceType = DieRoller.dFaces.d6;
-        [SerializeField] private StatName statName = StatName.None;
+        [SerializeField] internal StatName statName = StatName.None;
         private PlayerStats playerStats;
        
         private void Start()
